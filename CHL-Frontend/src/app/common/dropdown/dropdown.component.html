@@ -1,1 +1,5 @@
-<p>dropdown works!</p>
+<select [ngStyle]="dropConfig.styles">
+    <option *ngFor="let state of states" [value]="state">
+        {{state}}
+    </option>
+</select>

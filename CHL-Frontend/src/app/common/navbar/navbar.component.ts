@@ -29,4 +29,23 @@ export class NavbarComponent implements OnInit {
     //text: 'Bye'
   };
 
+  // stateList = [
+  //   "Kerala",
+  //   "Karnataka",
+  //   "West Bengal",
+  //   "Uttar Pradesh",
+  //   "Mumbai"
+  // ]
+
+  // textdropConfig = {
+  //   styles: {
+  //     width: '120px',
+  //     height: '40px',
+  //     backgroundColor: '#E9F7F8',
+  //     color: 'black',
+  //     cursor: 'pointer',
+  //     fontSize: '20px'
+  //   }
+  // };
+
 }
