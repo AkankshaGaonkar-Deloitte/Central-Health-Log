@@ -1,9 +1,14 @@
-
-  <nav class="navbar">
-    <div class="name"><img class="plus" src="assets/images/plus_image.png"><b>Central <span> Health Log</span></b></div>
-    <div>
-      <div class="navbar-nav">
-        <a href="#"><app-button [text]='btntext' ></app-button></a>
-      </div>
+<nav class="navbar">
+  <div class="name">
+    <img class="plus" src="assets/images/plus_image.png" /><b
+      >Central <span> Health Log</span></b
+    >
+  </div>
+  <div>
+    <div class="navbar-nav">
+      <!--<a href="#"><app-button [text]="btntext"></app-button></a>-->
+      <a href="#"><app-button [text]="btntext" [btnConfig]="textBtnConfig"></app-button></a>
+      <!--<a href="#"><app-void-button [btnConfig]="textBtnConfig" [text]="textBtnConfig.text"></app-void-button></a>-->
     </div>
-  </nav>
+  </div>
+</nav>

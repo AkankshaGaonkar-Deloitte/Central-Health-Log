@@ -1,0 +1,128 @@
+Index: CHL-Frontend/src/app/app.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { InputComponent } from './common/input/input.component';\nimport { ButtonComponent } from './common/button/button.component';\nimport { NavbarComponent } from './common/navbar/navbar.component';\nimport { SidebarComponent } from './common/sidebar/sidebar.component';\nimport { DropdownComponent } from './common/dropdown/dropdown.component';\nimport { CheckboxComponent } from './common/checkbox/checkbox.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    InputComponent,\n    ButtonComponent,\n    NavbarComponent,\n    SidebarComponent,\n    DropdownComponent,\n    CheckboxComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/app.module.ts b/CHL-Frontend/src/app/app.module.ts
+--- a/CHL-Frontend/src/app/app.module.ts	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/app.module.ts	(date 1667547035969)
+@@ -9,6 +9,7 @@
+ import { SidebarComponent } from './common/sidebar/sidebar.component';
+ import { DropdownComponent } from './common/dropdown/dropdown.component';
+ import { CheckboxComponent } from './common/checkbox/checkbox.component';
++import { VoidButtonComponent } from './common/void-button/void-button.component';
+ 
+ @NgModule({
+   declarations: [
+@@ -19,6 +20,7 @@
+     SidebarComponent,
+     DropdownComponent,
+     CheckboxComponent,
++    VoidButtonComponent
+   ],
+   imports: [
+     BrowserModule,
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n  <nav class=\"navbar\">\n    <div class=\"name\"><img class=\"plus\" src=\"assets/images/plus_image.png\"><b>Central <span> Health Log</span></b></div>\n    <div>\n      <div class=\"navbar-nav\">\n        <a href=\"#\"><app-button [text]='btntext' ></app-button></a>\n      </div>\n    </div>\n  </nav>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.html b/CHL-Frontend/src/app/common/navbar/navbar.component.html
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.html	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.html	(date 1667549368437)
+@@ -1,9 +1,14 @@
+-
+-  <nav class="navbar">
+-    <div class="name"><img class="plus" src="assets/images/plus_image.png"><b>Central <span> Health Log</span></b></div>
+-    <div>
+-      <div class="navbar-nav">
+-        <a href="#"><app-button [text]='btntext' ></app-button></a>
+-      </div>
+-    </div>
+-  </nav>
+\ No newline at end of file
++<nav class="navbar">
++  <div class="name">
++    <img class="plus" src="assets/images/plus_image.png" /><b
++      >Central <span> Health Log</span></b
++    >
++  </div>
++  <div>
++    <div class="navbar-nav">
++      <a href="#"><app-button [text]="btntext"></app-button></a>
++      <a href="#"><app-void-button [text]="'Add new'" [btnClass]="'btn-primary'" [btnConfig]="textBtnConfig"></app-void-button></a>
++      
++    </div>
++  </div>
++</nav>
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Component, Input, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss'],\n  styles: [`:host ::ng-deep .btn{ height: 30px;padding-bottom: 30px;\n    padding-top: 0px !important }`] \n  // to change the style of child component\n})\nexport class NavbarComponent implements OnInit {\n  @Input('btntext') btntext: string='Login';\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.ts b/CHL-Frontend/src/app/common/navbar/navbar.component.ts
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.ts	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.ts	(date 1667549472764)
+@@ -16,4 +16,15 @@
+   ngOnInit(): void {
+   }
+ 
++  textBtnConfig = {
++    styles: {
++      width: '120px',
++      height: '40px',
++      backgroundColor: '#1CB5BD',
++      color: '#fff',
++      cursor: 'pointer'
++    },
++    text: 'Login'
++  };
++
+ }
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n.navbar{\n    background-color: #fff;\n    height: 70px;\n    font-family: Montserrat;\n    font-size: 35px;\n    span{\n        color: #1CB5BD;\n    }\n    \n        .plus{\n            height: 40px;\n       \n        }\n    }    \n    \n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.scss b/CHL-Frontend/src/app/common/navbar/navbar.component.scss
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.scss	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.scss	(date 1667547270123)
+@@ -1,16 +1,14 @@
+-
+-.navbar{
+-    background-color: #fff;
+-    height: 70px;
+-    font-family: Montserrat;
+-    font-size: 35px;
+-    span{
+-        color: #1CB5BD;
+-    }
+-    
+-        .plus{
+-            height: 40px;
+-       
+-        }
+-    }    
+-    
++.navbar {
++  background-color: #fff;
++  height: 70px;
++  font-family: Montserrat;
++  font-size: 35px;
++
++  span {
++    color: #1cb5bd;
++  }
++
++  .plus {
++    height: 40px;
++  }
++}
