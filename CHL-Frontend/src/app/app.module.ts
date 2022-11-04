@@ -18,7 +18,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
-    CheckboxComponent
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
