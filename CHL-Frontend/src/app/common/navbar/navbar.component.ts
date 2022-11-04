@@ -23,8 +23,10 @@ export class NavbarComponent implements OnInit {
       backgroundColor: '#1CB5BD',
       color: '#fff',
       cursor: 'pointer'
-    },
-    text: 'Login'
+    }
+    //,
+    //text: this.btntext
+    //text: 'Bye'
   };
 
 }
