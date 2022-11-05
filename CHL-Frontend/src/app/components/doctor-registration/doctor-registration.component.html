@@ -1,0 +1,80 @@
+<div class="main-container">
+<app-navbar [btntext]="'Login'"></app-navbar>
+
+<body>
+  <div class="container">
+    <div class="card w-75 mx-auto">
+      <div class="card-body">
+        <form>
+          <div class="form-group row">
+            <label id="name" class="col-sm-2 col-form-label">Doctor name:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+            <label class="col-sm-2 col-form-label">Aadhaar no:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Registration no:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+            <label class="col-sm-2 col-form-label">Year of Registration:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">
+                State medical council:
+            </label>
+            <div class="col-sm-4">
+              <app-dropdown
+                [states]="stateList"
+                [dropConfig]="textDropConfig"
+              ></app-dropdown>
+            </div>
+            <label class="col-sm-2 col-form-label">Qualification:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Email:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+            <label class="col-sm-2 col-form-label">Contact no:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <br />
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Username:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+            <label class="col-sm-2 col-form-label">Password:</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" />
+            </div>
+          </div>
+          <br />
+          <div class="col-md-12 text-center">
+            <app-button
+              [text]="btntext"
+              [btnConfig]="textBtnConfig"
+            ></app-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</div>

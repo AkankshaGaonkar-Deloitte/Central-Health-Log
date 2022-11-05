@@ -9,6 +9,7 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
+import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ButtonComponent } from './common/button/button.component';
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
-    ButtonComponent
+    ButtonComponent,
+    DoctorRegistrationComponent
   ],
   imports: [
     BrowserModule,
