@@ -8,10 +8,19 @@
     -o-background-size: cover;
     background-size: cover;
     height: 90vh;
-    padding-top: 8vh;
+    padding-top: 5vh;
+    position: relative;
 
+    .card {
+      border-radius: 10px;
+      position: relative;
+      // opacity: 0.4;
+      background-color: rgba(233, 247, 248, 0.5)
+
+    }
     
   }
+
 }
 
 input {
