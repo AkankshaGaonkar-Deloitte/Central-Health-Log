@@ -1,24 +1,17 @@
-body{
-    background: url('../../../assets/images/doc-reg-bg.png' ) no-repeat center center fixed;
+.main-container {
+  
+  .container-body {
+    background: url("../../../assets/images/doc-reg-bg.png") no-repeat center
+      center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    // align-items: center;}
+    height: 90vh;
+    padding-top: 8vh;
 
-    .container{
-        padding-top: 9vh;
-        padding-bottom: 10vh;
-
-        .card{
-            opacity: 0.4;
-
-            .card-body {
-                background: #ffffff;
-                border-radius: 28px;
-              }
-        }
-    }
+    
+  }
 }
 
 input {

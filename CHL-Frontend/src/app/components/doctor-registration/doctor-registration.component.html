@@ -1,13 +1,12 @@
 <div class="main-container">
-<app-navbar [btntext]="'Login'"></app-navbar>
-
-<body>
-  <div class="container">
+  <app-navbar [btntext]="'Login'"></app-navbar>
+  <div class="container-body">
+    
     <div class="card w-75 mx-auto">
       <div class="card-body">
         <form>
           <div class="form-group row">
-            <label id="name" class="col-sm-2 col-form-label">Doctor name:</label>
+            <label class="col-sm-2 col-form-label">Doctor name:</label>
             <div class="col-sm-4">
               <input type="text" class="form-control" />
             </div>
@@ -30,7 +29,7 @@
           <br />
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">
-                State medical council:
+              State medical council:
             </label>
             <div class="col-sm-4">
               <app-dropdown
@@ -66,7 +65,7 @@
             </div>
           </div>
           <br />
-          <div class="col-md-12 text-center">
+          <div class="btnWrap col-md-12 text-center">
             <app-button
               [text]="btntext"
               [btnConfig]="textBtnConfig"
@@ -76,5 +75,4 @@
       </div>
     </div>
   </div>
-</body>
 </div>

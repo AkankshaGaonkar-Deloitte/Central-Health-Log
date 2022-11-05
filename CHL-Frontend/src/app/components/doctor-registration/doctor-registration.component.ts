@@ -11,30 +11,29 @@ export class DoctorRegistrationComponent implements OnInit {
 
   textBtnConfig = {
     styles: {
-      width: '160px',
-      height: '45px',
+      width: '6em',
+      height: '1.5em',
       backgroundColor: '#1CB5BD',
       color: '#fff',
       cursor: 'pointer',
-      fontSize: '28px',
+      fontSize: '24px',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       borderRadius: '10px',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
-      fontWeight: '700'
+      fontWeight: '700',
+      paddingLeft: '1.2em',
+      display: 'inline-flex',
+      alignItems: 'center'
     }
   };
 
   textDropConfig = {
     styles : {
-      // width: '120px',
-      // height: '40px',
-      // backgroundColor: '#E9F7F8',
-      // color: 'black',
-      // cursor: 'pointer',
-      // fontSize: '20px',
-      paddingTop: '8px',
-      paddingBottom: '8px',
+      width: '100%',
+      paddingTop: '0.5em',
+      paddingBottom: '0.5em',
+      textAlign: 'center',
       background: '#e9f7f8',
       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
       borderRadius: '10px'

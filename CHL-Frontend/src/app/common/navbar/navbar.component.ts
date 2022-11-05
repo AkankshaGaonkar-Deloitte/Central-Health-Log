@@ -16,8 +16,8 @@ export class NavbarComponent implements OnInit {
 
   textBtnConfig = {
     styles: {
-      width: '120px',
-      height: '40px',
+      width: '6em',
+      height: '2em',
       backgroundColor: '#1CB5BD',
       color: '#fff',
       cursor: 'pointer',
@@ -26,30 +26,33 @@ export class NavbarComponent implements OnInit {
       borderRadius: '10px',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
-      fontWeight: '700'
+      fontWeight: '700',
+      paddingLeft: '1.7em',
+      display: 'inline-flex',
+      alignItems: 'center'
     }
     //,
     //text: this.btntext
     //text: 'Bye'
   };
 
-  stateList = [
-    "Kerala",
-    "Karnataka",
-    "West Bengal",
-    "Uttar Pradesh",
-    "Mumbai"
-  ]
+  // stateList = [
+  //   "Kerala",
+  //   "Karnataka",
+  //   "West Bengal",
+  //   "Uttar Pradesh",
+  //   "Mumbai"
+  // ]
 
-  textdropConfig = {
-    styles: {
-      width: '120px',
-      height: '40px',
-      backgroundColor: '#E9F7F8',
-      color: 'black',
-      cursor: 'pointer',
-      fontSize: '20px'
-    }
-  };
+  // textdropConfig = {
+  //   styles: {
+  //     width: '100%',
+  //     height: '40px',
+  //     backgroundColor: '#E9F7F8',
+  //     color: 'black',
+  //     cursor: 'pointer',
+  //     fontSize: '20px'
+  //   }
+  // };
 
 }
