@@ -17,7 +17,7 @@ export class DropdownComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  saveState(selected: string) {
+  emitEvent(selected: string) {
     console.log(selected)
     this.selectedState = selected
     this.selectedDropdown.emit(selected);

@@ -18,6 +18,12 @@ export class DoctorRegistrationComponent implements OnInit {
     this.doctor.state = $event
   }
 
+  submit($event: string) {
+    console.log('submit button clicked')
+    console.log(`${$event}`)
+    console.log(this.doctor)
+  }
+
   textBtnConfig = {
     styles: {
       width: '6em',
