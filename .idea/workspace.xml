@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="frontend doc reg form opacity problem resolved" />
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="frontend doc reg form opacity problem resolved">
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/styles.scss" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

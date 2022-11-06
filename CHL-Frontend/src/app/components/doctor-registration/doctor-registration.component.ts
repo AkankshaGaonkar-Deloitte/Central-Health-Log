@@ -20,9 +20,8 @@ export class DoctorRegistrationComponent implements OnInit {
   }
 
   // for the register submit button
-  submit($event: string) {
-    console.log('submit button clicked')
-    console.log(`${$event}`)
+  submit(){
+    console.log('submit from submit2')
     console.log(this.doctor)
   }
 
