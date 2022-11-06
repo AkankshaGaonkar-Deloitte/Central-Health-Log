@@ -9,21 +9,24 @@ import { Doctor } from 'src/app/model/Doctor';
 export class DoctorRegistrationComponent implements OnInit {
 
   btntext: string = 'Register'
-  doctor: Doctor = new Doctor(-1, '', -1, -1, -1, '', '', '', -1, '', '')
+  doctor: Doctor = new Doctor()
 
   state: string = ''
 
+  // saves doctor's state from dropdown component
   saveState($event: string) {
     console.log(`At parent, selected state from child: ${$event}`)
     this.doctor.state = $event
   }
 
+  // for the register submit button
   submit($event: string) {
     console.log('submit button clicked')
     console.log(`${$event}`)
     console.log(this.doctor)
   }
 
+  // config/style for button
   textBtnConfig = {
     styles: {
       width: '6em',
@@ -43,6 +46,7 @@ export class DoctorRegistrationComponent implements OnInit {
     }
   };
 
+  // config/style for dropdown list
   textDropConfig = {
     styles: {
       width: '100%',
@@ -98,10 +102,6 @@ export class DoctorRegistrationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  register() {
-    console.log(this.doctor)
   }
 
 }
