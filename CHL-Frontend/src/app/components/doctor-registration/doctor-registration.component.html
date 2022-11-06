@@ -1,7 +1,6 @@
 <div class="main-container">
   <app-navbar [btntext]="'Login'"></app-navbar>
   <div class="container-body">
-    
     <div class="card w-75 mx-auto">
       <div class="card-body">
         <form>
@@ -35,6 +34,7 @@
               <app-dropdown
                 [states]="stateList"
                 [dropConfig]="textDropConfig"
+                (selectedDropdown)="saveState($event)"
               ></app-dropdown>
             </div>
             <label class="col-sm-2 col-form-label">Qualification:</label>

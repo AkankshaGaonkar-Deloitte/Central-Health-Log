@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="frontend-doc-reg is now rebased with common-component">
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.scss" afterDir="false" />
-    </list>
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="frontend doc reg form opacity problem resolved" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667585432160</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="frontend doc reg form opacity problem resolved">
+      <created>1667673434781</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1667673434782</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="frontend-doc-reg is now rebased with common-component" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend-doc-reg is now rebased with common-component" />
+    <MESSAGE value="frontend doc reg form opacity problem resolved" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend doc reg form opacity problem resolved" />
   </component>
 </project>

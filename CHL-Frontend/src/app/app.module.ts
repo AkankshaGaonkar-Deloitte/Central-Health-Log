@@ -10,6 +10,7 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { DoctorRegistrationComponent } from './components/doctor-registration/doctor-registration.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { DoctorRegistrationComponent } from './components/doctor-registration/do
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

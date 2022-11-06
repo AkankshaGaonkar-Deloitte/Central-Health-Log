@@ -1,5 +1,5 @@
-<select [ngStyle]="dropConfig.styles">
-    <option *ngFor="let state of states" [value]="state">
+<select [ngStyle]="dropConfig.styles" #state (change)="saveState(state.value)">
+    <option *ngFor="let state of states">
         {{state}}
     </option>
 </select>

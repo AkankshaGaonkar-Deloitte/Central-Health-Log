@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Doctor } from 'src/app/model/Doctor';
 
 @Component({
   selector: 'app-doctor-registration',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorRegistrationComponent implements OnInit {
 
-  btntext:string = 'Register'
+  btntext: string = 'Register'
+  doctor: Doctor = new Doctor(-1, '', -1, -1, -1, '', '', '', -1, '', '')
+
+  state: string = ''
+
+  saveState($event: string) {
+    console.log(`At parent, selected state from child: ${$event}`)
+    this.doctor.state = $event
+  }
 
   textBtnConfig = {
     styles: {
@@ -29,7 +38,7 @@ export class DoctorRegistrationComponent implements OnInit {
   };
 
   textDropConfig = {
-    styles : {
+    styles: {
       width: '100%',
       paddingTop: '0.5em',
       paddingBottom: '0.5em',
@@ -83,6 +92,10 @@ export class DoctorRegistrationComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  register() {
+    console.log(this.doctor)
   }
 
 }
