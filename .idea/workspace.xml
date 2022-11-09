@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. backend doc reg branch created&#10;2. basic spring security added&#10;3. doctor table created">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_security_2_7_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_5_7_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/HelloController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Doctor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/security/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chl.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/chl.mv.db" afterDir="false" />
-    </list>
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. backend doc reg branch created&#10;2. basic spring security added&#10;3. doctor table created" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -84,6 +68,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -163,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667673434782</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1. backend doc reg branch created&#10;2. basic spring security added&#10;3. doctor table created">
+      <created>1667930764472</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667930764472</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
