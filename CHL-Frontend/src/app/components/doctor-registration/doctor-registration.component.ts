@@ -9,14 +9,14 @@ import { Doctor } from 'src/app/model/Doctor';
 export class DoctorRegistrationComponent implements OnInit {
 
   btntext: string = 'Register'
-  doctor: Doctor = new Doctor()
+  doctor: Doctor = new Doctor(-1)
 
   state: string = ''
 
   // saves doctor's state from dropdown component
   saveState($event: string) {
     console.log(`At parent, selected state from child: ${$event}`)
-    this.doctor.state = $event
+    this.doctor.stateMedicalCouncil = $event
   }
 
   // for the register submit button
