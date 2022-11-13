@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -32,13 +33,17 @@ export class ButtonComponent implements OnInit {
   @Input() btntext!: string;
   @Output() onClick = new EventEmitter<string>();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
   emitEvent() {
     this.onClick.emit('clicked')
+  }
+  saveValue($event:string){
+    if ($event==='Logout'){this.router.navigate(['/login']);
+  }
   }
 
 

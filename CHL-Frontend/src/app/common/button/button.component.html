@@ -14,6 +14,6 @@
   <div>
     <img class="image"  src="../../../assets/images/Person.png" 
       (click)="onImgBtnClick($event)">
-    <app-dropdown class="dropdown" [states]="droptxt" [dropConfig]="textDropConfig"></app-dropdown>
+    <app-dropdown (value)="saveValue($event)" class="dropdown" [states]="droptxt" [dropConfig]="textDropConfig"></app-dropdown>
   </div>
 </ng-template>

@@ -9,7 +9,7 @@ export class DropdownComponent implements OnInit {
   @Input() dropConfig!: any;
   @Input() states!: string[];
 
-  @Output() selectedDropdown = new EventEmitter<string>();
+  @Output('value') selectedDropdown = new EventEmitter<string>();
 
   // selectedState:string = ''
 
