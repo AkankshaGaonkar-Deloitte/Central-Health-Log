@@ -10,25 +10,51 @@
 #sub-container{
     height:93%;
     background-color:#DAFDFF;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+
 }
 
 #image-container{
-    padding-top: 100px;
-    padding-left: 100px;
-}
-
-#main-text{
-    font-family: Montserrat;
-    padding-top: 50px;
-    font-size: 45px;
-    padding-left: 180px;
-}
-
-#moto-text{
-    font-family: Montserrat;
-    padding-top: 10px;
-    font-size: 22px;
-    color: #737373;
-    padding-left: 60px;
     display: flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: Montserrat;
+    #main-text{
+        font-size: 45px;
+        padding-top: 40px;
+    }
+    #moto-text{
+        font-size: 22px;
+        color: #737373;
+        padding-top: 10px;
+    }
+}
+
+#login-container{
+    background-color: #ffff;
+    box-shadow: -1px 2px 5px 4px rgba(115,115,115,0.29);
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    width:500px; 
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#login-heading{
+    font-family: Montserrat;
+    font-size: 45px;
+    text-align: center;
+
+
+
+}
+#login-btn{
+    text-align: center;
 }

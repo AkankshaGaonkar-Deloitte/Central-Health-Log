@@ -2,9 +2,41 @@
     <div id="nav-bar" ><app-navbar [btntext]="'Register'"></app-navbar></div>
     <div id="sub-container">
         <div id= image-container>
-           <img src="assets/images/login_bg.png" alt="login-bg-image"> 
+           <img src="assets/images/login_bg.png" alt="login-bg-image">
            <div id="main-text"><strong> Your Health Comes First.</strong></div>
            <div id="moto-text">With Central Health Log you can manage your personal health reports effectively. </div>
         </div>
-        <div id="form-conatiner"></div>
+        <div id="login-container">
+                <form>
+                    <div id ="login-heading">LOGIN</div>
+                    <span>Select the User Type</span>
+                    <div id="buttons">
+                        <app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button>
+                        <app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button>
+                        <app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button>
+                    </div>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input 
+                            id="username" 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input 
+                            id="password" 
+                            type="text" 
+                            class="form-control"
+                            placeholder="Password">
+                    </div>
+                    <div id="login-btn"><app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button></div>
+                </form> 
+            <span>New User? Register</span>
+        </div> 
     </div>
+</div>
+
+
+
