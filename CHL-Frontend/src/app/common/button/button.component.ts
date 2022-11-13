@@ -15,7 +15,8 @@ export class ButtonComponent implements OnInit {
       borderRadius: '0px',
       fontSize: '24px',
       border: '0px',
-      outline: '0px'
+      outline: '0px',
+      fontFamily:'Montserrat'
 
     }
   };

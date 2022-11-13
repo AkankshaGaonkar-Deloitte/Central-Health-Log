@@ -18,14 +18,22 @@ export class NavbarComponent implements OnInit {
   message = 'Click on a button';
   textBtnConfig = {
     styles: {
-      width: '100%',
-      height: '50px',
+
       backgroundColor: '#fff',
       color: '#1CB5BD',
       fontFamily: 'Montserrat',
       fontSize: '28px',
-      borderRadius: '1px',
-      borderColor: '#1CB5BD'
+      borderColor: '#1CB5BD',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '8px 54px',
+      gap: '10px',
+      width: '100%',
+      height: '40px',
+      border: '1px solid #1CB5BD',
+      borderRadius: '4px',
     },
     text: this.Text
   };
