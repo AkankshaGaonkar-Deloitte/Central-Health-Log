@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="dropdown component now works">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

@@ -1,1 +1,19 @@
-<button type="submit" class="btn" [ngStyle]="btnConfig.styles" (click)="emitEvent()"><b>{{text}}</b></button>
+
+<ng-container *ngTemplateOutlet="btnConfig['text'] ? text : image">
+</ng-container>
+
+<!-- Text Button -->
+<ng-template #text>
+  <button type="button" [ngStyle]="btnConfig.styles" (click)="onTextBtnClick($event)">
+   <b> {{btntext}}</b>
+  </button>
+</ng-template>
+
+<!-- Profile Section -->
+<ng-template #image>
+  <div>
+    <img class="image"  src="../../../assets/images/Person.png" 
+      (click)="onImgBtnClick($event)">
+    <app-dropdown class="dropdown" [states]="droptxt" [dropConfig]="textDropConfig"></app-dropdown>
+  </div>
+</ng-template>

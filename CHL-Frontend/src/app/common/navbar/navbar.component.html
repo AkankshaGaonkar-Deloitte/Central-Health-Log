@@ -6,10 +6,11 @@
   </div>
   <div>
     <div class="navbar-nav">
-      <!--<a href="#"><app-button [text]="btntext"></app-button></a>-->
-      <a href="#"><app-button [text]="btntext" [btnConfig]="textBtnConfig"></app-button></a>
-      <!--<a href="#"><app-void-button [btnConfig]="textBtnConfig" [text]="textBtnConfig.text"></app-void-button></a>-->
-      <!--<app-dropdown [states]="stateList" [dropConfig]="textdropConfig"></app-dropdown>-->
+
+          <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig"
+                      (textBtnClickEmt)="onClickEventReceived($event)"></app-button>
+          <app-button  *ngIf="btn==false" [droptxt]="[name,'Logout']" [btnConfig]="imgBtnConfig"
+                      (imgBtnClickEmt)="onClickEventReceived($event)"></app-button>
     </div>
   </div>
 </nav>

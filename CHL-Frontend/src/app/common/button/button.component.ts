@@ -7,8 +7,28 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
 
+  textDropConfig = {
+    styles: {
+      width: '100%',
+      textAlign: 'center',
+      background: 'white',
+      borderRadius: '0px',
+      fontSize: '24px',
+      border: '0px',
+      outline: '0px'
+
+    }
+  };
+  @Input() droptxt!: string[];
+  onImgBtnClick(event: any) {
+    console.log("HI");
+  }
+  onTextBtnClick(event: any) {
+    console.log("HI");
+  }
+
   @Input() btnConfig!: any;
-  @Input() text!: string;
+  @Input() btntext!: string;
   @Output() onClick = new EventEmitter<string>();
 
   constructor() { }
@@ -19,5 +39,7 @@ export class ButtonComponent implements OnInit {
   emitEvent() {
     this.onClick.emit('clicked')
   }
+
+
 
 }

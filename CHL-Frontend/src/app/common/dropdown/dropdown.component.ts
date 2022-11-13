@@ -11,7 +11,7 @@ export class DropdownComponent implements OnInit {
 
   @Output() selectedDropdown = new EventEmitter<string>();
 
-  selectedState:string = 'Andaman and Nicobar Islands'
+  // selectedState:string = ''
 
   constructor() {}
 
@@ -19,7 +19,7 @@ export class DropdownComponent implements OnInit {
 
   emitEvent(selected: string) {
     console.log(selected)
-    this.selectedState = selected
+    // this.selectedState = selected
     this.selectedDropdown.emit(selected);
   }
 }
