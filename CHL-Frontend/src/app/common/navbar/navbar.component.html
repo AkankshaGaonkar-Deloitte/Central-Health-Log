@@ -8,7 +8,7 @@
     <div class="navbar-nav">
 
           <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig"
-                      (textBtnClickEmt)="onClickEventReceived($event)"></app-button>
+                      (onClick)="onClickEventReceived($event)"></app-button>
           <app-button  *ngIf="btn==false" [droptxt]="[name,'Logout']" [btnConfig]="imgBtnConfig"
                       (imgBtnClickEmt)="onClickEventReceived($event)"></app-button>
     </div>

@@ -1,4 +1,6 @@
+import { ConditionalExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,13 +11,13 @@ export class NavbarComponent implements OnInit {
   @Input('btntext') Text: string = "Login";
   @Input('name') name: string = "Your Profile";
   @Input('button') btn: boolean = true;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
 
-  message = 'Click on a button';
+  message: string = 'Click on a button';
   textBtnConfig = {
     styles: {
 
@@ -41,8 +43,10 @@ export class NavbarComponent implements OnInit {
   imgBtnConfig = {
   };
 
-  onClickEventReceived(event: any) {
-    this.message = event;
+  onClickEventReceived($event: any) {
+    if (this.Text === 'Login') { this.router.navigate(['/login']) }
+    else { if (this.Text === 'Register') { this.router.navigate(['/registration']) } };
   }
 
 }
+
