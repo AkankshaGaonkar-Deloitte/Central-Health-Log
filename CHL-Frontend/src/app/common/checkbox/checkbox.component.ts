@@ -21,6 +21,7 @@ export class CheckboxComponent implements OnInit {
   }
   */
 
+  @Input() checkboxConfig!: any
   @Input() checkList:string[] = ['A','B','C']
   @Output() selectedCheckbox = new EventEmitter<string[]>();
 

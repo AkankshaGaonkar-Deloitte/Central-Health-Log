@@ -1,6 +1,6 @@
 <form action="">
   <div *ngFor="let item of checkList" (change)="liveCheck(check.value)">
-    <input #check type="checkbox" name="vehicle1" value={{item}}/>
+    <input [ngStyle]="checkboxConfig.styles" #check type="checkbox" name="vehicle1" value={{item}}/>
     <label>{{item}}</label><br />
   </div>
   <input type="submit" value="Submit" />
