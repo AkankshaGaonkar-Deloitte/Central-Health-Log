@@ -5,16 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database">
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/DocRegController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/DoctorRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/security/SecurityConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/DoctorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/constants/StatusCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_22,_11_32_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_22,_12_11_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_22__11_32_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_04_11_22__12_11_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_11_22,_12_10_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_04_11_22__12_10_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/security/SecurityConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/doctor-registration/doctor-registration.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/model/Doctor.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/model/Doctor.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/DocRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/DocRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/DoctorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/DoctorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +39,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -167,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667930764472</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database">
+      <created>1667969221444</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667969221444</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

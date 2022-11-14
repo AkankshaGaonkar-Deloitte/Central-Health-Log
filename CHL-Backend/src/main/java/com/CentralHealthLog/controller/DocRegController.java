@@ -18,8 +18,8 @@ public class DocRegController {
     @PostMapping("/doctor")
     public ResponseEntity<Doctor> addNewDoctor(@RequestBody Doctor doctor){
         System.out.println(doctor);
-        doctorService.saveDoctor(doctor);
-        return new ResponseEntity<Doctor>(doctor, HttpStatus.OK);
+        Doctor savedDoctor = doctorService.saveDoctor(doctor);
+        return new ResponseEntity<Doctor>(savedDoctor, HttpStatus.OK);
     }
 
 }
