@@ -22,30 +22,29 @@ export class ButtonComponent implements OnInit {
     }
   };
   @Input() droptxt!: string[];
-  onImgBtnClick(event: any) {
-    console.log("HI");
-  }
-  onTextBtnClick(event: any) {
-    console.log("HI");
-  }
-
   @Input() btnConfig!: any;
   @Input() btntext!: string;
-  @Output() onClick = new EventEmitter<string>();
+  @Output() onClick = new EventEmitter<any>();
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
-  emitEvent() {
-    this.onClick.emit('clicked')
+  onClickBtn($event: any) {
+    this.onClick.emit($event);
   }
+
   saveValue($event:string){
     if ($event==='Logout'){this.router.navigate(['/login']);
   }
   }
-
+  onImgBtnClick(event: any) {
+    console.log("HI");
+  }
+  // emitEvent() {
+  //   this.onClick.emit('clicked')
+  // }
+  
 
 
 }

@@ -1,4 +1,4 @@
-<select [ngStyle]="dropConfig.styles" #state (change)="emitEvent(state.value) ">
+<select [ngStyle]="dropConfig.styles" #state (change)="emitEvent(state.value)">
     <option *ngFor="let state of states">
         {{state}}
     </option>
