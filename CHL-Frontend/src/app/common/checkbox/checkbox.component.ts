@@ -8,8 +8,21 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class CheckboxComponent implements OnInit {
 
+  /*
+    //PARENT COMPONENT HTML
+    <app-checkbox [checkList]="checkboxInputs" (selectedCheckbox)="onClickEventReceived($event)"></app-checkbox>
+
+    //PARENT COMPONENT TS
+    checkboxInputs = ['Angular', 'Spring', 'Java', 'SQL']
+
+    onClickEventReceived($event: string[]) {
+    console.log(`At parent + ${$event}`);
+    
+  }
+  */
+
   @Input() checkList:string[] = ['A','B','C']
-  @Output('value') selectedDropdown = new EventEmitter<string>();
+  @Output() selectedCheckbox = new EventEmitter<string[]>();
 
   checkedBoxes: string[] = []
 
@@ -29,6 +42,9 @@ export class CheckboxComponent implements OnInit {
       this.checkedBoxes.push(selected)
     }
     console.log(`checked elements: ${this.checkedBoxes}`);
+
+
+    this.selectedCheckbox.emit(this.checkedBoxes)
     
   }
 
