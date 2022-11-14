@@ -1,32 +1,52 @@
-import { Component, Input, OnInit} from '@angular/core';
+import { ConditionalExpr } from '@angular/compiler';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
-  styles: [`:host ::ng-deep .btn{ height: 30px;padding-bottom: 30px;
-    padding-top: 0px !important }`]
-  // to change the style of child component
 })
 export class NavbarComponent implements OnInit {
-  @Input('btntext') btntext: string='Login';
-
-  constructor() { }
+  @Input('btntext') Text: string = "Login";
+  @Input('name') name: string = "Your Profile";
+  @Input('button') btn: boolean = true;
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+
+  message: string = 'Click on a button';
   textBtnConfig = {
     styles: {
-      width: '120px',
+
+      backgroundColor: '#fff',
+      color: '#1CB5BD',
+      fontFamily: 'Montserrat',
+      fontSize: '28px',
+      borderColor: '#1CB5BD',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: '8px 54px',
+      gap: '10px',
+      width: '100%',
       height: '40px',
-      backgroundColor: '#1CB5BD',
-      color: '#fff',
-      cursor: 'pointer'
-    }
-    //,
-    //text: this.btntext
-    //text: 'Bye'
+      border: '1px solid #1CB5BD',
+      borderRadius: '4px',
+    },
+    text: this.Text
   };
 
+  imgBtnConfig = {
+  };
+
+  onClickEventReceived($event: any) {
+    if (this.Text === 'Login') { this.router.navigate(['/login']) }
+    else { if (this.Text === 'Register') { this.router.navigate(['/registration']) } };
+  }
+
 }
+

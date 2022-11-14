@@ -1,8 +1,11 @@
-.btn{
-    width: 120px;
-    height: 40px;
-    background-color: #1CB5BD;
-    color: #fff;
-    cursor: pointer;
+div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.image{
+    height: 100%;
     
 }
