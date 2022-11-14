@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,11 +8,12 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class CheckboxComponent implements OnInit {
 
-  checkList:string[] = ['A','B','C']
+  @Input() checkList:string[] = ['A','B','C']
+  @Output('value') selectedDropdown = new EventEmitter<string>();
 
   checkedBoxes: string[] = []
 
-  //constructor() { }
+  constructor() { }
 
   ngOnInit(): void {
   }
