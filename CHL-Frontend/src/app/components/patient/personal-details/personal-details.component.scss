@@ -1,14 +1,24 @@
 #main-container{
-    background-color: #F5FEFF;;
+    width: 100vw;
+    height: 100vh;
 }
+
+#nav-bar{
+    height:7%;
+}
+ #parent-container{
+    background-color: #F5FEFF;
+    height:93%;
+ }
+
 #sub-container{
     background-color: #ffff;
     box-shadow: -1px 2px 5px 4px rgba(115,115,115,0.29);
     border-radius: 6px;
     display: flex;
     flex-direction: row;
-    width:500px; 
-    height: 600px;
+    width:1000px; 
+    height: 850px;
     justify-content: center;
     align-items: center;
 }

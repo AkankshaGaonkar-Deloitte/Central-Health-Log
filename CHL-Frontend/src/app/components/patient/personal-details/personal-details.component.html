@@ -1,77 +1,80 @@
 <div id="main-container">
-    <div id="sub-container">
-        <div id="text1">Back to Dashboard</div>
-        <div id="text2">Update Details</div>
-        <div id="container">
-            <form>
-            <div id="container1">
-                <div id="sub-container1">
-                    <div class="form-group">
-                        <label for="first name">First name</label>
-                        <input 
-                            id="first name" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="First name">
+    <div id="nav-bar" ><app-navbar [btntext]="'Register'"></app-navbar></div>
+    <div id="parent-container">
+        <div id="sub-container">
+            <div id="text1">Back to Dashboard</div>
+            <div id="text2">Update Details</div>
+            <div id="container">
+                <form>
+                <div id="container1">
+                    <div id="sub-container1">
+                        <div class="form-group">
+                            <label for="first name">First name</label>
+                            <input 
+                                id="first name" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="First name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input 
+                                id="email" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <input 
+                                id="gender" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Gender">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input 
-                            id="email" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Email">
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <input 
-                            id="gender" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Gender">
+                    <div id="sub-container2">
+                        <div class="form-group">
+                            <label for="Last name">Last name</label>
+                            <input 
+                                id="last name" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Last name">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Contact No</label>
+                            <input 
+                                id="contactno" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Contact No">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactno">Age</label>
+                            <input 
+                                id="age" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Age">
+                        </div>
                     </div>
                 </div>
-                <div id="sub-container2">
+                <div id="container2">
                     <div class="form-group">
-                        <label for="Last name">Last name</label>
+                        <label for="address">Address</label>
                         <input 
-                            id="last name" 
+                            id="address" 
                             type="text" 
                             class="form-control"
-                            placeholder="Last name">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactno">Contact No</label>
-                        <input 
-                            id="contactno" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Contact No">
-                    </div>
-                    <div class="form-group">
-                        <label for="contactno">Age</label>
-                        <input 
-                            id="age" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Age">
+                            placeholder="Address">
                     </div>
                 </div>
-            </div>
-            <div id="container2">
-                <div class="form-group">
-                    <label for="address">Address</label>
-                    <input 
-                        id="address" 
-                        type="text" 
-                        class="form-control"
-                        placeholder="Address">
+                <div id="conatiner3">
+                    <!-- <div id="login-btn"><app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button></div> -->
                 </div>
+                </form>
             </div>
-            <div id="conatiner3">
-                 <!-- <div id="login-btn"><app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button></div> -->
-            </div>
-            </form>
         </div>
-   </div>
+    </div>
 </div>  
