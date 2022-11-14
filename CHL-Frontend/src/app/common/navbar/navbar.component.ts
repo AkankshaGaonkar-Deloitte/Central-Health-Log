@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   @Input('btntext') Text: string = "Login";
   @Input('name') name: string = "Your Profile";
-  @Input('button') btn: boolean = true;
+  @Input('button') btn: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
