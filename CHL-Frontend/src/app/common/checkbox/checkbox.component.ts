@@ -10,42 +10,25 @@ export class CheckboxComponent implements OnInit {
 
   checkList:string[] = ['A','B','C']
 
+  checkedBoxes: string[] = []
+
   //constructor() { }
 
   ngOnInit(): void {
   }
 
-  name = 'Angular';
-   
-  form: FormGroup;
-  webData = [
-    { id: 1, name: 'PHP' },
-    { id: 2, name: 'Laravel' },
-    { id: 3, name: 'Angular' },
-    { id: 4, name: 'React' }
-  ];
-  
-  get ordersFormArray() {
-    return this.form.controls['orders'] as FormArray;
-  }
-  
-  constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      orders: new FormArray([])
-    });
-  
-    this.addCheckboxesToForm();
-  }
-  
-  private addCheckboxesToForm() {
-    this.webData.forEach(() => this.ordersFormArray.push(new FormControl(false)));
-  }
-  
-  submit() {
-    const selectedOrderIds = this.form.value.orders
-      .map((checked:string, i:number) => checked ? this.webData[i].id : null)
-      .filter((v: null) => v !== null);
-    console.log(selectedOrderIds);
+  liveCheck(selected: string){
+    console.log(selected)
+    if (this.checkedBoxes.includes(selected)) {
+      // delete this.checkedBoxes[this.checkedBoxes.indexOf(selected)]
+      this.checkedBoxes.forEach( (item, index) => {
+        if(item === selected) this.checkedBoxes.splice(index,1);
+      });
+    } else {
+      this.checkedBoxes.push(selected)
+    }
+    console.log(`checked elements: ${this.checkedBoxes}`);
+    
   }
 
 }

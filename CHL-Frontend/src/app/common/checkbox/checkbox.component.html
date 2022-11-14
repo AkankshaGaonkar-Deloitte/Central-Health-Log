@@ -1,12 +1,12 @@
-<!-- <form action="">
-  <div *ngFor="let item of checkList">
-    <input type="checkbox" name="vehicle1" value={{item}} />
+<form action="">
+  <div *ngFor="let item of checkList" (change)="liveCheck(check.value)">
+    <input #check type="checkbox" name="vehicle1" value={{item}}/>
     <label>{{item}}</label><br />
   </div>
   <input type="submit" value="Submit" />
-</form> -->
+</form>
 
-<form [formGroup]="form" (ngSubmit)="submit()">
+<!-- <form [formGroup]="form" (ngSubmit)="submit()">
     <label formArrayName="orders" *ngFor="let order of ordersFormArray.controls; let i = index">
         <input type="checkbox" [formControlName]="i" />
         {{ webData[i].name }}
@@ -14,4 +14,4 @@
 
     <br />
     <button class="btn btn-success">submit</button>
-</form>
+</form> -->
