@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="name">
+    <img class="plus" src="assets/images/plus_image.png" /><b
+      >Central <span> Health Log</span></b
+    >
+  </div>
+  <div>
+    <div class="navbar-nav">
+
+          <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig"
+                      (onClick)="onClickEventReceived($event)"></app-button>
+          <app-button  *ngIf="btn==false" [droptxt]="[name,'Logout']" [btnConfig]="imgBtnConfig"
+                      (imgBtnClickEmt)="onClickEventReceived($event)"></app-button>
+    </div>
+  </div>
+</nav>

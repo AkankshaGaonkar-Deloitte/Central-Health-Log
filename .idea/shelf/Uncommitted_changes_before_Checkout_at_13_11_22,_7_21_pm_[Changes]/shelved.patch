@@ -1,0 +1,283 @@
+Index: CHL-Frontend/src/app/common/button/button.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/button/button.component.html b/CHL-Frontend/src/app/common/button/button.component.html
+--- a/CHL-Frontend/src/app/common/button/button.component.html	
++++ b/CHL-Frontend/src/app/common/button/button.component.html	
+@@ -1,1 +1,19 @@
+-<button type="submit" class="btn" [ngStyle]="btnConfig.styles" (click)="emitEvent()"><b>{{text}}</b></button>
+\ No newline at end of file
++
++<ng-container *ngTemplateOutlet="btnConfig['text'] ? text : image">
++</ng-container>
++
++<!-- Text Button -->
++<ng-template #text>
++  <button type="button" [ngStyle]="btnConfig.styles" (click)="onTextBtnClick($event)">
++   <b> {{btntext}}</b>
++  </button>
++</ng-template>
++
++<!-- Profile Section -->
++<ng-template #image>
++  <div>
++    <img class="image"  src="../../../assets/images/Person.png" 
++      (click)="onImgBtnClick($event)">
++    <app-dropdown class="dropdown" [states]="droptxt" [dropConfig]="textDropConfig"></app-dropdown>
++  </div>
++</ng-template>
+\ No newline at end of file
+Index: CHL-Frontend/src/app/common/dropdown/dropdown.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts b/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts
+--- a/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts	
++++ b/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts	
+@@ -11,7 +11,7 @@
+ 
+   @Output() selectedDropdown = new EventEmitter<string>();
+ 
+-  selectedState:string = 'Andaman and Nicobar Islands'
++  // selectedState:string = ''
+ 
+   constructor() {}
+ 
+@@ -19,7 +19,7 @@
+ 
+   emitEvent(selected: string) {
+     console.log(selected)
+-    this.selectedState = selected
++    // this.selectedState = selected
+     this.selectedDropdown.emit(selected);
+   }
+ }
+Index: CHL-Frontend/src/app/common/button/button.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/button/button.component.scss b/CHL-Frontend/src/app/common/button/button.component.scss
+--- a/CHL-Frontend/src/app/common/button/button.component.scss	
++++ b/CHL-Frontend/src/app/common/button/button.component.scss	
+@@ -1,0 +1,11 @@
++div{
++    display: flex;
++    flex-direction: row;
++    width: 100%;
++    align-items: center;
++    justify-content: space-around;
++}
++.image{
++    height: 100%;
++    
++}
+\ No newline at end of file
+Index: CHL-Frontend/src/app/common/button/button.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/button/button.component.ts b/CHL-Frontend/src/app/common/button/button.component.ts
+--- a/CHL-Frontend/src/app/common/button/button.component.ts	
++++ b/CHL-Frontend/src/app/common/button/button.component.ts	
+@@ -7,8 +7,28 @@
+ })
+ export class ButtonComponent implements OnInit {
+ 
++  textDropConfig = {
++    styles: {
++      width: '100%',
++      textAlign: 'center',
++      background: 'white',
++      borderRadius: '0px',
++      fontSize: '24px',
++      border: '0px',
++      outline: '0px'
++
++    }
++  };
++  @Input() droptxt!: string[];
++  onImgBtnClick(event: any) {
++    console.log("HI");
++  }
++  onTextBtnClick(event: any) {
++    console.log("HI");
++  }
++
+   @Input() btnConfig!: any;
+-  @Input() text!: string;
++  @Input() btntext!: string;
+   @Output() onClick = new EventEmitter<string>();
+ 
+   constructor() { }
+@@ -20,4 +40,6 @@
+     this.onClick.emit('clicked')
+   }
+ 
++
++
+ }
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.scss b/CHL-Frontend/src/app/common/navbar/navbar.component.scss
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.scss	
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.scss	
+@@ -1,7 +1,7 @@
+ .navbar {
+   background-color: #fff;
+-  height: 70px;
+-  font-family: Montserrat;
++  height: 7%;
++  font-family: 'Montserrat';
+   font-size: 35px;
+ 
+   span {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -5,12 +5,13 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="dropdown component now works">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/app.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.scss" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/button/button.component.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/dropdown/dropdown.component.ts" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+Index: CHL-Frontend/src/app/app.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/app.component.html b/CHL-Frontend/src/app/app.component.html
+--- a/CHL-Frontend/src/app/app.component.html	
++++ b/CHL-Frontend/src/app/app.component.html	
+@@ -1,1 +1,1 @@
+-<app-navbar></app-navbar>
+\ No newline at end of file
++<router-outlet></router-outlet>
+\ No newline at end of file
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.html b/CHL-Frontend/src/app/common/navbar/navbar.component.html
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.html	
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.html	
+@@ -6,10 +6,11 @@
+   </div>
+   <div>
+     <div class="navbar-nav">
+-      <!--<a href="#"><app-button [text]="btntext"></app-button></a>-->
+-      <a href="#"><app-button [text]="btntext" [btnConfig]="textBtnConfig"></app-button></a>
+-      <!--<a href="#"><app-void-button [btnConfig]="textBtnConfig" [text]="textBtnConfig.text"></app-void-button></a>-->
+-      <!--<app-dropdown [states]="stateList" [dropConfig]="textdropConfig"></app-dropdown>-->
++
++          <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig"
++                      (textBtnClickEmt)="onClickEventReceived($event)"></app-button>
++          <app-button  *ngIf="btn==false" [droptxt]="[name,'Logout']" [btnConfig]="imgBtnConfig"
++                      (imgBtnClickEmt)="onClickEventReceived($event)"></app-button>
+     </div>
+   </div>
+ </nav>
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.ts b/CHL-Frontend/src/app/common/navbar/navbar.component.ts
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.ts	
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.ts	
+@@ -1,51 +1,40 @@
+-import { Component, Input, OnInit} from '@angular/core';
++import { Component, Input, OnInit } from '@angular/core';
+ 
+ @Component({
+   selector: 'app-navbar',
+   templateUrl: './navbar.component.html',
+   styleUrls: ['./navbar.component.scss'],
+-  styles: [`:host ::ng-deep .btn{ height: 30px;padding-bottom: 30px;
+-    padding-top: 0px !important }`]
+-  // to change the style of child component
+ })
+ export class NavbarComponent implements OnInit {
+-  @Input('btntext') btntext: string='Login';
+-
++  @Input('btntext') Text: string = "Login";
++  @Input('name') name: string = "Your Profile";
++  @Input('button') btn: boolean = true;
+   constructor() { }
+ 
+   ngOnInit(): void {
+   }
+ 
++
++  message = 'Click on a button';
+   textBtnConfig = {
+     styles: {
+-      width: '120px',
+-      height: '40px',
+-      backgroundColor: '#1CB5BD',
+-      color: '#fff',
+-      cursor: 'pointer'
+-    }
+-    //,
+-    //text: this.btntext
+-    //text: 'Bye'
++      width: '100%',
++      height: '50px',
++      backgroundColor: '#fff',
++      color: '#1CB5BD',
++      fontFamily: 'Montserrat',
++      fontSize: '28px',
++      borderRadius: '1px',
++      borderColor: '#1CB5BD'
++    },
++    text: this.Text
+   };
+ 
+-  // stateList = [
+-  //   "Kerala",
+-  //   "Karnataka",
+-  //   "West Bengal",
+-  //   "Uttar Pradesh",
+-  //   "Mumbai"
+-  // ]
++  imgBtnConfig = {
++  };
+ 
+-  // textdropConfig = {
+-  //   styles: {
+-  //     width: '120px',
+-  //     height: '40px',
+-  //     backgroundColor: '#E9F7F8',
+-  //     color: 'black',
+-  //     cursor: 'pointer',
+-  //     fontSize: '20px'
+-  //   }
+-  // };
++  onClickEventReceived(event: any) {
++    this.message = event;
++  }
+ 
+ }
