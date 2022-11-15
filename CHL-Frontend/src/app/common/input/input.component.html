@@ -1,6 +1,7 @@
 <div>
   <label>{{ inputLabel }}</label>
   <input
+    (change)="emitChanges()"
     [(ngModel)]="userInput"
     #inputField="ngModel"
     id="ip"

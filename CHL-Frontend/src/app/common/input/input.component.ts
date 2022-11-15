@@ -7,6 +7,26 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class InputComponent implements OnInit {
 
+  /*
+  //PARENT TS
+    type:string = 'text'
+  label:string = 'Name'
+
+  parentValidations = {
+    required: '',
+    minLength: '2',
+    maxLength: '',
+    pattern: ''
+  }
+
+  onClickEventReceived($event: string|number|null) {
+    console.log(`At parent ${$event}`);
+  }
+
+  //PARENT HTML
+  <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" (outputEmit)="onClickEventReceived($event)"></app-input>
+  */
+
   @Input() inputType:string = 'number'
   @Input() inputLabel:string = 'Enter details'
   @Output() outputEmit = new EventEmitter<string | number | null>()
@@ -18,6 +38,12 @@ export class InputComponent implements OnInit {
     minLength: '',
     maxLength: '',
     pattern: '^[6-9]\d{9}$'
+  }
+
+  emitChanges() {
+    console.log(`At child: ${this.userInput}`)
+    this.outputEmit.emit(this.userInput)
+    
   }
 
   constructor() { }
