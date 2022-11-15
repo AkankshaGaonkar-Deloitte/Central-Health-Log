@@ -1,5 +1,6 @@
+ 
 <div id="main-container">
-    <div id="nav-bar" ><app-navbar [btntext]="'Register'"></app-navbar></div>
+    <app-navbar [btntext]="'Register'"></app-navbar>
     <div id="parent-container">
         <div id="sub-container">
             <div id="text1"><a href="#" ></a>Back to Dashboard</div>
@@ -70,8 +71,8 @@
                             >
                     </div>
                 </div>
-                <div id="conatiner3">
-                    <!-- <div id="login-btn"><app-button  class="sub-btn" [text]="btntext" [btnConfig]="textBtnConfig"></app-button></div> -->
+                <div id="container3">
+                    <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
                 </div>
                 </form>
             </div>
