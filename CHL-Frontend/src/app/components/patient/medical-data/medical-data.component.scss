@@ -1,0 +1,164 @@
+#main-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+#nav-bar{
+    height:7%;
+}
+
+ #parent-container{
+    background-color: #F5FEFF;
+    height:93%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+ }
+
+#sub-container{
+    background-color: #ffff;
+    box-shadow: -1px 2px 5px 4px rgba(115,115,115,0.29);
+    border-radius: 6px;
+    width:85%; 
+    height: 90%;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    // width: 100%;
+    // height: 100%;
+
+}
+
+#container3{
+    display: flex;
+    flex-direction: row-reverse;
+    // justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    // border: 2px solid black;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 10px;
+
+}
+
+#container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    // border: 2px solid black;
+}
+#container2{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    // border: 2px solid black;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 10px;
+    
+
+}
+#sub-container1,#sub-container2{
+    width: 40%;
+//    border: 2px solid black;
+//    padding-top: 50px;
+//    padding-left: 50px;
+padding: 0px 50px ;
+   
+
+}
+
+label + input:focus {
+    color: #000000;
+}
+
+
+.form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+
+}
+form{
+    width: 100%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: right;
+    color: #1A1A1A;
+
+}
+input{
+    width: 280px;
+    height: 40px;
+    font-family: 'Montserrat';
+font-style: normal;
+
+font-size: 20px;
+line-height: 20px;
+
+color: #1A1A1A;
+
+}
+label{
+    font-size: 25px;
+
+}
+
+#text2{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 29px;
+padding-top: 30px;
+padding-left: 40px  ;
+padding-bottom: 50px;
+
+color: #2C2D2D;
+}
+#text1{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 20px;
+color: #737373;
+padding-top: 30px;
+padding-left: 40px  ;
+
+}
+
+#address{
+    width:80%;
+    height: 150px;
+
+
+}
+#healthprb{
+
+}
+
+input:focus{
+    border-color: #1CB5BD;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #1CB5BD;
+    outline: 0 none;
+    // text-decoration-color: #943a3a;
+    // text-decoration: none;
+    // background-color: #1A1A1A;
+}
