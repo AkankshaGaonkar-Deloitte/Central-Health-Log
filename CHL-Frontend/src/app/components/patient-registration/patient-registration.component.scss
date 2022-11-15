@@ -1,0 +1,18 @@
+#main-container{
+    width: 100vw;
+    height: 100vh;
+}
+
+#nav-bar{
+    height:7%;
+}
+
+#sub-container{
+    height:93%;
+    background-color:#F5FEFF;
+    display: flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
