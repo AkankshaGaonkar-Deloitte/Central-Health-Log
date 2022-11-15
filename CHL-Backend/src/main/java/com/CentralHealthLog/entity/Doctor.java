@@ -3,10 +3,8 @@ package com.CentralHealthLog.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -17,10 +15,13 @@ public class Doctor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique=true,nullable = false)
     private String username;
 
+    @Column(nullable = false)
     private String password;
 
+    @Column(nullable = false)
     private String doctorName;
 
     private String aadhaarNo;
@@ -35,6 +36,7 @@ public class Doctor {
 
     private String email;
 
+    @Column(unique=true,nullable = false)
     private String phoneNo;
 
     private String speciality;
