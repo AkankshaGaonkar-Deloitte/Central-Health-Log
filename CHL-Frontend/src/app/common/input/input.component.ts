@@ -27,17 +27,17 @@ export class InputComponent implements OnInit {
   <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" (outputEmit)="onClickEventReceived($event)"></app-input>
   */
 
-  @Input() inputType:string = 'number'
-  @Input() inputLabel:string = 'Enter details'
+  @Input() inputType:string = 'password'
+  @Input() inputLabel:string = 'Enter password: '
   @Output() outputEmit = new EventEmitter<string | number | null>()
 
   userInput:string = ''
 
   @Input() validations = {
     required: '',
-    minLength: '',
+    minLength: '3',
     maxLength: '',
-    pattern: '^[6-9]\d{9}$'
+    pattern: ''
   }
 
   emitChanges() {
