@@ -1,5 +1,5 @@
 <div id="main-container">
-    <div id="nav-bar" ><app-navbar [btntext]="'Register'"></app-navbar></div>
+    <app-navbar [btntext]="'Register'"></app-navbar>
     <div id="sub-container">
         <div id= image-container>
            <img src="assets/images/login_bg.png" alt="login-bg-image">
@@ -16,21 +16,23 @@
                         <app-button  [btntext]="'Admin'" [btnConfig]="textBtnConfig"></app-button>
                         
                     </div>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input 
-                            id="username" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Username">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input 
-                            id="password" 
-                            type="text" 
-                            class="form-control"
-                            placeholder="Password">
+                    <div id="form-container">
+                        <!-- <div class="form-group"> -->
+                            <label for="username">Username</label>
+                            <input 
+                                id="username" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Username">
+                        <!-- </div> -->
+                        <!-- <div class="form-group"> -->
+                            <label for="password">Password</label>
+                            <input 
+                                id="password" 
+                                type="text" 
+                                class="form-control"
+                                placeholder="Password">
+                        <!-- </div> -->
                     </div>
                     <app-button  [btntext]="'LOGIN'" [btnConfig]="textBtnConfig"></app-button>
                 </form> 

@@ -17,17 +17,24 @@ throw new Error('Method not implemented.');
   }
   textBtnConfig = {
     styles: {
-      backgroundColor: '#fff',
-      color: '#1CB5BD',
+      // backgroundColor: '#1CB5BD',
+      color: '#000',
       fontFamily: 'Montserrat',
-      fontSize: '28px',
-      borderColor: '#1CB5BD',
-      padding: '8px 54px',
-      gap: '10px',
-      width: '33%',
+      fontSize: '20px',
+      // borderColor: '#1CB5BD',
+      
+      // padding: '8px 54px',
+      // gap: '10px',
+      width: '130px',
       height: '40px',
-      border: '1px solid #1CB5BD',
-      borderRadius: '4px',
+      border: '1px solid #949494',
+      // borderRadius: '4px',
+      // display: 'flex',
+      // flex-direction: 'coloumn',
+      // justify-content: 'space-between';
+      // align-items: 'center'
+            
+      
 
     },text:['']
   }
