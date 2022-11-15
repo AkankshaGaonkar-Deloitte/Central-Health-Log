@@ -1,1 +1,28 @@
-<p>input works!</p>
+<div>
+  <label>{{ inputLabel }}</label>
+  <input
+    [(ngModel)]="userInput"
+    #inputField="ngModel"
+    id="ip"
+    name="ip"
+    [type]="inputType"
+    [pattern]="validations.pattern"
+    [minlength]="validations.minLength"
+    [maxlength]="validations.maxLength"
+    [required]="validations.required"
+  />
+  <div *ngIf="inputField.invalid && (inputField.dirty || inputField.touched)" class="alert">
+    <div *ngIf="inputField.errors?.['required']">
+        Required.
+    </div>
+    <div *ngIf="inputField.errors?.['pattern']">
+        Invalid input.
+    </div>
+    <div *ngIf="inputField.errors?.['minlength']">
+        {{ inputLabel }} must be at least {{validations.minLength}} characters long.
+    </div>
+    <div *ngIf="inputField.errors?.['maxLength']">
+        {{ inputLabel }} must not be more than {{validations.minLength}} characters long.
+    </div>
+  </div>
+</div>
