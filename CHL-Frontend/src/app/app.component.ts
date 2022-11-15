@@ -9,11 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'CHL-Frontend';
 
-  checkboxInputs = ['Angular', 'Spring', 'Java', 'SQL']
-
-  onClickEventReceived($event: string[]) {
-    console.log(`At parent + ${$event}`);
-    
-  }
-
 }
