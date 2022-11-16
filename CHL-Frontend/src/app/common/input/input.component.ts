@@ -24,17 +24,20 @@ export class InputComponent implements OnInit {
   }
 
   //PARENT HTML
-  <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" (outputEmit)="onClickEventReceived($event)"></app-input>
+  <div style="width: 500px;">
+    <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" (outputEmit)="onClickEventReceived($event)"></app-input>
+  </div>
+  
   */
 
-  @Input() inputType:string = 'password'
-  @Input() inputLabel:string = 'Enter password: '
+  @Input() inputType:string = 'text'
+  @Input() inputLabel:string = 'Enter password:'
   @Output() outputEmit = new EventEmitter<string | number | null>()
 
   userInput:string = ''
 
   @Input() validations = {
-    required: '',
+    required: 'true',
     minLength: '3',
     maxLength: '',
     pattern: ''
