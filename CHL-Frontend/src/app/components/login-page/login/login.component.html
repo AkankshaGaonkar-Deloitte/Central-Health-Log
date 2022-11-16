@@ -9,34 +9,38 @@
         <div id="login-container">
                 <form>
                     <div id ="login-heading">LOGIN</div>
-                    <span>Select the User Type</span>
-                    <div id="buttons">
-                        <app-button  [btntext]="'Patient'" [btnConfig]="textBtnConfig"></app-button>
-                        <app-button  [btntext]="'Doctor'" [btnConfig]="textBtnConfig"></app-button>
-                        <app-button  [btntext]="'Admin'" [btnConfig]="textBtnConfig"></app-button>
-                        
+                    <div >
+                        <span id="text">Select the User Type</span>
+                        <div id="buttons">
+                            <app-button  [btntext]="'Patient'" [btnConfig]="textBtnConfig"></app-button>
+                            <app-button  [btntext]="'Doctor'" [btnConfig]="textBtnConfig"></app-button>
+                            <app-button  [btntext]="'Admin'" [btnConfig]="textBtnConfig"></app-button>
+                            
+                        </div>
                     </div>
                     <div id="form-container">
-                        <!-- <div class="form-group"> -->
-                            <label for="username">Username</label>
+                        <div class="form-group">
+                            <div id="name">Username</div>
                             <input 
                                 id="username" 
                                 type="text" 
                                 class="form-control"
-                                placeholder="Username">
-                        <!-- </div> -->
-                        <!-- <div class="form-group"> -->
-                            <label for="password">Password</label>
+                                ></div>
+                        
+                        <div class="form-group">
+                            <div id="pass">Password</div>
                             <input 
                                 id="password" 
                                 type="text" 
                                 class="form-control"
-                                placeholder="Password">
-                        <!-- </div> -->
+                                >
+                        </div>
                     </div>
-                    <app-button  [btntext]="'LOGIN'" [btnConfig]="textBtnConfig"></app-button>
+                    <div id="login-btn">
+                    <app-button  [btntext]="'LOGIN'" [btnConfig]="textBtnConfig"></app-button></div>
+                    
                 </form> 
-            <span>New User? Register</span>
+            
         </div> 
     </div>
 </div>

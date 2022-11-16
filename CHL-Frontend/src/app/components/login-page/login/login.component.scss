@@ -14,7 +14,6 @@
     flex-direction:row;
     justify-content: space-evenly;
     align-items: center;
-
 }
 
 #image-container{
@@ -40,44 +39,82 @@
     border-radius: 6px;
     display: flex;
     flex-direction: column;
-    width:500px; 
-    height: 600px;
-    justify-content: center;
+    width:27%; 
+    height: 60%;
+    justify-content: space-evenly;
     align-items: center;
-    
 }
 
 #login-heading{
-    font-family: Montserrat;
     font-size: 45px;
     text-align: center;
-
-
-
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
 }
+
 #login-btn{
     text-align: center;
 }
 
-#form-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    // width: 100%;
+#text{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #1A1A1A;
+    border: #1A1A1A soild ;
 }
 
-// .form-group{
-//     width: 40%;
-// //    border: 2px solid black;
-// //    padding-top: 50px;
-// //    padding-left: 50px;
-// padding: 0px 50px ;
-// }
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
-// #buttons{
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
+.form-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
 
-// }
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+input{
+    width: 80%;
+    margin-left: 20px;
+    
+}
+#name,#pass{
+    // border: #1A1A1A 1px solid ;
+    width: 20%;
+}
+
+#buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+
+    // width: 400px;
+    // height: 42px;
+    // left: 1157px;
+    // top: 397px;
+
+}
+app-button{
+    margin-right: 5px;
+    
+}

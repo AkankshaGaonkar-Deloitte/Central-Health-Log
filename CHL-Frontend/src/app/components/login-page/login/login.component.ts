@@ -20,7 +20,7 @@ throw new Error('Method not implemented.');
       // backgroundColor: '#1CB5BD',
       color: '#000',
       fontFamily: 'Montserrat',
-      fontSize: '20px',
+      fontSize: '18px',
       // borderColor: '#1CB5BD',
       
       // padding: '8px 54px',
@@ -28,7 +28,8 @@ throw new Error('Method not implemented.');
       width: '130px',
       height: '40px',
       border: '1px solid #949494',
-      // borderRadius: '4px',
+      
+      borderRadius: '0px',
       // display: 'flex',
       // flex-direction: 'coloumn',
       // justify-content: 'space-between';
