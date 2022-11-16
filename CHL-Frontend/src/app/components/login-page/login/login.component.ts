@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -11,14 +11,32 @@ throw new Error('Method not implemented.');
 }
 
   @Input('btntext') btntext: string='Login';
+  @Input() inputType:string = 'string'
+  @Input() inputLabel:string = 'Username'
+  @Output() outputEmit = new EventEmitter<string | number | null>()
+
+  userInput:string = ''
+
+  @Input() validations = {
+    required: '',
+    minLength: '3',
+    maxLength: '10',
+  }
+
+  emitChanges() {
+    console.log(`At child: ${this.userInput}`)
+    this.outputEmit.emit(this.userInput)
+    
+  }
+
   constructor() { }
 
   ngOnInit(): void {
   }
   textBtnConfig = {
     styles: {
-      // backgroundColor: '#1CB5BD',
-      color: '#000',
+      backgroundColor: '#ffff',
+      color: 'black',
       fontFamily: 'Montserrat',
       fontSize: '18px',
       // borderColor: '#1CB5BD',
@@ -28,6 +46,9 @@ throw new Error('Method not implemented.');
       width: '130px',
       height: '40px',
       border: '1px solid #949494',
+      
+      
+      
       
       borderRadius: '0px',
       // display: 'flex',
@@ -39,5 +60,6 @@ throw new Error('Method not implemented.');
 
     },text:['']
   }
+  
 
 }

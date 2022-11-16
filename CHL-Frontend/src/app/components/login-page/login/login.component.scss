@@ -94,6 +94,10 @@ form{
 input{
     width: 80%;
     margin-left: 20px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    
+   
     
 }
 #name,#pass{
@@ -107,6 +111,7 @@ input{
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+    
 
     // width: 400px;
     // height: 42px;
@@ -118,3 +123,12 @@ app-button{
     margin-right: 5px;
     
 }
+input:focus{
+    border-color: #1CB5BD;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #1CB5BD;
+    outline: 0 none;
+    // text-decoration
+    background-color: '#DAFDFF';
+    // background-color: #1A1A1A;
+}
+
