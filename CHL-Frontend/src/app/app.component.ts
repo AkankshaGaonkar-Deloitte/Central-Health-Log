@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'CHL-Frontend';
+
+  ipConfig = {
+    styles: {  
+      width: '800px'
+    }
+  };
   
 }
