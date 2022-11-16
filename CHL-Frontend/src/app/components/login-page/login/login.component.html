@@ -20,22 +20,23 @@
                     </div>
                     <div id="form-container">
                         <div class="form-group">
-                            <div id="name">Username</div>
+                            <!-- <div id="name">Username</div> -->
                             <!-- <input 
                                 id="username" 
                                 type="text" 
                                 class="form-control"
                                 > -->
-                            <app-input></app-input>
+                            <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" (outputEmit)="onClickEventReceived($event)"></app-input>
                             </div>
                         
                         <div class="form-group">
-                            <div id="pass">Password</div>
+                            <!-- <div id="pass">Password</div>
                             <input 
                                 id="password" 
                                 type="text" 
                                 class="form-control"
-                                >
+                                > -->
+                                <app-input [inputType]="type2" [inputLabel]="label2" [validations]="parentValidations2" (outputEmit)="onClickEventReceived($event)"></app-input>
                         </div>
                     </div>
                     <div id="login-btn">

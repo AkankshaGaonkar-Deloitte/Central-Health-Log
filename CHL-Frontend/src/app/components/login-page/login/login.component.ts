@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -6,28 +6,36 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-onClickEventReceived($event: any) {
-throw new Error('Method not implemented.');
-}
+  type:string = 'text'
+  label:string = 'Username'
 
-  @Input('btntext') btntext: string='Login';
-  @Input() inputType:string = 'string'
-  @Input() inputLabel:string = 'Username'
-  @Output() outputEmit = new EventEmitter<string | number | null>()
-
-  userInput:string = ''
-
-  @Input() validations = {
+  parentValidations = {
     required: '',
     minLength: '3',
     maxLength: '10',
+    pattern: ''
   }
 
-  emitChanges() {
-    console.log(`At child: ${this.userInput}`)
-    this.outputEmit.emit(this.userInput)
-    
+  onClickEventReceived($event: string|number|null) {
+    console.log(`At parent ${$event}`);
   }
+  type2:string = 'password'
+  label2:string = 'Password'
+
+  parentValidations2 = {
+    required: '',
+    minLength: '3',
+    maxLength: '10',
+    pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+  }
+
+  onClickEventReceived2($event: string|number|null) {
+    console.log(`At parent ${$event}`);
+  }
+
+
+
+  @Input('btntext') btntext: string='Login';
 
   constructor() { }
 
@@ -39,27 +47,12 @@ throw new Error('Method not implemented.');
       color: 'black',
       fontFamily: 'Montserrat',
       fontSize: '18px',
-      // borderColor: '#1CB5BD',
-      
-      // padding: '8px 54px',
-      // gap: '10px',
+      borderColor: '#fff',
       width: '130px',
       height: '40px',
       border: '1px solid #949494',
-      
-      
-      
-      
       borderRadius: '0px',
-      // display: 'flex',
-      // flex-direction: 'coloumn',
-      // justify-content: 'space-between';
-      // align-items: 'center'
-            
-      
-
-    },text:['']
+      },text:['']
   }
-  
 
 }
