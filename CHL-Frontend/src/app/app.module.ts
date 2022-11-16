@@ -26,8 +26,7 @@ import { MedicalDataComponent } from './components/patient/medical-data/medical-
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
