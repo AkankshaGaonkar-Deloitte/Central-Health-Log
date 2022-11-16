@@ -24,8 +24,6 @@ public class Doctor {
     @Column(nullable = false)
     private String doctorName;
 
-    private String aadhaarNo;
-
     private Integer registrationNo;
 
     private Integer yearOfReg;
@@ -34,6 +32,7 @@ public class Doctor {
 
     private String qualification;
 
+    @Column(unique = true)
     private String email;
 
     @Column(unique=true,nullable = false)
