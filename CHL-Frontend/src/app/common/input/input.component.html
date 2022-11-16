@@ -37,6 +37,7 @@
       [minlength]="validations.minLength"
       [maxlength]="validations.maxLength"
       [required]="validations.required"
+      [ngStyle]="styling"
     />
     <div class="errors" *ngIf="inputField.invalid && (inputField.dirty || inputField.touched)">
       <div *ngIf="inputField.errors?.['required']">Required.</div>
