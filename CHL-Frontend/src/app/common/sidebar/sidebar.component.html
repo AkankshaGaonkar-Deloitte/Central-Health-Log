@@ -1,10 +1,12 @@
 <div class="sidebar">
-    <div class="tab" *ngFor="let menu of menus | keyvalue">
-        <ul >
-                <img id="sidebar-icons" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25" height="25" >
-            <img id="sidebar-icons" *ngIf="menu.value[0]!='Dashboard'" src="assets/images/Sidebar-icons.svg" width="25" height="25">
-            <div class="sidebar-ul"><li id="sidebar-element" routerLink={{menu.value[1]}}>{{menu.value[0]}}</li></div>
-
+    <ul id="profile" tabindex="1">
+        <div *ngFor="let menu of menus | keyvalue">
+            <li id="sidebar-element" routerLink={{menu.value[1]}}> 
+                <img id="sidebar-icon" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25" height="25" >
+                <img id="sidebar-icon" *ngIf="menu.value[0]!='Dashboard'" src="assets/images/Sidebar-icons.svg" width="25" height="25">
+                {{menu.value[0]}}
+            </li>
+        </div>
     </ul>
     </div>
 
