@@ -13,13 +13,10 @@ export class MedicationComponent implements OnInit {
   }
   textBtnConfig = {
     styles: {
-      backgroundColor: '#1CB5BD',
-      color: '#ffff',
+      backgroundColor: '#ffff',
+      color: '#1CB5BD',
       fontFamily: 'Montserrat',
       fontSize: '20px',
-      // borderColor: '#1CB5BD',
-      
-      // padding: '8px 54px',
       gap: '10px',
       width: '150px',
       height: '40px',
