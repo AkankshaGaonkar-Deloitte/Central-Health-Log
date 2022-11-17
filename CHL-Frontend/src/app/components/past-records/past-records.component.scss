@@ -45,7 +45,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    //margin: 20px;
+
 }
 
 td,
@@ -57,4 +57,38 @@ th {
 
 th {
     background-color: #f5f5f5;
+
+    gap: 4px;
+    isolation: isolate;
+    width: 285.4px;
+    height: 55px;
+    background: #F5F5F5;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.85);
+
+}
+
+table,
+th,
+td {
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+td {
+    height: 22px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.85);
+
 }
