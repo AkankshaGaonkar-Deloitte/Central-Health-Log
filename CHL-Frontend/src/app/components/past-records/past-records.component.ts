@@ -7,6 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PastRecordsComponent implements OnInit {
 
+    textBtnConfig = {
+      type:"submit",
+      styles: {
+         background: '#fff',
+         color: '#1CB5BD',
+         height: '40px',
+         width: '120px'
+  
+      }
+  };
+
   constructor() { }
 
   ngOnInit(): void {
