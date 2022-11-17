@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
   };
   message: string = 'Click on a button';
   textBtnConfig = {
+    type:"button",
     styles: {
 
       backgroundColor: '#fff',

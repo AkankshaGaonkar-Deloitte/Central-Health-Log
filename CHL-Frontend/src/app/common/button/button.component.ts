@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
 
 
 
-  @Input() btnConfig!: any;
+  @Input() btnConfig={type:"button",styles:{}};
   @Input() btntext!: string;
   @Output() onClick = new EventEmitter<any>();
 
