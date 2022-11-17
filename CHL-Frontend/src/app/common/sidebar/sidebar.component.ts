@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { KeyValue } from '@angular/common';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,11 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-menus={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]};
+@Input() menus={ '1': ['Dashboard','/patient-dashboard']} ;
+
 Dashboard:string="Dashboard";
 
   constructor() { }
-  
+
 
   ngOnInit(): void {
   }

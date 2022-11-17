@@ -1,18 +1,16 @@
 <div class="sidebar">
     <div class="tab" *ngFor="let menu of menus | keyvalue">
-        <ul>
-            <img id="sidebar-icons" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25" height="25" >
+        <ul >
+                <img id="sidebar-icons" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25" height="25" >
             <img id="sidebar-icons" *ngIf="menu.value[0]!='Dashboard'" src="assets/images/Sidebar-icons.svg" width="25" height="25">
             <div class="sidebar-ul"><li id="sidebar-element" routerLink={{menu.value[1]}}>{{menu.value[0]}}</li></div>
-        </ul>
+
+    </ul>
     </div>
 
 
-
-
-
-<!-- <mat-tab-group>
-        <mat-tab label="project-board">PROJECT BOARD</mat-tab>
-        <mat-tab label="project-board">PROJECT BOARD</mat-tab>
-        <mat-tab label="project-board">PROJECT BOARD</mat-tab>
-    </mat-tab-group> -->
+<!-- in parent.component.ts file -->
+    <!-- sidebar-tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]}; -->
+    
+    <!-- in parent/html -->
+    <!-- <app-sidebar [sidebar-tabs]="menus"></app-sidebar> -->
