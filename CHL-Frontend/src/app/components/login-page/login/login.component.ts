@@ -6,33 +6,42 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  type:string = 'text'
-  label:string = 'Username'
-
-  parentValidations = {
-    required: '',
-    minLength: '3',
-    maxLength: '10',
-    pattern: ''
-  }
+  ipConfig = {
+    type: 'text',
+    label: 'username',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: '',
+      minLength: '3',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
 
   onClickEventReceived($event: string|number|null) {
     console.log(`At parent ${$event}`);
   }
-  type2:string = 'password'
-  label2:string = 'Password'
 
-  parentValidations2 = {
-    required: '',
-    minLength: '3',
-    maxLength: '10',
-    pattern: ''
-    
-  }
-
-  onClickEventReceived2($event: string|number|null) {
-    console.log(`At parent ${$event}`);
-  }
+  ipConfig2 = {
+    type: 'password',
+    label: 'password',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: '',
+      minLength: '3',
+      maxLength: '',
+      pattern:''
+    },
+    patternErrorMessage: ''
+  };
+  
 
 
 
@@ -47,6 +56,7 @@ export class LoginComponent implements OnInit {
   //   console.log("Form is submitted")
   // }
   textBtnConfig = {
+    type:'submit',
     styles: {
       backgroundColor: '#ffff',
       color: 'black',
