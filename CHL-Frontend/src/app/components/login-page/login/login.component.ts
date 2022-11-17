@@ -26,7 +26,8 @@ export class LoginComponent implements OnInit {
     required: '',
     minLength: '3',
     maxLength: '10',
-    pattern: '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$'
+    pattern: ''
+    
   }
 
   onClickEventReceived2($event: string|number|null) {

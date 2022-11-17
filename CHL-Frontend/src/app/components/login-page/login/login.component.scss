@@ -92,18 +92,20 @@ form{
     height: 100%;
 }
 
-input{
-    width: 80%;
-    margin-left: 20px;
-    font-family: 'Montserrat';
-    font-style: normal;
+// input{
+//     width: 80%;
+//     margin-left: 20px;
+//     font-family: 'Montserrat';
+//     font-style: normal;
     
    
     
-}
+// }
 #name,#pass{
     // border: #1A1A1A 1px solid ;
     width: 20%;
+    margin-right: 20px;
+
 }
 
 #buttons{
