@@ -3,6 +3,22 @@
     <div class="parent-container">
         <div class="sub-container">
             <div id="text1"><a href="#" ></a>&lt; &nbsp; Back to Dashboard</div>
+            <div class="search-filter">
+                <div class="left">
+                    <div id="sort-by">Sort By</div>
+                    <div style="margin-right: 10px;">
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
+                    </div>
+                    <div>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
+                    </div>
+                </div>
+                <div class="right">
+                    <div style="margin-left: 10px;"><app-button [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig" ></app-button></div>
+                    <div style="margin-left: 10px;"><app-button [btntext]="'Filter severity'" [btnConfig]="textBtnConfig" ></app-button></div>
+                    <div style="margin-left: 10px;"><app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" ></app-button></div>
+                </div>
+            </div>
             <div class="sub-container-2">
                 <table>
                     <tr>
