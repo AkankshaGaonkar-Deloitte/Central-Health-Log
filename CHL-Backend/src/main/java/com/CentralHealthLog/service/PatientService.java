@@ -13,17 +13,20 @@ public class PatientService {
     @Autowired
     private PatientRepository patientRepository;
 
-    public String savePatient(Patient patient) {
-//        if(checkIfUserExist(patient.getUsername())){  throw new UsernameAlreadyExistsException("Username already exists!!");}
-            patientRepository.save(patient);
-            return "Customer added successfully";
+    public Patient savePatient(Patient patient) {
+//        if (patientRepository.findByUsername(patient.getUsername())!=null)
+//        {  throw new UsernameAlreadyExistsException("Username already exists!!");}
+            return patientRepository.save(patient);
         }
 //
 //
-//    public boolean checkIfUserExist(String username) {
-//        return patientRepository.findByUsername(username) !=null ? true : false;
-//    }
-}
+//    public void checkIfUserExist(String username) {
+
+//        Patient patient=patientRepository.findByUsername(username).get();
+
+//        return patientRepository.findByUsername(username) !=null ? true : false;}
+    }
+
 
 
 
