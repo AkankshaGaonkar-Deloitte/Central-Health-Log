@@ -1,0 +1,209 @@
+Index: CHL-Frontend/src/app/app.module.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { InputComponent } from './common/input/input.component';\nimport { ButtonComponent } from './common/button/button.component';\nimport { NavbarComponent } from './common/navbar/navbar.component';\nimport { SidebarComponent } from './common/sidebar/sidebar.component';\nimport { DropdownComponent } from './common/dropdown/dropdown.component';\nimport { CheckboxComponent } from './common/checkbox/checkbox.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    InputComponent,\n    ButtonComponent,\n    NavbarComponent,\n    SidebarComponent,\n    DropdownComponent,\n    CheckboxComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/app.module.ts b/CHL-Frontend/src/app/app.module.ts
+--- a/CHL-Frontend/src/app/app.module.ts	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/app.module.ts	(date 1667549587539)
+@@ -9,6 +9,7 @@
+ import { SidebarComponent } from './common/sidebar/sidebar.component';
+ import { DropdownComponent } from './common/dropdown/dropdown.component';
+ import { CheckboxComponent } from './common/checkbox/checkbox.component';
++import { VoidButtonComponent } from './common/void-button/void-button.component';
+ 
+ @NgModule({
+   declarations: [
+@@ -19,6 +20,7 @@
+     SidebarComponent,
+     DropdownComponent,
+     CheckboxComponent,
++    VoidButtonComponent
+   ],
+   imports: [
+     BrowserModule,
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"34321c7e-b3a3-4e3c-a940-9ec627657f4e\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/chl.mv.db\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/chl.mv.db\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CompilerWorkspaceConfiguration\">\n    <option name=\"MAKE_PROJECT_ON_SAVE\" value=\"true\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"JpbToolWindowState\">\n    <option name=\"myId2FirstActivated\">\n      <map>\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"true\" />\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\n      </map>\n    </option>\n    <option name=\"myId2Visible\">\n      <map>\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"false\" />\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"useMavenConfig\" value=\"true\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2Gr72gGfzwEbmsZeYZWHq3UdZZo\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"autoscrollToSource\" value=\"true\" />\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"last_opened_file_path\": \"/home/akanksha5/Desktop/Central-Health-Log\",\n    \"settings.editor.selected.configurable\": \"advanced.settings\"\n  }\n}]]></component>\n  <component name=\"RunManager\" selected=\"Application.com.CentralHealthLog.CentralHealthLogApplication\">\n    <configuration name=\"CentralHealthLogApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"product.CentralHealthLogApplication\" />\n      <module name=\"Central-Health-Log.main\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"product.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"com.CentralHealthLog.CentralHealthLogApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.CentralHealthLog.CentralHealthLogApplication\" />\n      <module name=\"CentralHealthLog\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.CentralHealthLog.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.com.CentralHealthLog.CentralHealthLogApplication\" />\n        <item itemvalue=\"Application.CentralHealthLogApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"34321c7e-b3a3-4e3c-a940-9ec627657f4e\" name=\"Changes\" comment=\"\" />\n      <created>1667134644527</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1667134644527</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/.idea/workspace.xml	(date 1667549736282)
+@@ -5,7 +5,10 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/chl.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/chl.mv.db" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/app.module.ts" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.scss" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/common/navbar/navbar.component.ts" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -28,7 +31,13 @@
+     </option>
+   </component>
+   <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$" value="task-frontend-doctor-registration" />
++      </map>
++    </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+   </component>
+   <component name="JpbToolWindowState">
+     <option name="myId2FirstActivated">
+@@ -63,14 +72,14 @@
+     <option name="showLibraryContents" value="true" />
+     <option name="showMembers" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "last_opened_file_path": "/home/akanksha5/Desktop/Central-Health-Log",
+-    "settings.editor.selected.configurable": "advanced.settings"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;/home/akanksha5/Desktop/Central-Health-Log&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RunManager" selected="Application.com.CentralHealthLog.CentralHealthLogApplication">
+     <configuration name="CentralHealthLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="product.CentralHealthLogApplication" />
+@@ -113,6 +122,9 @@
+       <list>
+         <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
+         <item itemvalue="Application.CentralHealthLogApplication" />
++        <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
++        <item itemvalue="Application.CentralHealthLogApplication" />
++        <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
+       </list>
+     </recent_temporary>
+   </component>
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n  <nav class=\"navbar\">\n    <div class=\"name\"><img class=\"plus\" src=\"assets/images/plus_image.png\"><b>Central <span> Health Log</span></b></div>\n    <div>\n      <div class=\"navbar-nav\">\n        <a href=\"#\"><app-button [text]='btntext' ></app-button></a>\n      </div>\n    </div>\n  </nav>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.html b/CHL-Frontend/src/app/common/navbar/navbar.component.html
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.html	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.html	(date 1667549587551)
+@@ -1,9 +1,14 @@
+-
+-  <nav class="navbar">
+-    <div class="name"><img class="plus" src="assets/images/plus_image.png"><b>Central <span> Health Log</span></b></div>
+-    <div>
+-      <div class="navbar-nav">
+-        <a href="#"><app-button [text]='btntext' ></app-button></a>
+-      </div>
+-    </div>
+-  </nav>
+\ No newline at end of file
++<nav class="navbar">
++  <div class="name">
++    <img class="plus" src="assets/images/plus_image.png" /><b
++      >Central <span> Health Log</span></b
++    >
++  </div>
++  <div>
++    <div class="navbar-nav">
++      <a href="#"><app-button [text]="btntext"></app-button></a>
++      <a href="#"><app-void-button [text]="'Add new'" [btnClass]="'btn-primary'" [btnConfig]="textBtnConfig"></app-void-button></a>
++
++    </div>
++  </div>
++</nav>
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import { Component, Input, OnInit} from '@angular/core';\n\n@Component({\n  selector: 'app-navbar',\n  templateUrl: './navbar.component.html',\n  styleUrls: ['./navbar.component.scss'],\n  styles: [`:host ::ng-deep .btn{ height: 30px;padding-bottom: 30px;\n    padding-top: 0px !important }`] \n  // to change the style of child component\n})\nexport class NavbarComponent implements OnInit {\n  @Input('btntext') btntext: string='Login';\n  \n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.ts b/CHL-Frontend/src/app/common/navbar/navbar.component.ts
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.ts	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.ts	(date 1667549587559)
+@@ -5,15 +5,26 @@
+   templateUrl: './navbar.component.html',
+   styleUrls: ['./navbar.component.scss'],
+   styles: [`:host ::ng-deep .btn{ height: 30px;padding-bottom: 30px;
+-    padding-top: 0px !important }`] 
++    padding-top: 0px !important }`]
+   // to change the style of child component
+ })
+ export class NavbarComponent implements OnInit {
+   @Input('btntext') btntext: string='Login';
+-  
++
+   constructor() { }
+ 
+   ngOnInit(): void {
+   }
+ 
++  textBtnConfig = {
++    styles: {
++      width: '120px',
++      height: '40px',
++      backgroundColor: '#1CB5BD',
++      color: '#fff',
++      cursor: 'pointer'
++    },
++    text: 'Login'
++  };
++
+ }
+Index: CHL-Frontend/src/app/common/navbar/navbar.component.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\n.navbar{\n    background-color: #fff;\n    height: 70px;\n    font-family: Montserrat;\n    font-size: 35px;\n    span{\n        color: #1CB5BD;\n    }\n    \n        .plus{\n            height: 40px;\n       \n        }\n    }    \n    \n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/CHL-Frontend/src/app/common/navbar/navbar.component.scss b/CHL-Frontend/src/app/common/navbar/navbar.component.scss
+--- a/CHL-Frontend/src/app/common/navbar/navbar.component.scss	(revision 752192b6a8c60824905fa3d6d1e4ef310884da9d)
++++ b/CHL-Frontend/src/app/common/navbar/navbar.component.scss	(date 1667549587567)
+@@ -1,16 +1,14 @@
+-
+-.navbar{
+-    background-color: #fff;
+-    height: 70px;
+-    font-family: Montserrat;
+-    font-size: 35px;
+-    span{
+-        color: #1CB5BD;
+-    }
+-    
+-        .plus{
+-            height: 40px;
+-       
+-        }
+-    }    
+-    
++.navbar {
++  background-color: #fff;
++  height: 70px;
++  font-family: Montserrat;
++  font-size: 35px;
++
++  span {
++    color: #1cb5bd;
++  }
++
++  .plus {
++    height: 40px;
++  }
++}
