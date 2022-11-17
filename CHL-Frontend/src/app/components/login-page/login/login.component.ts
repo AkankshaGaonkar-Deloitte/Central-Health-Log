@@ -42,6 +42,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  // login(loginForm){
+  //   console.log("Form is submitted")
+  // }
   textBtnConfig = {
     styles: {
       backgroundColor: '#ffff',
