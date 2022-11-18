@@ -1,19 +1,21 @@
 
-<ng-container *ngTemplateOutlet="btnConfig['text'] ? text : image">
-</ng-container>
-
-<!-- Text Button -->
-<ng-template #text>
-  <button type="button" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
+  <button [type]="btnConfig.type" class="btn" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
    <b> {{btntext}}</b>
   </button>
-</ng-template>
 
-<!-- Profile Section -->
-<ng-template #image>
-  <div>
-    <img class="image"  src="../../../assets/images/Person.png" 
-      (click)="onImgBtnClick($event)">
-    <app-dropdown (value)="saveValue($event)" class="dropdown" [states]="droptxt" [dropConfig]="textDropConfig"></app-dropdown>
-  </div>
-</ng-template>
+
+<!-- How to use -->
+<!-- <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" ></app-button> -->
+
+<!-- give styling like this in component.ts file -->
+
+<!-- textBtnConfig = {
+  textBtnConfig = {
+    type:"submit",
+    styles: {
+       background: '#fff',
+       color: '#1CB5BD',
+       height: '40px'
+
+    }
+}; -->

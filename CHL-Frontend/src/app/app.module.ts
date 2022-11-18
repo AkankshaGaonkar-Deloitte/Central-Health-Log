@@ -26,8 +26,7 @@ import { PatientRegistrationComponent } from './components/patient-registration/
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
