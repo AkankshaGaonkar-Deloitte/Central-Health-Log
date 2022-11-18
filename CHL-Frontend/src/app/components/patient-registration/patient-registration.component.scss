@@ -17,13 +17,19 @@
 
 #image-container {
     width: 43%;
-    padding-left: 50px;
 
+}
+#reg-image{
+    position: absolute;
+width: 617px;
+height: 480px;
+left: 70px;
+top: 179px;
 }
 
 #reg-container {
     position: absolute;
-    width: 995px;
+    width: 50%;
     height: 83%;
     left: 825px;
     top: 100px;
@@ -31,6 +37,62 @@
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 6px;
 }
+
+#main-text{
+    color:#2C2D2D;
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 30px;
+line-height: 37px;
+position: absolute;
+width: 458px;
+height: 37px;
+left: 296px;
+top: 700px;
+}
+#moto-text{
+position: absolute;
+width: 450px;
+height: 40px;
+left: 235px;
+top: 750px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 20px;
+letter-spacing: 0.1em;
+color: #737373;
+text-align: center;
+}
+
 form{
     padding: 20px;
+    p{
+        font-family: 'Montserrat';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 20px;
+color: #1A1A1A;
+padding-top: 20px;    
+}
+
+}
+#reg-heading{
+    font-family: 'Montserrat';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 29px;
+color: #2C2D2D;
+
+}
+#buttons{
+    display: inline-flex;
+    justify-content: space-between;
+    width:395px;
+    height: 40px;
+
 }

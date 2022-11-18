@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { reduce } from 'rxjs';
 
 @Component({
   selector: 'app-patient-registration',
@@ -8,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class PatientRegistrationComponent implements OnInit {
 
   constructor() { }
-
+  btnstyle = {
+    type:"button",
+    styles: {
+       background: '#fff',
+       color: '#1CB5BD',
+       height: '40px'}
+    }
   ngOnInit(): void {
   }
 

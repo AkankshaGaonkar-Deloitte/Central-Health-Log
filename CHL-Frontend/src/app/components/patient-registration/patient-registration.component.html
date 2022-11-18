@@ -2,17 +2,18 @@
     <app-navbar [button]="true" [btntext]="'Login'"></app-navbar>
     <div id="sub-container">
         <div id="image-container">
-            <img src="assets/images/reg-img.png" alt="reg-image" height="450px">
-            <div id="main-text"><strong> Your Health Comes First.</strong></div>
+            <img id="reg-image" src="assets/images/reg-img.png" alt="reg-image" >
+            <div id="main-text">Your Health Comes First</div>
             <div id="moto-text">With Central Health Log you can manage your personal health reports effectively. </div>
         </div>
         <div id="reg-container">
             <form>
                 <div id="reg-heading">Register Account</div>
-                <span>Select the User Type</span>
-                <div id="buttons">
-                    <!-- <app-button [btntext]="'Patient'"></app-button>
-                    <app-button [btntext]="'Doctor'"></app-button> -->
+                <div class="select-user">
+                    <p>Select the User Type</p>
+                    <div id="buttons"><app-button [btntext]="'Patient'" [btnConfig]="btnstyle"></app-button>
+                    <app-button [btntext]="'Doctor'" [btnConfig]="btnstyle"></app-button>
+                    </div>
                 </div>
             </form>
         </div>
