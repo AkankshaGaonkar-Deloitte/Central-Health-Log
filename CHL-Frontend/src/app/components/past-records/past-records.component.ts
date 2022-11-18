@@ -44,6 +44,27 @@ export class PastRecordsComponent implements OnInit {
   ipConfig = {
     type: 'search',
     label: 'from',
+    placeholder: 'from',
+    styling: {
+      width: '197px',
+      height: '40px',
+      background: '#FFFFFF',
+      border: '1px solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  ipConfig2 = {
+    type: 'search',
+    label: 'from',
+    placeholder: 'to',
     styling: {
       width: '197px',
       height: '40px',
