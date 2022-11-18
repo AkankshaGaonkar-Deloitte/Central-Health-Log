@@ -7,6 +7,7 @@
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database">
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
