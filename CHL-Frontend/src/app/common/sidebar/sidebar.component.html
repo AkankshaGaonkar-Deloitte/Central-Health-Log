@@ -1,1 +1,17 @@
-<p>sidebar works!</p>
+<div class="sidebar">
+    <div class="tab" *ngFor="let menu of menus | keyvalue" id="sidebar-element" routerLink={{menu.value[1]}}>
+        <img id="sidebar-icon" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25"
+            height="25">
+        <img id="sidebar-icon" *ngIf="menu.value[0]!='Dashboard'" src="assets/images/Sidebar-icons.svg" width="25"
+            height="25">
+        {{menu.value[0]}}
+    </div>
+    
+</div>
+
+
+<!-- in parent.component.ts file -->
+<!-- sidebar-tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]}; -->
+
+<!-- in parent/html -->
+<!-- <app-sidebar [sidebar-tabs]="menus"></app-sidebar> -->
