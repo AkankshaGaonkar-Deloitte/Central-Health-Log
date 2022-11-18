@@ -52,12 +52,12 @@ export class PastRecordsComponent implements OnInit {
       borderRadius: '0'
     },
     validations: {
-      required: '',
+      required: 'false',
       minLength: '',
       maxLength: '',
       pattern: ''
     },
-    patternErrorMessage: 'Invalid ph no'
+    patternErrorMessage: ''
   };
 
   onClickEventReceived($event: string | number | null) {
