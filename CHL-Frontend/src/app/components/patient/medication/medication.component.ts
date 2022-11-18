@@ -12,6 +12,7 @@ export class MedicationComponent implements OnInit {
   ngOnInit(): void {
   }
   textBtnConfig = {
+    type:"button",
     styles: {
       backgroundColor: '#ffff',
       color: '#1CB5BD',
@@ -25,6 +26,7 @@ export class MedicationComponent implements OnInit {
       
 
     },text:['']
-  }
+  } 
+  sidebartabs={'1':["Dashboard","/patient-dashboard"],'2':["Personal Details","/personal-details"],'3':["Medical Data","/medical-data"],'4':["Medications",'/medications'],'5':["Past Records","/past-records"]};
 
 }

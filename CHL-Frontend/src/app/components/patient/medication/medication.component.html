@@ -1,6 +1,7 @@
 <div id="main-container">
     <app-navbar [btntext]="'Register'"></app-navbar>
     <div id="parent-container">
+      <div id="side-bar"><app-sidebar [menus]="sidebartabs"></app-sidebar></div>
         <div id="sub-container">
             <div id="text1"><a href="#" ></a>Back to Dashboard</div>
             <div id="update-btn"><app-button  class="sub-btn" [btntext]="'Add'" [btnConfig]="textBtnConfig"></app-button></div>
