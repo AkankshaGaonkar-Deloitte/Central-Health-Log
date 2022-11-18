@@ -41,6 +41,25 @@ export class PastRecordsComponent implements OnInit {
     }
   };
 
+  textBtnConfig3 = {
+    type: "submit",
+    styles: {
+      color: '#fff',
+      height: '40px',
+      width: '40px',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '20px',
+      lineHeight: '24px',
+      textAlign: 'center',
+
+      background: '#000000',
+      borderRadius: '6px'
+
+    }
+  };
+
   ipConfig = {
     type: 'search',
     label: 'from',
