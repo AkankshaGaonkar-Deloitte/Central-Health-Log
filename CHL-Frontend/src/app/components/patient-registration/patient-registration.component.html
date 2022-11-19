@@ -7,14 +7,12 @@
             <div id="moto-text">With Central Health Log you can manage your personal health reports effectively. </div>
         </div>
         <div id="reg-container">
-            <form>
                 <div id="reg-heading">Register Account</div>
                 <div class="select-user">
                     <p>Select the User Type</p>
-                    <div id="buttons"><app-button [btntext]="'Patient'" [btnConfig]="btnstyle"></app-button>
-                    <app-button [btntext]="'Doctor'" [btnConfig]="btnstyle"></app-button>
+                    <div id="buttons"><app-button [btntext]="'Patient'" [btnConfig]="btnstyle" (onClick)="addPatient($event)"></app-button>
+                    <app-button [btntext]="'Doctor'" [btnConfig]="btnstyle" (onClick)="addDoctor($event)"></app-button>
                     </div>
-                </div>
-            </form>
+                </div>    
         </div>
     </div>

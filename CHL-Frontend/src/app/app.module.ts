@@ -11,6 +11,8 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PatientRegistrationComponent } from './components/patient-registration/patient-registration.component';
+import { AddPatientComponent } from './components/add-patient/add-patient.component';
+import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { PatientRegistrationComponent } from './components/patient-registration/
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    PatientRegistrationComponent
+    PatientRegistrationComponent,
+    AddPatientComponent,
+    AddDoctorComponent
   ],
   imports: [
     BrowserModule,

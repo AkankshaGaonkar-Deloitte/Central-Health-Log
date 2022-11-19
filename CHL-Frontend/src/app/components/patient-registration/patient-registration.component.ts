@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { reduce } from 'rxjs';
 
 @Component({
@@ -8,7 +9,7 @@ import { reduce } from 'rxjs';
 })
 export class PatientRegistrationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   btnstyle = {
     type:"button",
     styles: {
@@ -18,5 +19,10 @@ export class PatientRegistrationComponent implements OnInit {
     }
   ngOnInit(): void {
   }
-
+  addPatient($event:any){
+    this.router.navigate(['/addPatient']);
+  }
+  addDoctor($event:any){
+    this.router.navigate(['/addDoctor']);
+  }
 }
