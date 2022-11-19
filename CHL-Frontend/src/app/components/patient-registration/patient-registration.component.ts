@@ -8,21 +8,17 @@ import { reduce } from 'rxjs';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
-
+  patientActive:boolean=true;
+textBtnConfig={ type: "submit", styles: {height:'50px',width:'200px' } };
   constructor(private router: Router) { }
-  btnstyle = {
-    type:"button",
-    styles: {
-       background: '#fff',
-       color: '#1CB5BD',
-       height: '40px'}
-    }
+ 
   ngOnInit(): void {
   }
   addPatient($event:any){
-    this.router.navigate(['/addPatient']);
+    this.patientActive=true;
   }
   addDoctor($event:any){
-    this.router.navigate(['/addDoctor']);
+    this.patientActive=false;
+
   }
 }
