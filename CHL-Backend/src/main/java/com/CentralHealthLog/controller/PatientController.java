@@ -10,21 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class PastRecordController {
+public class PatientController {
 
     @Autowired
     private PastRecordService pastRecordService;
 
-    @PostMapping("/past-record")
+    @PostMapping("/patient/past-record")
     public ResponseEntity<PastRecord> addPastRecord(@RequestBody PastRecord pastRecord) {
         System.out.println(pastRecord);
         PastRecord savedRecord = pastRecordService.addRecord(pastRecord);
         return new ResponseEntity<PastRecord>(savedRecord, HttpStatus.OK);
     }
 
-    @GetMapping("/past-record/{patientId}")
+    @GetMapping("/patient/past-record/{patientId}")
     public List<PastRecord> getAllPatientRecords(@PathVariable Long patientId) {
-        List<PastRecord>  records = pastRecordService.getAllPatientRecords(patientId);
+        List<PastRecord> records = pastRecordService.getAllPatientRecords(patientId);
         return records;
     }
 
