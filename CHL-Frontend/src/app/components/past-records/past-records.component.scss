@@ -131,50 +131,138 @@
 
 // }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .main-container {
+
     position: absolute;
+
     width: 100%;
+
     height: 100%;
+
     // background-color: #F5FEFF;
+
 }
+
+
 
 .subcontainer {
+
     // position: relative;
+
     width: 100%;
+
     height: 92%;
+
     background-color: #F5FEFF;
+
     display: flex;
+
     flex-direction: row;
+
     // justify-content: space-evenly;
+
     // align-items: center;
+
 }
+
+
 
 .flex-item1 {
+
     width: fit-content;
+
     height: fit-content;
+
 }
+
+
 
 .flex-item2 {
+
     position: relative;
+
     width: 76%;
+
     height: 85%;
+
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+
     border-radius: 10px;
+
     position: absolute;
+
     left: 409px;
+
     top: 110px;
+
     background: #FFFFFF;
+
 }
 
-#heading {
-    position: relative;
-    left: 20px;
-    top: 20px;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 29px;
-    color: #2C2D2D;
 
+
+#heading {
+
+    position: relative;
+
+    left: 20px;
+
+    top: 20px;
+
+    font-family: 'Montserrat';
+
+    font-style: normal;
+
+    font-weight: 700;
+
+    font-size: 30px;
+
+    line-height: 29px;
+
+    color: #2C2D2D;
 }
