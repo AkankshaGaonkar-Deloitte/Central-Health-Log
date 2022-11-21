@@ -5,9 +5,9 @@ import com.CentralHealthLog.service.PastRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class PastRecordController {
@@ -20,6 +20,12 @@ public class PastRecordController {
         System.out.println(pastRecord);
         PastRecord savedRecord = pastRecordService.addRecord(pastRecord);
         return new ResponseEntity<PastRecord>(savedRecord, HttpStatus.OK);
+    }
+
+    @GetMapping("/past-record/{patientId}")
+    public List<PastRecord> getAllPatientRecords(@PathVariable Long patientId) {
+        List<PastRecord>  records = pastRecordService.getAllPatientRecords(patientId);
+        return records;
     }
 
 }
