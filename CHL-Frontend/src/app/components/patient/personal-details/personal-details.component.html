@@ -1,81 +1,53 @@
- 
 <div id="main-container">
-    <app-navbar [btntext]="'Register'"></app-navbar>
-    <div id="parent-container">
-        <div id="sub-container">
-            <div id="text1"><a href="#" ></a>Back to Dashboard</div>
-            <div id="text2">Update Details</div>
-            <div id="container">
-                <form>
-                <div id="container1">
-                    <div id="sub-container1">
-                        <div class="form-group">
-                            <label for="first name">First name</label>
-                            <input 
-                                id="first name" 
-                                type="text" 
-                                class="form-control"
-                                >
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input 
-                                id="email" 
-                                type="text" 
-                                class="form-control"
-                                >
-                        </div>
-                        <div class="form-group">
-                            <label for="gender">Gender</label>
-                            <input 
-                                id="gender" 
-                                type="text" 
-                                class="form-control"
-                                >
-                        </div>
-                    </div>
-                    <div id="sub-container2">
-                        <div class="form-group">
-                            <label for="Last name">Last name</label>
-                            <input 
-                                id="last name" 
-                                type="text" 
-                                class="form-control"
-                                >
-                        </div>
-                        <div class="form-group">
-                            <label for="contactno">Contact No</label>
-                            <input 
-                                id="contactno" 
-                                type="text" 
-                                class="form-control"
-                               >
-                        </div>
-                        <div class="form-group">
-                            <label for="contactno">Age</label>
-                            <input 
-                                id="age" 
-                                type="text" 
-                                class="form-control"
-                               >
-                        </div>
-                    </div>
-                </div>
-                <div id="container2">
-                    <div class="form-group">
-                        <label for="address">Address</label>
-                        <input 
-                            id="address" 
-                            type="text" 
-                            class="form-control"
-                            >
-                    </div>
-                </div>
-                <div id="container3">
-                    <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
-                </div>
-                </form>
+  <app-navbar [button]="false" [name]="'Dr Akansha Gaonkar'"></app-navbar>
+  <div id="parent-container">
+    <app-sidebar [menus]="menus"></app-sidebar>
+    <div id="sub-container">
+      <div id="text1"><a href="#"></a>Back to Dashboard</div>
+      <div id="text2">Update Details</div>
+      <div id="container">
+        <form>
+          <div id="container1">
+            <div id="sub-container1">
+              <div class="form-group">
+                <label for="first name">First name</label>
+                <input id="first name" type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <input id="gender" type="text" class="form-control" />
+              </div>
             </div>
-        </div>
+            <div id="sub-container2">
+              <div class="form-group">
+                <label for="Last name">Last name</label>
+                <input id="last name" type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="contactno">Contact No</label>
+                <input id="contactno" type="text" class="form-control" />
+              </div>
+              <div class="form-group">
+                <label for="contactno">Age</label>
+                <input id="age" type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div id="container2">
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input id="address" type="text" class="form-control" />
+            </div>
+          </div>
+          <div id="container3">
+            <!-- <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div> -->
+          </div>
+        </form>
+      </div>
     </div>
-</div>  
+  </div>
+</div>

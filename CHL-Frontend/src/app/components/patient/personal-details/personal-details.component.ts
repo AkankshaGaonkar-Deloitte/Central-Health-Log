@@ -6,6 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./personal-details.component.scss']
 })
 export class PersonalDetailsComponent implements OnInit {
+  menus={'1':["Dashboard","/patient-dashboard"],'2':["Personal Details","/personal-details"],'3':["Medical Data","/medical-data"],'4':["Medications",'/medications'],'5':["Past Records","/past-records"]};
 
 
   @Input('btntext') btntext: string='Login';
