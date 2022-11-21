@@ -1,5 +1,6 @@
 package com.CentralHealthLog.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
@@ -23,6 +24,7 @@ public class PastRecord {
 
     private String doctorName;
 
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date date;
 
     private String diagnosis;
