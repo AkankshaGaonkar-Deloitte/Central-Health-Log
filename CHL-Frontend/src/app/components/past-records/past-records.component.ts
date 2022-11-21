@@ -100,8 +100,8 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  menus={'1':["Dashboard","/patient-dashboard"],'2':["Personal Details","/personal-details"],'3':["Medical Data","/medical-data"],'4':["Medications",'/medications'],'5':["Past Records","/past-records"]};
-
+  tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]};
+  
   onClickEventReceived($event: string | number | null) {
     console.log(`At parent ${$event}`);
   }
