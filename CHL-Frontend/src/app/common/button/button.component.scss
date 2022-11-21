@@ -8,11 +8,21 @@ button{
       gap: 10px;
 
       width: 100%;
-      background: #1CB5BD;
-      color: #fff;
+      background: #fff;
+      color: #1CB5BD;;
       font-size: 28px;
       border-color: #1CB5BD;
       height: 40px;
       border: 1px solid #1CB5BD;
       border-radius: 4px;
+      outline: none;
+}
+
+button:hover {
+  border: 1px solid #737373;
+}
+
+button:focus {
+  background: #DAFDFF;
+  outline: none;
 }
