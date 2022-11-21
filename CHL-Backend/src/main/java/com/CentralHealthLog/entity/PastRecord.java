@@ -25,7 +25,7 @@ public class PastRecord {
     private String doctorName;
 
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date date;
+    private Date uploadDate;
 
     private String diagnosis;
 
