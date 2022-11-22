@@ -29,11 +29,6 @@ export class NavbarComponent implements OnInit {
     type:"button",
     styles: {
 
-      backgroundColor: '#fff',
-      color: '#1CB5BD',
-      fontSize: '0.9em',
-      borderColor: '#1CB5BD',
-      width: '100%',
       height: '1.2em',
         
     }
