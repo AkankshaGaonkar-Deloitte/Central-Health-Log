@@ -41,7 +41,8 @@ export class InputComponent implements OnInit {
     label: 'Name',
     placeholder: '',
     styling: {  
-      width: '800px'
+      width: '15em',
+      height:'2.4em'
     },
     validations : {
       required: '',
