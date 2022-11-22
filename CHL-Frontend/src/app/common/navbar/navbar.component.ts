@@ -28,7 +28,6 @@ export class NavbarComponent implements OnInit {
   textBtnConfig = {
     type:"button",
     styles: {
-
       height: '1.2em',
 
     }
