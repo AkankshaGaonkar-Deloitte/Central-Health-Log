@@ -8,5 +8,15 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'CHL-Frontend';
+
+  textBtnConfig = {
+    type:"submit",
+    styles: {
+      //  background: '#1CB5BD',
+      //  color: '#fff',
+      //  height: '40px'
+
+    }
+  }
   
 }
