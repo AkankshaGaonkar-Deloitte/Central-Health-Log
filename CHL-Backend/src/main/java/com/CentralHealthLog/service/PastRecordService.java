@@ -20,4 +20,8 @@ public class PastRecordService {
     public List<PastRecord> getAllPatientRecords(Long patientId){
         return pastRecordRepository.findByPatientId(patientId).get();
     }
+
+    public List<PastRecord> filterByDoctor(Long patientId, Long doctorId) {
+        return pastRecordRepository.findByPatientIdAndDoctorId(patientId, doctorId).get();
+    }
 }

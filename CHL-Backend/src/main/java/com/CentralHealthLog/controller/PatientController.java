@@ -28,4 +28,9 @@ public class PatientController {
         return records;
     }
 
+    @GetMapping("/patient/past-record/{patientId}/filter-by-doctor/{doctorId}")
+    public List<PastRecord> filterByDoctor(@PathVariable Long patientId, @PathVariable Long doctorId){
+        return pastRecordService.filterByDoctor(patientId, doctorId);
+    }
+
 }

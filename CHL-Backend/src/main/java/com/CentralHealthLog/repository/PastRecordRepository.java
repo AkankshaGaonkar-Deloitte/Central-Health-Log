@@ -11,4 +11,6 @@ import java.util.Optional;
 public interface PastRecordRepository extends JpaRepository<PastRecord, Long> {
 
     Optional<List<PastRecord>> findByPatientId(Long patientId);
+
+    Optional<List<PastRecord>> findByPatientIdAndDoctorId(Long patientId, Long doctorId);
 }
