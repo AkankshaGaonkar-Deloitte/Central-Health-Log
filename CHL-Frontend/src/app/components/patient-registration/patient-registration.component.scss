@@ -39,7 +39,8 @@
     border-radius: 6px;
     padding: 20px;
     padding-top: 35px;
-    p{
+
+    p {
 
         padding-top: 20px;
         font-family: 'Montserrat';
@@ -48,7 +49,7 @@
         font-size: 20px;
         line-height: 20px;
         color: #1A1A1A;
-    
+
     }
 }
 
@@ -82,10 +83,11 @@
     text-align: center;
 }
 
-form {
-    padding: 20px;
+// form {
+//     height: 400px;
+//     width: 100%;
 
-}
+// }
 
 #reg-heading {
     font-family: 'Montserrat';
@@ -118,10 +120,11 @@ button {
     border-radius: 2px 2px 0px 0px;
     box-sizing: border-box;
     background-color: #FFFFFF;
+    outline: none;
 }
 
 button:hover,
-button:focus {
+button:focus ,button:active,.active{
     font-weight: 700;
     font-size: 22px;
     line-height: 22px;
@@ -129,5 +132,15 @@ button:focus {
     border: 2px solid #1CB5BD;
     border-radius: 2px 2px 0px 0px;
     color: #1CB5BD;
+    outline: none;
 
+}
+
+label {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    color: #1A1A1A;
 }
