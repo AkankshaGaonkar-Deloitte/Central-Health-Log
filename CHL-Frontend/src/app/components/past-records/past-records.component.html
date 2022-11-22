@@ -89,14 +89,117 @@
 
 <div class="main-container">
   <div id="nav">
-      <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
   </div>
   <div class="subcontainer">
-      <div class="flex-item1">
-          <app-sidebar [menus]="menus"></app-sidebar>
+    <div class="flex-item1">
+      <app-sidebar [menus]="menus"></app-sidebar>
+    </div>
+    <div class="flex-item2">
+      <div class="main">
+        <div id="text1"><a href="#"></a>&lt; &nbsp; Back to Dashboard</div>
+        <div class="search-filter">
+          <div class="left">
+            <div id="sort-by">Sort By</div>
+            <div style="margin-right: 10px;">
+              <app-input [ipConfig]="searchConfig1" (outputEmit)="onClickEventReceived($event)"></app-input>
+            </div>
+            <div style="margin-right: 10px;">
+              <app-input [ipConfig]="searchConfig2" (outputEmit)="onClickEventReceived($event)"></app-input>
+            </div>
+            <div>
+              <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3"></app-button>
+            </div>
+          </div>
+          <div class="right">
+            <div style="margin-left: 10px;">
+              <app-button [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig"></app-button>
+            </div>
+            <div style="margin-left: 10px;">
+              <app-button [btntext]="'Filter severity'" [btnConfig]="textBtnConfig"></app-button>
+            </div>
+            <div style="margin-left: 10px;">
+              <app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2"></app-button>
+            </div>
+          </div>
+        </div>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>Doctor name</th>
+              <th>Diagnosis</th>
+              <th>Severity</th>
+              <th>Prescription</th>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+            <tr>
+              <td>10/12/22</td>
+              <td>Dr. Rogit Patel</td>
+              <td>Fever</td>
+              <td>3</td>
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+            </tr>
+
+          </table>
+        </div>
+
       </div>
-      <div class="flex-item2">
-          <div class="main"></div>
-      </div>
+    </div>
   </div>
 </div>

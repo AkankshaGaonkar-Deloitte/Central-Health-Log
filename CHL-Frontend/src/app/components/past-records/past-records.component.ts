@@ -12,13 +12,13 @@ export class PastRecordsComponent implements OnInit {
     styles: {
       background: '#fff',
       color: '#1CB5BD',
-      height: '40px',
-      width: '170px',
+      height: '2em',
+      width: '8em',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
       fontWeight: '500',
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
       textAlign: 'center',
 
     }
@@ -29,13 +29,13 @@ export class PastRecordsComponent implements OnInit {
     styles: {
       background: '#1CB5BD',
       color: '#fff',
-      height: '40px',
-      width: '170px',
+      height: '2em',
+      width: '8em',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
       fontWeight: '500',
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
       textAlign: 'center',
 
     }
@@ -45,30 +45,29 @@ export class PastRecordsComponent implements OnInit {
     type: "submit",
     styles: {
       color: '#fff',
-      height: '40px',
-      width: '40px',
+      height: '2em',
+      width: '2em',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
       fontWeight: '500',
-      fontSize: '20px',
-      lineHeight: '24px',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
       textAlign: 'center',
-
       background: '#000000',
-      borderRadius: '6px'
+      borderRadius: '0.375em'
 
     }
   };
 
-  ipConfig = {
+  searchConfig1 = {
     type: 'search',
     label: 'from',
     placeholder: 'from',
     styling: {
-      width: '197px',
-      height: '40px',
+      width: '10em',
+      height: '2.5em',
       background: '#FFFFFF',
-      border: '1px solid #949494',
+      border: '0.0625em solid #949494',
       borderRadius: '0'
     },
     validations: {
@@ -80,15 +79,15 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  ipConfig2 = {
+  searchConfig2 = {
     type: 'search',
     label: 'from',
     placeholder: 'to',
     styling: {
-      width: '197px',
-      height: '40px',
+      width: '10em',
+      height: '2.5em',
       background: '#FFFFFF',
-      border: '1px solid #949494',
+      border: '0.0625em solid #949494',
       borderRadius: '0'
     },
     validations: {
