@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   @Input('btntext') Text: string = "Login";
   @Input('name') name: string = "Your Profile";
   @Input('button') btn: boolean = true;
-  
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
     styles: {
 
       height: '1.2em',
-        
+
     }
   };
 
