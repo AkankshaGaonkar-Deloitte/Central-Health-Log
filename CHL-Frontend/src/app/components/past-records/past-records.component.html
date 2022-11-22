@@ -1,92 +1,3 @@
-<!-- <div class="main-container">
-    <app-navbar [name]="'Dr. Abhijit'" [button]="false"></app-navbar>
-    <div class="parent-container">     
-        <div class="sub-container">
-            <div id="text1"><a href="#" ></a>&lt; &nbsp; Back to Dashboard</div>
-            <div class="search-filter">
-                <div class="left">
-                    <div id="sort-by">Sort By</div>
-                    <div style="margin-right: 10px;">
-                        <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
-                    </div>
-                    <div style="margin-right: 10px;">
-                        <app-input [ipConfig]="ipConfig2" (outputEmit)="onClickEventReceived($event)"></app-input>
-                    </div>
-                    <div>
-                      <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3" ></app-button>
-                    </div>
-                </div>
-                <div class="right">
-                    <div style="margin-left: 10px;"><app-button [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig" ></app-button></div>
-                    <div style="margin-left: 10px;"><app-button [btntext]="'Filter severity'" [btnConfig]="textBtnConfig" ></app-button></div>
-                    <div style="margin-left: 10px;"><app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" ></app-button></div>
-                </div>
-            </div>
-            <div class="sub-container-2">
-                <table>
-                    <tr>
-                      <th>Date</th>
-                      <th>Doctor name</th>
-                      <th>Diagnosis</th>
-                      <th>Severity</th>
-                      <th>Prescription</th>
-                    </tr>
-                    <tr>
-                      <td>10/12/22</td>
-                      <td>Dr. Rogit Patel</td>
-                      <td>Fever</td>
-                      <td>3</td>
-                      <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                    </tr>
-                    <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      <tr>
-                        <td>10/12/22</td>
-                        <td>Dr. Rogit Patel</td>
-                        <td>Fever</td>
-                        <td>3</td>
-                        <td><app-button [btntext]="'View'" [btnConfig]="textBtnConfig" ></app-button></td>
-                      </tr>
-                      
-                  </table>
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <div class="main-container">
   <div id="nav">
     <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
@@ -113,7 +24,7 @@
           </div>
           <div class="right">
             <div style="margin-left: 10px;">
-              <app-button [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig"></app-button>
+              <app-button id="myBtn" [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig"></app-button>
               <!-- <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"></app-dropdown> -->
             </div>
             <div style="margin-left: 10px;">
@@ -204,3 +115,4 @@
     </div>
   </div>
 </div>
+
