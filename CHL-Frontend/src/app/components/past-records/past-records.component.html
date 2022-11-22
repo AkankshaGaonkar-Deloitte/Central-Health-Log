@@ -1,4 +1,4 @@
-<div class="main-container">
+<!-- <div class="main-container">
     <app-navbar [name]="'Dr. Abhijit'" [button]="false"></app-navbar>
     <div class="parent-container">     
         <div class="sub-container">
@@ -85,30 +85,18 @@
             </div>
         </div>
     </div>
-</div>
-
-<!-- <div>
-
-  <div class="main-container">
-
-      <app-navbar [button]="false" [name]="'Dr Akansha Gaonkar'"></app-navbar>
-
-      <div class="subcontainer">
-
-          <div class="flex-item1">
-
-              <app-sidebar [menus]="menus"></app-sidebar>
-
-          </div>
-
-          <div class="flex-item2" >
-
-              <p id="heading"><b>Dashboard</b></p>
-
-          </div>
-
-      </div>
-
-  </div>
-
 </div> -->
+
+<div class="main-container">
+  <div id="nav">
+      <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+  </div>
+  <div class="subcontainer">
+      <div class="flex-item1">
+          <app-sidebar [menus]="menus"></app-sidebar>
+      </div>
+      <div class="flex-item2">
+          <div class="main"></div>
+      </div>
+  </div>
+</div>

@@ -99,12 +99,12 @@ export class PastRecordsComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
-
-  tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]};
   
   onClickEventReceived($event: string | number | null) {
     console.log(`At parent ${$event}`);
   }
+
+  menus={'1':["Dashboard","/patient-dashboard",1],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",0], '4':["Medications","/medications",0], '5':["Past Records","/past-records",0]};
 
   constructor() { }
 
