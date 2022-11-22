@@ -7,7 +7,11 @@
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="updated patient-service">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CHL-Backend/CentralHealthLog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/CentralHealthLog.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PatientService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="common-component" />
+        <entry key="$PROJECT_DIR$" value="task-frontend-patient-dashboard" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
