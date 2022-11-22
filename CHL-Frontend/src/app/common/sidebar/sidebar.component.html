@@ -1,4 +1,4 @@
-<div class="sidebar">
+<nav class="sidebar">
     <div class="tab"   [ngClass]="{'active': menu.value[2]===1}" *ngFor="let menu of menus | keyvalue" id="sidebar-element" routerLink={{menu.value[1]}}>
         <div class="item">
         <img id="sidebar-icon" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25"
@@ -9,11 +9,11 @@
     </div>
 </div>
     
-</div>
+</nav>
 
 
 <!-- in parent.component.ts file -->
-<!-- sidebar-tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]}; -->
+<!-- tabs={'1':["Dashboard","/patient-dashboard"],'2':["Patient Details","/patient-details"],'3':["Past Records","/past-records"]}; -->
 
 <!-- in parent/html -->
-<!-- <app-sidebar [sidebar-tabs]="menus"></app-sidebar> -->
+<!-- <app-sidebar [menus]="tabs"></app-sidebar> -->
