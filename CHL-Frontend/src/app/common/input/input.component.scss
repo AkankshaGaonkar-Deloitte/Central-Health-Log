@@ -49,13 +49,14 @@
 
 .ipField {
   width: 100%;
+  height: 100%;
 
   .errors {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.8em;
+    line-height: 0.833em;
     color: #ee0004;
   }
 }
@@ -63,36 +64,36 @@
 input {
   box-sizing: border-box;
   background: #ffffff;
-  border: 1px solid #949494;
-  border-radius: 10px;
+  border:  0.025em solid #949494;
+  border-radius: 0.625em;
 
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
-  font-size: 20px;
-  line-height: 22px;
+  font-size: 1em;
+  line-height: 1.1em;
   color: rgba(0, 0, 0, 0.85);
 }
 
 input:hover {
-  border: 1px solid #737373;
+  border: 0.0625em solid #737373;
 }
 
 input:focus {
-  border: 1px solid #1cb5bd;
+  border: 0.0625em solid #1cb5bd;
   outline: none;
 }
 
 input.ng-touched.ng-invalid {
-  border: 1px solid #ee0004;
+  border: 0.0625em solid #ee0004;
 }
 
 label {
   font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
+  font-size: 1em;
+  line-height: 1.5em;
   /* identical to box height */
 
   letter-spacing: 0.1em;
