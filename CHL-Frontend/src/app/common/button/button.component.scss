@@ -1,28 +1,22 @@
-button{
-    font-family: Montserrat;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      padding: 8px 54px;
-      gap: 10px;
+button {
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7em 1.8em;
+  gap: 0.5em;
+  width: 100%;
 
-      width: 100%;
-      background: #fff;
-      color: #1CB5BD;;
-      font-size: 28px;
-      border-color: #1CB5BD;
-      height: 40px;
-      border: 1px solid #1CB5BD;
-      border-radius: 4px;
-      outline: none;
-}
+  font-style: normal;
+  font-weight: 500;
+  background: #1CB5BD;
+  color: #fff;
+  font-size: 0.85em;
+  border-color: #1CB5BD;
+  height: 1.2em;
+  border: 0.0625 solid #1CB5BD;
+  border-radius: 0.25em;
+  font-family: 'Montserrat',
 
-button:hover {
-  border: 1px solid #737373;
-}
-
-button:focus {
-  background: #DAFDFF;
-  outline: none;
 }
