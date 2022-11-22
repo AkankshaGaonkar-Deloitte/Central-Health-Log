@@ -11,15 +11,15 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class PatientRegistrationComponent implements OnInit {
   patientActive:boolean=true;
 
-textBtnConfig={ type: "submit", styles: {height:'50px',width:'200px' } };
+textBtnConfig={ type: "submit", styles: {backgroundColor:'#1CB5BD',color:'#fff',height:'2em' } };
 
 ipConfig = {
   type: 'text',
   label: 'firstname',
   placeholder:'',
   styling: {  
-    width: '200px',
-    height: '40px'
+    width: '10em',
+    height: '1.6em'
   },
   validations : {
     required: '',
