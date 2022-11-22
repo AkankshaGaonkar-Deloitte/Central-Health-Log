@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -31,6 +33,11 @@ public class PatientController {
     @GetMapping("/patient/past-record/{patientId}/filter-by-doctor/{doctorId}")
     public List<PastRecord> filterByDoctor(@PathVariable Long patientId, @PathVariable Long doctorId){
         return pastRecordService.filterByDoctor(patientId, doctorId);
+    }
+
+    @GetMapping("/patient/past-record/{patientId}/search-by-date/{from}/{to}")
+    public List<PastRecord> filterByDoctor(@PathVariable Long patientId, @PathVariable String from, @PathVariable String to) throws ParseException {
+        return pastRecordService.filterByDate(patientId, from, to);
     }
 
 }
