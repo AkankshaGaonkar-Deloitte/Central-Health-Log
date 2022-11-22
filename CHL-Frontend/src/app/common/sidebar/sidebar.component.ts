@@ -7,12 +7,22 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-@Input() menus={ '1': ['Dashboard','/patient-dashboard']} ;
 
-Dashboard:string="Dashboard";
+  onClick(tab: any, menus: any) {
+    for (let key in menus) {
+     if(menus[key]==tab.value){
+        menus[key][2]=1;
+     }else{
+      menus[key][2]=0;
+     }
+
+    }
+  }
+
+  @Input() menus = { '1': ['Dashboard', '/patient-dashboard', 0] };
+  Dashboard: string = "Dashboard";
 
   constructor() { }
-
 
   ngOnInit(): void {
   }
