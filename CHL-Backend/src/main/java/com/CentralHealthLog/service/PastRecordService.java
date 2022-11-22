@@ -34,4 +34,8 @@ public class PastRecordService {
         Date toDate = new SimpleDateFormat("yyyy-MM-dd").parse(to);
         return pastRecordRepository.findByPatientIdAndUploadDateBetween(patientId, fromDate, toDate).get();
     }
+
+    public List<PastRecord> filterBySeverity(Long patientId, Integer severityFrom, Integer severityTo) {
+        return pastRecordRepository.findByPatientIdAndSeverityBetween(patientId, severityFrom, severityTo).get();
+    }
 }

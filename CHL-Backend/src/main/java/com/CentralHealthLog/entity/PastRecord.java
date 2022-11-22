@@ -32,4 +32,6 @@ public class PastRecord {
     private File prescription;
 
     private String uploadedBy;
+
+    private Integer severity;
 }

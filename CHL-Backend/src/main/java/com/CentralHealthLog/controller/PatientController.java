@@ -40,4 +40,9 @@ public class PatientController {
         return pastRecordService.filterByDate(patientId, from, to);
     }
 
+    @GetMapping("/patient/past-record/{patientId}/filter-by-severity/{severityFrom}/{severityTo}")
+    public List<PastRecord> filterBySeverity(@PathVariable Long patientId, @PathVariable Integer severityFrom, @PathVariable Integer severityTo) {
+        return pastRecordService.filterBySeverity(patientId, severityFrom, severityTo);
+    }
+
 }
