@@ -27,6 +27,6 @@ export class MedicationComponent implements OnInit {
 
     },text:['']
   } 
-  sidebartabs={'1':["Dashboard","/patient-dashboard"],'2':["Personal Details","/personal-details"],'3':["Medical Data","/medical-data"],'4':["Medications",'/medications'],'5':["Past Records","/past-records"]};
+  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",0],'4':["Medications",'/medications',1],'5':["Past Records","/past-records",0]};
 
 }
