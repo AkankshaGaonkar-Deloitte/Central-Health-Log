@@ -103,11 +103,11 @@ export class PastRecordsComponent implements OnInit {
     type: 'date',
     label: 'Date',
     placeholder: '',
-    styling: {  
-      width: '200px',
-      height: '40px'
+    styling: {
+      width: '12.5em',
+      height: '2.5em'
     },
-    validations : {
+    validations: {
       required: 'false',
       minLength: '',
       maxLength: '',
@@ -120,11 +120,11 @@ export class PastRecordsComponent implements OnInit {
     type: 'text',
     label: 'Name',
     placeholder: '',
-    styling: {  
-      width: '200px',
-      height: '40px'
+    styling: {
+      width: '12.5em',
+      height: '2.5em'
     },
-    validations : {
+    validations: {
       required: '',
       minLength: '4',
       maxLength: '',
@@ -137,11 +137,11 @@ export class PastRecordsComponent implements OnInit {
     type: 'text',
     label: 'Diagnosis',
     placeholder: '',
-    styling: {  
-      width: '200px',
-      height: '40px'
+    styling: {
+      width: '12.5em',
+      height: '2.5em'
     },
-    validations : {
+    validations: {
       required: '',
       minLength: '4',
       maxLength: '',
@@ -150,17 +150,17 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  descriptionConfig = {
+  presscriptionConfig = {
     type: 'file',
     label: 'Description',
     placeholder: '',
-    styling: {  
-      width: '200px',
-      height: '40px'
+    styling: {
+      width: '12.5em',
+      height: '2.5em'
     },
-    validations : {
+    validations: {
       required: 'false',
-      minLength: '4',
+      minLength: '',
       maxLength: '',
       pattern: ''
     },
@@ -203,7 +203,7 @@ export class PastRecordsComponent implements OnInit {
   }
 
   displayStyle = "none";
-  
+
   openPopup() {
     this.displayStyle = "block";
   }
