@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'CHL-Frontend';
-  menus={'1':["Dashboard","/patient-dashboard",1],'2':["Patient Details","/patient-details",0],'3':["Past Records","/past-records",0]};
 }
