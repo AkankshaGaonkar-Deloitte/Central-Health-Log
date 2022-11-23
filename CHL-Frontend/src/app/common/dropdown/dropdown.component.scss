@@ -1,28 +1,22 @@
 select {
     box-sizing: border-box;
     background: #ffffff;
-    border: 1px solid #949494;
-    border-radius: 10px;
-    height: 40px;
+    border: 0;
+    border-radius: 0.625em;
+    height:  2em;
     width: 100%;
     text-align: center;
-
-    font-family: 'Poppins';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-
+    font-size: 1em;
+    line-height: 1.5em;
     letter-spacing: 0.1em;
     color: #2C2D2D;
   }
   
-  select:hover{
-    border: 1px solid #737373;
-  }
-  
-  select:focus{
-    border: 1px solid #1CB5BD;
+  select:hover,
+  select:focus,select:active{
     outline: none;
   }
   
