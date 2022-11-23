@@ -21,72 +21,111 @@
                 </div>
             </div>
             <form *ngIf="patientActive==true" [formGroup]="RegistrationForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="firstName">First Name </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="firstNameReceived($event) "></app-input>
-
-                    <label for="lastName">Last Name </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="lastNameReceived($event)"></app-input>
-
-                    <label for="email">Email </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="emailReceived($event)"></app-input>
-
-                    <label for="contact">Contact Number </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="contactReceived($event)"></app-input>
-
-                    <label for="gender">Gender </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="genderReceived($event)"></app-input>
-
-                    <label for="age">Age </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="ageReceived($event)"></app-input>
-
-                    <label for="userID">User ID</label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="useridReceived($event)"></app-input>
-
-                    <label for="password">Password </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="pwdReceived($event)"></app-input>
-
-                </div>
-                <div id="login-btn">
-                    <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
+                <div class="main-form">
+                    <div class="form-group">
+                        <div class="form-flex">
+                            <label for="firstName">First Name </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="firstNameReceived($event) "></app-input>
+                        </div>
+                        <div class="form-flex">
+                            <label for="lastName">Last Name </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="lastNameReceived($event)"></app-input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-flex">
+                            <label for="email">Email </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="emailReceived($event)"></app-input>
+                        </div>
+                        <div class="form-flex">
+                            <label for="contact">Contact Number </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="contactReceived($event)"></app-input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-flex">
+                            <label for="gender">Gender </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="genderReceived($event)"></app-input>
+                        </div>
+                        <div class="form-flex">
+                            <label for="age">Age </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="ageReceived($event)"></app-input>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-flex">
+                            <label for="userID">User ID</label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="useridReceived($event)"></app-input>
+                        </div>
+                        <div class="form-flex">
+                            <label for="password">Password </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="pwdReceived($event)"></app-input>
+                        </div>
+                    </div>
+                    <div id="login-btn">
+                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
+                    </div>
                 </div>
             </form>
 
             <form *ngIf="patientActive==false" (ngSubmit)="onDocSubmit()">
-                <label for="doctorName">Doctor Name </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="docNameReceived($event) "></app-input>
-
-                <label for="aadhar">Aadhar No </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="aadharReceived($event)"></app-input>
-
-                <label for="regNO">Registration No </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="regNoReceived($event)"></app-input>
-
-                <label for="year">Year of Registration </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="yearReceived($event)"></app-input>
-
-                <label for="council">State Medical Council </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="councilReceived($event)"></app-input>
-
-                <label for="Qualification">Qualification </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="qualReceived($event)"></app-input>
-
-                <label for="email">Email </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="docEmailReceived($event)"></app-input>
-
-                <label for="contact">Contact Number </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="docContactReceived($event)"></app-input>
-
-                <label for="userID">User ID</label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="docIdReceived($event)"></app-input>
-
-                <label for="password">Password </label>
-                <app-input [ipConfig]="ipConfig" (outputEmit)="docPwdReceived($event)"></app-input>
-                <div id="login-btn">
-                    <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
+                <div class="main-form">
+                    <div class="form-group">
+                    <div class="form-flex">
+                        <label for="doctorName">Doctor Name </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="docNameReceived($event) "></app-input>
+                    </div>
+                    <div class="form-flex">
+                        <label for="aadhar">Aadhar No </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="aadharReceived($event)"></app-input>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="form-flex">
+                        <label for="regNO">Registration No </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="regNoReceived($event)"></app-input>
+                    </div>
+                    <div class="form-flex">
+                        <label for="year">Year of Registration </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="yearReceived($event)"></app-input>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="form-flex">
+                        <label for="council">State Medical Council </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="councilReceived($event)"></app-input>
+                    </div>
+                    <div class="form-flex">
+                        <label for="Qualification">Qualification </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="qualReceived($event)"></app-input>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="form-flex">
+                        <label for="email">Email </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="docEmailReceived($event)"></app-input>
+                    </div>
+                    <div class="form-flex">
+                        <label for="contact">Contact Number </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="docContactReceived($event)"></app-input>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                    <div class="form-flex">
+                        <label for="userID">User ID</label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="docIdReceived($event)"></app-input>
+                    </div>
+                    <div class="form-flex">
+                        <label for="password">Password </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="docPwdReceived($event)"></app-input>
+                    </div>
+                    </div>
+                    <div id="login-btn">
+                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
+                    </div>
                 </div>
             </form>
-            
+
 
         </div>
     </div>

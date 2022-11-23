@@ -17,7 +17,7 @@ ipConfig = {
   label: 'firstname',
   placeholder:'',
   styling: {  
-    width: '10em',
+    width: '12em',
     height: '1.6em'
   },
   validations : {
