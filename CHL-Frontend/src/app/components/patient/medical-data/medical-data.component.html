@@ -1,6 +1,9 @@
 <div id="main-container">
-    <app-navbar [btntext]="'Register'"></app-navbar>
+    <div id="nav">
+    <app-navbar [btntext]="'Register'"></app-navbar></div>
     <div id="parent-container">
+        <div class="sidebar">
+        <app-sidebar [menus]="tab"></app-sidebar></div>
         <div id="sub-container">
             <div id="text1"><a href="#" ></a>Back to Dashboard</div>
             <div id="text2">Update Details</div>

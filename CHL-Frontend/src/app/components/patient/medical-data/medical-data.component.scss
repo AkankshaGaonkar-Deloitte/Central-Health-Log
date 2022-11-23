@@ -3,8 +3,9 @@
     height: 100vh;
 }
 
-#nav-bar{
+#nav{
     height:7%;
+    width: 100%;
 }
 
  #parent-container{
@@ -15,13 +16,17 @@
     justify-content: center;
     align-items: center;
  }
-
+.sidebar{
+    height:100%;
+    width: 18%;
+}
 #sub-container{
     background-color: #ffff;
     box-shadow: -1px 2px 5px 4px rgba(115,115,115,0.29);
     border-radius: 6px;
-    width:85%; 
+    width:77%; 
     height: 90%;
+    margin: auto;
 }
 
 #container{
