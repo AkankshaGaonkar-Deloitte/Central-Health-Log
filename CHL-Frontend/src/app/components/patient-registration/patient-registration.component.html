@@ -15,7 +15,7 @@
             <div id="reg-heading">Register Account</div>
             <div class="select-user">
                 <p>Select the User Type</p>
-                <div id="buttons"><button [ngClass]="{'active': patientActive}"
+                <div id="buttons"><button type="button" [ngClass]="{'active': patientActive}"
                         (click)="addPatient($event)">Patient</button>
                     <button [ngClass]="{'active': !patientActive}" (click)="addDoctor($event)">Doctor</button>
                 </div>

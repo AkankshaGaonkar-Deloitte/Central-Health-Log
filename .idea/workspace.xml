@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="updated common-components acc to em">
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient-registration/patient-registration.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="updated common-components acc to em" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

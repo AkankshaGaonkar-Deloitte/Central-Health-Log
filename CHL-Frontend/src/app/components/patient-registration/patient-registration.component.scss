@@ -105,8 +105,8 @@ button {
     font-weight: 500;
     font-size: 0.8em;
     line-height: 1.1em;
-    width: 7.5em;
-    // height: 2.5em;
+    width: 8em;
+    height: 1.8em;
     border: 0.0625em solid #949494;
     border-radius: 0.0625em 0.0625em 0 0;
     box-sizing: border-box;
@@ -117,8 +117,6 @@ button {
 button:hover,
 button:focus ,button:active,.active{
     font-weight: 700;
-    font-size: 1em;
-    line-height: 1.1em;
     background: #DAFDFF;
     border: 0.0625em solid #1CB5BD;
     color: #1CB5BD;
