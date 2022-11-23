@@ -26,7 +26,8 @@ import { MedicationComponent } from './components/patient/medication/medication.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

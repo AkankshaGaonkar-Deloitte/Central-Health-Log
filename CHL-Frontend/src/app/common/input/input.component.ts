@@ -12,22 +12,19 @@ export class InputComponent implements OnInit {
   ipConfig = {
     type: 'tel',
     label: 'Ph no',
+    placeholder: '',
     styling: {  
       width: '200px',
       height: '40px'
     },
     validations : {
-      required: '',
+      required: 'false',
       minLength: '',
       maxLength: '',
       pattern: '[6-9]{1}[0-9]{9}'
     },
     patternErrorMessage: 'Invalid ph no'
   };
-
-  onClickEventReceived($event: string|number|null) {
-    console.log(`At parent ${$event}`);
-  }
 
   onClickEventReceived($event: string|number|null) {
     console.log(`At parent ${$event}`);
@@ -42,8 +39,10 @@ export class InputComponent implements OnInit {
   @Input() ipConfig = {
     type: 'text',
     label: 'Name',
+    placeholder: '',
     styling: {  
-      width: '800px'
+      width: '15em',
+      height:'2.4em'
     },
     validations : {
       required: '',
