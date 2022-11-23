@@ -26,9 +26,14 @@ export class PersonalDetailsComponent implements OnInit {
     });
 
   firstNameReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'firstName':$event}​​​​​​) }
+  emailReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
+  genderReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
   lastNameReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
+  contactNoReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
+  ageReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
+  addressReceived($event:any){​​​​​​ this.PersonalDetails.patchValue({​​​​​​'lastName':$event}​​​​​​) }
   
-  ipConfig = {
+  ipConfig1 = {
     type: 'text',
     label: 'firstname',
     placeholder:'',
@@ -46,20 +51,102 @@ export class PersonalDetailsComponent implements OnInit {
     };​​​​​​
     ipConfig2 = {
       type: 'text',
-      label: 'lastname',
+      label: 'email',
       placeholder:'',
       styling: {
-      width: '200px',
+      width: '300px',
       height: '40px'
       },
       validations : {
       required: '',
-      minLength: '3',
+      minLength: '',
       maxLength: '',
       pattern: ''
       },
       patternErrorMessage: ''
       };​​​​​​
+      ipConfig3 = {
+        type: 'text',
+        label: 'gender',
+        placeholder:'',
+        styling: {
+        width: '300px',
+        height: '40px'
+        },
+        validations : {
+        required: '',
+        minLength: '',
+        maxLength: '',
+        pattern: ''
+        },
+        patternErrorMessage: ''
+        };​​​​​​
+        ipConfig4 = {
+          type: 'text',
+          label: 'lastname',
+          placeholder:'',
+          styling: {
+          width: '300px',
+          height: '40px'
+          },
+          validations : {
+          required: '',
+          minLength: '3',
+          maxLength: '',
+          pattern: ''
+          },
+          patternErrorMessage: ''
+          };​​​​​​
+          ipConfig5 = {
+            type: 'text',
+            label: 'contactno',
+            placeholder:'',
+            styling: {
+            width: '300px',
+            height: '40px'
+            },
+            validations : {
+            required: '',
+            minLength: '3',
+            maxLength: '',
+            pattern: ''
+            },
+            patternErrorMessage: ''
+            };​​​​​​
+            ipConfig6 = {
+              type: 'text',
+              label: 'lastname',
+              placeholder:'',
+              styling: {
+              width: '300px',
+              height: '40px'
+              },
+              validations : {
+              required: '',
+              minLength: '3',
+              maxLength: '',
+              pattern: ''
+              },
+              patternErrorMessage: ''
+              };​​​​​​
+              ipConfig7 = {
+                type: 'text',
+                label: 'lastname',
+                placeholder:'',
+                styling: {
+                width: '900px',
+                height: '100px'
+                },
+                validations : {
+                required: '',
+                minLength: '3',
+                maxLength: '',
+                pattern: ''
+                },
+                patternErrorMessage: ''
+                };​​​​​​
+                
+              
 
   textBtnConfig = {
     styles: {
