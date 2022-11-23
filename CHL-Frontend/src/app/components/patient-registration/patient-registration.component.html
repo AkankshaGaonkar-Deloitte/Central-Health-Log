@@ -5,14 +5,18 @@
     <div id="sub-container">
         <div id="image-container">
             <img id="reg-image" src="assets/images/reg-img.png" alt="reg-image">
-            <div id="main-text">Your Health Comes First</div>
-            <div id="moto-text">With Central Health Log you can manage your personal health reports effectively. </div>
+            <div class="content">
+                <div id="main-text">Your Health Comes First</div>
+                <div id="moto-text">With Central Health Log you can manage your personal health reports effectively.
+                </div>
+            </div>
         </div>
         <div id="reg-container">
             <div id="reg-heading">Register Account</div>
             <div class="select-user">
                 <p>Select the User Type</p>
-                <div id="buttons"><button [ngClass]="{'active': patientActive}" (click)="addPatient($event)">Patient</button>
+                <div id="buttons"><button [ngClass]="{'active': patientActive}"
+                        (click)="addPatient($event)">Patient</button>
                     <button [ngClass]="{'active': !patientActive}" (click)="addDoctor($event)">Doctor</button>
                 </div>
             </div>
@@ -50,38 +54,39 @@
 
             <form *ngIf="patientActive==false" (ngSubmit)="onDocSubmit()">
                 <label for="doctorName">Doctor Name </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="docNameReceived($event) "></app-input>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="docNameReceived($event) "></app-input>
 
-                    <label for="aadhar">Aadhar No </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="aadharReceived($event)"></app-input>
+                <label for="aadhar">Aadhar No </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="aadharReceived($event)"></app-input>
 
-                    <label for="regNO">Registration No </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="regNoReceived($event)"></app-input>
+                <label for="regNO">Registration No </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="regNoReceived($event)"></app-input>
 
-                    <label for="year">Year of Registration </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="yearReceived($event)"></app-input>
+                <label for="year">Year of Registration </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="yearReceived($event)"></app-input>
 
-                    <label for="council">State Medical Council </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="councilReceived($event)"></app-input>
+                <label for="council">State Medical Council </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="councilReceived($event)"></app-input>
 
-                    <label for="Qualification">Qualification </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="qualReceived($event)"></app-input>
-                    
-                    <label for="email">Email </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="docEmailReceived($event)"></app-input>
+                <label for="Qualification">Qualification </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="qualReceived($event)"></app-input>
 
-                    <label for="contact">Contact Number </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="docContactReceived($event)"></app-input>
+                <label for="email">Email </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="docEmailReceived($event)"></app-input>
 
-                    <label for="userID">User ID</label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="docIdReceived($event)"></app-input>
+                <label for="contact">Contact Number </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="docContactReceived($event)"></app-input>
 
-                    <label for="password">Password </label>
-                    <app-input [ipConfig]="ipConfig" (outputEmit)="docPwdReceived($event)"></app-input>
+                <label for="userID">User ID</label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="docIdReceived($event)"></app-input>
+
+                <label for="password">Password </label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="docPwdReceived($event)"></app-input>
                 <div id="login-btn">
                     <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
                 </div>
             </form>
+            
 
         </div>
     </div>
