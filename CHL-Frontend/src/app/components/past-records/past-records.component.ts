@@ -99,6 +99,74 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
+  dateConfig = {
+    type: 'date',
+    label: 'Date',
+    placeholder: '',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  nameConfig = {
+    type: 'text',
+    label: 'Name',
+    placeholder: '',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: '',
+      minLength: '4',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  diagnosisConfig = {
+    type: 'text',
+    label: 'Diagnosis',
+    placeholder: '',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: '',
+      minLength: '4',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  descriptionConfig = {
+    type: 'file',
+    label: 'Description',
+    placeholder: '',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: 'false',
+      minLength: '4',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
 
   // textDropConfig = {
   //   styles: {
@@ -132,6 +200,15 @@ export class PastRecordsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
   }
 
 }
