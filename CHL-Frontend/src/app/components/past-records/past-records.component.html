@@ -42,35 +42,6 @@
                       <h4 class="modal-title">Add past record</h4>
                     </div>
                     <div class="modal-body">
-                      <!-- <form>
-                        <div class="flex-modal">
-                          <div class="top">
-                            <div class="left">
-                              <label>Date:</label>
-                              <app-input [ipConfig]="dateConfig" (outputEmit)="onClickEventReceived($event)">
-                              </app-input>
-                            </div>
-                            <div class="right">
-                              <label>Doctor name:</label>
-                              <app-input [ipConfig]="nameConfig" (outputEmit)="onClickEventReceived($event)">
-                              </app-input>
-                            </div>
-                          </div>
-                          <div class="bottom">
-                            <div class="left">
-                              <label>Diagnosis:</label>
-                              <app-input [ipConfig]="diagnosisConfig" (outputEmit)="onClickEventReceived($event)">
-                              </app-input>
-                            </div>
-                            <div class="right">
-                              <label>Prescription:</label>
-                              <app-input [ipConfig]="descriptionConfig" (outputEmit)="onClickEventReceived($event)">
-                              </app-input>
-                            </div>
-                          </div>
-                        </div>
-                      </form> -->
-
                       <div class="flex-modal">
                         <div class="grid-item">
                           <label>Date:</label>
@@ -96,9 +67,8 @@
 
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-danger" (click)="closePopup()">
-                        Close
-                      </button>
+                      <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"></app-button>
+                      <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2" (click)="closePopup()"></app-button>                     
                     </div>
                   </div>
                 </div>
