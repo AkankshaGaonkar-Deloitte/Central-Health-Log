@@ -1,5 +1,6 @@
 <div id="main-container">
-    <app-navbar [btntext]="'Register'"></app-navbar>
+    <div id="nav">
+    <app-navbar [btntext]="'Register'"></app-navbar></div>
     <div id="sub-container">
         <div id= image-container>
            <img src="assets/images/login_bg.png" alt="login-bg-image">
@@ -12,21 +13,21 @@
                     <div >
                         <span id="text">Select the User Type</span>
                         <div id="buttons">
-                            <app-button  [btntext]="'Patient'" [btnConfig]="textBtnConfig"></app-button>
-                            <app-button  [btntext]="'Doctor'" [btnConfig]="textBtnConfig"></app-button>
-                            <app-button  [btntext]="'Admin'" [btnConfig]="textBtnConfig"></app-button>
+                            <app-button  [btntext]="'Patient'" [btnConfig]="textBtnConfig2"></app-button>
+                            <app-button  [btntext]="'Doctor'" [btnConfig]="textBtnConfig2"></app-button>
+                            <app-button  [btntext]="'Admin'" [btnConfig]="textBtnConfig2"></app-button>
                             
                         </div>
                     </div>
                     <div id="form-container">
                         <div class="form-group">
                             <div id="name">Username</div> 
-                            <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
+                            <app-input [ipConfig]="ipConfig"></app-input>
                             </div>
                         
                         <div class="form-group">
                             <div id="pass">Password</div>
-                            <app-input [ipConfig]="ipConfig2" (outputEmit)="onClickEventReceived($event)"></app-input>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
                         </div>
                     </div>
                     <div id="login-btn">
