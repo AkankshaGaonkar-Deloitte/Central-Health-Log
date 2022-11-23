@@ -1,6 +1,6 @@
 
-  <button type="button" class="btn btn-outline-info" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
-   <b> {{btntext}}</b>
+  <button [type]="btnConfig.type" class="btn" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
+   {{btntext}}
   </button>
 
 
@@ -11,6 +11,7 @@
 
 <!-- textBtnConfig = {
   textBtnConfig = {
+    type:"submit",
     styles: {
        background: '#fff',
        color: '#1CB5BD',

@@ -32,23 +32,24 @@
       (change)="emitChanges()"
       [(ngModel)]="userInput"
       #inputField="ngModel"
-      [type]="inputType"
-      [pattern]="validations.pattern"
-      [minlength]="validations.minLength"
-      [maxlength]="validations.maxLength"
-      [required]="validations.required"
-      [ngStyle]="styling"
+      [type]="ipConfig.type"
+      [placeholder]="ipConfig.placeholder"
+      [pattern]="ipConfig.validations.pattern"
+      [minlength]="ipConfig.validations.minLength"
+      [maxlength]="ipConfig.validations.maxLength"
+      [required]="ipConfig.validations.required"
+      [ngStyle]="ipConfig.styling"
     />
     <div class="errors" *ngIf="inputField.invalid && (inputField.dirty || inputField.touched)">
       <div *ngIf="inputField.errors?.['required']">Required.</div>
-      <div *ngIf="inputField.errors?.['pattern']">Invalid input.</div>
+      <div *ngIf="inputField.errors?.['pattern']">{{ipConfig.patternErrorMessage}}</div>
       <div *ngIf="inputField.errors?.['minlength']">
-        {{ inputLabel }} must be at least {{ validations.minLength }} characters
+        {{ ipConfig.label }} must be at least {{ ipConfig.validations.minLength }} characters
         long.
       </div>
       <div *ngIf="inputField.errors?.['maxLength']">
-        {{ inputLabel }} must not be more than
-        {{ validations.minLength }} characters long.
+        {{ ipConfig.label }} must not be more than
+        {{ ipConfig.validations.minLength }} characters long.
       </div>
     </div>
 </div>

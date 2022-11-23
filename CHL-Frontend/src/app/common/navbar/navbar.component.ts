@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   @Input('btntext') Text: string = "Login";
   @Input('name') name: string = "Your Profile";
   @Input('button') btn: boolean = true;
-  
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -19,36 +19,17 @@ export class NavbarComponent implements OnInit {
 
   textDropConfig = {
     styles: {
-      width: '100%',
-      textAlign: 'center',
-      background: 'white',
-      borderRadius: '0px',
-      fontSize: '24px',
-      border: '0px',
-      outline: '0px',
-      fontFamily:'Montserrat'
+      fontSize: '0.7em',
+      outline: 'none',
 
     }
   };
   message: string = 'Click on a button';
   textBtnConfig = {
+    type:"button",
     styles: {
+      height: '1.2em',
 
-      backgroundColor: '#fff',
-      color: '#1CB5BD',
-      fontFamily: 'Montserrat',
-      fontSize: '28px',
-      borderColor: '#1CB5BD',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: '8px 54px',
-      gap: '10px',
-      width: '100%',
-      height: '40px',
-      border: '1px solid #1CB5BD',
-      borderRadius: '4px',  
     }
   };
 

@@ -9,20 +9,21 @@ export class InputComponent implements OnInit {
 
   /*
   //PARENT TS
-    type:string = 'text'
-  label:string = 'Name'
-
-  parentValidations = {
-    required: '',
-    minLength: '2',
-    maxLength: '',
-    pattern: ''
-  }
-
   ipConfig = {
-    styles: {  
-      width: '800px'
-    }
+    type: 'tel',
+    label: 'Ph no',
+    placeholder: '',
+    styling: {  
+      width: '200px',
+      height: '40px'
+    },
+    validations : {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: '[6-9]{1}[0-9]{9}'
+    },
+    patternErrorMessage: 'Invalid ph no'
   };
 
   onClickEventReceived($event: string|number|null) {
@@ -30,25 +31,31 @@ export class InputComponent implements OnInit {
   }
 
   //PARENT HTML
-  <div style="width: 500px;">
-    <app-input [inputType]="type" [inputLabel]="label" [validations]="parentValidations" [styling]="ipConfig.styles" (outputEmit)="onClickEventReceived($event)"></app-input>
-  </div>
+  <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
+
   
   */
 
-  @Input() inputType:string = 'text'
-  @Input() inputLabel:string = 'Enter password:'
-  @Input() styling = {}
+  @Input() ipConfig = {
+    type: 'text',
+    label: 'Name',
+    placeholder: '',
+    styling: {  
+      width: '15em',
+      height:'2.4em'
+    },
+    validations : {
+      required: '',
+      minLength: '2',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: 'Must be a valid input'
+  }
+
   @Output() outputEmit = new EventEmitter<string | number | null>()
 
   userInput:string = ''
-
-  @Input() validations = {
-    required: 'true',
-    minLength: '3',
-    maxLength: '',
-    pattern: ''
-  }
 
   emitChanges() {
     console.log(`At child: ${this.userInput}`)
