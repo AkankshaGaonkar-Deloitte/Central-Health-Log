@@ -26,7 +26,8 @@ import { PastRecordsComponent } from './components/past-records/past-records.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
