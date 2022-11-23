@@ -7,21 +7,23 @@
       <app-sidebar [menus]="sidebartabs"></app-sidebar>
     </div>
     <div id="sub-container">
-      <div id="text1"><a href="#"></a>Back to Dashboard</div>
-      <div id="update-btn">
-        <app-button class="sub-btn" [btntext]="'Add'" [btnConfig]="textBtnConfig"></app-button>
+      <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
+      <div id="add-btn">
+        <app-button
+          class="sub-btn"
+          [btntext]="'ADD'"
+          [btnConfig]="textBtnConfig1"
+        ></app-button>
       </div>
       <div id="text2">Current Medication</div>
       <div id="container1">
         <table>
-          <h2>Current Medication</h2>
           <tr bgcolor="#F5F5F5">
             <th>Medicine</th>
             <th>Dosage</th>
             <th>Date</th>
             <th>Record ID</th>
             <th>Action</th>
-
           </tr>
           <tr>
             <td>Albendazol</td>
@@ -29,7 +31,10 @@
             <td>21-Jul-2022</td>
             <td>223183</td>
             <td>
-              <app-button [btntext]="'Delete'" [btnConfig]="textBtnConfig"></app-button>
+              <app-button
+                [btntext]="'Delete'"
+                [btnConfig]="textBtnConfig"
+              ></app-button>
             </td>
           </tr>
           <tr>
@@ -38,7 +43,10 @@
             <td>21-Jul2022</td>
             <td>456378</td>
             <td>
-              <app-button [btntext]="'Delete'" [btnConfig]="textBtnConfig"></app-button>
+              <app-button
+                [btntext]="'Delete'"
+                [btnConfig]="textBtnConfig"
+              ></app-button>
             </td>
           </tr>
           <tr>
@@ -47,15 +55,17 @@
             <td>21-Jul-2022</td>
             <td>568929</td>
             <td>
-              <app-button [btntext]="'Delete'" [btnConfig]="textBtnConfig"></app-button>
+              <app-button
+                [btntext]="'Delete'"
+                [btnConfig]="textBtnConfig"
+              ></app-button>
             </td>
           </tr>
-
         </table>
       </div>
+      <div id="text2">Past Medication</div>
       <div id="container2">
         <table>
-          <h2>Past Medication</h2>
           <tr bgcolor="#F5F5F5">
             <th>Medicine</th>
             <th>Dosage</th>
@@ -82,7 +92,6 @@
           </tr>
         </table>
       </div>
-
     </div>
   </div>
 </div>

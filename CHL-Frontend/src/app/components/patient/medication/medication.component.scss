@@ -31,11 +31,13 @@
 }
 
 #container1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    margin: 1.25em;   
 }
+
 
 // #container3{
 //     display: flex;
@@ -47,7 +49,6 @@
 //     padding-top: 10px;
 
 // }
-
 // #container1{
 //     display: flex;
 //     flex-direction: row;
@@ -56,18 +57,19 @@
 //     width: 100%;
 // }
 
-// #container2{
-//     display: flex;
-//     flex-direction: row;
-//     justify-content: space-around;
-//     align-items: center;
-//     width: 100%;
-//     padding-left: 150px;
-//     padding-right: 150px;
-//     padding-top: 10px;
+#container2{
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
+    // align-items: center;
+    // width: 100%;
+    // padding-left: 150px;
+    // padding-right: 150px;
+    // padding-top: 10px;
+    margin: 1.25em;     
     
 
-// }
+}
 // #sub-container1,#sub-container2{
 //     width: 40%;
 //     padding: 0px 50px ;
@@ -111,29 +113,28 @@
 //     font-size: 25px;
 // }
 
-// #text2{
-//     font-family: 'Montserrat';
-//     font-style: normal;
-//     font-weight: 700;
-//     font-size: 25px;
-//     line-height: 29px;
-//     padding-top: 30px;
-//     padding-left: 40px  ;
-//     padding-bottom: 50px;
-//     color: #2C2D2D;
-// }
+#text2{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 29px;
+    // padding-top: 30px;
+    // padding-left: 40px;
+    // padding-bottom: 50px;
+    color: #2C2D2D;
+}
 
-// #text1{
-//     font-family: 'Montserrat';
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 20px;
-//     line-height: 20px;
-//     color: #737373;
-//     padding-top: 30px;
-//     padding-left: 40px;
-// }
-
+#text1{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #737373;
+    // padding-top: 30px;
+    // padding-left: 40px;
+}
 // #address{
 //     width:80%;
 //     height: 150px;
@@ -144,6 +145,13 @@
 //     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px #1CB5BD;
 //     outline: 0 none;
 // }
+
+#add-btn{
+    float: right;
+
+
+
+}
 table {
     font-family: 'Montserrat';
     font-style: normal;
@@ -157,5 +165,5 @@ table {
   td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 0.5em;
   }

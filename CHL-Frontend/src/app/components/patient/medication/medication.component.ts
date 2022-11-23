@@ -18,15 +18,28 @@ export class MedicationComponent implements OnInit {
       color: '#1CB5BD',
       fontFamily: 'Montserrat',
       fontSize: '20px',
-      gap: '10px',
-      width: '150px',
-      height: '40px',
+      width: '100px',
+      height: '20px',
       border: '1px solid #1CB5BD',
       borderRadius: '4px',
       
 
-    },text:['']
-  } 
+    }}
+    textBtnConfig1 = {
+      type:"button",
+      styles: {
+        backgroundColor: '#1CB5BD',
+        color: '#ffff',
+        fontFamily: 'Montserrat',
+        fontSize: '20px',
+        width: '150px',
+        height: '40px',
+        border: '1px solid #1CB5BD',
+        borderRadius: '4px',
+        
+  
+      }}
+  
   sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",0],'4':["Medications",'/medications',1],'5':["Past Records","/past-records",0]};
 
 }
