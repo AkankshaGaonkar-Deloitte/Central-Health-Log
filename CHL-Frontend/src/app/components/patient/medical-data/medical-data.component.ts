@@ -15,40 +15,46 @@ export class MedicalDataComponent implements OnInit {
 
   ngOnInit(): void {}
   PersonalDetails = new FormGroup({
-    firstName: new FormControl(''),
+    height: new FormControl(''),
     lastName: new FormControl(''),
-    email: new FormControl(''),
-    contact: new FormControl(''),
-    gender: new FormControl(''),
-    age: new FormControl(''),
-    address: new FormControl(''),
+    bmi: new FormControl(''),
+    immunization: new FormControl(''),
+    familyMedicalHistory: new FormControl(''),
+    weight: new FormControl(''),
+    allergies: new FormControl(''),
+    bloodGroup: new FormControl(''),
+    chronicHealthProblem: new FormControl('')
   });
 
-  firstNameReceived($event: any) {
-    this.PersonalDetails.patchValue({ firstName: $event });
+  heightReceived($event: any) {
+    this.PersonalDetails.patchValue({ height: $event });
   }
-  emailReceived($event: any) {
-    this.PersonalDetails.patchValue({ email: $event });
+  bmiReceived($event: any) {
+    this.PersonalDetails.patchValue({ bmi: $event });
   }
-  genderReceived($event: any) {
-    this.PersonalDetails.patchValue({ gender: $event });
+  immunizationsReceived($event: any) {
+    this.PersonalDetails.patchValue({ immunization: $event });
   }
-  lastNameReceived($event: any) {
-    this.PersonalDetails.patchValue({ lastName: $event });
+  familymedicalhistoryReceived($event: any) {
+    this.PersonalDetails.patchValue({ familyMedicalHistory: $event });
   }
-  contactNoReceived($event: any) {
-    this.PersonalDetails.patchValue({ contact: $event });
+  weightReceived($event: any) {
+    this.PersonalDetails.patchValue({ weight: $event });
   }
-  ageReceived($event: any) {
-    this.PersonalDetails.patchValue({ age: $event });
+  allergiesReceived($event: any) {
+    this.PersonalDetails.patchValue({ allergies: $event });
   }
-  addressReceived($event: any) {
-    this.PersonalDetails.patchValue({ address: $event });
+  bloodGroupReceived($event: any) {
+    this.PersonalDetails.patchValue({ bloodGroup: $event });
+  }
+
+  chronichealthproblemReceived($event: any) {
+    this.PersonalDetails.patchValue({ chronicHealthProblem: $event });
   }
 
   ipConfig1 = {
     type: 'text',
-    label: 'firstname',
+    label: 'height',
     placeholder: '',
     styling: {
       width: '300px',
@@ -56,7 +62,7 @@ export class MedicalDataComponent implements OnInit {
     },
     validations: {
       required: '',
-      minLength: '3',
+      minLength: '',
       maxLength: '',
       pattern: '',
     },
@@ -64,7 +70,7 @@ export class MedicalDataComponent implements OnInit {
   };
   ipConfig2 = {
     type: 'text',
-    label: 'email',
+    label: 'weight',
     placeholder: '',
     styling: {
       width: '300px',
@@ -80,7 +86,7 @@ export class MedicalDataComponent implements OnInit {
   };
   ipConfig3 = {
     type: 'text',
-    label: 'gender',
+    label: 'bmi',
     placeholder: '',
     styling: {
       width: '300px',
@@ -96,23 +102,7 @@ export class MedicalDataComponent implements OnInit {
   };
   ipConfig4 = {
     type: 'text',
-    label: 'lastname',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '3',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig5 = {
-    type: 'text',
-    label: 'contactno',
+    label: 'allergies',
     placeholder: '',
     styling: {
       width: '300px',
@@ -121,14 +111,30 @@ export class MedicalDataComponent implements OnInit {
     validations: {
       required: '',
       minLength: '',
-      maxLength: '10',
+      maxLength: '',
+      pattern: '',
+    },
+    patternErrorMessage: '',
+  };
+  ipConfig5 = {
+    type: 'text',
+    label: 'immunizations',
+    placeholder: '',
+    styling: {
+      width: '300px',
+      height: '40px',
+    },
+    validations: {
+      required: '',
+      minLength: '',
+      maxLength: '',
       pattern: '',
     },
     patternErrorMessage: '',
   };
   ipConfig6 = {
     type: 'text',
-    label: 'age',
+    label: 'blood group',
     placeholder: '',
     styling: {
       width: '300px',
@@ -144,11 +150,27 @@ export class MedicalDataComponent implements OnInit {
   };
   ipConfig7 = {
     type: 'text',
-    label: 'address',
+    label: 'family medical history',
     placeholder: '',
     styling: {
-      width: '900px',
-      height: '100px',
+      width: '300px',
+      height: '40px',
+    },
+    validations: {
+      required: '',
+      minLength: '',
+      maxLength: '',
+      pattern: '',
+    },
+    patternErrorMessage: '',
+  };
+  ipConfig8 = {
+    type: 'text',
+    label: 'chronic health problem',
+    placeholder: '',
+    styling: {
+      width: '300px',
+      height: '40px',
     },
     validations: {
       required: '',

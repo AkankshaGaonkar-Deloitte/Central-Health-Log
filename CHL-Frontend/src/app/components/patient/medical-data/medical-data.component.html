@@ -11,41 +11,49 @@
             <div id="container1">
               <div id="sub-container1">
                 <div class="form-group">
-                  <label for="first name">First name</label>
+                  <label for="height">Height</label>
                   <!-- <input id="first name" type="text" class="form-control" /> -->
-                  <app-input [ipConfig]="ipConfig1" (outputEmit)="firstNameReceived($event) "></app-input>
+                  <app-input [ipConfig]="ipConfig1" (outputEmit)="heightReceived($event) "></app-input>
                 </div>
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <app-input [ipConfig]="ipConfig2" (outputEmit)="emailReceived($event) "></app-input>
+                  <label for="bmi">BMI</label>
+                  <app-input [ipConfig]="ipConfig2" (outputEmit)="bmiReceived($event) "></app-input>
                 </div>
                 <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <app-input [ipConfig]="ipConfig3" (outputEmit)="genderReceived($event) "></app-input>
+                  <label for="immunizations">Immunizations</label>
+                  <app-input [ipConfig]="ipConfig3" (outputEmit)="immunizationsReceived($event) "></app-input>
+                </div>
+                <div class="form-group">
+                  <label for="familymedicalhistory">Family Medical History</label>
+                  <app-input [ipConfig]="ipConfig4" (outputEmit)="familymedicalhistoryReceived($event) "></app-input>
                 </div>
               </div>
               <div id="sub-container2">
                 <div class="form-group">
-                  <label for="Last name">Last name</label>
-                  <app-input [ipConfig]="ipConfig4" (outputEmit)="lastNameReceived($event) "></app-input>
+                  <label for="Weight">Weight</label>
+                  <app-input [ipConfig]="ipConfig5" (outputEmit)="weightReceived($event) "></app-input>
                 </div>
                 <div class="form-group">
-                  <label for="contactno">Contact No</label>
-                  <app-input [ipConfig]="ipConfig5" (outputEmit)="contactNoReceived($event) "></app-input>
+                  <label for="allergies">Allergies</label>
+                  <app-input [ipConfig]="ipConfig6" (outputEmit)="allergiesReceived($event) "></app-input>
                 </div>
                 <div class="form-group">
-                  <label for="contactno">Age</label>
-                  <app-input [ipConfig]="ipConfig6" (outputEmit)="ageReceived($event) "></app-input>
+                  <label for="bloodgroup">Blood Group</label>
+                  <app-input [ipConfig]="ipConfig7" (outputEmit)="bloodGroupReceived($event) "></app-input>
+                </div>
+                <div class="form-group">
+                  <label for="chronichealthproblem">Chronic Health Problem</label>
+                  <app-input [ipConfig]="ipConfig8" (outputEmit)="chronichealthproblemReceived($event) "></app-input>
                 </div>
               </div>
             </div>
-            <div id="container2">
+            <!-- <div id="container2">
               <div id="address-bar" class="form-group">
                 <label for="address">Address</label>
-                <app-input [ipConfig]="ipConfig7" (outputEmit)="addressReceived($event) "></app-input>
-              </div>
-            </div>
-            <div id="container3">
+                <app-input [ipConfig]="ipConfig8" (outputEmit)="addressReceived($event) "></app-input>
+              </div> -->
+            <!-- </div> -->
+            <div id="container2">
               <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
             </div>
           </form>
