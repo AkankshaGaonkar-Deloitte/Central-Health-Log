@@ -1,6 +1,6 @@
 <div id="main-container">
     <div id="nav">
-    <app-navbar [button]="false" [name]="'Akanksha Gaonkar'"></app-navbar></div>
+    <app-navbar [button]="false" [name]="'Dr.Tashmeet(Orthpaedic)'"></app-navbar></div>
     <div id="parent-container">
       <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
       <div id="sub-container">
@@ -11,9 +11,9 @@
             <div id="container1">
               <div id="sub-container1">
                 <div class="form-group">
-                  <label for="first name">First name</label>
+                  <label for="speciality">Speciality</label>
                   <!-- <input id="first name" type="text" class="form-control" /> -->
-                  <app-input [ipConfig]="ipConfig1" (outputEmit)="specialityReceived($event)"></app-input>
+                  <app-input [ipConfig]="ipConfig1" (outputEmit)="specialityReceived($event) "></app-input>
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
@@ -26,7 +26,7 @@
               </div>
               <div id="sub-container2">
                 <div class="form-group">
-                  <label for="Last name">Last name</label>
+                  <label for="consultationFee">Consultation Fee</label>
                   <app-input [ipConfig]="ipConfig4" (outputEmit)="consultationFeeReceived($event) "></app-input>
                 </div>
                 <div class="form-group">

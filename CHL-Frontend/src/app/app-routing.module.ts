@@ -1,6 +1,8 @@
-import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+
 
 const routes: Routes = [
   {
@@ -14,3 +16,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

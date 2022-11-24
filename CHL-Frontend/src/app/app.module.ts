@@ -10,6 +10,8 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
-    ButtonComponent
+    ButtonComponent,
+    DoctorProfileComponent
   ],
   imports: [
     BrowserModule,

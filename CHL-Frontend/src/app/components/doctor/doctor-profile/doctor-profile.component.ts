@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
@@ -8,15 +8,16 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class DoctorProfileComponent implements OnInit {
 
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
   menus = {
     '1': ['Dashboard', '/doctor-dashboard', 0],
     '2': ['Doctor Profile', '/doctor-profile', 1]
   };
 
-  
-  constructor() {}
-
-  ngOnInit(): void {}
   DoctorProfile = new FormGroup({
     speciality: new FormControl(''),
     email: new FormControl(''),
@@ -178,5 +179,6 @@ export class DoctorProfileComponent implements OnInit {
     console.log(this.DoctorProfile.value);
   }
 }
+
 
 
