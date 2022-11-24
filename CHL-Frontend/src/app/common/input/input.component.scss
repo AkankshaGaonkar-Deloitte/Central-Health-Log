@@ -64,7 +64,7 @@
 input {
   box-sizing: border-box;
   background: #ffffff;
-  border:  0.025em solid #949494;
+  border: 0.025em solid #949494;
   border-radius: 0.625em;
 
   font-family: "Montserrat";
@@ -80,7 +80,8 @@ input:hover {
 }
 
 input:focus {
-  border: 0.0625em solid #1cb5bd;
+  border: 1px solid #1CB5BD;
+  box-shadow: 0px 0px 6px rgba(28, 181, 189, 0.5);
   outline: none;
 }
 
