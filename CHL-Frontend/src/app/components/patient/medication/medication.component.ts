@@ -32,11 +32,11 @@ export class MedicationComponent implements OnInit {
         color: '#ffff',
         fontFamily: 'Montserrat',
         fontSize: '20px',
-        width: '150px',
+        width: '120px',
         height: '40px',
         border: '1px solid #1CB5BD',
         borderRadius: '4px',
-        
+      
   
       }}
   
