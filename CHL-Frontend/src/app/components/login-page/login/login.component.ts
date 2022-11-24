@@ -63,7 +63,8 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em'
+      height: '1.8em',
+      borderRadius:'0.35em'
     },
     validations: {
       required: '',
@@ -81,7 +82,8 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em'
+      height: '1.8em',
+      borderRadius:'0.35em'
     },
     validations: {
       required: '',
