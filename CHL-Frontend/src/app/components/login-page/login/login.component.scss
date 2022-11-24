@@ -51,8 +51,7 @@
             form {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-evenly;
-                height: 100%;
+                gap: 1.7em;
 
 
                 #login-heading {
@@ -105,7 +104,7 @@
                     font-size: 0.8em;
                     line-height: 1.1em;
                     width: 8em;
-                    height: 1.8em;
+                    height: 2em;
                     border: 0.0625em solid #949494;
                     border-radius: 0.0625em 0.0625em 0 0;
                     box-sizing: border-box;
@@ -132,12 +131,14 @@
                     color: #1A1A1A;
                 }
 
-                #login-btn {
-                    width: 6em;
-                    text-align: center;
-
-                }
+                
+            }
+            #login-btn {
+                width: 6em;
+                margin-bottom: 1em;
+    
             }
         }
+        
     }
 }
