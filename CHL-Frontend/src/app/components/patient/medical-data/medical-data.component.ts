@@ -1,3 +1,4 @@
+
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -14,7 +15,7 @@ export class MedicalDataComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  PersonalDetails = new FormGroup({
+  MedicationComponent = new FormGroup({
     height: new FormControl(''),
     lastName: new FormControl(''),
     bmi: new FormControl(''),
@@ -27,29 +28,29 @@ export class MedicalDataComponent implements OnInit {
   });
 
   heightReceived($event: any) {
-    this.PersonalDetails.patchValue({ height: $event });
+    this.MedicationComponent .patchValue({ height: $event });
   }
   bmiReceived($event: any) {
-    this.PersonalDetails.patchValue({ bmi: $event });
+    this.MedicationComponent .patchValue({ bmi: $event });
   }
   immunizationsReceived($event: any) {
-    this.PersonalDetails.patchValue({ immunization: $event });
+    this.MedicationComponent .patchValue({ immunization: $event });
   }
   familymedicalhistoryReceived($event: any) {
-    this.PersonalDetails.patchValue({ familyMedicalHistory: $event });
+    this.MedicationComponent .patchValue({ familyMedicalHistory: $event });
   }
   weightReceived($event: any) {
-    this.PersonalDetails.patchValue({ weight: $event });
+    this.MedicationComponent.patchValue({ weight: $event });
   }
   allergiesReceived($event: any) {
-    this.PersonalDetails.patchValue({ allergies: $event });
+    this.MedicationComponent.patchValue({ allergies: $event });
   }
   bloodGroupReceived($event: any) {
-    this.PersonalDetails.patchValue({ bloodGroup: $event });
+    this.MedicationComponent.patchValue({ bloodGroup: $event });
   }
 
   chronichealthproblemReceived($event: any) {
-    this.PersonalDetails.patchValue({ chronicHealthProblem: $event });
+    this.MedicationComponent.patchValue({ chronicHealthProblem: $event });
   }
 
   ipConfig1 = {
@@ -194,6 +195,6 @@ export class MedicalDataComponent implements OnInit {
     type: 'submit',
   };
   onupdate() {
-    console.log(this.PersonalDetails.value);
+    console.log(this.MedicationComponent.value);
   }
 }
