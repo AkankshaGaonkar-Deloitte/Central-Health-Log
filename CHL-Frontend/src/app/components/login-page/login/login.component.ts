@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
       maxLength: '',
       pattern: ''
     },
-    patternErrorMessage: 'Must be a valid input'
+    patternErrorMessage: 'Please enter a valid username'
   }
 
 
@@ -88,10 +88,10 @@ export class LoginComponent implements OnInit {
     validations: {
       required: '',
       minLength: '5',
-      maxLength: '20',
+      maxLength: '',
       pattern: ''
     },
-    patternErrorMessage: 'Must be a valid password'
+    patternErrorMessage: 'Enter a valid password'
   }
 
   textBtnConfig = {
