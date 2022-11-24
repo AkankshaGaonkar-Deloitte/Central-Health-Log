@@ -13,7 +13,7 @@ export class DoctorProfileComponent implements OnInit {
     '2': ['Doctor Profile', '/doctor-profile', 1]
   };
 
-  @Input('btntext') btntext: string = 'Login';
+  
   constructor() {}
 
   ngOnInit(): void {}
