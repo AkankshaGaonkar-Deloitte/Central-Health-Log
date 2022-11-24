@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {  
       width: '15em',
-      height:'2.4em'
+      height:'2em'
     },
     validations : {
       required: '',
@@ -31,18 +31,19 @@ export class LoginComponent implements OnInit {
   ipConfig2 = {
     type: 'password',
     label: 'password',
+    placeholder: '',
     styling: {  
-      width: '200px',
-      height: '40px'
+      width: '15em',
+      height:'2em'
     },
     validations : {
       required: '',
-      minLength: '3',
+      minLength: '2',
       maxLength: '',
-      pattern:''
+      pattern: ''
     },
-    patternErrorMessage: ''
-  };
+    patternErrorMessage: 'Must be a valid input'
+  }
   
 
 
