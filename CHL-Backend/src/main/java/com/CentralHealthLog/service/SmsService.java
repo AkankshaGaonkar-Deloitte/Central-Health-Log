@@ -5,6 +5,7 @@ import com.CentralHealthLog.dto.StoreOTP;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 import com.twilio.type.PhoneNumber;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.util.MultiValueMap;
 
@@ -12,9 +13,12 @@ import java.text.ParseException;
 
 @Component
 public class SmsService {
-    private final String ACCOUNT_SID="";
-    private final String AUTH_TOKEN="";
-    private final String FROM_NUMBER="";
+    @Value("${twilio.account_sid}")
+    private String ACCOUNT_SID;
+    @Value("${twilio.auth_token}")
+    private String AUTH_TOKEN;
+    @Value("${twilio.from_number}")
+    private String FROM_NUMBER;
 
     public void send(SmsPojo sms) throws ParseException{
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
