@@ -7,6 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PastRecordsComponent implements OnInit {
 
+  textDropConfig = {
+    styles: {
+      background: '#fff',
+      color: '#1CB5BD',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      lineHeight: '1.5em',
+      textAlign: 'center'
+    }
+  }
+
+  optionList = [
+    "Date",
+    "Severity"
+  ];
+
   textBtnConfig = {
     type: "submit",
     styles: {
