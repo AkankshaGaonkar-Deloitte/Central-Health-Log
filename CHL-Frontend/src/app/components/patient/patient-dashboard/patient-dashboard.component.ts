@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Pulse } from 'src/app/model/Pulse';
+import { GraphServiceService } from 'src/app/service/graph-service.service';
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -9,15 +11,13 @@ import { Component, OnInit } from '@angular/core';
 export class PatientDashboardComponent implements OnInit {
 
   tabs={'1':["Dashboard","/patient-dashboard",1],'2':["Personal Details","/personal-details",0],'3':["Medical Pulse","/medical-Pulse",0],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
-  // url = 'http://localhost:8080/pulse';
-  // data!: Pulse[];
-  // date=[];
-  // pulse !:any[];
-  // chart =[];
-
-  public SystemName: string = "BP";
+  // pulse:Pulse=new Pulse();
+  pulse!: Pulse[];
+  pulseRate!: Array<Number>;
+  date!: Array<Date>;
+  public SystemName: string = "Pulse";
   firstCopy = false;
-
+n=this.pulse.length
   // data
   public lineChartData: Array<number> = [ 100,80,49];
  
@@ -26,7 +26,10 @@ export class PatientDashboardComponent implements OnInit {
         label: this.SystemName
       }
   ];
-  // labels
+
+  for ( var i = 0; i < n; i++) {
+   console.log('hi')
+  }
   public lineChartLabels: Array<any> = ["2018-01-29 ", "2018-01-29 ", "2018-01-29 "];
   
   public lineChartOptions: any = {
@@ -50,7 +53,7 @@ export class PatientDashboardComponent implements OnInit {
         anchor: 'end',
         //color: "#2756B3",
         color: "#222",
-
+        fill: true,
         font: {
           family: 'FontAwesome',
           size: 14
@@ -74,8 +77,6 @@ export class PatientDashboardComponent implements OnInit {
 
 
 
-  public ChartType = 'bar';
-
   public chartClicked(e: any): void {
     console.log(e);
   }
@@ -83,9 +84,11 @@ export class PatientDashboardComponent implements OnInit {
     console.log(e);
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private graphService: GraphServiceService) { }
 
   ngOnInit(): void {
+    this.graphService.getPulse().subscribe(data=>{this.pulse=data;console.warn(this.pulse)});
+    
     
   }
 }
