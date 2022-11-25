@@ -1,6 +1,6 @@
 package com.CentralHealthLog.service;
 
-import com.CentralHealthLog.dto.SmsPojo;
+import com.CentralHealthLog.dto.SMSPojo;
 import com.CentralHealthLog.dto.StoreOTP;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -20,7 +20,7 @@ public class SmsService {
     @Value("${twilio.from_number}")
     private String FROM_NUMBER;
 
-    public void send(SmsPojo sms) throws ParseException{
+    public void send(SMSPojo sms) throws ParseException{
         Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
         int min = 100000;

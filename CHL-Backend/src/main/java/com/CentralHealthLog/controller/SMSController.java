@@ -3,7 +3,7 @@ package com.CentralHealthLog.controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-import com.CentralHealthLog.dto.SmsPojo;
+import com.CentralHealthLog.dto.SMSPojo;
 import com.CentralHealthLog.service.SmsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,7 +25,7 @@ public class SMSController {
     private final String  TOPIC_DESTINATION = "/lesson/sms";
     //You can send SMS in verified Number
     @PostMapping("/mobileNo")
-    public ResponseEntity<String> smsSubmit(@RequestBody SmsPojo sms) {
+    public ResponseEntity<String> smsSubmit(@RequestBody SMSPojo sms) {
         try{
             System.out.println("hello");
             service.send(sms);
