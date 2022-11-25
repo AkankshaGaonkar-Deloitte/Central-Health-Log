@@ -1,0 +1,24 @@
+<div class="main-container">
+    <div id="nav">
+        <app-navbar [button]="false" [name]="'Akansha Gaonkar'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+        <div class="flex-item1">
+            <app-sidebar [menus]="tabs"></app-sidebar>
+        </div>
+        <div class="flex-item2">
+            <p id="heading"><b>Dashboard</b></p>
+                <div style="display: block;" class="chart">
+                    <canvas baseChart
+                          
+                            [datasets]="labelMFL"
+                            [labels]="lineChartLabels"
+                            [options]="lineChartOptions"
+                            [type]="'line'"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+                  
+            </div>
+        </div>
+    </div>
+</div>

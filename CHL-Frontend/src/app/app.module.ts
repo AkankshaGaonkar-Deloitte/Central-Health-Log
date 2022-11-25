@@ -10,6 +10,9 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgChartsModule } from 'ng2-charts';
+import { HttpClientModule } from '@angular/common/http';
+import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +23,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
-    PersonalDetailsComponent
+    PersonalDetailsComponent,
+    PatientDashboardComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
