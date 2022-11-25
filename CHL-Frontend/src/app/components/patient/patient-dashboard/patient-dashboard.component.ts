@@ -17,93 +17,107 @@ export class PatientDashboardComponent implements OnInit {
   pulse!: Array<Pulse>;
   pulseRate!: Array<Number>;
   date!: Array<Date>;
+  
+
+ 
   public SystemName: string = "Pulse";
   firstCopy = false;
-  // data
-  public lineChartData: Array<number> = [120,70,69];
- 
-  public labelMFL: Array<any> = [
-      { data: this.lineChartData,
-        label: this.SystemName
-      }
-  ];
-
- 
-  public lineChartLabels: Array<any> =["2018-01-29 10:00:00", "2018-01-29 10:27:00", "2018-01-29 10:28:00"];
-  
-  public lineChartOptions: any = {
-    responsive: true,
-    scales : {
-      yAxes: [{
-        ticks: {
-          max : 60,
-          min : 0,
-        }
-      }],
-      xAxes: [{
-  
- 
-        }],
-    },
-      plugins: {
-      datalabels: {
-        display: true,
-        align: 'top',
-        anchor: 'end',
-        //color: "#2756B3",
-        color: "#222",
-        fill: true,
-        font: {
-          family: 'FontAwesome',
-          size: 14
-        },
-      
-      },
-      deferred: false
-
-    },
-
-  };
-
-   _lineChartColors:Array<any> = [{
-       backgroundColor: 'red',
-        borderColor: 'red',
-        pointBackgroundColor: 'red',
-        pointBorderColor: 'red',
-        pointHoverBackgroundColor: 'red',
-        pointHoverBorderColor: 'red' 
-      }];
-
-
-
   public chartClicked(e: any): void {
     console.log(e);
   }
   public chartHovered(e: any): void {
     console.log(e);
   }
+  public lineChartData: Array<any> = [];
+  public lineChartLabels: Array<any> = [];
+  
+  public labelMFL: Array<any> = [
+    { data: this.lineChartData,
+      label: this.SystemName
+    }
+];
+
+//       // data
+   
+   
+  
+    
+      public lineChartOptions: any = {
+        responsive: true,
+        scales : {
+          yAxes: [{
+            ticks: {
+              max : 60,
+              min : 0,
+            }
+          }],
+          xAxes: [{
+      
+     
+            }],
+        },
+          plugins: {
+          datalabels: {
+            display: true,
+            align: 'top',
+            anchor: 'end',
+            //color: "#2756B3",
+            color: "#222",
+            fill: true,
+            font: {
+              family: 'FontAwesome',
+              size: 14
+            },
+          
+          },
+          deferred: false
+    
+        },
+    
+      };
+    
+       _lineChartColors:Array<any> = [{
+           backgroundColor: 'red',
+            borderColor: 'red',
+            pointBackgroundColor: 'red',
+            pointBorderColor: 'red',
+            pointHoverBackgroundColor: 'red',
+            pointHoverBorderColor: 'red' 
+          }];
+    
+
 
   constructor(private graphService: GraphServiceService) { }
-
+  
   ngOnInit(): void {
-    let DateArry!:  Array<any>;
-    let pulseRate!:Array<number>;
+    let DateArry:  Array<any> = [];
+    let pulseRate:Array<any> = [];
+
+
+  //   for (var i = 0; i < 7; i++) {
+  //     blinkArry.push(Math.round(Math.random() * 100));
+  //     startDateArry.push(Math.round(Math.random() * 100));
+  //   }
+
+
     this.graphService.getPulse().subscribe(data=>
       {
       console.warn(data);
       console.warn(data[0].pulse);
      
       for ( let i in data) {
-        DateArry.push(data[i].date);
-        pulseRate.push(data[i].pulse);}
-        console.warn(DateArry)
-    });
+        // this.lineChartLabels.push(data[i].date);
+        // this.lineChartData.push(data[i].pulse);}
+        // console.warn("my label in " + this.lineChartLabels) 
+        // console.warn("my data " + this.lineChartData) 
+    }
    
-    this.lineChartLabels=DateArry;
-    this.lineChartData=pulseRate;
-    console.warn('hi',this.lineChartLabels)
-    console.warn('hi',this.lineChartData)
-  }}
+  
+  });}
+    // this.lineChartLabels=DateArry;
+    // this.lineChartData=pulseRate;
+    // console.warn('hi',this.lineChartLabels)
+    // console.warn('hi',this.lineChartData)
 // for (let key in menus) {
 //   if(menus[key]==tab.value){
 //      menus[key][2]=1;
@@ -112,3 +126,4 @@ export class PatientDashboardComponent implements OnInit {
 //   }
 
 //  }
+}
