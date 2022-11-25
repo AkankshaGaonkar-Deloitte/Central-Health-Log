@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+
 import { Component, OnInit } from '@angular/core';
+import { ChartOptions, ChartType } from 'chart.js';
 import { Pulse } from 'src/app/model/Pulse';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 
@@ -9,17 +10,17 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
   styleUrls: ['./patient-dashboard.component.scss']
 })
 export class PatientDashboardComponent implements OnInit {
+ 
 
   tabs={'1':["Dashboard","/patient-dashboard",1],'2':["Personal Details","/personal-details",0],'3':["Medical Pulse","/medical-Pulse",0],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
   // pulse:Pulse=new Pulse();
-  pulse!: Pulse[];
+  pulse!: Array<Pulse>;
   pulseRate!: Array<Number>;
   date!: Array<Date>;
   public SystemName: string = "Pulse";
   firstCopy = false;
-n=this.pulse.length
   // data
-  public lineChartData: Array<number> = [ 100,80,49];
+  public lineChartData: Array<number> = [120,70,69];
  
   public labelMFL: Array<any> = [
       { data: this.lineChartData,
@@ -27,10 +28,8 @@ n=this.pulse.length
       }
   ];
 
-  for ( var i = 0; i < n; i++) {
-   console.log('hi')
-  }
-  public lineChartLabels: Array<any> = ["2018-01-29 ", "2018-01-29 ", "2018-01-29 "];
+ 
+  public lineChartLabels: Array<any> =["2018-01-29 10:00:00", "2018-01-29 10:27:00", "2018-01-29 10:28:00"];
   
   public lineChartOptions: any = {
     responsive: true,
@@ -87,8 +86,29 @@ n=this.pulse.length
   constructor(private graphService: GraphServiceService) { }
 
   ngOnInit(): void {
-    this.graphService.getPulse().subscribe(data=>{this.pulse=data;console.warn(this.pulse)});
-    
-    
-  }
-}
+    let DateArry!:  Array<any>;
+    let pulseRate!:Array<number>;
+    this.graphService.getPulse().subscribe(data=>
+      {
+      console.warn(data);
+      console.warn(data[0].pulse);
+     
+      for ( let i in data) {
+        DateArry.push(data[i].date);
+        pulseRate.push(data[i].pulse);}
+        console.warn(DateArry)
+    });
+   
+    this.lineChartLabels=DateArry;
+    this.lineChartData=pulseRate;
+    console.warn('hi',this.lineChartLabels)
+    console.warn('hi',this.lineChartData)
+  }}
+// for (let key in menus) {
+//   if(menus[key]==tab.value){
+//      menus[key][2]=1;
+//   }else{
+//    menus[key][2]=0;
+//   }
+
+//  }

@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
+// import { ChartsModule } from 'ng2-charts';
+// import { Label } from 'ng2-charts';
 
 @NgModule({
   declarations: [
