@@ -1,1 +1,27 @@
-<p>navbar works!</p>
+<nav class="navbar">
+  <div class="name">
+    <img class="plus" src="assets/images/plus_image.png" /><b>Central <span> Health Log</span></b>
+  </div>
+  <div>
+    <div class="navbar-nav">
+      <div id="button" *ngIf="btn">
+        <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig" (onClick)="onClickEventReceived($event)">
+        </app-button>
+      </div>
+      <div id="Profile" *ngIf="!btn">
+        <img class="image" src="assets/images/Person.png">
+        <app-dropdown (value)="saveValue($event)" class="dropdown" [states]="[name,'Logout']"
+          [dropConfig]="textDropConfig">
+        </app-dropdown>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- How to use -->
+<!-- for button in navbar -->
+<!-- <app-navbar [button]="true" [btntext]="'Register'"></app-navbar> -->
+<!-- for profile and logout in navbar -->
+<!-- <app-navbar [button]="false" [name]="'Dr or Patient Name'"></app-navbar> -->
