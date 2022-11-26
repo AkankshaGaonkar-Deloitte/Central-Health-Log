@@ -179,4 +179,5 @@ export class PersonalDetailsComponent implements OnInit {
   onupdate() {
     console.log(this.PersonalDetails.value);
   }
+  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",1],'3':["Medical Data","/medical-data",0],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
 }
