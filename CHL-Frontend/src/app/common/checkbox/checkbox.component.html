@@ -1,1 +1,11 @@
-<p>checkbox works!</p>
+<div *ngFor="let item of checkList" (change)="liveCheck(check.value)">
+  <input
+    [ngStyle]="checkboxConfig.styles"
+    #check
+    type="checkbox"
+    name="checkbox"
+    value="{{ item }}"
+  />
+  <label>{{ item }}</label
+  ><br />
+</div>

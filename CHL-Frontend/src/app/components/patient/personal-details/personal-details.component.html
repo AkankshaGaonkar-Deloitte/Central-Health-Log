@@ -1,0 +1,55 @@
+<div id="main-container">
+  <div id="nav">
+  <app-navbar [button]="false" [name]="'Akanksha Gaonkar'"></app-navbar></div>
+  <div id="parent-container">
+    <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
+    <div id="sub-container">
+      <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
+      <div id="text2">Update Details</div>
+      <div id="container">
+        <form (ngSubmit)="onupdate()">
+          <div id="container1">
+            <div id="sub-container1">
+              <div class="form-group">
+                <label for="first name">First name</label>
+                <!-- <input id="first name" type="text" class="form-control" /> -->
+                <app-input [ipConfig]="ipConfig1" (outputEmit)="firstNameReceived($event) "></app-input>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <app-input [ipConfig]="ipConfig2" (outputEmit)="emailReceived($event) "></app-input>
+              </div>
+              <div class="form-group">
+                <label for="gender">Gender</label>
+                <app-input [ipConfig]="ipConfig3" (outputEmit)="genderReceived($event) "></app-input>
+              </div>
+            </div>
+            <div id="sub-container2">
+              <div class="form-group">
+                <label for="Last name">Last name</label>
+                <app-input [ipConfig]="ipConfig4" (outputEmit)="lastNameReceived($event) "></app-input>
+              </div>
+              <div class="form-group">
+                <label for="contactno">Contact No</label>
+                <app-input [ipConfig]="ipConfig5" (outputEmit)="contactNoReceived($event) "></app-input>
+              </div>
+              <div class="form-group">
+                <label for="contactno">Age</label>
+                <app-input [ipConfig]="ipConfig6" (outputEmit)="ageReceived($event) "></app-input>
+              </div>
+            </div>
+          </div>
+          <div id="container2">
+            <div id="address-bar" class="form-group">
+              <label for="address">Address</label>
+              <app-input [ipConfig]="ipConfig7" (outputEmit)="addressReceived($event) "></app-input>
+            </div>
+          </div>
+          <div id="container3">
+            <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
