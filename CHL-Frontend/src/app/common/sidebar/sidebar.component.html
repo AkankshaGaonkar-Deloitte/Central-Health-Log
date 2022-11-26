@@ -1,1 +1,20 @@
-<p>sidebar works!</p>
+<nav class="sidebar">
+    <div class="tab"  (click)="onClick(menu,menus)" [ngClass]="{'active': menu.value[2]===1}" *ngFor="let menu of menus | keyvalue" id="sidebar-element" routerLink={{menu.value[1]}}>
+        <div class="item">
+        <img id="sidebar-icon" *ngIf="menu.value[0]==='Dashboard'" src="assets/images/Dashboard-icon.svg" width="25"
+            height="25">
+        <img id="sidebar-icon" *ngIf="menu.value[0]!='Dashboard'" src="assets/images/Sidebar-icons.svg" width="25"
+            height="25">
+        {{menu.value[0]}}
+    </div>
+</div>
+
+</nav>
+
+
+<!-- in parent.component.ts file -->
+<!-- in whichever component u r using sidebar,give the value there as 1 and 0 in others -->
+<!-- tabs={'1':["Dashboard","/patient-dashboard",1],'2':["Patient Details","/patient-details",0],'3':["Past Records","/past-records",0]}; -->
+
+<!-- in parent/html -->
+<!-- <app-sidebar [menus]="tabs"></app-sidebar> -->
