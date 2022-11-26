@@ -7,7 +7,7 @@ const routes: Routes = [
   {
     path : 'medication',
     component : MedicationComponent
-  }
+  },
   {
     path : 'personal-details',
     component : PersonalDetailsComponent
