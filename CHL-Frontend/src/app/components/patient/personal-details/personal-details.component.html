@@ -5,6 +5,10 @@
     <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
     <div id="sub-container">
       <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
+      <div>{{patient.id}}</div>
+      <div>{{patient.firstname}}</div>
+      <div>{{patient.age}}</div>
+      <div>{{patient.lastname}}</div>
       <div id="text2">Update Details</div>
       <div id="container">
         <form (ngSubmit)="onupdate()">
@@ -53,3 +57,4 @@
     </div>
   </div>
 </div>
+

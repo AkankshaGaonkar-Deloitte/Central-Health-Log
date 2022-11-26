@@ -12,6 +12,7 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationComponent } from './components/patient/medication/medication.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MedicationComponent } from './components/patient/medication/medication.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

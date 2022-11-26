@@ -1,16 +1,19 @@
-
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-medical-data',
   templateUrl: './medical-data.component.html',
-  styleUrls: ['./medical-data.component.scss']
+  styleUrls: ['./medical-data.component.scss'],
 })
 export class MedicalDataComponent implements OnInit {
-
- 
-  menus={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",0],'4':["Medications","/medications",0],'5':["Past Records","/past-records",0]}
+  menus = {
+    '1': ['Dashboard', '/patient-dashboard', 0],
+    '2': ['Personal Details', '/personal-details', 0],
+    '3': ['Medical Data', '/medical-data', 0],
+    '4': ['Medications', '/medications', 0],
+    '5': ['Past Records', '/past-records', 0],
+  };
   @Input('btntext') btntext: string = 'Login';
   constructor() {}
 
@@ -24,20 +27,20 @@ export class MedicalDataComponent implements OnInit {
     weight: new FormControl(''),
     allergies: new FormControl(''),
     bloodGroup: new FormControl(''),
-    chronicHealthProblem: new FormControl('')
+    chronicHealthProblem: new FormControl(''),
   });
 
   heightReceived($event: any) {
-    this.MedicationComponent .patchValue({ height: $event });
+    this.MedicationComponent.patchValue({ height: $event });
   }
   bmiReceived($event: any) {
-    this.MedicationComponent .patchValue({ bmi: $event });
+    this.MedicationComponent.patchValue({ bmi: $event });
   }
   immunizationsReceived($event: any) {
-    this.MedicationComponent .patchValue({ immunization: $event });
+    this.MedicationComponent.patchValue({ immunization: $event });
   }
   familymedicalhistoryReceived($event: any) {
-    this.MedicationComponent .patchValue({ familyMedicalHistory: $event });
+    this.MedicationComponent.patchValue({ familyMedicalHistory: $event });
   }
   weightReceived($event: any) {
     this.MedicationComponent.patchValue({ weight: $event });
@@ -197,5 +200,4 @@ export class MedicalDataComponent implements OnInit {
   onupdate() {
     console.log(this.MedicationComponent.value);
   }
-  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",1],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
 }

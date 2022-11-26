@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./medication.component.scss']
 })
 export class MedicationComponent implements OnInit {
+  menus = {
+    '1': ['Dashboard', '/patient-dashboard', 0],
+    '2': ['Personal Details', '/personal-details', 0],
+    '3': ['Medical Data', '/medical-data', 0],
+    '4': ['Medications', '/medications', 1],
+    '5': ['Past Records', '/past-records', 0],
+  };
 
   constructor() { }
 
@@ -39,7 +46,5 @@ export class MedicationComponent implements OnInit {
       
   
       }}
-  
-  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",0],'4':["Medications",'/medications',1],'5':["Past Records","/past-records",0]};
 
 }

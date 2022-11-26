@@ -1,3 +1,5 @@
+import { PatientService } from './../../../service/patient/patient.service';
+import { Patient } from './../../../model/patient/patient';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -15,10 +17,16 @@ export class PersonalDetailsComponent implements OnInit {
     '5': ['Past Records', '/past-records', 0],
   };
 
-  @Input('btntext') btntext: string = 'Login';
-  constructor() {}
+  patient!: Patient;
 
-  ngOnInit(): void {}
+  @Input('btntext') btntext: string = 'Login';
+  constructor(public patientservice:PatientService) {
+
+  }
+
+  ngOnInit(): void {
+    this.getPatientById();
+  }
   PersonalDetails = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),
@@ -179,5 +187,11 @@ export class PersonalDetailsComponent implements OnInit {
   onupdate() {
     console.log(this.PersonalDetails.value);
   }
-  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",1],'3':["Medical Data","/medical-data",0],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
+
+  getPatientById(){
+     return this.patientservice.getPatientDetailsById(1).subscribe(data => {
+      this.patient = data;
+    });
+    
+  }
 }
