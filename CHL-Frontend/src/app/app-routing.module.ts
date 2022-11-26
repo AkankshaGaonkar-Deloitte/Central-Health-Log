@@ -10,7 +10,7 @@ const routes: Routes = [
     component : MedicalDataComponent
   },
   {
-    path : 'medication',
+    path : 'medications',
     component : MedicationComponent
   },
   {

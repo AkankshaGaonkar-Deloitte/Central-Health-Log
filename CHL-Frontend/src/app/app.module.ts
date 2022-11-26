@@ -9,7 +9,6 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
-import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationComponent } from './components/patient/medication/medication.component';
@@ -23,8 +22,8 @@ import { MedicationComponent } from './components/patient/medication/medication.
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
-    MedicalDataComponent
-    PersonalDetailsComponent
+    MedicalDataComponent,
+    PersonalDetailsComponent,
     PersonalDetailsComponent,
     ButtonComponent,
     MedicationComponent

@@ -197,4 +197,5 @@ export class MedicalDataComponent implements OnInit {
   onupdate() {
     console.log(this.MedicationComponent.value);
   }
+  sidebartabs={'1':["Dashboard","/patient-dashboard",0],'2':["Personal Details","/personal-details",0],'3':["Medical Data","/medical-data",1],'4':["Medications",'/medications',0],'5':["Past Records","/past-records",0]};
 }
