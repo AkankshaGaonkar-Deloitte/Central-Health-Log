@@ -12,6 +12,7 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
+import { MedicationComponent } from './components/patient/medication/medication.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,9 @@ import { MedicalDataComponent } from './components/patient/medical-data/medical-
     CheckboxComponent,
     MedicalDataComponent
     PersonalDetailsComponent
+    PersonalDetailsComponent,
+    ButtonComponent,
+    MedicationComponent
   ],
   imports: [
     BrowserModule,
