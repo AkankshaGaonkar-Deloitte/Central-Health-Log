@@ -4,7 +4,7 @@ import { MedicalDataComponent } from './components/patient/medical-data/medical-
 
 const routes: Routes = [
   {
-    path : '',
+    path : 'medical-data',
     component : MedicalDataComponent
   }
 ];
