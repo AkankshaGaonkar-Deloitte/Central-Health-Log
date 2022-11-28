@@ -217,6 +217,8 @@ export class PastRecordsComponent implements OnInit {
 
     } else if (this.filterSelector === 'Doctor') {
       console.log(this.doctor);
+      this.pastRecordService.filterByDoctor(this.patientId, this.doctor)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
       
     }
     

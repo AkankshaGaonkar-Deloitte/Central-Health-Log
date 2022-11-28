@@ -36,5 +36,10 @@ export class PastRecordService {
     return this.http.get<PastRecord[]>(`http://localhost:8080/patient/past-record/${patientId}/search-by-date/${from}/${to}`, {headers})
   }
 
+  filterByDoctor(patientId: number, doctorId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<PastRecord[]>(`http://localhost:8080/patient/past-record/${patientId}/filter-by-doctor/${doctorId}`, {headers})
+  }
+
   
 }
