@@ -34,15 +34,18 @@
             color: #2C2D2D;
         
         }
+        .chart0{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
         .chart1{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-
-            .pulseRate{
-                width: 50%;
-                height: 20%;
-            }
+        }
+        .refresh{
+            width: 4.5em;
         }
         
     }

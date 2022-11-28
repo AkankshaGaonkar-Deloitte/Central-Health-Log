@@ -8,17 +8,21 @@
         </div>
         <div class="flex-item2">
             <p id="heading"><b>Dashboard</b></p>
+            <div class="chart0">
+                
+            </div>
             <div class="chart1">
                 <div class="pulseRate">
                     <pulse-line-graph></pulse-line-graph>
                 </div>
-                <div class="bpGraph">
+                <div class="bmiGraph">
                     <bmi-line-graph></bmi-line-graph>
                 </div>
+                
             </div>
-
-            <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
-
+            <div class="refresh">
+                <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button></div>
+    
         </div>
     </div>
 </div>

@@ -13,7 +13,7 @@ export class BmiLineGraphComponent implements OnInit {
   constructor(private graphService: GraphServiceService) { }
 
 
-  public pulseRate: Object[]=[] ;
+  public BMI: Object[]=[] ;
   public primaryXAxis: Object = {
     title: 'Date',
     valueType: 'Category',
@@ -22,19 +22,19 @@ export class BmiLineGraphComponent implements OnInit {
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {
-    title: 'Pulse Rate',
-    minimum: 0,
-    maximum: 150,
-    interval: 20,
-    lineStyle: { width: 0 },
+    title: 'BMI',
+    minimum: 12,
+    maximum: 35,
+    interval: 1,
+    lineStyle: { width: 0},
     majorTickLines: { width: 0 },
   };
   public chartArea: Object = {
     border: {
-      width: 1
+      width: 0
     }
   };
-  public width: string = Browser.isDevice ? '100%' : '75%';
+  // public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {
     enable: true
   };
@@ -53,12 +53,12 @@ export class BmiLineGraphComponent implements OnInit {
 
   ngOnInit(): void {
     let pr:Object[]=[];
-    this.graphService.getPulse().subscribe(data =>{
+    this.graphService.getBMI().subscribe(data =>{
     for(let i in data) {
       pr.push(data[i]);
       console.warn(data[i]);
     }
-    this.pulseRate=pr;
+    this.BMI=pr;
   }
     
     )
