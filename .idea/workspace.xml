@@ -5,6 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/dummyClasses/getUserData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/dummyClasses/myUserData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/user.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/filter/JwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/userRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/requests/AuthenticationRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/requests/AuthenticationResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/userService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chl.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/chl.mv.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +36,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -63,14 +77,14 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/akanksha5/Desktop/Central-Health-Log",
-    "settings.editor.selected.configurable": "advanced.settings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/akanksha5/Desktop/Central-Health-Log&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.com.CentralHealthLog.CentralHealthLogApplication">
     <configuration name="CentralHealthLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.CentralHealthLogApplication" />
