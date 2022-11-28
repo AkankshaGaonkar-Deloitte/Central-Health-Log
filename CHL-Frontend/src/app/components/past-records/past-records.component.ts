@@ -314,34 +314,9 @@ export class PastRecordsComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
-
-
-  // textDropConfig = {
-  //   styles: {
-  //     background: '#fff',
-  //     color: '#1CB5BD',
-  //     height: '2em',
-  //     width: '8em',
-  //     fontFamily: 'Montserrat',
-  //     fontStyle: 'normal',
-  //     fontWeight: '500',
-  //     fontSize: '1.25em',
-  //     lineHeight: '1.5em',
-  //     textAlign: 'center',
-  //     border: '0.0625 solid #1CB5BD',
-  //     borderRadius: '0.25em',
-  //   }
-  // }
-
-  // optionList = [
-  //   "Dr. Prasad",
-  //   "Dr. Amit",
-  //   "Dr. Tashmeet"
-  // ];
-
   
 
-  menus = { '1': ["Dashboard", "/patient-dashboard", 1], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
+  menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 1] };
 
   constructor() { }
 
