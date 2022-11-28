@@ -18,4 +18,6 @@ public class user {
 
     @Column(nullable = false)
     private String password;
+
+    private roles role;
 }

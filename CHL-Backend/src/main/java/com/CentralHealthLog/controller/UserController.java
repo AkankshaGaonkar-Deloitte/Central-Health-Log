@@ -1,8 +1,13 @@
 package com.CentralHealthLog.controller;
 
+import com.CentralHealthLog.exception.UnauthorizedException;
 import com.CentralHealthLog.requests.AuthenticationRequest;
 import com.CentralHealthLog.requests.AuthenticationResponse;
+import com.CentralHealthLog.service.userService;
+import com.CentralHealthLog.utils.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,7 +16,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+
 public class UserController {
+    @Autowired
+    private userService userservice;
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private JwtUtil jwtUtil;
     @PostMapping("/authenticate")
     public ResponseEntity<?> createAuthenticationToken(@RequestBody AuthenticationRequest authenticationRequest) throws Exception{
         try {
@@ -22,8 +34,9 @@ public class UserController {
         catch (BadCredentialsException e){
             throw new UnauthorizedException(e);
         }
-        final UserDetails userDetails = userServices.loadUserByUsername(authenticationRequest.getUserName());
+        final UserDetails userDetails = userService.loadUserByUsername(authenticationRequest.getUserName());
         final String jwt = jwtUtil.generateToken(userDetails);
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
+
     }
 }
