@@ -11,9 +11,9 @@
         <div id="text1"><a href="#"></a>&lt; &nbsp; Back to Dashboard</div>
         <div class="search-filter">
           <div class="left">
-            <!-- <div id="sort-by">Sort By</div> -->
+            <!-- Select filter -->
             <div id="sort-by">
-              <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"></app-dropdown>
+              <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="filterSelectEventReceived($event)"></app-dropdown>
             </div>
             <div style="margin-right: 10px;">
               <app-input [ipConfig]="searchConfig1" (outputEmit)="onClickEventReceived($event)"></app-input>

@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PastRecordsComponent implements OnInit {
 
+  filterSelector: string = 'Date'
+
+  // filter selector block starts
   textDropConfig = {
     styles: {
       background: '#fff',
@@ -15,7 +18,7 @@ export class PastRecordsComponent implements OnInit {
       fontStyle: 'normal',
       fontWeight: '500',
       lineHeight: '1.5em',
-      textAlign: 'center'
+      textAlign: 'left'
     }
   }
 
@@ -23,6 +26,13 @@ export class PastRecordsComponent implements OnInit {
     "Date",
     "Severity"
   ];
+
+  filterSelectEventReceived(selectedFilter: string){
+    console.log(`At parent filter select ${selectedFilter}`);
+    this.filterSelector = selectedFilter
+    
+  }
+  // filter selector block ends
 
   textBtnConfig = {
     type: "submit",
