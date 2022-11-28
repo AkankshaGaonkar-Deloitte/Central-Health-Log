@@ -9,11 +9,13 @@ import { PastRecordService } from 'src/app/service/past-record.service';
 })
 export class PastRecordsComponent implements OnInit {
 
+  patientId: number = 43190
+
   filterSelector: string = 'Date'
   dateFrom: string = ''
   dateTo: string = ''
-  severityFrom: string = ''
-  severityTo: string = ''
+  severityFrom: number = -1
+  severityTo: number = -1
   doctor: number = -1
 
   allPastRecordsOfAPatient: PastRecord[] = []
@@ -145,12 +147,12 @@ export class PastRecordsComponent implements OnInit {
 
   onClickSeverityFromReceived(fromSeverity: string|number|null) {
     console.log(`At parent severity from ${fromSeverity}`);
-    this.severityFrom = fromSeverity as string
+    this.severityFrom = fromSeverity as number
   }
 
   onClickSeverityToReceived(toSeverity: string|number|null) {
     console.log(`At parent severity to ${toSeverity}`);
-    this.severityTo = toSeverity as string
+    this.severityTo = toSeverity as number
   }
   // search with severity ends
 
@@ -208,6 +210,8 @@ export class PastRecordsComponent implements OnInit {
       
     } else if (this.filterSelector === 'Severity') {
       console.log(`${this.severityFrom} ${this.severityTo}`);
+      this.pastRecordService.filterBySeverity(this.patientId, this.severityFrom, this.severityTo)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
 
     } else if (this.filterSelector === 'Doctor') {
       console.log(this.doctor);
