@@ -207,6 +207,8 @@ export class PastRecordsComponent implements OnInit {
   search(){
     if (this.filterSelector === 'Date') {
       console.log(`${this.dateFrom} ${this.dateTo}`);
+      this.pastRecordService.filterByDate(this.patientId, this.dateFrom, this.dateTo)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
       
     } else if (this.filterSelector === 'Severity') {
       console.log(`${this.severityFrom} ${this.severityTo}`);
