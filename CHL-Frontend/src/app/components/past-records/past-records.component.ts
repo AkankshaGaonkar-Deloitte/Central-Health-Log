@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PastRecord } from 'src/app/model/past-record';
+import { PastRecordService } from 'src/app/service/past-record.service';
 
 @Component({
   selector: 'app-past-records',
@@ -13,6 +15,8 @@ export class PastRecordsComponent implements OnInit {
   severityFrom: string = ''
   severityTo: string = ''
   doctor: number = -1
+
+  allPastRecordsOfAPatient: PastRecord[] = []
 
   // filter selector block starts
   textDropConfig = {
@@ -318,9 +322,12 @@ export class PastRecordsComponent implements OnInit {
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 1] };
 
-  constructor() { }
+  constructor(private pastRecordService: PastRecordService) { }
 
   ngOnInit(): void {
+    this.pastRecordService.getAllPatientRecords(43190)
+      .subscribe(data => this.allPastRecordsOfAPatient = data);
+    
   }
 
   displayStyle = "none";

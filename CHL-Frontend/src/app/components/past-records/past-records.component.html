@@ -86,70 +86,16 @@
               <th>Severity</th>
               <th>Prescription</th>
             </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
+            <tr *ngFor="let pastRecord of allPastRecordsOfAPatient">
+              <td>{{pastRecord.uploadDate}}</td>
+              <td>{{pastRecord.doctorName}}</td>
+              <td>{{pastRecord.diagnosis}}</td>
+              <td>{{pastRecord.severity}}</td>
+              <!-- <td>{{todo.targetDate | date}}</td> -->
               <td>
                 <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
               </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-              </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-              </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-              </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-              </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-              </td>
-            </tr>
-            <tr>
-              <td>10/12/22</td>
-              <td>Dr. Rogit Patel</td>
-              <td>Fever</td>
-              <td>3</td>
-              <td>
-                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-
-              </td>
-            </tr>
+          </tr>
 
           </table>
         </div>

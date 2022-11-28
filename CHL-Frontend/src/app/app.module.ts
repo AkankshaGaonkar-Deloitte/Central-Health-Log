@@ -11,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
+import { HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PastRecordsComponent } from './components/past-records/past-records.com
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
