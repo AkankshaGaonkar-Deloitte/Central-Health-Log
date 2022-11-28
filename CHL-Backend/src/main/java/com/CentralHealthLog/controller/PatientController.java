@@ -36,7 +36,7 @@ public class PatientController {
     }
 
     @GetMapping("/patient/past-record/{patientId}/search-by-date/{from}/{to}")
-    public List<PastRecord> filterByDoctor(@PathVariable Long patientId, @PathVariable String from, @PathVariable String to) throws ParseException {
+    public List<PastRecord> filterByDate(@PathVariable Long patientId, @PathVariable String from, @PathVariable String to) throws ParseException {
         return pastRecordService.filterByDate(patientId, from, to);
     }
 

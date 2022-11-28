@@ -11,7 +11,8 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,9 @@ import { HttpClientModule} from '@angular/common/http'
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
