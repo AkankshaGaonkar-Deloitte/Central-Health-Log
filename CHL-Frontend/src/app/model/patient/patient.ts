@@ -1,12 +1,12 @@
 export class Patient {
     id !: number;
-    username!: String;
-    firstname !: String;
-    lastname !: String;
-    password!:String;
-    email !: String;
+    username!: string;
+    firstname !: string;
+    lastname !: string;
+    password!:string;
+    email !: string;
     phoneNo !: number;
-    gender !: String;
-    address !:String;
+    gender !: string;
+    address !:string;
     age !: number;
 }

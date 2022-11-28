@@ -1,5 +1,5 @@
 import { Patient } from './../../model/patient/patient';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -13,12 +13,30 @@ export class PatientService {
 
  getPatientDetails(): Observable<Patient[]>{
     console.log("get patient list method invoked")
-    return this.httpClient.get<Patient[]>(`${this.baseURL}`);
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get<Patient[]>(`${this.baseURL}`,{headers});
+    
   }
 
   getPatientDetailsById(id: number): Observable<Patient>{
-    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`);
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`,{headers});
     
   }
+  createAuthenticationHeader(){
+    let username: string = 'nawaz2000'
+    let password: string = '123'
+    let basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
+    //return basicAuthHeaderString;
+    return new HttpHeaders({
+    Authorization: basicAuthHeaderString
+    })
+    }
+    // getAllPatientRecords(patientId: number): Observable<PastRecord[]>{
+    // let headers = this.createAuthenticationHeader()
+    // return this.http.get<PastRecord[]>(`http://localhost:8080/patient/past-record/${patientId}`, {headers})
+    // }
+    
+    
 
 }

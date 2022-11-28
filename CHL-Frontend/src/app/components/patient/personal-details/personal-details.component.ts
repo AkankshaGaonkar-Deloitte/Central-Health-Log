@@ -17,7 +17,8 @@ export class PersonalDetailsComponent implements OnInit {
     '5': ['Past Records', '/past-records', 0],
   };
 
-  patient!: Patient;
+  // patient!: Patient;
+  patient=new Patient();
 
   @Input('btntext') btntext: string = 'Login';
   constructor(public patientservice:PatientService) {
@@ -185,6 +186,7 @@ export class PersonalDetailsComponent implements OnInit {
     type: 'submit',
   };
   onupdate() {
+    return this.patientservice.
     console.log(this.PersonalDetails.value);
   }
 

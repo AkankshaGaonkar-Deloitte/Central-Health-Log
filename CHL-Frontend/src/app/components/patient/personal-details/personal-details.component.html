@@ -1,6 +1,6 @@
 <div id="main-container">
   <div id="nav">
-  <app-navbar [button]="false" [name]="'Akanksha Gaonkar'"></app-navbar></div>
+  <app-navbar [button]="false" [name]="patient.firstname"></app-navbar></div>
   <div id="parent-container">
     <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
     <div id="sub-container">
@@ -50,7 +50,7 @@
             </div>
           </div>
           <div id="container3">
-            <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
+            <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig" (onClick)="onupdate()"></app-button></div>
           </div>
         </form>
       </div>
