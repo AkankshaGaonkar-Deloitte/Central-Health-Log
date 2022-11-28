@@ -41,35 +41,58 @@
                     <div class="modal-header">
                       <h4 class="modal-title">Add past record</h4>
                     </div>
+                    
                     <div class="modal-body">
                       <div class="flex-modal">
                         <div class="grid-item">
-                          <label>Date:</label>
-                          <app-input [ipConfig]="dateConfig" (outputEmit)="''">
+                          <label>Upload Date:</label>
+                          <app-input name="uploadDate" (outputEmit)="pastRecord.uploadDate=$event" [ipConfig]="dateConfig">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Patient ID:</label>
+                          <app-input name="patientId" [ipConfig]="idConfig" (outputEmit)="pastRecord.patientId=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Doctor ID:</label>
+                          <app-input name="doctorId" [ipConfig]="idConfig" (outputEmit)="pastRecord.doctorId=$event">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label>Doctor name:</label>
-                          <app-input [ipConfig]="nameConfig" (outputEmit)="''">
+                          <app-input name="doctorName" [ipConfig]="nameConfig" (outputEmit)="pastRecord.doctorName=$event">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label>Diagnosis:</label>
-                          <app-input [ipConfig]="diagnosisConfig" (outputEmit)="''">
+                          <app-input name="diagnosis" [ipConfig]="diagnosisConfig" (outputEmit)="pastRecord.diagnosis=$event">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label id="prescription-label">Prescription:</label>
-                          <app-input [ipConfig]="presscriptionConfig" (outputEmit)="''">
+                          <app-input name="prescription" [ipConfig]="presscriptionConfig" (outputEmit)="''">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label id="prescription-label">Uploaded by:</label>
+                          <app-input name="uploadedBy" [ipConfig]="nameConfig" (outputEmit)="pastRecord.uploadedBy=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label id="prescription-label">Severity:</label>
+                          <app-input name="severity" [ipConfig]="idConfig" (outputEmit)="pastRecord.severity=$event">
                           </app-input>
                         </div>
                       </div>
 
                     </div>
+                  
                     <div class="modal-footer">
-                      <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"></app-button>
+                      <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="submitNewPastRecord()"></app-button>
                       <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2" (click)="closePopup()"></app-button>                     
                     </div>
+                    
                   </div>
                 </div>
               </div>

@@ -8,6 +8,7 @@ import { PastRecordService } from 'src/app/service/past-record.service';
   styleUrls: ['./past-records.component.scss']
 })
 export class PastRecordsComponent implements OnInit {
+  pastRecord: PastRecord = new PastRecord(-1)
 
   patientId: number = 43190
 
@@ -276,6 +277,23 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
+  idConfig = {
+    type: 'number',
+    label: 'ID',
+    placeholder: '',
+    styling: {
+      width: '12.5em',
+      height: '2.5em'
+    },
+    validations: {
+      required: '',
+      minLength: '',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
   nameConfig = {
     type: 'text',
     label: 'Name',
@@ -345,6 +363,18 @@ export class PastRecordsComponent implements OnInit {
   }
   closePopup() {
     this.displayStyle = "none";
+  }
+
+  submitNewPastRecord(){
+    console.log(this.pastRecord);
+    this.pastRecordService.addPastRecord(this.pastRecord)
+      .subscribe(data => {
+        console.log(`Newly added data ${data}`);
+        
+        this.allPastRecordsOfAPatient.push(data)})
+    // this.pastRecordService.getAllPatientRecords(43190)
+    //   .subscribe(data => this.allPastRecordsOfAPatient = data);
+    this.closePopup()
   }
 
 }

@@ -41,5 +41,10 @@ export class PastRecordService {
     return this.http.get<PastRecord[]>(`http://localhost:8080/patient/past-record/${patientId}/filter-by-doctor/${doctorId}`, {headers})
   }
 
+  addPastRecord(newPastRecord: PastRecord){
+    let headers = this.createAuthenticationHeader()
+    return this.http.post<PastRecord>(`http://localhost:8080/patient/past-record`, newPastRecord, {headers})
+  }
+
   
 }
