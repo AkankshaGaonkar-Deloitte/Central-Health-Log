@@ -19,7 +19,6 @@
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
     "@syncfusion/ej2-angular-charts": "^20.3.58",
-    "@syncfusion/ej2-ng-charts": "^16.2.50",
     "chart.js": "^4.0.1",
     "ng2-charts": "^4.0.2",
     "rxjs": "~7.5.0",
