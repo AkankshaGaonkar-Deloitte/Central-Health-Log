@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { Pulse } from 'src/app/model/Pulse';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 
 @Component({
@@ -11,18 +12,19 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
 export class PulseLineGraphComponent implements OnInit {
 
   constructor(private graphService: GraphServiceService) { }
-  public pulseRate: Object[]=[] ;
+  public pulseRate: Object[] = [];
   public primaryXAxis: Object = {
     title: 'Date',
     valueType: 'Category',
     edgeLabelPlacement: 'Shift',
+    // labelFormat: 'yMMM',
     majorGridLines: { width: 0 }
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {
-    title: 'Pulse Rate',
-    minimum: 0,
-    maximum: 150,
+    title: 'Pulse Rate (Beats/minute)',
+    minimum: 50,
+    maximum: 140,
     interval: 20,
     lineStyle: { width: 0 },
     majorTickLines: { width: 0 },
@@ -32,6 +34,7 @@ export class PulseLineGraphComponent implements OnInit {
       width: 0
     }
   };
+  public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
   // public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {
     enable: true
@@ -50,15 +53,15 @@ export class PulseLineGraphComponent implements OnInit {
   public title: string = 'Pulse Rate';
 
   ngOnInit(): void {
-    let pr:Object[]=[];
-    this.graphService.getPulse().subscribe(data =>{
-    for(let i in data) {
-      pr.push(data[i]);
-      console.warn(data[i]);
+    let pr: Object[] = [];
+    this.graphService.getPulse().subscribe(data => {
+      for (let i in data) {
+        pr.push(data[i]);
+        console.warn(data[i]);
+      }
+      this.pulseRate = pr;
     }
-    this.pulseRate=pr;
-  }
-    
+
     )
   }
 

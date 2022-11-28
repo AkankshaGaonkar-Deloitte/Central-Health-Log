@@ -19,9 +19,9 @@ export class BpBarGraphComponent implements OnInit {
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {
-    title: 'BP',
+    title: 'BP (in mmHg)',
     minimum: 50,
-    maximum: 190,
+    maximum: 150,
     interval: 10,
     lineStyle: { width: 0},
     majorTickLines: { width: 0 },
@@ -31,6 +31,7 @@ export class BpBarGraphComponent implements OnInit {
       width: 0
     }
   };
+  public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
   // public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {
     enable: true

@@ -1,9 +1,11 @@
-<ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title'
+<div  style="width:100%; height:15em;">
+    <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title'
                     [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
                     (load)='load($event)' [chartArea]='chartArea'  [legendSettings]='legend'>
 
                     <e-series-collection>
-                        <e-series [dataSource]='BMI' type='Line' xName='date' yName='bmi' width=2 opacity=1>
+                        <e-series [dataSource]='BMI' type='Line' xName='date' yName='bmi'[marker]='circleMarker' width=2 opacity=1>
                         </e-series>
                     </e-series-collection>
                 </ejs-chart>
+            </div>

@@ -22,9 +22,9 @@ export class BmiLineGraphComponent implements OnInit {
   };
   //Initializing Primary Y Axis
   public primaryYAxis: Object = {
-    title: 'BMI',
-    minimum: 12,
-    maximum: 35,
+    title: 'BMI (in kg/m2)',
+    minimum: 13,
+    maximum: 30,
     interval: 1,
     lineStyle: { width: 0},
     majorTickLines: { width: 0 },
@@ -34,6 +34,7 @@ export class BmiLineGraphComponent implements OnInit {
       width: 0
     }
   };
+  public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
   // public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {
     enable: true
