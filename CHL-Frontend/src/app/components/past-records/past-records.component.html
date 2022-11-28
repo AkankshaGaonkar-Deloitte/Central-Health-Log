@@ -25,7 +25,7 @@
               <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityTo" (outputEmit)="onClickSeverityToReceived($event)"></app-input>
             </div>
             <div>
-              <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3"></app-button>
+              <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3" (click)="search()"></app-button>
             </div>
           </div>
           <div class="right">

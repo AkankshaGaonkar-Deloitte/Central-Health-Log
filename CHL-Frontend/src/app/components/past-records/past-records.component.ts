@@ -148,6 +148,18 @@ export class PastRecordsComponent implements OnInit {
   }
   // search with severity ends
 
+  // on search button click
+  search(){
+    if (this.filterSelector === 'Date') {
+      console.log(`${this.dateFrom} ${this.dateTo}`);
+      
+    } else {
+      console.log(`${this.severityFrom} ${this.severityTo}`);
+      
+    }
+    
+  }
+
   textBtnConfig = {
     type: "submit",
     styles: {
