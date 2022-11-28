@@ -5,13 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pulse {
+public class BMI {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +20,5 @@ public class Pulse {
     @Column
     public Date date;
     @Column(nullable = false)
-    public Integer pulse;
-
+    public Double bmi;
 }

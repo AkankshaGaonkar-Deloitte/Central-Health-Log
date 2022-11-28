@@ -1,8 +1,10 @@
 package com.CentralHealthLog.controller;
 
 
+import com.CentralHealthLog.entity.BMI;
+import com.CentralHealthLog.entity.BloodPressure;
 import com.CentralHealthLog.entity.Pulse;
-import com.CentralHealthLog.service.PulseService;
+import com.CentralHealthLog.service.GraphService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +18,18 @@ import java.util.List;
 @RequestMapping(value = "/graph")
 public class GraphController {
     @Autowired
-    PulseService pulseService;
+    GraphService graphService;
     @GetMapping("/pulse")
     public List<Pulse> getPulse(){
-        return pulseService.getallPulse();
+        return graphService.getallPulse();
     }
+    @GetMapping("/bp")
+    public List<BloodPressure> getBloodPressure(){
+        return graphService.getallBLoodPressure();
+    }
+    @GetMapping("/bmi")
+    public List<BMI> getBMI(){
+        return graphService.getallBMI();
+    }
+
 }

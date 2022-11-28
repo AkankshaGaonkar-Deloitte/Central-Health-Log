@@ -11,14 +11,15 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pulse {
-
+public class BloodPressure {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
     @Column
     public Date date;
     @Column(nullable = false)
-    public Integer pulse;
+    public Integer systolic;
+    @Column(nullable = false)
+    public Integer diastolic;
 
 }
