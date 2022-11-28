@@ -1,6 +1,6 @@
 package com.CentralHealthLog.filter;
 
-import com.CentralHealthLog.service.userService;
+import com.CentralHealthLog.service.UserService;
 import com.CentralHealthLog.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -21,7 +21,7 @@ public class JwtFilter extends OncePerRequestFilter {
 
     // Jwt filter for filtering the requests and providing authorization
     @Autowired
-    private userService userservice;
+    private UserService userservice;
     @Autowired
     private JwtUtil jwtUtil;
     @Override

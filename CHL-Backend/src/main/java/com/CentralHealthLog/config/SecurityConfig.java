@@ -1,7 +1,7 @@
 package com.CentralHealthLog.config;
 
 import com.CentralHealthLog.filter.JwtFilter;
-import com.CentralHealthLog.service.userService;
+import com.CentralHealthLog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,17 +23,40 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     // Security Configuration for the API gateway
-    private static final String[] AUTH_WHITELIST = { // APIs that doesn't require authorization
+    private static final String[] AUTH_WHITELIST = {
+            // APIs that doesn't require authorization
+            // -- Swagger UI v2`
+            "/v2/api-docs",
+            "/swagger-resources",
+            "/swagger-resources/**",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+// -- Swagger UI v3 (OpenAPI)
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/authenticate",
+            "/signup",
+            "/h2-console/**",
+            "/console/**",
+            "/login",
+            "/h2",
+            "/",
+            "/home",
+            "/h2/**"
     };
-    private static final String[] Admin_list = {  // APIs that require admin authorization
+    private static final String[] Admin_list = {
+            // APIs that require admin authorization
+            "/patients"
     };
     @Autowired
-    private userService userservice;
+    private UserService userService;
     @Autowired
     private JwtFilter jwtFilter;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userservice);
+        auth.userDetailsService(userService);
     }
 
     // PasswordEncoder

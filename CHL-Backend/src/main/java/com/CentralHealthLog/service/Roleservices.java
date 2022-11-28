@@ -1,6 +1,6 @@
 package com.CentralHealthLog.service;
 
-import com.CentralHealthLog.entity.roles;
+import com.CentralHealthLog.entity.Roles;
 import com.CentralHealthLog.exception.ApiErrorResponse;
 import com.CentralHealthLog.exception.NotFoundException;
 import com.CentralHealthLog.exception.UnauthorizedException;
@@ -17,7 +17,7 @@ import java.util.Optional;
 public class Roleservices {
     @Autowired
     private RoleRepository roleRepository;
-    public roles addRole(roles employeeRole) {
+    public Roles addRole(Roles employeeRole) {
         if(roleRepository.findByName(employeeRole.getName())!=null){
             throw new NotFoundException("Role already exists");
         }
@@ -25,8 +25,8 @@ public class Roleservices {
     }
 
     //Not sure
-    public roles updateRole(roles employeeRole,Integer roleId) {
-        Optional<roles> role=roleRepository.findById(roleId);
+    public Roles updateRole(Roles employeeRole, Long roleId) {
+        Optional<Roles> role=roleRepository.findById(roleId);
         if(!role.isPresent()){
             throw new NotFoundException("Role doesn't exist");
         }
@@ -34,8 +34,8 @@ public class Roleservices {
         return roleRepository.save(role.get());
     }
 
-    public List<roles> getAllRoles() {
-        List<roles> rolesList=new ArrayList<>();
+    public List<Roles> getAllRoles() {
+        List<Roles> rolesList=new ArrayList<>();
         roleRepository.findAll().forEach(rolesList::add);
         if(rolesList.isEmpty()){
             throw new NotFoundException("No roles found!");
@@ -43,8 +43,8 @@ public class Roleservices {
         return rolesList;
     }
 
-    public Optional<roles> getRole(Integer id) {
-        Optional<roles> employeeRole= roleRepository.findById(id);
+    public Optional<Roles> getRole(Long id) {
+        Optional<Roles> employeeRole= roleRepository.findById(id);
         if(!employeeRole.isPresent()){
             throw new NotFoundException("No role found!");
         }

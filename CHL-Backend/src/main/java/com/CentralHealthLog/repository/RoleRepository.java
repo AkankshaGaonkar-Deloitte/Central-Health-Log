@@ -1,8 +1,8 @@
 package com.CentralHealthLog.repository;
 
-import com.CentralHealthLog.entity.roles;
+import com.CentralHealthLog.entity.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
-public interface RoleRepository extends JpaRepository<roles,Integer> {
+public interface RoleRepository extends JpaRepository<Roles,Long> {
 
-    roles findByName(String name);
+    Roles findByName(String name);
 }

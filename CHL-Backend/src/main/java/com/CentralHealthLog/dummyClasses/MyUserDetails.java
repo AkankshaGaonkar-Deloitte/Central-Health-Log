@@ -1,6 +1,8 @@
 package com.CentralHealthLog.dummyClasses;
 
 
+import com.CentralHealthLog.entity.ClientUser;
+import com.CentralHealthLog.entity.Roles;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -20,15 +22,15 @@ public class MyUserDetails implements UserDetails {
 //        this.password=employee.getPassword();
 //        this.roles=employee.getRoles();
 //    }
-    private User user;
-    public MyUserDetails(User user){
+    private ClientUser user;
+    public MyUserDetails(ClientUser user){
         this.user=user;
     }
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-        for (UserRole role : user.getRoles()) {
+        for (Roles role : user.getRoles()) {
             authorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
@@ -69,7 +71,7 @@ public class MyUserDetails implements UserDetails {
     //    public String getFirstName(){return employee.getFirstName();}
 //    public String getLastName(){return employee.getLastName();}
 //    public String getDesignation(){return employee.getDesignation();}
-    public User getEmployee() {
+    public ClientUser getEmployee() {
         return user;
     }
 }
