@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class PastRecordsComponent implements OnInit {
 
   filterSelector: string = 'Date'
+  dateFrom: string = ''
+  dateTo: string = ''
+  severityFrom: string = ''
+  severityTo: string = ''
 
   // filter selector block starts
   textDropConfig = {
@@ -33,6 +37,116 @@ export class PastRecordsComponent implements OnInit {
     
   }
   // filter selector block ends
+
+  // search with date starts
+  searchWithDateFrom = {
+    type: 'date',
+    label: 'from',
+    placeholder: 'from',
+    styling: {
+      width: '10em',
+      height: '2.5em',
+      background: '#FFFFFF',
+      border: '0.0625em solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  searchWithDateTo = {
+    type: 'date',
+    label: 'from',
+    placeholder: 'to',
+    styling: {
+      width: '10em',
+      height: '2.5em',
+      background: '#FFFFFF',
+      border: '0.0625em solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  onClickFromDateReceived(fromDate: string|number|null) {
+    console.log(`At parent from date ${fromDate}`);
+    this.dateFrom = fromDate as string
+    
+  }
+
+  onClickToDateReceived(toDate: string|number|null) {
+    console.log(`At parent to date ${toDate}`);
+    this.dateTo = toDate as string
+    
+  }
+  // search with date ends
+
+  // search with severity begins
+  searchWithSeverityFrom = {
+    type: 'number',
+    label: 'from',
+    placeholder: 'from',
+    styling: {
+      width: '10em',
+      height: '2.5em',
+      background: '#FFFFFF',
+      border: '0.0625em solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: '',
+      min: '1',
+      max: '10'
+    },
+    patternErrorMessage: ''
+  };
+
+  searchWithSeverityTo = {
+    type: 'number',
+    label: 'to',
+    placeholder: 'to',
+    styling: {
+      width: '10em',
+      height: '2.5em',
+      background: '#FFFFFF',
+      border: '0.0625em solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: '',
+      min: '1',
+      max: '10'
+    },
+    patternErrorMessage: ''
+  };
+
+  onClickSeverityFromReceived(fromSeverity: string|number|null) {
+    console.log(`At parent severity from ${fromSeverity}`);
+    this.severityFrom = fromSeverity as string
+  }
+
+  onClickSeverityToReceived(toSeverity: string|number|null) {
+    console.log(`At parent severity to ${toSeverity}`);
+    this.severityTo = toSeverity as string
+  }
+  // search with severity ends
 
   textBtnConfig = {
     type: "submit",
@@ -84,46 +198,6 @@ export class PastRecordsComponent implements OnInit {
       borderRadius: '0.375em'
 
     }
-  };
-
-  searchConfig1 = {
-    type: 'search',
-    label: 'from',
-    placeholder: 'from',
-    styling: {
-      width: '10em',
-      height: '2.5em',
-      background: '#FFFFFF',
-      border: '0.0625em solid #949494',
-      borderRadius: '0'
-    },
-    validations: {
-      required: 'false',
-      minLength: '',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
-
-  searchConfig2 = {
-    type: 'search',
-    label: 'from',
-    placeholder: 'to',
-    styling: {
-      width: '10em',
-      height: '2.5em',
-      background: '#FFFFFF',
-      border: '0.0625em solid #949494',
-      borderRadius: '0'
-    },
-    validations: {
-      required: 'false',
-      minLength: '',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
   };
 
   dateConfig = {
@@ -218,9 +292,7 @@ export class PastRecordsComponent implements OnInit {
   //   "Dr. Tashmeet"
   // ];
 
-  onClickEventReceived($event: string | number | null) {
-    console.log(`At parent ${$event}`);
-  }
+  
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 1], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
 

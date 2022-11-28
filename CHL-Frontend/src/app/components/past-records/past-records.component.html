@@ -15,11 +15,14 @@
             <div id="sort-by">
               <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="filterSelectEventReceived($event)"></app-dropdown>
             </div>
+            <!--date filter-->
             <div style="margin-right: 10px;">
-              <app-input [ipConfig]="searchConfig1" (outputEmit)="onClickEventReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateFrom" (outputEmit)="onClickFromDateReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityFrom" (outputEmit)="onClickSeverityFromReceived($event)"></app-input>
             </div>
             <div style="margin-right: 10px;">
-              <app-input [ipConfig]="searchConfig2" (outputEmit)="onClickEventReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateTo" (outputEmit)="onClickToDateReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityTo" (outputEmit)="onClickSeverityToReceived($event)"></app-input>
             </div>
             <div>
               <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3"></app-button>
@@ -48,22 +51,22 @@
                       <div class="flex-modal">
                         <div class="grid-item">
                           <label>Date:</label>
-                          <app-input [ipConfig]="dateConfig" (outputEmit)="onClickEventReceived($event)">
+                          <app-input [ipConfig]="dateConfig" (outputEmit)="''">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label>Doctor name:</label>
-                          <app-input [ipConfig]="nameConfig" (outputEmit)="onClickEventReceived($event)">
+                          <app-input [ipConfig]="nameConfig" (outputEmit)="''">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label>Diagnosis:</label>
-                          <app-input [ipConfig]="diagnosisConfig" (outputEmit)="onClickEventReceived($event)">
+                          <app-input [ipConfig]="diagnosisConfig" (outputEmit)="''">
                           </app-input>
                         </div>
                         <div class="grid-item">
                           <label id="prescription-label">Prescription:</label>
-                          <app-input [ipConfig]="presscriptionConfig" (outputEmit)="onClickEventReceived($event)">
+                          <app-input [ipConfig]="presscriptionConfig" (outputEmit)="''">
                           </app-input>
                         </div>
                       </div>
