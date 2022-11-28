@@ -11,9 +11,10 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgChartsModule } from 'ng2-charts';
+import { ChartComponent } from 'chart.js';
 import { HttpClientModule } from '@angular/common/http';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
-// import { ChartsModule } from 'ng2-charts';
+// import { ChartModule,CategoryService,ColumnSeriesService } from '@syncfusion/ej2-ng-charts';
 // import { Label } from 'ng2-charts';
 
 @NgModule({
@@ -34,7 +35,7 @@ import { PatientDashboardComponent } from './components/patient/patient-dashboar
     FormsModule,
     ReactiveFormsModule,
     NgChartsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

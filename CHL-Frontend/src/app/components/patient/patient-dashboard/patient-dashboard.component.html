@@ -10,17 +10,15 @@
             <p id="heading"><b>Dashboard</b></p>
                 <div style="display: block;" class="chart">
                     <canvas baseChart
-                          
                             [datasets]="labelMFL"
                             [labels]="lineChartLabels"
                             [options]="lineChartOptions"
                             [type]="'line'"
-                            (chartHover)="chartHovered($event)"
-                            (chartClick)="chartClicked($event)"></canvas>
+                            ></canvas>
                   
             </div>
         
-
+<button (click)="onClick()">click me</button>
               
         </div>
     </div>
