@@ -12,6 +12,7 @@ export class PastRecordsComponent implements OnInit {
   dateTo: string = ''
   severityFrom: string = ''
   severityTo: string = ''
+  doctor: number = -1
 
   // filter selector block starts
   textDropConfig = {
@@ -28,7 +29,8 @@ export class PastRecordsComponent implements OnInit {
 
   optionList = [
     "Date",
-    "Severity"
+    "Severity",
+    "Doctor"
   ];
 
   filterSelectEventReceived(selectedFilter: string){
@@ -148,17 +150,68 @@ export class PastRecordsComponent implements OnInit {
   }
   // search with severity ends
 
-  // on search button click
+  // search with doctor id begins
+  searchWithDoctorId = {
+    type: 'number',
+    label: 'Doctor id',
+    placeholder: 'Doctor id',
+    styling: {
+      width: '10em',
+      height: '2.5em',
+      background: '#FFFFFF',
+      border: '0.0625em solid #949494',
+      borderRadius: '0'
+    },
+    validations: {
+      required: 'false',
+      minLength: '',
+      maxLength: '',
+      pattern: '',
+      min: '1',
+      max: '10'
+    },
+    patternErrorMessage: ''
+  };
+
+  onClickDoctorReceived(doctorid: string|number|null) {
+    console.log(`At parent doctorid from ${doctorid}`);
+    this.doctor = doctorid as number
+  }
+  // search with doctor id ends
+
+  // on search button click begins
+  searchBtnConfig = {
+    type: "submit",
+    styles: {
+      color: '#fff',
+      height: '2em',
+      width: '5em',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
+      textAlign: 'center',
+      background: '#000000',
+      borderRadius: '0.375em'
+
+    }
+  };
+
   search(){
     if (this.filterSelector === 'Date') {
       console.log(`${this.dateFrom} ${this.dateTo}`);
       
-    } else {
+    } else if (this.filterSelector === 'Severity') {
       console.log(`${this.severityFrom} ${this.severityTo}`);
+
+    } else if (this.filterSelector === 'Doctor') {
+      console.log(this.doctor);
       
     }
     
   }
+  // on search button click ends
 
   textBtnConfig = {
     type: "submit",
@@ -190,24 +243,6 @@ export class PastRecordsComponent implements OnInit {
       fontSize: '1.25em',
       lineHeight: '1.5em',
       textAlign: 'center',
-
-    }
-  };
-
-  textBtnConfig3 = {
-    type: "submit",
-    styles: {
-      color: '#fff',
-      height: '2em',
-      width: '2em',
-      fontFamily: 'Montserrat',
-      fontStyle: 'normal',
-      fontWeight: '500',
-      fontSize: '1.25em',
-      lineHeight: '1.5em',
-      textAlign: 'center',
-      background: '#000000',
-      borderRadius: '0.375em'
 
     }
   };

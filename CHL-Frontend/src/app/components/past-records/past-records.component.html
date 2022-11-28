@@ -15,28 +15,22 @@
             <div id="sort-by">
               <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="filterSelectEventReceived($event)"></app-dropdown>
             </div>
-            <!--date filter-->
+            <!--filter type-->
             <div style="margin-right: 10px;">
               <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateFrom" (outputEmit)="onClickFromDateReceived($event)"></app-input>
               <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityFrom" (outputEmit)="onClickSeverityFromReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Doctor'" [ipConfig]="searchWithDoctorId" (outputEmit)="onClickDoctorReceived($event)"></app-input>
             </div>
             <div style="margin-right: 10px;">
               <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateTo" (outputEmit)="onClickToDateReceived($event)"></app-input>
               <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityTo" (outputEmit)="onClickSeverityToReceived($event)"></app-input>
             </div>
             <div>
-              <app-button [btntext]="'Search'" [btnConfig]="textBtnConfig3" (click)="search()"></app-button>
+              <app-button [btntext]="'Search'" [btnConfig]="searchBtnConfig" (click)="search()"></app-button>
             </div>
           </div>
           <div class="right">
-            <div style="margin-left: 10px;">
-              <app-button id="myBtn" [btntext]="'Filter by doctor'" [btnConfig]="textBtnConfig"></app-button>
-              <!-- <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"></app-dropdown> -->
-            </div>
-            <div style="margin-left: 10px;">
-              <app-button [btntext]="'Filter severity'" [btnConfig]="textBtnConfig"></app-button>
-            </div>
-            <div style="margin-left: 10px;">
+            <div>
               <app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" (click)="openPopup()"></app-button>
             </div>
             <!--Modal starts-->
