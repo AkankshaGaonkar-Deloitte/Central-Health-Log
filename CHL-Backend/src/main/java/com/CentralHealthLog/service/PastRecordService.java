@@ -21,6 +21,7 @@ public class PastRecordService {
     }
 
     public List<PastRecord> getAllPatientRecords(Long patientId){
+        System.out.println("Inside get all patient. Patient Id: "+ patientId);
         return pastRecordRepository.findByPatientId(patientId).get();
     }
 

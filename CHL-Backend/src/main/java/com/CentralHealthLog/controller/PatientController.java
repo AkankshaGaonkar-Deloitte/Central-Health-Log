@@ -19,7 +19,6 @@ public class PatientController {
 
     @PostMapping("/patient/past-record")
     public ResponseEntity<PastRecord> addPastRecord(@RequestBody PastRecord pastRecord) {
-        System.out.println(pastRecord);
         PastRecord savedRecord = pastRecordService.addRecord(pastRecord);
         return new ResponseEntity<PastRecord>(savedRecord, HttpStatus.OK);
     }
