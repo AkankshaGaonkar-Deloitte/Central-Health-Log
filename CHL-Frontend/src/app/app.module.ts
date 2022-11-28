@@ -17,6 +17,7 @@ import { PatientDashboardComponent } from './components/patient/patient-dashboar
 import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
 import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
+import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
 // import { Label } from 'ng2-charts';
 
 @NgModule({
@@ -32,6 +33,7 @@ import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-gra
     PatientDashboardComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
+    BmiLineGraphComponent,
   ],
   imports: [
     BrowserModule,

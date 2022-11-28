@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { Browser } from '@syncfusion/ej2-base';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
+import { Browser } from '@syncfusion/ej2-base';
 
 @Component({
-  selector: 'pulse-line-graph',
-  templateUrl: './pulse-line-graph.component.html',
-  styleUrls: ['./pulse-line-graph.component.scss']
+  selector: 'bmi-line-graph',
+  templateUrl: './bmi-line-graph.component.html',
+  styleUrls: ['./bmi-line-graph.component.scss']
 })
-export class PulseLineGraphComponent implements OnInit {
+export class BmiLineGraphComponent implements OnInit {
 
   constructor(private graphService: GraphServiceService) { }
+
+
   public pulseRate: Object[]=[] ;
   public primaryXAxis: Object = {
     title: 'Date',
@@ -29,10 +31,10 @@ export class PulseLineGraphComponent implements OnInit {
   };
   public chartArea: Object = {
     border: {
-      width: 0
+      width: 1
     }
   };
-  // public width: string = Browser.isDevice ? '100%' : '75%';
+  public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {
     enable: true
   };
@@ -47,7 +49,7 @@ export class PulseLineGraphComponent implements OnInit {
     args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
   };
   // custom code end
-  public title: string = 'Pulse Rate';
+  public title: string = 'BMI';
 
   ngOnInit(): void {
     let pr:Object[]=[];

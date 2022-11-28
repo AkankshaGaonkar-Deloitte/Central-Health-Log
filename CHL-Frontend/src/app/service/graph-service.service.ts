@@ -15,5 +15,13 @@ export class GraphServiceService {
       return this.httpClient.get<Pulse[]>(`${this.baseurl+'/pulse'}`)
 
     }
+    // getBMI():Observable<BMI[]>{
+    //   return this.httpClient.get<BMI[]>(`${this.baseurl+'/bmi'}`)
+
+    // }
+    // getBloodPressure():Observable<BloodPressure[]>{
+    //   return this.httpClient.get<BloodPressure[]>(`${this.baseurl+'/bp'}`)
+
+    // }
   }
 

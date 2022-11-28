@@ -1,7 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { Browser } from '@syncfusion/ej2-base';
 import { ChartOptions, ChartType } from 'chart.js';
 import { Pulse } from 'src/app/model/Pulse';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
