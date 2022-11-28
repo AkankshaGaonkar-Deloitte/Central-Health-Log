@@ -9,33 +9,20 @@
         <div class="flex-item2">
             <p id="heading"><b>Dashboard</b></p>
             <div class="chart">
-
-
+                <div class="pulseRate">
                 <ejs-chart style='display:block' align='center' id='chartcontainer' [title]='title'
                     [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
                     (load)='load($event)' [chartArea]='chartArea' [width]='width' [legendSettings]='legend'>
 
-                    <e-series-collection >
-
-                        <e-series [dataSource]='pulseRate' type='Line' xName='date' yName='pulse' width=2
-                            opacity=1> </e-series>
-            
-
-
+                    <e-series-collection>
+                        <e-series [dataSource]='pulseRate' type='Line' xName='date' yName='pulse' width=2 opacity=1>
+                        </e-series>
                     </e-series-collection>
                 </ejs-chart>
-
-                <!-- <canvas baseChart
-                            [datasets]="labelMFL"
-                            [labels]="lineChartLabels"
-                            [options]="lineChartOptions"
-                            [type]="'line'"
-                            ></canvas> -->
-
-
+            </div>
             </div>
 
-            <button (click)="onClick()">click me</button>
+            <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
 
         </div>
     </div>
