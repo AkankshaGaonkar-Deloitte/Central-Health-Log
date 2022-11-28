@@ -17,9 +17,13 @@ public class Vitals {
     private Long id;
     private float height;
     private float weight;
-    private float blood_pressure;
+    private String blood_group;
     private float bmi;
-    private float pulse_rate;
+    private String Chronic_health_problems;
+    private  String immunizations;
+    private String chronic_health_problems;
+    private  String family_medical_history;
+
 
 }
 
