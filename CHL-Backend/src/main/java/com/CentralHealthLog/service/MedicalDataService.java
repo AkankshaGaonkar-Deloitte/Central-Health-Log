@@ -28,12 +28,15 @@ public class MedicalDataService {
         existingVitals.setWeight(vitals.getWeight());
         if(vitals.getAllergies() != null){
         existingVitals.setAllergies(vitals.getAllergies());}
-        if(vitals.getFamily_medical_history() != null){
-        existingVitals.setFamily_medical_history(vitals.getFamily_medical_history());}
-        if(vitals.getBlood_group() != null){
-        existingVitals.setBlood_group(vitals.getBlood_group());}
+        if(vitals.getFamilyMedicalHistory() != null){
+        existingVitals.setFamilyMedicalHistory(vitals.getFamilyMedicalHistory());}
+        if(vitals.getBloodGroup() != null){
+        existingVitals.setBloodGroup(vitals.getBloodGroup());}
         if(vitals.getImmunizations() != null){
         existingVitals.setImmunizations(vitals.getImmunizations());}
+        if(vitals.getChronicHealthProblems() != null){
+            existingVitals.setChronicHealthProblems(vitals.getChronicHealthProblems());
+        }
 
         return medicalDataRepository.save(existingVitals);
     }

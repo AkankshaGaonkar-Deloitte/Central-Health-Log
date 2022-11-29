@@ -47,7 +47,7 @@
               </div>
             </div>
             <div id="container2">
-              <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
+              <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" (onClick)="onupdate()"  [btnConfig]="textBtnConfig"></app-button></div>
             </div>
           </form>
         </div>

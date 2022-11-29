@@ -28,7 +28,7 @@ public class Patient {
     private String email;
 
     @Column(unique=true,nullable = false)
-    private String phoneNo;
+    private Long phoneNo;
 
     private String gender;
 

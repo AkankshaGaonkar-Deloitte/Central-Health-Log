@@ -35,6 +35,7 @@ public class PatientService {
         Patient existingPatient = patientRepository.findById(patient.getId()).orElse(null);
         if (patient.getFirstname() != null)
         {
+            System.out.println(patient.getFirstname()+" Request body firstname.");
             existingPatient.setFirstname(patient.getFirstname());
         }
         if (patient.getLastname() != null) {
@@ -50,7 +51,9 @@ public class PatientService {
         existingPatient.setPhoneNo(patient.getPhoneNo());}
         if(patient.getAddress() != null){
         existingPatient.setAddress(patient.getAddress());}
+        System.out.println("prasad is debugging errors"+ existingPatient.getFirstname());
         return patientRepository.save(existingPatient);
+
     }
 
 }

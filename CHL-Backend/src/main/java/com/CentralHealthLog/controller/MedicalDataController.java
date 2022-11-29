@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin("*")
 public class MedicalDataController {
 
     @Autowired
@@ -26,7 +27,7 @@ public class MedicalDataController {
     public Vitals findVitalsById(@PathVariable Long id) {
         return medicalDataService.getVitalsById(id);
     }
-    @PutMapping("/update-vitals")
+    @PutMapping("/vitals")
     public Vitals updateVitals(@RequestBody Vitals vitals) {
         return medicalDataService.updateVitals(vitals);
     }

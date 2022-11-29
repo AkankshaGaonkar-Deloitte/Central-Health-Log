@@ -1,3 +1,5 @@
+import { Vitals } from './../../../model/patient/vitals';
+import { PatientService } from './../../../service/patient/patient.service';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -14,13 +16,14 @@ export class MedicalDataComponent implements OnInit {
     '4': ['Medications', '/medications', 0],
     '5': ['Past Records', '/past-records', 0],
   };
-  @Input('btntext') btntext: string = 'Login';
-  constructor() {}
-
-  ngOnInit(): void {}
+  constructor(private medicalDataService: PatientService) {}
+  
+  vitals=new Vitals();
+  ngOnInit(): void {
+    this.getVitalById();
+  }
   MedicationComponent = new FormGroup({
     height: new FormControl(''),
-    lastName: new FormControl(''),
     bmi: new FormControl(''),
     immunization: new FormControl(''),
     familyMedicalHistory: new FormControl(''),
@@ -32,28 +35,38 @@ export class MedicalDataComponent implements OnInit {
 
   heightReceived($event: any) {
     this.MedicationComponent.patchValue({ height: $event });
+    this.vitals.height = Number(this.MedicationComponent.value.height);
   }
   bmiReceived($event: any) {
     this.MedicationComponent.patchValue({ bmi: $event });
+    this.vitals.bmi = Number(this.MedicationComponent.value.bmi);
   }
   immunizationsReceived($event: any) {
     this.MedicationComponent.patchValue({ immunization: $event });
+    this.vitals.immunizations = String(this.MedicationComponent.value.immunization);
   }
   familymedicalhistoryReceived($event: any) {
     this.MedicationComponent.patchValue({ familyMedicalHistory: $event });
+    this.vitals.familyMedicalHistory = String(this.MedicationComponent.value.familyMedicalHistory);
   }
   weightReceived($event: any) {
     this.MedicationComponent.patchValue({ weight: $event });
+    this.vitals.weight = Number(this.MedicationComponent.value.weight);
   }
   allergiesReceived($event: any) {
     this.MedicationComponent.patchValue({ allergies: $event });
+    this.vitals.allergies = String(this.MedicationComponent.value.allergies);
   }
+
   bloodGroupReceived($event: any) {
     this.MedicationComponent.patchValue({ bloodGroup: $event });
+    this.vitals.bloodGroup = String(this.MedicationComponent.value.bloodGroup);
   }
 
   chronichealthproblemReceived($event: any) {
     this.MedicationComponent.patchValue({ chronicHealthProblem: $event });
+    this.vitals.chronicHealthProblems = String(this.MedicationComponent.value.chronicHealthProblem);
+    console.log(this.vitals.chronicHealthProblems+" prasad");
   }
 
   ipConfig1 = {
@@ -197,7 +210,25 @@ export class MedicalDataComponent implements OnInit {
     },
     type: 'submit',
   };
+
   onupdate() {
-    console.log(this.MedicationComponent.value);
+    
+    console.log(this.vitals.chronicHealthProblems +"hi nawaz");
+    return this.medicalDataService.updateVitals(this.vitals).subscribe(data => {
+      this.vitals = data;
+      console.log(this.vitals);
+      
+
+      
+    });
   }
+  getVitalById() {
+    return this.medicalDataService.getVitalsById(1).subscribe(data => {
+     this.vitals = data;
+    console.log("db value : " + this.vitals.allergies);
+    
+   });
+  }
+
+  
 }
