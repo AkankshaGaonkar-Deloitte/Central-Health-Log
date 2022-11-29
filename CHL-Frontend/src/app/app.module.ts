@@ -10,7 +10,7 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { PatientRegistrationComponent } from './components/patient-registration/patient-registration.component';
+import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 
 
 @NgModule({
