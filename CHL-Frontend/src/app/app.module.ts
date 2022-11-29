@@ -11,7 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { PatientRegistrationComponent } from './components/patient/patient-regis
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
