@@ -159,14 +159,14 @@ export class MedicationsComponent implements OnInit {
 
   }
 
-  removeMedication(id?: number){
+  removeOrDeleteMedication(id?: number){
     this.medicationService.removeOrDeleteMedication(id)
       .subscribe(
         response => {
-          const index = this.allMedicalDataOfAPatient.indexOf(response, 0);
-          if (index > -1) {
-            this.allMedicalDataOfAPatient.splice(index, 1);
-          }
+          // const index = this.allMedicalDataOfAPatient.indexOf(response, 0);
+          // if (index > -1) {
+          //   this.allMedicalDataOfAPatient.splice(index, 1);
+          // }
           this.medicationService.getAllPatientRecords(this.patientId)
             .subscribe(data => this.allMedicalDataOfAPatient = data)
         }
