@@ -28,7 +28,7 @@ export class MedicationService {
 
   removeOrDeleteMedication(id?: number){
     let headers = this.createAuthenticationHeader()
-    return this.http.get<Medication>(`http://localhost:8080/patient/medications/{id}`, {headers})
+    return this.http.delete<Medication>(`http://localhost:8080/patient/medications/${id as number}`, {headers})
   }
 
 

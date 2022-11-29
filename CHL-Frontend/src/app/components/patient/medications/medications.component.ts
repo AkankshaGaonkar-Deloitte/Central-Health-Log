@@ -159,7 +159,7 @@ export class MedicationsComponent implements OnInit {
 
   }
 
-  removeOrDelete(id?: number){
+  removeMedication(id?: number){
     this.medicationService.removeOrDeleteMedication(id)
       .subscribe(
         response => {
@@ -167,6 +167,8 @@ export class MedicationsComponent implements OnInit {
           if (index > -1) {
             this.allMedicalDataOfAPatient.splice(index, 1);
           }
+          this.medicationService.getAllPatientRecords(this.patientId)
+            .subscribe(data => this.allMedicalDataOfAPatient = data)
         }
       )
   }

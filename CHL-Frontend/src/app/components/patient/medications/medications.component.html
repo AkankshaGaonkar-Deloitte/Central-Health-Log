@@ -40,7 +40,7 @@
                                 <td>{{medication.startingDate}}</td>
                                 <td>{{medication.recordId}}</td>
                                 <td>
-                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="removeOrDelete(medication.id)"></app-button>
+                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="removeMedication(medication.id)"></app-button>
                                 </td>
                             </tr>
                         </ng-container>
@@ -73,7 +73,7 @@
                                 <td>{{medication.startingDate}}</td>
                                 <td>{{medication.recordId}}</td>
                                 <td>
-                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="removeOrDelete(medication.id)"></app-button>
+                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="''"></app-button>
                                 </td>
                             </tr>
                         </ng-container>
