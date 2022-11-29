@@ -14,14 +14,21 @@ export class PatientService {
  getPatientDetails(): Observable<Patient[]>{
     console.log("get patient list method invoked")
     let headers = this.createAuthenticationHeader()
-    return this.httpClient.get<Patient[]>(`${this.baseURL}`,{headers});
+    return this.httpClient.get<Patient[]>(`${this.baseURL}`, {headers});
     
   }
 
   getPatientDetailsById(id: number): Observable<Patient>{
     let headers = this.createAuthenticationHeader()
-    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`,{headers});
+    return this.httpClient.get<Patient>(`${this.baseURL}/${id}`, {headers});
     
+  }
+
+  updatePatientDetails(patient: Patient):Observable<Patient>{
+    let headers = this.createAuthenticationHeader()
+    console.log("patient body is : " + patient.id)
+    return this.httpClient.put<Patient>(`${this.baseURL}`, patient, {headers});
+
   }
   createAuthenticationHeader(){
     let username: string = 'nawaz2000'
