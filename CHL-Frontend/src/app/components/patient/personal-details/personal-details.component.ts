@@ -186,8 +186,8 @@ export class PersonalDetailsComponent implements OnInit {
     type: 'submit',
   };
   onupdate() {
-    return this.patientservice.
     console.log(this.PersonalDetails.value);
+    return this.patientservice
   }
 
   getPatientById(){
