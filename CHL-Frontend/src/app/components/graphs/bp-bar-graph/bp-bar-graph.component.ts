@@ -28,7 +28,7 @@ export class BpBarGraphComponent implements OnInit {
   };
   public chartArea: Object = {
     border: {
-      width: 0
+      width: 0.2
     }
   };
   public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
