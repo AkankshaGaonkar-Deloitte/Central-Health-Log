@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database" />
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22,_7_44_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22,_7_47_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22,_7_50_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22,_8_00_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22,_9_58_pm_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__7_44_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__7_47_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__7_50_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__8_00_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__8_00_pm__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_14_11_22__9_58_pm__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicalDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicalDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Vitals.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Vitals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/vitals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/MedicalDataRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/MedicalDataRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicalDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicalDataService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +49,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task-sidebar" />
+        <entry key="$PROJECT_DIR$" value="feature-patient" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,6 +76,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
