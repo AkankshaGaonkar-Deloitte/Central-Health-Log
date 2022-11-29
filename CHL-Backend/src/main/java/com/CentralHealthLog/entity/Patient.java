@@ -13,7 +13,7 @@ public class Patient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
 
     @Column(nullable = false)
@@ -27,7 +27,7 @@ public class Patient {
 
     private String email;
 
-    @Column(unique=true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String phoneNo;
 
     private String gender;
@@ -36,8 +36,3 @@ public class Patient {
 
     private String address;
 }
-
-
-
-
-
