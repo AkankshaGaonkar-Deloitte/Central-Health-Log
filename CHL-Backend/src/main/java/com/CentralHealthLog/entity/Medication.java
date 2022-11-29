@@ -33,5 +33,5 @@ public class Medication {
     private Long recordId;
 
     @Column(nullable = false)
-    private boolean isCurrent;
+    private Boolean isCurrent;
 }

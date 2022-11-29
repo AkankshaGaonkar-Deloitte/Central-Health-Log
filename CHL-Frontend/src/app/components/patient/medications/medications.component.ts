@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PastRecord } from 'src/app/model/past-record';
 import { Medication } from 'src/app/model/patient/medication';
 import { MedicationService } from 'src/app/service/medication/medication.service';
-import { PastRecordService } from 'src/app/service/past-record.service';
 
 @Component({
   selector: 'app-medications',
@@ -143,20 +142,33 @@ export class MedicationsComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
-  
 
-  menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
+
+  menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 1], '5': ["Past Records", "/past-records", 0] };
 
   constructor(private medicationService: MedicationService) { }
 
   ngOnInit(): void {
     this.medicationService.getAllPatientRecords(this.patientId)
       .subscribe(response => {
-        console.log('medication component ts ' + response.keys);
+        this.allMedicalDataOfAPatient = response
+        console.log(this.allMedicalDataOfAPatient);
         
-        this.allMedicalDataOfAPatient = response}
-        )
-    
+      }
+    )
+
+  }
+
+  removeOrDelete(id?: number){
+    this.medicationService.removeOrDeleteMedication(id)
+      .subscribe(
+        response => {
+          const index = this.allMedicalDataOfAPatient.indexOf(response, 0);
+          if (index > -1) {
+            this.allMedicalDataOfAPatient.splice(index, 1);
+          }
+        }
+      )
   }
 
   displayStyle = "none";

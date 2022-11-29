@@ -21,7 +21,7 @@
                             <app-button [btntext]="'Add'" [btnConfig]="textBtnConfig2" (click)="''">
                             </app-button>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="table-container">
@@ -33,15 +33,17 @@
                             <th>Record ID</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let medication of allMedicalDataOfAPatient">
-                            <td>{{medication.medicine}}</td>
-                            <td>{{medication.dosage}}</td>
-                            <td>{{medication.startingDate}}</td>
-                            <td>{{medication.recordId}}</td>
-                            <td>
-                                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-                            </td>
-                        </tr>
+                        <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                            <tr *ngIf="medication.isCurrent">
+                                <td>{{medication.medicine}}</td>
+                                <td>{{medication.dosage}}</td>
+                                <td>{{medication.startingDate}}</td>
+                                <td>{{medication.recordId}}</td>
+                                <td>
+                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="removeOrDelete(medication.id)"></app-button>
+                                </td>
+                            </tr>
+                        </ng-container>
 
                     </table>
                 </div>
@@ -64,15 +66,17 @@
                             <th>Record ID</th>
                             <th>Action</th>
                         </tr>
-                        <tr *ngFor="let medication of allMedicalDataOfAPatient">
-                            <td>{{medication.medicine}}</td>
-                            <td>{{medication.dosage}}</td>
-                            <td>{{medication.startingDate}}</td>
-                            <td>{{medication.recordId}}</td>
-                            <td>
-                                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-                            </td>
-                        </tr>
+                        <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                            <tr *ngIf="!medication.isCurrent">
+                                <td>{{medication.medicine}}</td>
+                                <td>{{medication.dosage}}</td>
+                                <td>{{medication.startingDate}}</td>
+                                <td>{{medication.recordId}}</td>
+                                <td>
+                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig" (click)="removeOrDelete(medication.id)"></app-button>
+                                </td>
+                            </tr>
+                        </ng-container>
 
                     </table>
                 </div>

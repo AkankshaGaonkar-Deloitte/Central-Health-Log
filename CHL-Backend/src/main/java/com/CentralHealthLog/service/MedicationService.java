@@ -25,10 +25,10 @@ public class MedicationService {
         Medication retrievedMedication = medicationRepository.findById(id).get();
         //System.out.println("------------------------------------------->deletion: " + retrievedMedication);
         if (retrievedMedication != null){
-            if (retrievedMedication.isCurrent() == true){
-                retrievedMedication.setCurrent(false);
+            if (retrievedMedication.getIsCurrent() == true){
+                retrievedMedication.setIsCurrent(false);
                 addMedication(retrievedMedication);
-            } else if(retrievedMedication.isCurrent() == false){
+            } else if(retrievedMedication.getIsCurrent() == false){
                 medicationRepository.delete(retrievedMedication);
             }
             return retrievedMedication;
