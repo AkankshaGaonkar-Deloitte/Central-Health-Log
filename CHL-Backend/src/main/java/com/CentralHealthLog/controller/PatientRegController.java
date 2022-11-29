@@ -47,12 +47,4 @@ public class PatientRegController {
          patientService.deletePatient(id);
          return new ResponseEntity<>("Deleted Successfully",HttpStatus.OK);
     }
-
-
-
-
-
-
-
-
 }

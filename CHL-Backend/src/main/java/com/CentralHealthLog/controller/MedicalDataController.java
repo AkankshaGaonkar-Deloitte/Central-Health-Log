@@ -1,5 +1,6 @@
 package com.CentralHealthLog.controller;
 
+
 import com.CentralHealthLog.entity.Vitals;
 import com.CentralHealthLog.service.MedicalDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,18 +16,19 @@ public class MedicalDataController {
 
 
 
-    @GetMapping("/products")
-    public List<Vitals> findAllProducts() {
-        return medicalDataService.getProducts();
-    }
+//    @GetMapping("/vitals")
+//    public List<Vitals> findAllProducts() {
+//        return medicalDataService.getProducts();
+//    }
 
-    @GetMapping("/productById/{id}")
-    public Vitals findProductById(@PathVariable Long id) {
-        return medicalDataService.getProductById(id);
+
+    @GetMapping("/vitals/{id}")
+    public Vitals findVitalsById(@PathVariable Long id) {
+        return medicalDataService.getVitalsById(id);
     }
-    @PutMapping("/update")
-    public Vitals updateProduct(@RequestBody Vitals product) {
-        return medicalDataService.updateProduct(product);
+    @PutMapping("/update-vitals")
+    public Vitals updateVitals(@RequestBody Vitals vitals) {
+        return medicalDataService.updateVitals(vitals);
     }
 
 

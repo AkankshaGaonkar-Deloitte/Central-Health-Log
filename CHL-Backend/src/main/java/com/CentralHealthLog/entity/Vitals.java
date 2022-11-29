@@ -17,12 +17,12 @@ public class Vitals {
     private Long id;
     private float height;
     private float weight;
-    private String blood_group;
     private float bmi;
-    private String Chronic_health_problems;
-    private  String immunizations;
+    private String blood_group;
+    private String allergies;
+    private String immunizations;
     private String chronic_health_problems;
-    private  String family_medical_history;
+    private String family_medical_history;
 
 
 }
