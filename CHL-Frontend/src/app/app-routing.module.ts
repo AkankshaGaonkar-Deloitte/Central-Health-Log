@@ -4,10 +4,7 @@ import { PatientDashboardComponent } from './components/patient/patient-dashboar
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 
 const routes: Routes = [
-  {
-    path : '',
-    component : PersonalDetailsComponent
-  },
+  
   {
     path : 'patient-dashboard',
     component : PatientDashboardComponent
