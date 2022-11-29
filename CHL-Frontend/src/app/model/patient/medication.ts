@@ -5,6 +5,7 @@ export class Medication {
         public isCurrent?: boolean,
         public medicine?: string,
         public recordId?: number,
-        public startingDate?: string
+        public startingDate?: string,
+        public patientId?: number
     ) {}
 }

@@ -23,6 +23,6 @@ export class MedicationService {
 
   getAllPatientRecords(patientId: number): Observable<Medication[]>{
     let headers = this.createAuthenticationHeader()
-    return this.http.get<Medication[]>(`http://localhost:8080/patient/past-record/${patientId}`, {headers})
+    return this.http.get<Medication[]>(`http://localhost:8080/patient/medications/${patientId}`, {headers})
   }
 }
