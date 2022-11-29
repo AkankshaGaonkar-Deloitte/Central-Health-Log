@@ -21,14 +21,14 @@ export class PatientRegService {
       }
 
       private baseurl="http://localhost:8080";
-    addPatient(newPatient:Patient):Observable<Patient[]>{
+    addPatient(newPatient:Patient):Observable<Patient>{
       let headers = this.createAuthenticationHeader()
-      return this.httpClient.post<Patient[]>(`${this.baseurl+'/patient'}`, newPatient,{headers})
+      return this.httpClient.post<Patient>(`${this.baseurl+'/patient'}`, newPatient,{headers})
 
     }
-    addDoctor(newDoctor:Doctor):Observable<Doctor[]>{
+    addDoctor(newDoctor:Doctor):Observable<Doctor>{
       let headers = this.createAuthenticationHeader()
-      return this.httpClient.post<Doctor[]>(`${this.baseurl+'/doctor'}`,newDoctor, {headers})
+      return this.httpClient.post<Doctor>(`${this.baseurl+'/doctor'}`,newDoctor, {headers})
 
     }
    

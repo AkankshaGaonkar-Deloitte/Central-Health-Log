@@ -11,10 +11,12 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+  ngOnInit(): void {
+  }
   patientActive:boolean=true;
 
   patient=new Patient();
-  this.patient.id=1;
+ 
   doctor=new Doctor();
 textBtnConfig={ type: "submit", styles: {backgroundColor:'#1CB5BD',color:'#fff',height:'2em' } };
 
@@ -37,8 +39,7 @@ ipConfig = {
 
   constructor(private router: Router,private patientregService: PatientRegService ) { }
   
-  ngOnInit(): void {
-  }
+  
 
   RegistrationForm = new FormGroup({
     firstName: new FormControl(''),
@@ -86,11 +87,11 @@ ipConfig = {
   }
   onSubmit() {
     console.warn(this.RegistrationForm.value,this.patient);
-    this.patientregService.addPatient(this.patient)
-      .subscribe(data =>this.patient)
-      //   this.patient=data;
-      //   console.log(this.patient)
-      // })
+    return this.patientregService.addPatient(this.patient)
+      .subscribe(data =>
+        {this.patient=data;
+        console.log(this.patient)
+      })
         
        }
   
@@ -109,41 +110,56 @@ ipConfig = {
 
   docNameReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.doctorname=String(this.DocRegistrationForm.value.doctorName);
 
   } 
   aadharReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.aadharNo=String(this.DocRegistrationForm.value.aadharNo);
 
   }
   regNoReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.regNo=String(this.DocRegistrationForm.value.registrationNo);
 
   } 
   yearReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.yearofReg=Number(this.DocRegistrationForm.value.yearOfReg);
 
   } 
   councilReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.stateMedCouncil=String(this.DocRegistrationForm.value.stateCouncil);
 
   } qualReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.qualification=String(this.DocRegistrationForm.value.qualification);
 
   } docIdReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.username=String(this.DocRegistrationForm.value.userID);
 
   } docPwdReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.password=String(this.DocRegistrationForm.value.password);
 
   } docEmailReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.email=String(this.DocRegistrationForm.value.email);
 
   } docContactReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
+    this.doctor.phoneNo=Number(this.DocRegistrationForm.value.contact);
 
   }
   onDocSubmit() {
     console.warn(this.DocRegistrationForm.value);
+    return this.patientregService.addDoctor(this.doctor)
+      .subscribe(data =>
+        {this.doctor=data;
+        console.log(this.doctor)
+      })
   }
   addPatient($event:any){
     this.patientActive=true;
