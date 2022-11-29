@@ -13,12 +13,12 @@ VALUES
 INSERT
 INTO
   medication
-  (medicine, record_id, dosage, starting_date, is_current)
+  (medicine, record_id, dosage, starting_date, is_current, patient_id)
 VALUES
-  ('Albendazole', 1, '0-0-1', '2022-11-21', true),
-  ('HCQS 200', 1, '0-1-0', '2022-11-21', true),
-  ('Pioz 15', 2, '0-0-1', '2012-09-12', true),
-  ('Minoxidil 5% sol', 3, '0-0-1', '2021-01-25', true),
-  ('Luliconazole 3% sol', 4, '1-0-1', '2021-01-25', false),
-  ('Crocin', 2, '1-1-1', '2012-09-12', false),
-  ('Shelcal XT', 3, '0-0-1', '2021-01-25', false);
+  ('Albendazole', 1, '0-0-1', '2022-11-21', true, 43190),
+  ('HCQS 200', 1, '0-1-0', '2022-11-21', true, 43190),
+  ('Pioz 15', 2, '0-0-1', '2012-09-12', true, 43190),
+  ('Minoxidil 5% sol', 3, '0-0-1', '2021-01-25', true, 43190),
+  ('Luliconazole 3% sol', 4, '1-0-1', '2021-01-25', false, 43190),
+  ('Crocin', 2, '1-1-1', '2012-09-12', false, 43190),
+  ('Shelcal XT', 3, '0-0-1', '2021-01-25', false, 43190);

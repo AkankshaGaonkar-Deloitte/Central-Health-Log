@@ -17,12 +17,13 @@ public class MedicationService {
         return medicationRepository.save(medication);
     }
 
-    public List<Medication> getAllMedications(){
-        return medicationRepository.findAll();
+    public List<Medication> getAllMedications(Long id){
+        return medicationRepository.findByPatientId(id).get();
     }
 
     public Medication deleteOrRemoveMedicationById(Long id){
         Medication retrievedMedication = medicationRepository.findById(id).get();
+        //System.out.println("------------------------------------------->deletion: " + retrievedMedication);
         if (retrievedMedication != null){
             if (retrievedMedication.isCurrent() == true){
                 retrievedMedication.setCurrent(false);
@@ -32,7 +33,7 @@ public class MedicationService {
             }
             return retrievedMedication;
         }else
-            return null;
+            throw new IllegalStateException("Medication does not exist with given Id");
 
     }
 }
