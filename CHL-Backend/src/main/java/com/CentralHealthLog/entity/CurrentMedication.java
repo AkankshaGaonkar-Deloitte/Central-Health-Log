@@ -26,6 +26,6 @@ public class CurrentMedication {
     @JsonFormat(pattern="yyyy-MM-dd")
     private Date startingDate;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private Long recordId;
 }
