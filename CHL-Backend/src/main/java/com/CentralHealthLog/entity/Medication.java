@@ -12,7 +12,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CurrentMedication {
+public class Medication {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,4 +28,7 @@ public class CurrentMedication {
 
     @Column(nullable = false)
     private Long recordId;
+
+    @Column(nullable = false)
+    private boolean isCurrent;
 }
