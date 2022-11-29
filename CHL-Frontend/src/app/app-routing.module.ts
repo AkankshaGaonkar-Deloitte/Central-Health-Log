@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
-import { MedicationComponent } from './components/patient/medication/medication.component';
+import { PastRecordsComponent } from './components/past-records/past-records.component';
+import { MedicationsComponent } from './components/patient/medications/medications.component';
 
 const routes: Routes = [
   {
@@ -11,11 +12,15 @@ const routes: Routes = [
   },
   {
     path : 'medications',
-    component : MedicationComponent
+    component : MedicationsComponent
   },
   {
     path : 'personal-details',
     component : PersonalDetailsComponent
+  },
+  {
+    path : 'past-records',
+    component : PastRecordsComponent
   }
 ];
 
