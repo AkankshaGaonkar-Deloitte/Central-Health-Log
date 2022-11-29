@@ -7,6 +7,6 @@ export class Patient {
     email !: string;
     phoneNo !: number;
     gender !: string;
-    address !:string;
+    // address !:string;
     age !: number;
 }
