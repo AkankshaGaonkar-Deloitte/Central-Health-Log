@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Patient } from 'src/app/model/patient';
 
 @Injectable({
   providedIn: 'root'
@@ -17,15 +18,17 @@ export class PatientRegService {
       Authorization: basicAuthHeaderString
       })
       }
-      // baseurl=
-    // addPatient():Observable<Patient[]>{
-    //   let headers = this.createAuthenticationHeader()
-    //   return this.httpClient.post<Patient[]>(`${this.baseurl+'/patient'}`, {headers})
+      baseurl= 'http://localhost:8080';
+    addPatient(newPatient:Patient):Observable<Patient[]>{
+      let headers = this.createAuthenticationHeader()
+      return this.httpClient.post<Patient[]>(`${this.baseurl+'/patient'}`, newPatient,{headers})
 
-    // }
+    }
     // addDoctor():Observable<Doctor[]>{
     //   let headers = this.createAuthenticationHeader()
     //   return this.httpClient.post<Doctor[]>(`${this.baseurl+'/doctor'}`, {headers})
 
     // }
+   
+    
 }
