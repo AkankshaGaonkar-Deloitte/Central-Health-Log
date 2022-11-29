@@ -19,16 +19,34 @@ export class PersonalDetailsComponent implements OnInit {
 
   // patient!: Patient;
   patient=new Patient();
+  fname !: string;
 
   @Input('btntext') btntext: string = 'Login';
   constructor(public patientservice:PatientService) {
 
   }
 
+  modalForm!: FormGroup;
+  testInp : string  = 'test';
+
   ngOnInit(): void {
     this.getPatientById();
+    console.log("patient value is " + this.patient.firstname)
+    this.modalForm = new FormGroup({
+      fn: new FormControl(
+        
+        { value: 'something', disabled: false }
+      )
+    });
+    console.log("value is : " + this.modalForm.get("fn")?.get("value"));
   }
+
+  // personalDetailsForm = new FormGroup({
+  //   firstName: 
+  // });
+
   PersonalDetails = new FormGroup({
+    id : new FormControl(''),
     firstName: new FormControl(''),
     lastName: new FormControl(''),
     email: new FormControl(''),
@@ -185,12 +203,23 @@ export class PersonalDetailsComponent implements OnInit {
     },
     type: 'submit',
   };
+
+
+
   onupdate() {
-    return this.patientservice.
-    console.log(this.PersonalDetails.value);
+    // return this.patientservice.
+    this.PersonalDetails.value.id = '1';
+    console.log(this.PersonalDetails.value.id + "id is ");
+    console.log(this.PersonalDetails.value.firstName + "firstname is ");
+    this.patient.id = Number(this.PersonalDetails.value.id);
+    this.patient.firstname != this.PersonalDetails.value.firstName;
+    return this.patientservice.updatePatientDetails(this.patient).subscribe(data => {
+      this.patient = data;
+      console.log("update successfull" + this.patient.id + " " + this.patient.firstname)
+    });
   }
 
-  getPatientById(){
+  getPatientById() {
      return this.patientservice.getPatientDetailsById(1).subscribe(data => {
       this.patient = data;
     });
