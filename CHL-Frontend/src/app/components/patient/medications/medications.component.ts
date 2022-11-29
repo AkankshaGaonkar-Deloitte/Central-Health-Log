@@ -58,6 +58,24 @@ export class MedicationsComponent implements OnInit {
     }
   };
 
+  deleteBtnConfig = {
+    type: "submit",
+    styles: {
+      background: '#fff',
+      color: '#737373',
+      border: '1px solid #737373',
+      height: '2em',
+      width: '8em',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
+      textAlign: 'center',
+
+    }
+  };
+
   dateConfig = {
     type: 'date',
     label: 'Date',
@@ -163,10 +181,6 @@ export class MedicationsComponent implements OnInit {
     this.medicationService.removeOrDeleteMedication(id)
       .subscribe(
         response => {
-          // const index = this.allMedicalDataOfAPatient.indexOf(response, 0);
-          // if (index > -1) {
-          //   this.allMedicalDataOfAPatient.splice(index, 1);
-          // }
           this.medicationService.getAllPatientRecords(this.patientId)
             .subscribe(data => this.allMedicalDataOfAPatient = data)
         }
@@ -174,5 +188,23 @@ export class MedicationsComponent implements OnInit {
   }
 
   displayStyle = "none";
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
+
+  submitNewMedication(){
+    this.medicationData.isCurrent=true
+    this.medicationData.patientId=this.patientId
+    this.medicationService.addMedication(this.medicationData)
+      .subscribe(data => {
+        console.log(`Newly added data ${data}`);
+        this.allMedicalDataOfAPatient.push(data)
+      })
+    this.closePopup()
+  }
 
 }

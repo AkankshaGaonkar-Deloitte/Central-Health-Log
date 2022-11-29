@@ -31,5 +31,9 @@ export class MedicationService {
     return this.http.delete<Medication>(`http://localhost:8080/patient/medications/${id as number}`, {headers})
   }
 
+  addMedication(medication: Medication){
+    let headers = this.createAuthenticationHeader()
+    return this.http.post<Medication>(`http://localhost:8080/patient/medications`, medication, {headers})
+  }
 
 }

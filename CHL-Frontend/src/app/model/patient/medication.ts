@@ -1,11 +1,11 @@
 export class Medication {
     constructor(
         public id?: number,
-        public dosage?: string,
+        public dosage?: string|number|null,
         public isCurrent?: boolean,
-        public medicine?: string,
-        public recordId?: number,
-        public startingDate?: string,
-        public patientId?: number
+        public medicine?: string|number|null,
+        public recordId?: string|number|null,
+        public startingDate?: string|number|null,
+        public patientId?: string|number|null
     ) {}
 }
