@@ -17,7 +17,7 @@ export class CheckboxComponent implements OnInit {
 
     onClickEventReceived($event: string[]) {
     console.log(`At parent + ${$event}`);
-    
+
   }
   */
 
@@ -46,7 +46,7 @@ export class CheckboxComponent implements OnInit {
 
 
     this.selectedCheckbox.emit(this.checkedBoxes)
-    
+
   }
 
 }
