@@ -10,6 +10,8 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login-page/login/login.component';
+
 import { NgChartsModule } from 'ng2-charts';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -29,11 +31,12 @@ import { MedicationsComponent } from './components/patient/medications/medicatio
   declarations: [
     AppComponent,
     InputComponent,
-    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
+    ButtonComponent,
+    LoginComponent,
     MedicalDataComponent,
     PersonalDetailsComponent,
     PersonalDetailsComponent,

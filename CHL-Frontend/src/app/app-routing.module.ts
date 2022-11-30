@@ -5,6 +5,7 @@ import { MedicalDataComponent } from './components/patient/medical-data/medical-
 import { MedicationsComponent } from './components/patient/medications/medications.component';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
+import { LoginComponent } from './components/login-page/login/login.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,15 @@ const routes: Routes = [
     path : 'past-records',
     component : PastRecordsComponent
   }
+    {
+      path : 'login',
+      component : LoginComponent
+    },
+    {
+      path : '',
+      redirectTo : 'login',
+      pathMatch : 'full'
+    }
 ];
 
 @NgModule({
