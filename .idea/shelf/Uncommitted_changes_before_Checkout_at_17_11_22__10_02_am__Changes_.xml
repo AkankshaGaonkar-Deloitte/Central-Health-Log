@@ -1,9 +1,0 @@
-<changelist name="Uncommitted_changes_before_Checkout_at_17_11_22,_10_02_am_[Changes]" date="1668659541579" recycled="true" deleted="true">
-  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_11_22,_10_02_am_[Changes]/shelved.patch" />
-  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 17/11/22, 10:02 am [Changes]" />
-  <binary>
-    <option name="BEFORE_PATH" value=".idea/sonarlint/issuestore/index.pb" />
-    <option name="AFTER_PATH" value=".idea/sonarlint/issuestore/index.pb" />
-    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_17_11_22,_10_02_am_[Changes]/index.pb" />
-  </binary>
-</changelist>

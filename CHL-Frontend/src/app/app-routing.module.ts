@@ -27,16 +27,16 @@ const routes: Routes = [
   {
     path : 'past-records',
     component : PastRecordsComponent
+  },
+  {
+    path : 'login',
+    component : LoginComponent
+  },
+  {
+    path : '',
+    redirectTo : 'login',
+    pathMatch : 'full'
   }
-    {
-      path : 'login',
-      component : LoginComponent
-    },
-    {
-      path : '',
-      redirectTo : 'login',
-      pathMatch : 'full'
-    }
 ];
 
 @NgModule({
