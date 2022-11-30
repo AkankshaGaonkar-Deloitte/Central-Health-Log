@@ -1,14 +1,14 @@
 export class Doctor {
     id !: number;
-    aadharNo !: string|number;
+    aadharNo !: number;
     username!: string;
     password!:string;
     phoneNo !: number;
     email !: string;
-    doctorname !: string;
+    doctorName !: string;
     qualification !: string;
     speciality !: string;
-    regNo !: string|number;
+    regNo !: number;
     yearofReg !: number;
     stateMedCouncil !: string;
     age !: number;

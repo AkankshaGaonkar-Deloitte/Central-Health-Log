@@ -24,9 +24,9 @@ public class Doctor {
     @Column(nullable = false)
     private String doctorName;
 
-    private Integer registrationNo;
+    private Long registrationNo;
 
-    private Integer yearOfReg;
+    private Long yearOfReg;
 
     private String stateMedicalCouncil;
 
@@ -36,11 +36,11 @@ public class Doctor {
     private String email;
 
     @Column(unique=true,nullable = false)
-    private String phoneNo;
+    private Long phoneNo;
 
     private String speciality;
 
-    private Integer age;
+    private Long age;
 
     private String gender;
 

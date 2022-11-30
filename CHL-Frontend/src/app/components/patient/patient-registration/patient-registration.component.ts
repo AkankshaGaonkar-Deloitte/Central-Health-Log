@@ -110,17 +110,17 @@ ipConfig = {
 
   docNameReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.doctorname=String(this.DocRegistrationForm.value.doctorName);
+    this.doctor.doctorName=String(this.DocRegistrationForm.value.doctorName);
 
   } 
   aadharReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.aadharNo=String(this.DocRegistrationForm.value.aadharNo);
+    this.doctor.aadharNo=Number(this.DocRegistrationForm.value.aadharNo);
 
   }
   regNoReceived($event:any){
     this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.regNo=String(this.DocRegistrationForm.value.registrationNo);
+    this.doctor.regNo=Number(this.DocRegistrationForm.value.registrationNo);
 
   } 
   yearReceived($event:any){
@@ -154,7 +154,7 @@ ipConfig = {
 
   }
   onDocSubmit() {
-    console.warn(this.DocRegistrationForm.value);
+    console.warn(this.DocRegistrationForm.value,this.doctor);
     return this.patientregService.addDoctor(this.doctor)
       .subscribe(data =>
         {this.doctor=data;
