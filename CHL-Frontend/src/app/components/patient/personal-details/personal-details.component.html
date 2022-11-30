@@ -5,10 +5,6 @@
     <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
     <div id="sub-container">
       <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
-      <div>{{patient.id}}</div>
-      <div>{{patient.firstname}}</div>
-      <div>{{patient.age}}</div>
-      <div>{{patient.lastname}}</div>
       <div id="text2">Update Details</div>
       <div id="container">
         <form [formGroup]="modalForm" (ngSubmit)="onupdate()" > 
@@ -16,7 +12,6 @@
             <div id="sub-container1">
               <div class="form-group">
                 <label for="first name">First name</label>
-                <!-- <input id="first name" formControlName="fn" type="text"  /> -->
                 <app-input [ipConfig]="ipConfig1" (outputEmit)="firstNameReceived($event) "></app-input>
               </div>
               <div class="form-group">

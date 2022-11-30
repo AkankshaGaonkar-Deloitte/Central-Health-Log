@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="">
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/PastRecordRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/PastRecordRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PastRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PastRecordService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicalDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicalDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Vitals.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Vitals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicalDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicalDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PatientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PatientService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +39,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature-registration" />
+        <entry key="$PROJECT_DIR$" value="feature-patient" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,6 +70,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>

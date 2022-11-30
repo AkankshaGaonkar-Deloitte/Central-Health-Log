@@ -16,15 +16,9 @@ export class PersonalDetailsComponent implements OnInit {
     '4': ['Medications', '/medications', 0],
     '5': ['Past Records', '/past-records', 0],
   };
-
-  // patient!: Patient;
   patient=new Patient();
   fname !: string;
-
-  @Input('btntext') btntext: string = 'Login';
-  constructor(public patientservice:PatientService) {
-
-  }
+  constructor(public patientservice:PatientService) { }
 
   modalForm!: FormGroup;
   testInp : string  = 'test';
@@ -41,10 +35,6 @@ export class PersonalDetailsComponent implements OnInit {
     console.log("value is : " + this.modalForm.get("fn")?.get("value"));
   }
 
-  // personalDetailsForm = new FormGroup({
-  //   firstName: 
-  // });
-
   PersonalDetails = new FormGroup({
     id : new FormControl(''),
     firstName: new FormControl(''),
@@ -58,24 +48,31 @@ export class PersonalDetailsComponent implements OnInit {
 
   firstNameReceived($event: any) {
     this.PersonalDetails.patchValue({ firstName: $event });
+    this.patient.firstname = String (this.PersonalDetails.value.firstName);
   }
   emailReceived($event: any) {
     this.PersonalDetails.patchValue({ email: $event });
+    this.patient.email = String (this.PersonalDetails.value.email);
   }
   genderReceived($event: any) {
     this.PersonalDetails.patchValue({ gender: $event });
+    this.patient.gender = String (this.PersonalDetails.value.gender);
   }
   lastNameReceived($event: any) {
     this.PersonalDetails.patchValue({ lastName: $event });
+    this.patient.lastname = String (this.PersonalDetails.value.lastName);
   }
   contactNoReceived($event: any) {
     this.PersonalDetails.patchValue({ contact: $event });
+    this.patient.phoneNo = Number (this.PersonalDetails.value.contact);
   }
   ageReceived($event: any) {
     this.PersonalDetails.patchValue({ age: $event });
+    this.patient.age = Number (this.PersonalDetails.value.age);
   }
   addressReceived($event: any) {
     this.PersonalDetails.patchValue({ address: $event });
+    this.patient.address = String (this.PersonalDetails.value.address);
   }
 
   ipConfig1 = {
@@ -209,13 +206,13 @@ export class PersonalDetailsComponent implements OnInit {
   onupdate() {
     // return this.patientservice.
     this.PersonalDetails.value.id = '1';
-    console.log(this.PersonalDetails.value.id + "id is ");
-    console.log(this.PersonalDetails.value.firstName + "firstname is ");
+    // console.log(this.PersonalDetails.value.id + "id is ");
     this.patient.id = Number(this.PersonalDetails.value.id);
     this.patient.firstname != this.PersonalDetails.value.firstName;
+    console.log(this.patient.firstname +"hi nawaz");
     return this.patientservice.updatePatientDetails(this.patient).subscribe(data => {
       this.patient = data;
-      console.log("update successfull" + this.patient.id + " " + this.patient.firstname)
+      
     });
   }
 

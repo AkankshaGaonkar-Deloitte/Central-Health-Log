@@ -7,10 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin("*")
 @RequestMapping("/patient")
 public class PatientRegController {
     @Autowired
@@ -38,6 +39,7 @@ public class PatientRegController {
 
     @PutMapping
     public ResponseEntity<Patient> updatePatient(@RequestBody Patient patient) {
+        System.out.println("Testing backend");
          Patient patients = patientService.updatePatientDetails(patient);
         return new ResponseEntity<Patient>(patients, HttpStatus.OK);
     }
@@ -47,12 +49,4 @@ public class PatientRegController {
          patientService.deletePatient(id);
          return new ResponseEntity<>("Deleted Successfully",HttpStatus.OK);
     }
-
-
-
-
-
-
-
-
 }
