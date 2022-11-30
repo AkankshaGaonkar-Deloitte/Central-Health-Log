@@ -20,7 +20,7 @@ import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-gra
 import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
 // import { Label } from 'ng2-charts';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationsComponent } from './components/patient/medications/medications.component';
@@ -39,8 +39,7 @@ import { MedicationsComponent } from './components/patient/medications/medicatio
     PersonalDetailsComponent,
     ButtonComponent,
     PastRecordsComponent,
-    MedicationsComponent
-    PersonalDetailsComponent,
+    MedicationsComponent,
     PatientDashboardComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
