@@ -36,6 +36,54 @@ ipConfig = {
   },
   patternErrorMessage: ''
 };
+ipConfig1 = {
+  type: 'tel',
+  label: 'contact',
+  placeholder:'',
+  styling: {  
+    width: '12em',
+    height: '1.6em'
+  },
+  validations : {
+    required: '',
+    minLength: '3',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
+ipConfig2 = {
+  type: 'password',
+  label: 'password',
+  placeholder:'',
+  styling: {  
+    width: '12em',
+    height: '1.6em'
+  },
+  validations : {
+    required: '',
+    minLength: '3',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
+ipConfig3 = {
+  type: 'number',
+  label: '',
+  placeholder:'',
+  styling: {  
+    width: '12em',
+    height: '1.6em'
+  },
+  validations : {
+    required: '',
+    minLength: '',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
 
   constructor(private router: Router,private patientregService: PatientRegService ) { }
   
@@ -86,7 +134,7 @@ ipConfig = {
 
   }
   onSubmit() {
-    console.warn(this.RegistrationForm.value,this.patient);
+    // console.warn(this.RegistrationForm.value,this.patient);
     return this.patientregService.addPatient(this.patient)
       .subscribe(data =>
         {this.patient=data;
@@ -109,35 +157,35 @@ ipConfig = {
   });
 
   docNameReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'doctorName':$event})
     this.doctor.doctorName=String(this.DocRegistrationForm.value.doctorName);
 
   } 
   aadharReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'aadharNo':$event})
     this.doctor.aadharNo=Number(this.DocRegistrationForm.value.aadharNo);
 
   }
   regNoReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.regNo=Number(this.DocRegistrationForm.value.registrationNo);
+    this.DocRegistrationForm.patchValue({'registrationNo':$event})
+    this.doctor.registrationNo=Number(this.DocRegistrationForm.value.registrationNo);
 
   } 
   yearReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.yearofReg=Number(this.DocRegistrationForm.value.yearOfReg);
+    this.DocRegistrationForm.patchValue({'yearOfReg':$event})
+    this.doctor.yearOfReg=Number(this.DocRegistrationForm.value.yearOfReg);
 
   } 
   councilReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
-    this.doctor.stateMedCouncil=String(this.DocRegistrationForm.value.stateCouncil);
+    this.DocRegistrationForm.patchValue({'stateCouncil':$event})
+    this.doctor.stateMedicalCouncil=String(this.DocRegistrationForm.value.stateCouncil);
 
   } qualReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'qualification':$event})
     this.doctor.qualification=String(this.DocRegistrationForm.value.qualification);
 
   } docIdReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'userID':$event})
     this.doctor.username=String(this.DocRegistrationForm.value.userID);
 
   } docPwdReceived($event:any){
@@ -145,20 +193,21 @@ ipConfig = {
     this.doctor.password=String(this.DocRegistrationForm.value.password);
 
   } docEmailReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'email':$event})
     this.doctor.email=String(this.DocRegistrationForm.value.email);
 
   } docContactReceived($event:any){
-    this.DocRegistrationForm.patchValue({'password':$event})
+    this.DocRegistrationForm.patchValue({'contact':$event})
     this.doctor.phoneNo=Number(this.DocRegistrationForm.value.contact);
 
   }
+  
   onDocSubmit() {
-    console.warn(this.DocRegistrationForm.value,this.doctor);
+    console.warn(this.DocRegistrationForm.value);
     return this.patientregService.addDoctor(this.doctor)
       .subscribe(data =>
         {this.doctor=data;
-        console.log(this.doctor)
+        console.warn(this.doctor)
       })
   }
   addPatient($event:any){

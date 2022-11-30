@@ -8,9 +8,9 @@ export class Doctor {
     doctorName !: string;
     qualification !: string;
     speciality !: string;
-    regNo !: number;
-    yearofReg !: number;
-    stateMedCouncil !: string;
+    registrationNo !: number;
+    yearOfReg !: number;
+    stateMedicalCouncil !: string;
     age !: number;
     gender !: string;
     address !:string;
