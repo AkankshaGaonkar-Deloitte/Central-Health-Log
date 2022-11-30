@@ -12,7 +12,7 @@ export class MedicalDataComponent implements OnInit {
   menus = {
     '1': ['Dashboard', '/patient-dashboard', 0],
     '2': ['Personal Details', '/personal-details', 0],
-    '3': ['Medical Data', '/medical-data', 0],
+    '3': ['Medical Data', '/medical-data', 1],
     '4': ['Medications', '/medications', 0],
     '5': ['Past Records', '/past-records', 0],
   };

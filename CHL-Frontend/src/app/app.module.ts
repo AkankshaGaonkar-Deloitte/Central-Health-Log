@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './common/input/input.component';
-import { ButtonComponent } from './common/button/button.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
@@ -13,10 +12,7 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login-page/login/login.component';
-
 import { NgChartsModule } from 'ng2-charts';
-
-import { HttpClientModule } from '@angular/common/http';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
@@ -41,8 +37,7 @@ import { HttpClientModule } from '@angular/common/http';
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    PatientRegistrationComponent
-    ButtonComponent,
+    PatientRegistrationComponent,
     LoginComponent,
     MedicalDataComponent,
     PersonalDetailsComponent,
