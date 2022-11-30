@@ -10,9 +10,11 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PastRecordsComponent } from './components/past-records/past-records.component';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationComponent } from './components/patient/medication/medication.component';
-import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import {HttpClientModule} from '@angular/common/http';
     PersonalDetailsComponent,
     PersonalDetailsComponent,
     ButtonComponent,
-    MedicationComponent
+    MedicationComponent,
+    PastRecordsComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import {HttpClientModule} from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    //{provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorAuthService, multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
