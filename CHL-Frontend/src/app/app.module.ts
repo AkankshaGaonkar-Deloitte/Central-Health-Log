@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './common/input/input.component';
+import { ButtonComponent } from './common/button/button.component';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
@@ -26,15 +28,20 @@ import { PastRecordsComponent } from './components/past-records/past-records.com
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationsComponent } from './components/patient/medications/medications.component';
+import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     InputComponent,
+    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
+    ButtonComponent,
+    PatientRegistrationComponent
     ButtonComponent,
     LoginComponent,
     MedicalDataComponent,

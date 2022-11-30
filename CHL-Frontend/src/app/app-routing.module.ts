@@ -6,8 +6,10 @@ import { MedicationsComponent } from './components/patient/medications/medicatio
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { LoginComponent } from './components/login-page/login/login.component';
+import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 
-const routes: Routes = [
+const routes: Routes = [ {path:'registration',component:PatientRegistrationComponent},
+
   {
     path : 'patient-dashboard',
     component : PatientDashboardComponent
