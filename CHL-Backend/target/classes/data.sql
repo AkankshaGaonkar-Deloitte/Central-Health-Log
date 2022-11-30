@@ -46,3 +46,8 @@ VALUES
       (3,'2021-11-09',90),
       (4,'2021-12-09',85),
       (5,'2022-01-09',97);
+
+     INSERT into VITALS VALUES(1,'Milk Products Allergies','O+iv',108,9,'Diabetes','ColourBlind',5.6,'Tetanus Toxoid',60,48);
+     INSERT into patient  VALUES(1,'Mangalore',21,'akanksha@gmail.com','Akanksha','female','Gaonkar','password','9632946608','ashu@123');
+
+
