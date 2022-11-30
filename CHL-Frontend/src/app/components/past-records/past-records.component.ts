@@ -40,10 +40,10 @@ export class PastRecordsComponent implements OnInit {
     "Doctor"
   ];
 
-  filterSelectEventReceived(selectedFilter: string){
+  filterSelectEventReceived(selectedFilter: string) {
     console.log(`At parent filter select ${selectedFilter}`);
     this.filterSelector = selectedFilter
-    
+
   }
   // filter selector block ends
 
@@ -88,16 +88,16 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  onClickFromDateReceived(fromDate: string|number|null) {
+  onClickFromDateReceived(fromDate: string | number | null) {
     console.log(`At parent from date ${fromDate}`);
     this.dateFrom = fromDate as string
-    
+
   }
 
-  onClickToDateReceived(toDate: string|number|null) {
+  onClickToDateReceived(toDate: string | number | null) {
     console.log(`At parent to date ${toDate}`);
     this.dateTo = toDate as string
-    
+
   }
   // search with date ends
 
@@ -146,12 +146,12 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  onClickSeverityFromReceived(fromSeverity: string|number|null) {
+  onClickSeverityFromReceived(fromSeverity: string | number | null) {
     console.log(`At parent severity from ${fromSeverity}`);
     this.severityFrom = fromSeverity as number
   }
 
-  onClickSeverityToReceived(toSeverity: string|number|null) {
+  onClickSeverityToReceived(toSeverity: string | number | null) {
     console.log(`At parent severity to ${toSeverity}`);
     this.severityTo = toSeverity as number
   }
@@ -180,7 +180,7 @@ export class PastRecordsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  onClickDoctorReceived(doctorid: string|number|null) {
+  onClickDoctorReceived(doctorid: string | number | null) {
     console.log(`At parent doctorid from ${doctorid}`);
     this.doctor = doctorid as number
   }
@@ -205,12 +205,12 @@ export class PastRecordsComponent implements OnInit {
     }
   };
 
-  search(){
+  search() {
     if (this.filterSelector === 'Date') {
       console.log(`${this.dateFrom} ${this.dateTo}`);
       this.pastRecordService.filterByDate(this.patientId, this.dateFrom, this.dateTo)
         .subscribe(data => this.allPastRecordsOfAPatient = data)
-      
+
     } else if (this.filterSelector === 'Severity') {
       console.log(`${this.severityFrom} ${this.severityTo}`);
       this.pastRecordService.filterBySeverity(this.patientId, this.severityFrom, this.severityTo)
@@ -220,9 +220,9 @@ export class PastRecordsComponent implements OnInit {
       console.log(this.doctor);
       this.pastRecordService.filterByDoctor(this.patientId, this.doctor)
         .subscribe(data => this.allPastRecordsOfAPatient = data)
-      
+
     }
-    
+
   }
   // on search button click ends
 
@@ -344,7 +344,7 @@ export class PastRecordsComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
-  
+
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 1] };
 
@@ -353,7 +353,7 @@ export class PastRecordsComponent implements OnInit {
   ngOnInit(): void {
     this.pastRecordService.getAllPatientRecords(43190)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
-    
+
   }
 
   displayStyle = "none";
@@ -365,15 +365,13 @@ export class PastRecordsComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  submitNewPastRecord(){
+  submitNewPastRecord() {
     console.log(this.pastRecord);
     this.pastRecordService.addPastRecord(this.pastRecord)
       .subscribe(data => {
         console.log(`Newly added data ${data}`);
-        
-        this.allPastRecordsOfAPatient.push(data)})
-    // this.pastRecordService.getAllPatientRecords(43190)
-    //   .subscribe(data => this.allPastRecordsOfAPatient = data);
+        this.allPastRecordsOfAPatient.push(data)
+      })
     this.closePopup()
   }
 

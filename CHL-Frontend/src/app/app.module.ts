@@ -14,7 +14,7 @@ import { PastRecordsComponent } from './components/past-records/past-records.com
 import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
-import { MedicationComponent } from './components/patient/medication/medication.component';
+import { MedicationsComponent } from './components/patient/medications/medications.component';
 
 @NgModule({
   declarations: [
@@ -29,8 +29,8 @@ import { MedicationComponent } from './components/patient/medication/medication.
     PersonalDetailsComponent,
     PersonalDetailsComponent,
     ButtonComponent,
-    MedicationComponent,
-    PastRecordsComponent
+    PastRecordsComponent,
+    MedicationsComponent
   ],
   imports: [
     BrowserModule,
