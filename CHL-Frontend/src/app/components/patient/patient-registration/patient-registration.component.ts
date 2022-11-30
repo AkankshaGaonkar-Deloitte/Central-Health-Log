@@ -25,8 +25,9 @@ ipConfig = {
   label: 'firstname',
   placeholder:'',
   styling: {  
-    width: '12em',
-    height: '1.6em'
+    width: '14em',
+    height: '1.6em',
+    borderRadius:'0.2em'
   },
   validations : {
     required: '',
@@ -41,8 +42,9 @@ ipConfig1 = {
   label: 'contact',
   placeholder:'',
   styling: {  
-    width: '12em',
-    height: '1.6em'
+    width: '14em',
+    height: '1.6em',
+    borderRadius:'0.2em'
   },
   validations : {
     required: '',
@@ -57,8 +59,9 @@ ipConfig2 = {
   label: 'password',
   placeholder:'',
   styling: {  
-    width: '12em',
-    height: '1.6em'
+    width: '14em',
+    height: '1.6em',
+    borderRadius:'0.2em'
   },
   validations : {
     required: '',
@@ -73,8 +76,9 @@ ipConfig3 = {
   label: '',
   placeholder:'',
   styling: {  
-    width: '12em',
-    height: '1.6em'
+    width: '14em',
+    height: '1.6em',
+    borderRadius:'0.2em'
   },
   validations : {
     required: '',
