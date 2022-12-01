@@ -13,6 +13,6 @@ export class Doctor {
     stateMedicalCouncil !: string|number|null;
     age !: string|number|null;
     gender !: string|number|null;
-    address !:string;
-    statusCode!:string;
+    address !:string|number|null;
+    statusCode!:string|number|null;
 }
