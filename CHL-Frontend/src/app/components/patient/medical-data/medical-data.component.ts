@@ -10,6 +10,26 @@ export class MedicalDataComponent implements OnInit {
 
   heightPrefill = ''
 
+  textDropConfig = {
+      styles: {
+        height: '2.375em',
+        width: '100%',
+        border: '0.0625em solid #949494',
+        borderRadius: '0.625em'
+      }
+    }
+  
+    optionList = [
+      "A+",
+      "A-",
+      "B+",
+      "B-",
+      "O+",
+      "O-",
+      "AB+",
+      "AB-"
+    ];
+
   textBtnConfig = {
     type: "submit",
     styles: {
