@@ -1,0 +1,68 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"AutoImportSettings\">\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\n  </component>\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"34321c7e-b3a3-4e3c-a940-9ec627657f4e\" name=\"Changes\" comment=\"\">\n      <change beforePath=\"$PROJECT_DIR$/chl.mv.db\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/chl.mv.db\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"CompilerWorkspaceConfiguration\">\n    <option name=\"MAKE_PROJECT_ON_SAVE\" value=\"true\" />\n  </component>\n  <component name=\"ExternalProjectsData\">\n    <projectState path=\"$PROJECT_DIR$\">\n      <ProjectState />\n    </projectState>\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"JpbToolWindowState\">\n    <option name=\"myId2FirstActivated\">\n      <map>\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"true\" />\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"true\" />\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"true\" />\n      </map>\n    </option>\n    <option name=\"myId2Visible\">\n      <map>\n        <entry key=\"com.haulmont.jpb.jpaInspector\" value=\"false\" />\n        <entry key=\"com.haulmont.jpb.jpaPalette\" value=\"false\" />\n        <entry key=\"com.haulmont.jpb.jpaStructure\" value=\"false\" />\n      </map>\n    </option>\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"MavenImportPreferences\">\n    <option name=\"generalSettings\">\n      <MavenGeneralSettings>\n        <option name=\"useMavenConfig\" value=\"true\" />\n      </MavenGeneralSettings>\n    </option>\n  </component>\n  <component name=\"ProjectId\" id=\"2Gr72gGfzwEbmsZeYZWHq3UdZZo\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"autoscrollToSource\" value=\"true\" />\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n    <option name=\"showMembers\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"last_opened_file_path\": \"/home/akanksha5/Desktop/Central-Health-Log\",\n    \"settings.editor.selected.configurable\": \"advanced.settings\"\n  }\n}]]></component>\n  <component name=\"RunManager\" selected=\"Application.com.CentralHealthLog.CentralHealthLogApplication\">\n    <configuration name=\"CentralHealthLogApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"product.CentralHealthLogApplication\" />\n      <module name=\"Central-Health-Log.main\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"product.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration name=\"com.CentralHealthLog.CentralHealthLogApplication\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"com.CentralHealthLog.CentralHealthLogApplication\" />\n      <module name=\"CentralHealthLog\" />\n      <extension name=\"coverage\">\n        <pattern>\n          <option name=\"PATTERN\" value=\"com.CentralHealthLog.*\" />\n          <option name=\"ENABLED\" value=\"true\" />\n        </pattern>\n      </extension>\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"JetRunConfigurationType\">\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <configuration default=\"true\" type=\"KotlinStandaloneScriptRunConfigurationType\">\n      <option name=\"filePath\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.com.CentralHealthLog.CentralHealthLogApplication\" />\n        <item itemvalue=\"Application.CentralHealthLogApplication\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"34321c7e-b3a3-4e3c-a940-9ec627657f4e\" name=\"Changes\" comment=\"\" />\n      <created>1667134644527</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1667134644527</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision a41e64f64acf603b18b7a6cb0ec866d4c5dce6c8)
++++ b/.idea/workspace.xml	(date 1669087596505)
+@@ -4,9 +4,7 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/chl.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/chl.mv.db" afterDir="false" />
+-    </list>
++    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="unversioned files added" />
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -29,6 +27,10 @@
+   </component>
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="HighlightingSettingsPerFile">
++    <setting file="file://$PROJECT_DIR$/CHL-Backend/pom.xml" root0="FORCE_HIGHLIGHTING" />
++    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
+   </component>
+   <component name="JpbToolWindowState">
+     <option name="myId2FirstActivated">
+@@ -65,8 +67,10 @@
+   </component>
+   <component name="PropertiesComponent"><![CDATA[{
+   "keyToString": {
++    "Git.Branch.Popup.ShowAllRemotes": "true",
+     "RunOnceActivity.OpenProjectViewOnStart": "true",
+     "RunOnceActivity.ShowReadmeOnStart": "true",
++    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+     "last_opened_file_path": "/home/akanksha5/Desktop/Central-Health-Log",
+     "settings.editor.selected.configurable": "advanced.settings"
+   }
+@@ -125,6 +129,14 @@
+       <option name="presentableId" value="Default" />
+       <updated>1667134644527</updated>
+     </task>
++    <task id="LOCAL-00001" summary="unversioned files added">
++      <created>1669087404803</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1669087404803</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -138,4 +150,8 @@
+       </map>
+     </option>
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="unversioned files added" />
++    <option name="LAST_COMMIT_MESSAGE" value="unversioned files added" />
++  </component>
+ </project>
+\ No newline at end of file

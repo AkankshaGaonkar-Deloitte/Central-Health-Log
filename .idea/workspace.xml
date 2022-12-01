@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database" />
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="yarn charts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/resources/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/data.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,6 +38,10 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -75,7 +83,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/akanksha5/Desktop/Central-Health-Log&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/tkaurkhanuja/Desktop/Central-Health-Log/CHL-Backend/pom.xml&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
   }
 }</component>

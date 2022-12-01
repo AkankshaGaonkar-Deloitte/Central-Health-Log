@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
@@ -27,6 +28,8 @@ export class LoginComponent implements OnInit {
   // }
   loginPatient(){
     console.warn('patient',this.LoginForm.value);
+    this.router.navigate(['/patient-dashboard'])
+    
   }
   loginDoctor(){
     console.warn('doctor',this.LoginForm.value);
@@ -37,7 +40,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
