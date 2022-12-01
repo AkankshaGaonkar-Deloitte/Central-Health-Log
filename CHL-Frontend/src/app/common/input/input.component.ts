@@ -9,19 +9,20 @@ export class InputComponent implements OnInit {
 
   /*
   //PARENT TS
+  prefil:string = 'Hello' //should only be used is you want to prefil the input field (e.g., in updating any user details)
+
   ipConfig = {
     type: 'tel',
     label: 'Ph no',
     placeholder: '',
     styling: {  
-      width: '200px',
       height: '40px'
     },
     validations : {
       required: 'false',
       minLength: '',
       maxLength: '',
-      pattern: '[6-9]{1}[0-9]{9}'
+      pattern: ''
     },
     patternErrorMessage: 'Invalid ph no'
   };
@@ -31,8 +32,11 @@ export class InputComponent implements OnInit {
   }
 
   //PARENT HTML
+  // can be used for normal input field
   <app-input [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
 
+  // must be used if you want the added prefil option
+  <app-input [userInput]="prefil" [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
   
   */
 
@@ -41,8 +45,7 @@ export class InputComponent implements OnInit {
     label: 'Name',
     placeholder: '',
     styling: {  
-      width: '15em',
-      height:'2.4em'
+      
     },
     validations : {
       required: '',
@@ -55,7 +58,7 @@ export class InputComponent implements OnInit {
 
   @Output() outputEmit = new EventEmitter<string | number | null>()
 
-  userInput:string = ''
+  @Input() userInput:string = ''
 
   emitChanges() {
     console.log(`At child: ${this.userInput}`)
