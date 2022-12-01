@@ -1,18 +1,18 @@
 export class Doctor {
-    id !: number;
-    aadharNo !: number;
-    username!: string;
-    password!:string;
-    phoneNo !: number;
-    email !: string;
-    doctorName !: string;
-    qualification !: string;
-    speciality !: string;
-    registrationNo !: number;
-    yearOfReg !: number;
-    stateMedicalCouncil !: string;
-    age !: number;
-    gender !: string;
+    id !: string|number|null;
+    aadharNo !: string|number|null;
+    username!: string|number|null;
+    password!:string|number|null;
+    phoneNo !: string|number|null;
+    email !: string|number|null;
+    doctorName !: string|number|null;
+    qualification !: string|number|null;
+    speciality !: string|number|null;
+    registrationNo !: string|number|null;
+    yearOfReg !: string|number|null;
+    stateMedicalCouncil !: string|number|null;
+    age !: string|number|null;
+    gender !: string|number|null;
     address !:string;
     statusCode!:string;
 }
