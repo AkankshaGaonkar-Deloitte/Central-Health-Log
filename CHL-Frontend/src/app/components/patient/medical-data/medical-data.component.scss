@@ -31,6 +31,12 @@
                 box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
                 border-radius: 0.5em;
 
+                #button-div{
+                    margin: 1.25em;
+                    display: flex;
+                    flex-direction: row-reverse;
+                }
+
                 #text1 {
                     font-family: "Montserrat";
                     font-style: normal;
@@ -71,89 +77,74 @@
                     }
                 }
 
-                .table-container {
-                    position: relative;
-                    margin: 1.25em;
-                    height: 30%;
-                    overflow-y: auto;
+                .outline {
+                    margin-left: 1.25em;
+                    margin-right: 1.25em;
+                    border: 1px solid #EAEBED;
+                    border-radius: 0.625em;
+
+                    .update-form-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr 1fr 1fr 2fr;
+                        gap: 0em 0em;
+                        grid-auto-flow: row;
+                        grid-template-areas:
+                            ". ."
+                            ". ."
+                            ". ."
+                            ". .";
+
+                        .form-cell {
+                            margin-top: 1.25em;
+                            margin-left: 1.25em;
+                            margin-right: 1.25em;
+
+                            .cell {
+                                display: grid;
+                                grid-template-columns: 1fr 1.5fr;
+                                grid-template-rows: 1fr;
+                                gap: 0em 0em;
+                                grid-template-areas:
+                                    ". .";
+
+                                label {
+                                    font-family: 'Poppins';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 1em;
+                                    line-height: 1.5em;
+                                    letter-spacing: 0.1em;
+                                    color: #2C2D2D;
+                                }
+
+                                textarea {
+                                    height: 5em;
+                                    border: 0.0625em solid #949494;
+                                    border-radius: 0.625em;
+                                }
+
+                                textarea:hover {
+                                    border: 0.0625em solid #737373;
+                                }
+
+                                textarea:focus {
+                                    border: 1px solid #1CB5BD;
+                                    box-shadow: 0px 0px 6px rgba(28, 181, 189, 0.5);
+                                    outline: none;
+                                }
+
+                                textarea.ng-touched.ng-invalid {
+                                    border: 0.0625em solid #ee0004;
+                                }
+                            }
+
+                        }
+                    }
+
+
                 }
             }
         }
     }
-}
-
-
-.flex-modal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 2em 2em;
-    grid-auto-flow: row;
-    grid-template-areas:
-        ". ."
-        ". .";
-
-    .grid-item {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
-
-
-
-
-
-
-
-
-
-table {
-    position: absolute;
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td,
-th {
-    border: 0.0625em solid #dddddd;
-    text-align: left;
-    padding: 0.5em;
-}
-
-th {
-    background-color: #f5f5f5;
-
-    gap: 0.25em;
-    isolation: isolate;
-    width: 17.8em;
-    height: 3.4375em;
-    background: #f5f5f5;
-    border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
-
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1em;
-    line-height: 1.375em;
-    color: rgba(0, 0, 0, 0.85);
-}
-
-table,
-th,
-td {
-    border-left: none;
-    border-right: none;
-    border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
-}
-
-td {
-    height: 1.375em;
-    font-family: "Montserrat";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 1em;
-    line-height: 1.375em;
-    color: rgba(0, 0, 0, 0.85);
 }
