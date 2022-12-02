@@ -16,11 +16,14 @@ public class BloodPressure {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
+
     @Column
-    @JsonFormat(pattern="yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     public Date date;
+
     @Column(nullable = false)
     public Integer systolic;
+    
     @Column(nullable = false)
     public Integer diastolic;
 

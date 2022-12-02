@@ -46,15 +46,25 @@
             <div class="form-cell">
               <div class="cell">
                 <label>Immunizations:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
-                
+                <app-input [userInput]="heightPrefill" [ipConfig]="immunizationConfig" (outputEmit)="''"></app-input>                
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Blood group:</label>
-                <!-- <app-input [userInput]="heightPrefill" [ipConfig]="heightConfig" (outputEmit)="''"></app-input> -->
                 <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"></app-dropdown>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Blood pressure:</label>
+                <app-input [userInput]="heightPrefill" [ipConfig]="bpConfig" (outputEmit)="''"></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Pulse (per minute):</label>
+                <app-input [userInput]="heightPrefill" [ipConfig]="pulseConfig" (outputEmit)="''"></app-input>
               </div>
             </div>
             <div class="form-cell">

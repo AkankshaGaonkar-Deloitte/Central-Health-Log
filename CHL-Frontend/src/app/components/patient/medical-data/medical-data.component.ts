@@ -115,6 +115,56 @@ export class MedicalDataComponent implements OnInit {
     patternErrorMessage: ''
   };
 
+    bpConfig = {
+    type: 'number',
+    label: 'Systole',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '3',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  pulseConfig = {
+    type: 'text',
+    label: 'Pulse',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '3',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  immunizationConfig = {
+    type: 'text',
+    label: 'Immunization',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '3',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
 

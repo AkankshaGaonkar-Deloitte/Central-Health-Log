@@ -23,31 +23,37 @@ VALUES
   ('Crocin', 2, '1-1-1', '2012-09-12', false, 43190),
   ('Shelcal XT', 3, '0-0-1', '2021-01-25', false, 43190);
 
-  INSERT INTO
-  BMI VALUES
+INSERT INTO
+BMI VALUES
   (1,20,'2021-09-09'),
   (2,24,'2021-10-09'),
   (3,22,'2021-11-09'),
-   (4,28,'2021-12-09'),
-    (5,23,'2022-01-09');
+  (4,28,'2021-12-09'),
+  (5,23,'2022-01-09');
 
-   INSERT INTO
-    blood_pressure VALUES
-    (1,'2021-09-09',90,110),
-    (2,'2021-10-09',80,120),
-    (3,'2021-11-09',75,105),
-    (4,'2021-12-09',82,100),
-      (5,'2022-01-09',67,110);
+INSERT INTO
+blood_pressure VALUES
+  (1,'2021-09-09',90,110),
+  (2,'2021-10-09',80,120),
+  (3,'2021-11-09',75,105),
+  (4,'2021-12-09',82,100),
+  (5,'2022-01-09',67,110);
 
-    INSERT INTO
-      pulse VALUES
-      (1,'2021-09-09',100),
-      (2,'2021-10-09',110),
-      (3,'2021-11-09',90),
-      (4,'2021-12-09',85),
-      (5,'2022-01-09',97);
+INSERT INTO
+pulse VALUES
+  (1,'2021-09-09',100),
+  (2,'2021-10-09',110),
+  (3,'2021-11-09',90),
+  (4,'2021-12-09',85),
+  (5,'2022-01-09',97);
 
-     INSERT into VITALS VALUES(1,'Milk Products Allergies','O+iv',108,9,'Diabetes','ColourBlind',5.6,'Tetanus Toxoid',60,48);
-     INSERT into patient  VALUES(1,'Mangalore',21,'akanksha@gmail.com','Akanksha','female','Gaonkar','password','9632946608','ashu@123');
+INSERT
+INTO
+  medical_data
+  (patient_id, is_current, height, weight, bmi, pulse_rate, blood_pressure, blood_group, allergies, immunizations, chronic_health_problems, family_medical_history)
+VALUES
+  (43190, TRUE, 6, 80, 24, 70, 120/80, 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia');
 
-
+INSERT into
+patient  VALUES
+(1,'Mangalore',21,'akanksha@gmail.com','Akanksha','female','Gaonkar','password','9632946608','ashu@123');

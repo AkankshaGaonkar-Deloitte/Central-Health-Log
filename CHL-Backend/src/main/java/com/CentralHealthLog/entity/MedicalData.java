@@ -5,21 +5,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-
-
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Vitals {
+public class MedicalData {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private float height;
-    private float weight;
-    private float bmi;
-    private float pulseRate;
-    private float bloodPressure;
+    private Long patientId;
+    private Boolean isCurrent;
+    private Double height;
+    private Double weight;
+    private Double bmi;
+    private Double pulseRate;
+    private String bloodPressure;
     private String bloodGroup;
     private String allergies;
     private String immunizations;
