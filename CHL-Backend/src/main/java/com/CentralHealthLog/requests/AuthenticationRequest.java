@@ -11,4 +11,6 @@ public @Data class AuthenticationRequest {
         this.userName = userName;
         this.password = password;
     }
+
+
 }
