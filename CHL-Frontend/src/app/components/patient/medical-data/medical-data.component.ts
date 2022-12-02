@@ -186,8 +186,7 @@ export class MedicalDataComponent implements OnInit {
     if (this.medicalData.isCurrent === undefined)
       this.medicalData.isCurrent='true'
     
-    if (this.medicalData.patientId === undefined)
-      this.medicalData.patientId=this.patientId
+    this.medicalData.patientId=this.patientId
 
     this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
     console.log(this.medicalData);
