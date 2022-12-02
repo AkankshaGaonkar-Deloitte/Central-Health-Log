@@ -1,55 +1,88 @@
-<div id="main-container">
-    <div id="nav">
-    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar></div>
-    <div id="parent-container">
-      <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
-      <div id="sub-container">
-        <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
-        <div id="text2">Update Details</div>
-        <div id="container">
-          <form (ngSubmit)="onupdate()">
-            <div id="container1">
-              <div id="sub-container1">
-                <div class="form-group">
-                  <label for="height">Height</label>
-                  <app-input [ipConfig]="ipConfig1" (outputEmit)="heightReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="bmi">BMI</label>
-                  <app-input [ipConfig]="ipConfig2" (outputEmit)="bmiReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="immunizations">Immunizations</label>
-                  <app-input [ipConfig]="ipConfig3" (outputEmit)="immunizationsReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="familymedicalhistory">Family Medical History</label>
-                  <app-input [ipConfig]="ipConfig4" (outputEmit)="familymedicalhistoryReceived($event) "></app-input>
-                </div>
-              </div>
-              <div id="sub-container2">
-                <div class="form-group">
-                  <label for="Weight">Weight</label>
-                  <app-input [ipConfig]="ipConfig5" (outputEmit)="weightReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="allergies">Allergies</label>
-                  <app-input [ipConfig]="ipConfig6" (outputEmit)="allergiesReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="bloodgroup">Blood Group</label>
-                  <app-input [ipConfig]="ipConfig7" (outputEmit)="bloodGroupReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="chronichealthproblem">Chronic Health Problem</label>
-                  <app-input [ipConfig]="ipConfig8" (outputEmit)="chronichealthproblemReceived($event) "></app-input>
-                </div>
+<div class="main-container">
+  <div id="nav">
+    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+  </div>
+  <div class="subcontainer">
+    <div class="flex-item1">
+      <app-sidebar [menus]="menus"></app-sidebar>
+    </div>
+    <div class="flex-item2">
+      <div class="main">
+        <div id="text1"><a href="#"></a>&lt; &nbsp; Back to Dashboard</div>
+        <div class="search-filter">
+          <div class="left">
+            <div id="sort-by">
+              Update Details
+            </div>
+          </div>
+          <div class="right"></div>
+        </div>
+        <div class="outline">
+          <div class="update-form-container">
+            <div class="form-cell">
+              <div class="cell">
+                <label>Height:</label>
+                <app-input [userInput]="medicalData.height" [ipConfig]="heightConfig" (outputEmit)="medicalData.height=$event"></app-input>
               </div>
             </div>
-            <div id="container2">
-              <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" (onClick)="onupdate()"  [btnConfig]="textBtnConfig"></app-button></div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Weight:</label>
+                <app-input [userInput]="medicalData.weight" [ipConfig]="weightConfig" (outputEmit)="medicalData.weight=$event"></app-input>
+              </div>
             </div>
-          </form>
+            <div class="form-cell">
+              <div class="cell">
+                <label>BMI:</label>
+                <app-input [userInput]="medicalData.bmi" [ipConfig]="bmiConfig" (outputEmit)="medicalData.bmi=$event"></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Allergies:</label>
+                <app-input [userInput]="medicalData.allergies" [ipConfig]="allergiesConfig" (outputEmit)="medicalData.allergies=$event"></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Immunizations:</label>
+                <app-input [userInput]="medicalData.immunizations" [ipConfig]="immunizationConfig" (outputEmit)="medicalData.immunizations=$event"></app-input>                
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Blood group:</label>
+                <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="medicalData.bloodGroup=$event"></app-dropdown>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Blood pressure:</label>
+                <app-input [userInput]="medicalData.bloodPressure" [ipConfig]="bpConfig" (outputEmit)="medicalData.bloodPressure=$event"></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Pulse (per minute):</label>
+                <app-input [userInput]="medicalData.pulseRate" [ipConfig]="pulseConfig" (outputEmit)="medicalData.pulseRate=$event"></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell" style="margin-bottom: 1.25em;">
+                <label>Family medical history:</label>
+                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="medicalData.familyMedicalHistory"></textarea>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell" style="margin-bottom: 1.25em;">
+                <label>Chronic health problems:</label>
+                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="medicalData.chronicHealthProblems"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="button-div">
+          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="medicalDataFormSubmit()"></app-button>
         </div>
       </div>
     </div>
