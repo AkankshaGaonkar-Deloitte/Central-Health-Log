@@ -8,7 +8,7 @@ import { Doctor } from 'src/app/model/doctor';
 @Component({
   selector: 'app-patient-registration',
   templateUrl: './patient-registration.component.html',
-  styleUrls: ['./patient-registration.component.scss','./image.scss']
+  styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
   ngOnInit(): void {
