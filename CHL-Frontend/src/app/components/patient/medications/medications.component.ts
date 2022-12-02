@@ -6,7 +6,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 @Component({
   selector: 'app-medications',
   templateUrl: './medications.component.html',
-  styleUrls: ['./medications.component.scss','./table.scss']
+  styleUrls: ['./medications.component.scss']
 })
 export class MedicationsComponent implements OnInit {
 
@@ -14,7 +14,6 @@ export class MedicationsComponent implements OnInit {
   medicationData: Medication = new Medication(-1)
 
   patientId: number = 43190
-
   filterSelector: string = 'Date'
   dateFrom: string = ''
   dateTo: string = ''
@@ -36,8 +35,7 @@ export class MedicationsComponent implements OnInit {
       fontWeight: '500',
       fontSize: '1.25em',
       lineHeight: '1.5em',
-      textAlign: 'center',
-
+      textAlign: 'center'
     }
   };
 
@@ -53,8 +51,7 @@ export class MedicationsComponent implements OnInit {
       fontWeight: '500',
       fontSize: '1.25em',
       lineHeight: '1.5em',
-      textAlign: 'center',
-
+      textAlign: 'center'
     }
   };
 
@@ -161,7 +158,6 @@ export class MedicationsComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 1], '5': ["Past Records", "/past-records", 0] };
 
   constructor(private medicationService: MedicationService) { }
@@ -173,9 +169,7 @@ export class MedicationsComponent implements OnInit {
         console.log(this.allMedicalDataOfAPatient);
         
       }
-    )
-
-  }
+    )}
 
   removeOrDeleteMedication(id?: number){
     this.medicationService.removeOrDeleteMedication(id)
@@ -184,9 +178,7 @@ export class MedicationsComponent implements OnInit {
           this.medicationService.getAllPatientRecords(this.patientId)
             .subscribe(data => this.allMedicalDataOfAPatient = data)
         }
-      )
-  }
-
+      ) }
   displayStyle = "none";
 
   openPopup() {
