@@ -1,7 +1,8 @@
-import { Vitals } from './../../../model/patient/vitals';
-import { PatientService } from './../../../service/patient/patient.service';
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { MedicalData } from 'src/app/model/medical-data';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
+import { MedicationService } from 'src/app/service/medication/medication.service';
 
 @Component({
   selector: 'app-medical-data',
@@ -9,225 +10,188 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./medical-data.component.scss'],
 })
 export class MedicalDataComponent implements OnInit {
-  menus = {
-    '1': ['Dashboard', '/patient-dashboard', 0],
-    '2': ['Personal Details', '/personal-details', 0],
-    '3': ['Medical Data', '/medical-data', 1],
-    '4': ['Medications', '/medications', 0],
-    '5': ['Past Records', '/past-records', 0],
-  };
-  constructor(private medicalDataService: PatientService) {}
+
+  patientId:number = 43190
+  medicalData: MedicalData = new MedicalData()
+
+  textDropConfig = {
+      styles: {
+        height: '2.375em',
+        width: '100%',
+        border: '0.0625em solid #949494',
+        borderRadius: '0.625em'
+      }
+    }
   
-  vitals=new Vitals();
-  ngOnInit(): void {
-    this.getVitalById();
-  }
-  MedicationComponent = new FormGroup({
-    height: new FormControl(''),
-    bmi: new FormControl(''),
-    immunization: new FormControl(''),
-    familyMedicalHistory: new FormControl(''),
-    weight: new FormControl(''),
-    allergies: new FormControl(''),
-    bloodGroup: new FormControl(''),
-    chronicHealthProblem: new FormControl(''),
-  });
+    optionList = [
+      "A+",
+      "A-",
+      "B+",
+      "B-",
+      "O+",
+      "O-",
+      "AB+",
+      "AB-"
+    ];
 
-  heightReceived($event: any) {
-    this.MedicationComponent.patchValue({ height: $event });
-    this.vitals.height = Number(this.MedicationComponent.value.height);
-  }
-  bmiReceived($event: any) {
-    this.MedicationComponent.patchValue({ bmi: $event });
-    this.vitals.bmi = Number(this.MedicationComponent.value.bmi);
-  }
-  immunizationsReceived($event: any) {
-    this.MedicationComponent.patchValue({ immunization: $event });
-    this.vitals.immunizations = String(this.MedicationComponent.value.immunization);
-  }
-  familymedicalhistoryReceived($event: any) {
-    this.MedicationComponent.patchValue({ familyMedicalHistory: $event });
-    this.vitals.familyMedicalHistory = String(this.MedicationComponent.value.familyMedicalHistory);
-  }
-  weightReceived($event: any) {
-    this.MedicationComponent.patchValue({ weight: $event });
-    this.vitals.weight = Number(this.MedicationComponent.value.weight);
-  }
-  allergiesReceived($event: any) {
-    this.MedicationComponent.patchValue({ allergies: $event });
-    this.vitals.allergies = String(this.MedicationComponent.value.allergies);
-  }
-
-  bloodGroupReceived($event: any) {
-    this.MedicationComponent.patchValue({ bloodGroup: $event });
-    this.vitals.bloodGroup = String(this.MedicationComponent.value.bloodGroup);
-  }
-
-  chronichealthproblemReceived($event: any) {
-    this.MedicationComponent.patchValue({ chronicHealthProblem: $event });
-    this.vitals.chronicHealthProblems = String(this.MedicationComponent.value.chronicHealthProblem);
-    console.log(this.vitals.chronicHealthProblems+" prasad");
-  }
-
-  ipConfig1 = {
-    type: 'text',
-    label: 'height',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig2 = {
-    type: 'text',
-    label: 'weight',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig3 = {
-    type: 'text',
-    label: 'bmi',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig4 = {
-    type: 'text',
-    label: 'allergies',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig5 = {
-    type: 'text',
-    label: 'immunizations',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig6 = {
-    type: 'text',
-    label: 'blood group',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig7 = {
-    type: 'text',
-    label: 'family medical history',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig8 = {
-    type: 'text',
-    label: 'chronic health problem',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
   textBtnConfig = {
+    type: "submit",
     styles: {
-      backgroundColor: '#1CB5BD',
-      color: '#ffff',
+      background: '#1CB5BD',
+      color: '#fff',
+      height: '2em',
+      width: '8em',
       fontFamily: 'Montserrat',
-      fontSize: '20px',
-      width: '150px',
-      height: '40px',
-      border: '1px solid #1CB5BD',
-      borderRadius: '4px',
-    },
-    type: 'submit',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
+      textAlign: 'center',
+
+    }
   };
 
-  onupdate() {
-    
-    console.log(this.vitals.chronicHealthProblems +"hi nawaz");
-    return this.medicalDataService.updateVitals(this.vitals).subscribe(data => {
-      this.vitals = data;
-      console.log(this.vitals);
-      
+  heightConfig = {
+    type: 'number',
+    label: 'Height',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '1',
+      maxLength: '2',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
 
-      
-    });
+  weightConfig = {
+    type: 'number',
+    label: 'Weight',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '3',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  bmiConfig = {
+    type: 'number',
+    label: 'BMI',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '4',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  allergiesConfig = {
+    type: 'text',
+    label: 'Allergies',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '3',
+      maxLength: '',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+    bpConfig = {
+    type: 'text',
+    label: 'Blood pressure',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '7',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  pulseConfig = {
+    type: 'text',
+    label: 'Pulse',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '3',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  immunizationConfig = {
+    type: 'text',
+    label: 'Immunization',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '2',
+      maxLength: '20',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
+
+  constructor(
+    private medicalDataService: MedicalDataService,
+    private datePipe: DatePipe
+  ) { }
+
+  ngOnInit(): void {
+    this.medicalDataService.getMedicalDataByPatientId(this.patientId)
+      .subscribe(response => this.medicalData=response)
   }
-  getVitalById() {
-    return this.medicalDataService.getVitalsById(1).subscribe(data => {
-     this.vitals = data;
-    console.log("db value : " + this.vitals.allergies);
+
+  medicalDataFormSubmit(){
+    if (this.medicalData.isCurrent === undefined)
+      this.medicalData.isCurrent='true'
     
-   });
+    this.medicalData.patientId=this.patientId
+
+    this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
+    console.log(this.medicalData);
+    this.medicalDataService.saveMedicalData(this.medicalData)
+      .subscribe(response => this.medicalData = response)
   }
 
   
