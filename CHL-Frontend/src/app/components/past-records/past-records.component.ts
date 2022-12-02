@@ -5,7 +5,7 @@ import { PastRecordService } from 'src/app/service/past-record.service';
 @Component({
   selector: 'app-past-records',
   templateUrl: './past-records.component.html',
-  styleUrls: ['./past-records.component.scss']
+  styleUrls: ['./past-records.component.scss','./table-modal.scss']
 })
 export class PastRecordsComponent implements OnInit {
   pastRecord: PastRecord = new PastRecord(-1)

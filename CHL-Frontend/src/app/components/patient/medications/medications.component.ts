@@ -6,7 +6,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 @Component({
   selector: 'app-medications',
   templateUrl: './medications.component.html',
-  styleUrls: ['./medications.component.scss']
+  styleUrls: ['./medications.component.scss','./table.scss']
 })
 export class MedicationsComponent implements OnInit {
 

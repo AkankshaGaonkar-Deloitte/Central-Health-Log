@@ -1,0 +1,49 @@
+table {
+    position: absolute;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 0.0625em solid #dddddd;
+    text-align: left;
+    padding: 0.5em;
+}
+
+th {
+    background-color: #f5f5f5;
+
+    gap: 0.25em;
+    isolation: isolate;
+    width: 17.8em;
+    height: 3.4375em;
+    background: #f5f5f5;
+    border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
+
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: rgba(0, 0, 0, 0.85);
+}
+
+table,
+th,
+td {
+    border-left: none;
+    border-right: none;
+    border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
+}
+
+td {
+    height: 1.375em;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.375em;
+    color: rgba(0, 0, 0, 0.85);
+}
