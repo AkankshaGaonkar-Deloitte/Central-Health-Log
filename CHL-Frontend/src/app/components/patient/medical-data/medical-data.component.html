@@ -22,67 +22,67 @@
             <div class="form-cell">
               <div class="cell">
                 <label>Height:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.height" [ipConfig]="heightConfig" (outputEmit)="medicalData.height=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Weight:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="weightConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.weight" [ipConfig]="weightConfig" (outputEmit)="medicalData.weight=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>BMI:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="bmiConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.bmi" [ipConfig]="bmiConfig" (outputEmit)="medicalData.bmi=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Allergies:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="allergiesConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.allergies" [ipConfig]="allergiesConfig" (outputEmit)="medicalData.allergies=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Immunizations:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="immunizationConfig" (outputEmit)="''"></app-input>                
+                <app-input [userInput]="medicalData.immunizations" [ipConfig]="immunizationConfig" (outputEmit)="medicalData.immunizations=$event"></app-input>                
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Blood group:</label>
-                <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"></app-dropdown>
+                <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="medicalData.bloodGroup=$event"></app-dropdown>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Blood pressure:</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="bpConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.bloodPressure" [ipConfig]="bpConfig" (outputEmit)="medicalData.bloodPressure=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Pulse (per minute):</label>
-                <app-input [userInput]="heightPrefill" [ipConfig]="pulseConfig" (outputEmit)="''"></app-input>
+                <app-input [userInput]="medicalData.pulseRate" [ipConfig]="pulseConfig" (outputEmit)="medicalData.pulseRate=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell" style="margin-bottom: 1.25em;">
                 <label>Family medical history:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="medicalData.familyMedicalHistory"></textarea>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell" style="margin-bottom: 1.25em;">
                 <label>Chronic health problems:</label>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="medicalData.chronicHealthProblems"></textarea>
               </div>
             </div>
           </div>
         </div>
         <div id="button-div">
-          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"></app-button>
+          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="medicalDataFormSubmit()"></app-button>
         </div>
       </div>
     </div>

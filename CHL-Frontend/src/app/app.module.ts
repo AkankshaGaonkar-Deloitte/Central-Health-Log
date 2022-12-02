@@ -26,6 +26,7 @@ import { MedicalDataComponent } from './components/patient/medical-data/medical-
 import { MedicationsComponent } from './components/patient/medications/medications.component';
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     ChartModule
   ],
-  providers: [CategoryService,LineSeriesService,ColumnSeriesService],
+  providers: [CategoryService,LineSeriesService,ColumnSeriesService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -20,7 +20,7 @@ public class MedicalDataService {
         return medicalData;
     }
 
-    public MedicalData updateVitals(MedicalData medicalData) {
+    public MedicalData saveMedicalData(MedicalData medicalData) {
         MedicalData existingMedicalData = medicalDataRepository.findById(medicalData.getId()).orElse(null);
         if (existingMedicalData.getBmi() != 0)
             existingMedicalData.setBmi(medicalData.getBmi());

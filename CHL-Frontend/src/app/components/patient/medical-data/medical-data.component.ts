@@ -1,4 +1,6 @@
+import { DatePipe, formatDate } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { MedicalData } from 'src/app/model/medical-data';
 import { MedicationService } from 'src/app/service/medication/medication.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 })
 export class MedicalDataComponent implements OnInit {
 
-  heightPrefill = ''
+  medicalData: MedicalData = new MedicalData()
 
   textDropConfig = {
       styles: {
@@ -116,8 +118,8 @@ export class MedicalDataComponent implements OnInit {
   };
 
     bpConfig = {
-    type: 'number',
-    label: 'Systole',
+    type: 'text',
+    label: 'Blood pressure',
     placeholder: '',
     styling: {
       height: '2.375em',
@@ -126,7 +128,7 @@ export class MedicalDataComponent implements OnInit {
     validations: {
       required: '',
       minLength: '2',
-      maxLength: '3',
+      maxLength: '7',
       pattern: ''
     },
     patternErrorMessage: ''
@@ -160,7 +162,7 @@ export class MedicalDataComponent implements OnInit {
     validations: {
       required: '',
       minLength: '2',
-      maxLength: '3',
+      maxLength: '20',
       pattern: ''
     },
     patternErrorMessage: ''
@@ -168,9 +170,22 @@ export class MedicalDataComponent implements OnInit {
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
 
-  constructor(private medicationService: MedicationService) { }
+  constructor(
+    private medicationService: MedicationService,
+    private datePipe: DatePipe
+  ) { }
 
   ngOnInit(): void {}
+
+  medicalDataFormSubmit(){
+    if (this.medicalData.isCurrent === undefined)
+      this.medicalData.isCurrent='true'
+
+    if (this.medicalData.uploadDate === undefined)
+      this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
+    console.log(this.medicalData);
+    
+  }
 
   
 }
