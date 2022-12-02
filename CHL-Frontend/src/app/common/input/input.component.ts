@@ -58,7 +58,7 @@ export class InputComponent implements OnInit {
 
   @Output() outputEmit = new EventEmitter<string | number | null>()
 
-  @Input() userInput:string = ''
+  @Input() userInput:any = ''
 
   emitChanges() {
     console.log(`At child: ${this.userInput}`)
