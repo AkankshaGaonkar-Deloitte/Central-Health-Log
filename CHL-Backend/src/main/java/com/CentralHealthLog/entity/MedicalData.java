@@ -1,10 +1,13 @@
 package com.CentralHealthLog.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Date;
+
 @Entity
 @Data
 @AllArgsConstructor
@@ -25,6 +28,9 @@ public class MedicalData {
     private String immunizations;
     private String chronicHealthProblems;
     private String familyMedicalHistory;
+
+    @JsonFormat(pattern="yyyy-MM-dd")
+    private Date uploadDate;
 
 }
 

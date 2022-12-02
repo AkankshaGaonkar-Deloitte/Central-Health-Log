@@ -50,9 +50,10 @@ pulse VALUES
 INSERT
 INTO
   medical_data
-  (patient_id, is_current, height, weight, bmi, pulse_rate, blood_pressure, blood_group, allergies, immunizations, chronic_health_problems, family_medical_history)
+  (patient_id, is_current, height, weight, bmi, pulse_rate, blood_pressure, blood_group, allergies, immunizations, chronic_health_problems, family_medical_history, upload_date)
 VALUES
-  (43190, TRUE, 6, 80, 24, 70, 120/80, 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia');
+  (43190, TRUE, 6, 80, 24, 70, 120/80, 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2022-11-21'),
+  (43190, FALSE, 6, 81, 24.3, 65, 120/80, 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-10-12');
 
 INSERT into
 patient  VALUES

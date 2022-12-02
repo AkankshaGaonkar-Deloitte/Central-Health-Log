@@ -5,13 +5,19 @@ import com.CentralHealthLog.repository.MedicalDataRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class MedicalDataService {
     @Autowired
     private MedicalDataRepository medicalDataRepository;
 
-    public MedicalData getVitalsById(Long id) {
-        return medicalDataRepository.findById(id).orElse(null);
+    public MedicalData getMedicalDataByPatientId(Long patientId) {
+        MedicalData medicalData = medicalDataRepository.findByPatientIdAndIsCurrentTrue(patientId).get();
+        if (medicalData == null)
+            throw new IllegalStateException("Medical data not found for patient with id " + patientId);
+        System.out.println("Medical data found for patient with id " + patientId + ": " + medicalData);
+        return medicalData;
     }
 
     public MedicalData updateVitals(MedicalData medicalData) {
