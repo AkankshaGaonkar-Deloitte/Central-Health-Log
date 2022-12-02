@@ -35,27 +35,33 @@ export class LoginComponent implements OnInit {
     console.warn('admin',this.LoginForm.value);
   }
 
+  username!: string|number|null;
+  password!:string|number|null;
 
-
+  loginData={
+    username:this.username,
+    password:this.password
+  };
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  onPatientactive() {
-    this.patientActive = true;
-    this.doctorActive = false;
-    this.adminActive = false;
-  }
-  onDoctoractive() {
-    this.patientActive = false;
-    this.doctorActive = true;
-    this.adminActive = false;
-  }
-  onAdminactive() {
-    this.patientActive = false;
-    this.doctorActive = false;
-    this.adminActive = true;
-  }
+  // onPatientactive() {
+  //   this.patientActive = true;
+  //   this.doctorActive = false;
+  //   this.adminActive = false;
+  // }
+  // onDoctoractive() {
+  //   this.patientActive = false;
+  //   this.doctorActive = true;
+  //   this.adminActive = false;
+  // }
+  // onAdminactive() {
+  //   this.patientActive = false;
+  //   this.doctorActive = false;
+  //   this.adminActive = true;
+  // }
 
   ipConfig = {
     type: 'text',

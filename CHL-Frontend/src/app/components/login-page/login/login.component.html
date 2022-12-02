@@ -15,27 +15,28 @@
 
                     <p id="text">Select the User Type</p>
                     <div id="buttons">
-                        <button [ngClass]="{'active': patientActive}" (click)="onPatientactive()">Patient</button>
+                        <!-- <button [ngClass]="{'active': patientActive}" (click)="onPatientactive()">Patient</button>
                         <button [ngClass]="{'active': doctorActive}" (click)="onDoctoractive()">Doctor</button>
-                        <button [ngClass]="{'active': adminActive}" (click)="onAdminactive()">Admin</button>
+                        <button [ngClass]="{'active': adminActive}" (click)="onAdminactive()">Admin</button> -->
 
                     </div>
                 </div>
+                {{loginData | json }}
                 <div id="form-container">
                     <div class="form-group">
                         <div id="name">Username</div>
-                        <app-input [ipConfig]="ipConfig" (outputEmit)="usernameReceived($event)"></app-input>
+                        <app-input [(ngModel)]="username" [ipConfig]="ipConfig" (outputEmit)="loginData.username=($event)"></app-input>
                     </div>
 
                     <div class="form-group">
                         <div id="pass">Password</div>
-                        <app-input [ipConfig]="ipConfig2" (outputEmit)="pwdReceived($event)"></app-input>
+                        <app-input  [(ngModel)]="password"[ipConfig]="ipConfig2" (outputEmit)="loginData.password=($event)"></app-input>
                     </div>
                 </div>
                 <div id="login-btn">
-                    <app-button *ngIf="patientActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginPatient()"></app-button>
-                    <app-button *ngIf="doctorActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginDoctor()"></app-button>
-                    <app-button *ngIf="adminActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginAdmin()"></app-button>
+                    <app-button [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginPatient()"></app-button>
+                    <!-- <app-button *ngIf="doctorActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginDoctor()"></app-button>
+                    <app-button *ngIf="adminActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginAdmin()"></app-button> -->
                 </div>
             </form>
            
