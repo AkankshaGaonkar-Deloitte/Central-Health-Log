@@ -186,10 +186,10 @@ export class MedicalDataComponent implements OnInit {
     if (this.medicalData.isCurrent === undefined)
       this.medicalData.isCurrent='true'
 
-    if (this.medicalData.uploadDate === undefined)
-      this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
+    this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
     console.log(this.medicalData);
-    
+    this.medicalDataService.saveMedicalData(this.medicalData)
+      .subscribe(response => this.medicalData = response)
   }
 
   

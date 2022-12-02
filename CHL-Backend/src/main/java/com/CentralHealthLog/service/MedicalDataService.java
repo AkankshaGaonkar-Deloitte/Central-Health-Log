@@ -20,34 +20,15 @@ public class MedicalDataService {
         return medicalData;
     }
 
-    public MedicalData saveMedicalData(MedicalData medicalData) {
-        MedicalData existingMedicalData = medicalDataRepository.findById(medicalData.getId()).orElse(null);
-        if (existingMedicalData.getBmi() != 0)
-            existingMedicalData.setBmi(medicalData.getBmi());
+    public MedicalData saveMedicalData(MedicalData medicalData){
+        MedicalData retrievedMedicalData = medicalDataRepository
+                .findByPatientIdAndIsCurrentTrue(medicalData.getPatientId()).get();
+        retrievedMedicalData.setIsCurrent(false);
+        medicalDataRepository.save(retrievedMedicalData);
 
-        if (existingMedicalData.getHeight() != 0)
-            existingMedicalData.setHeight(medicalData.getHeight());
+        medicalData.setId(Long.valueOf(-1));
+        return medicalDataRepository.save(medicalData);
 
-        if (existingMedicalData.getWeight() != 0)
-            existingMedicalData.setWeight(medicalData.getWeight());
-
-        if (medicalData.getAllergies() != null) {
-            existingMedicalData.setAllergies(medicalData.getAllergies());
-        }
-        if (medicalData.getFamilyMedicalHistory() != null) {
-            existingMedicalData.setFamilyMedicalHistory(medicalData.getFamilyMedicalHistory());
-        }
-        if (medicalData.getBloodGroup() != null) {
-            existingMedicalData.setBloodGroup(medicalData.getBloodGroup());
-        }
-        if (medicalData.getImmunizations() != null) {
-            existingMedicalData.setImmunizations(medicalData.getImmunizations());
-        }
-        if (medicalData.getChronicHealthProblems() != null) {
-            existingMedicalData.setChronicHealthProblems(medicalData.getChronicHealthProblems());
-        }
-
-        return medicalDataRepository.save(existingMedicalData);
     }
 
 }
