@@ -36,17 +36,7 @@ export class PatientService {
     return this.httpClient.put<Patient>(`${this.baseurl + '/patient'}`, patient, { headers });
 
   }
-  updateMedicalData(MedicalData: MedicalData): Observable<MedicalData> {
-    let headers = this.createAuthenticationHeader()
-    console.log("patient body is : " + MedicalData.chronicHealthProblems)
-    return this.httpClient.put<MedicalData>(`${this.baseurl + '/MedicalData'}`, MedicalData, { headers });
-
-  }
-  getMedicalDataById(id: number): Observable<MedicalData> {
-    let headers = this.createAuthenticationHeader()
-    return this.httpClient.get<MedicalData>(`${this.baseurl + '/MedicalData'}/${id}`, { headers });
-
-  }
+  
   createAuthenticationHeader() {
     let username: string = 'nawaz2000'
     let password: string = '123'

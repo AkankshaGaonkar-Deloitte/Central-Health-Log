@@ -1,6 +1,7 @@
 import { DatePipe, formatDate } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { MedicalData } from 'src/app/model/medical-data';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
 import { MedicationService } from 'src/app/service/medication/medication.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 })
 export class MedicalDataComponent implements OnInit {
 
+  patientId:number = 43190
   medicalData: MedicalData = new MedicalData()
 
   textDropConfig = {
@@ -171,11 +173,14 @@ export class MedicalDataComponent implements OnInit {
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
 
   constructor(
-    private medicationService: MedicationService,
+    private medicalDataService: MedicalDataService,
     private datePipe: DatePipe
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.medicalDataService.getMedicalDataByPatientId(this.patientId)
+      .subscribe(response => this.medicalData=response)
+  }
 
   medicalDataFormSubmit(){
     if (this.medicalData.isCurrent === undefined)
