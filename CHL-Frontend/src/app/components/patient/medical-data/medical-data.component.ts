@@ -11,7 +11,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 })
 export class MedicalDataComponent implements OnInit {
 
-  patientId:number = 43190
+  patientId:number = 431900
   medicalData: MedicalData = new MedicalData()
 
   textDropConfig = {

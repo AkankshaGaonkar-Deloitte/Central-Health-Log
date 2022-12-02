@@ -21,10 +21,12 @@ public class MedicalDataService {
     }
 
     public MedicalData saveMedicalData(MedicalData medicalData){
-        MedicalData retrievedMedicalData = medicalDataRepository
-                .findByPatientIdAndIsCurrentTrue(medicalData.getPatientId()).get();
-        retrievedMedicalData.setIsCurrent(false);
-        medicalDataRepository.save(retrievedMedicalData);
+        if (medicalData.getId() != null){
+            MedicalData retrievedMedicalData = medicalDataRepository
+                    .findByPatientIdAndIsCurrentTrue(medicalData.getPatientId()).get();
+            retrievedMedicalData.setIsCurrent(false);
+            medicalDataRepository.save(retrievedMedicalData);
+        }
 
         medicalData.setId(Long.valueOf(-1));
         return medicalDataRepository.save(medicalData);
