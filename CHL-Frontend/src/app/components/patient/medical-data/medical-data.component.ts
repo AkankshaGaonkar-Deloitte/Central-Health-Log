@@ -11,7 +11,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 })
 export class MedicalDataComponent implements OnInit {
 
-  patientId:number = 431900
+  patientId:number = 43190
   medicalData: MedicalData = new MedicalData()
 
   textDropConfig = {
@@ -185,6 +185,9 @@ export class MedicalDataComponent implements OnInit {
   medicalDataFormSubmit(){
     if (this.medicalData.isCurrent === undefined)
       this.medicalData.isCurrent='true'
+    
+    if (this.medicalData.patientId === undefined)
+      this.medicalData.patientId=this.patientId
 
     this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
     console.log(this.medicalData);
