@@ -18,7 +18,7 @@ export class PatientRegistrationComponent implements OnInit {
   patient = new Patient();
 
   doctor = new Doctor();
-  textBtnConfig = { type: "submit", styles: { backgroundColor: '#1CB5BD', color: '#fff', height: '2em' } };
+  textBtnConfig = { type: "submit", styles: { backgroundColor: '#1CB5BD', color: '#fff', height: '2em',width:'8em',fontSize:'1.1em' } };
 
   // onUSerID(){
   //   this.ipConfig.patternErrorMessage
@@ -28,8 +28,8 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'firstname',
     placeholder: '',
     styling: {
-      width: '14em',
-      height: '1.6em',
+      width: '17em',
+      height: '2em',
       borderRadius: '0.2em'
     },
     validations: {
@@ -45,8 +45,8 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'contact',
     placeholder: '',
     styling: {
-      width: '14em',
-      height: '1.6em',
+      width: '17em',
+      height: '2em',
       borderRadius: '0.2em'
     },
     validations: {
@@ -62,8 +62,8 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'password',
     placeholder: '',
     styling: {
-      width: '14em',
-      height: '1.6em',
+      width: '17em',
+      height: '2em',
       borderRadius: '0.2em'
     },
     validations: {
@@ -79,8 +79,8 @@ export class PatientRegistrationComponent implements OnInit {
     label: '',
     placeholder: '',
     styling: {
-      width: '14em',
-      height: '1.6em',
+      width: '17em',
+      height: '2em',
       borderRadius: '0.2em'
     },
     validations: {

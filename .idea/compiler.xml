@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="CentralHealthLog" target="17" />
+      <module name="CentralHealthLog" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
