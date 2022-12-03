@@ -8,10 +8,11 @@ export class LoginService {
 
   constructor(private http:HttpClient) { }
    
-   //generate token
-    // public generateToken(LoginForm: any){
-    //   return this.http.post(`${baseUrl}/authenticate`,LoginForm);
+  private baseUrl="http://localhost:8080";
+  //generate token
+    public generateToken(LoginData: any){
+      return this.http.post(`${this.baseUrl}/authenticate`,LoginData);
 
-    // }
+    }
 }
 

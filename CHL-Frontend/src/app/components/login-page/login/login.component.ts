@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { LoginService } from 'src/app/service/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -42,11 +43,26 @@ export class LoginComponent implements OnInit {
     username:this.username,
     password:this.password
   };
-  
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+  //request server to generate token
+
+  
+  constructor(private login:LoginService) { }
+
+  ngOnInit(): void {}
+  formSubmit(){
+     console.log('login btn clicked');
+    this.login.generateToken(this.loginData).subscribe(
+      (data:any)=>{
+        console.log('success');
+        console.log(data);
+      },
+      (error:any)=>{
+          console.log('Error !');
+          console.log(error);
+        }
+      );}
+  
   // onPatientactive() {
   //   this.patientActive = true;
   //   this.doctorActive = false;
@@ -61,7 +77,11 @@ export class LoginComponent implements OnInit {
   //   this.patientActive = false;
   //   this.doctorActive = false;
   //   this.adminActive = true;
-  // }
+  // },
+    // (error:any)=>{
+    //   console.log('Error !');
+    //   console.log(error);
+    // }
 
   ipConfig = {
     type: 'text',
@@ -110,4 +130,5 @@ export class LoginComponent implements OnInit {
       height: '2em'
     }
   }
+
 }
