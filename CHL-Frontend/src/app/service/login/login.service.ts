@@ -6,13 +6,13 @@ import { Injectable } from '@angular/core';
 })
 export class LoginService {
 
-  constructor(private http:HttpClient) { }
+  constructor() { }
    
-  private baseUrl="http://localhost:8080";
-  //generate token
-    public generateToken(LoginData: any){
-      return this.http.post(`${this.baseUrl}/authenticate`,LoginData);
+  // private baseUrl="http://localhost:8080";
+  // //generate token
+  //   public generateToken(LoginData: any){
+  //     return this.http.post(`${this.baseUrl}/authenticate`,LoginData);
 
-    }
+  //   }
 }
 

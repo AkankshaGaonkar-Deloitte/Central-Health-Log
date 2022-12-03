@@ -47,21 +47,21 @@ export class LoginComponent implements OnInit {
   //request server to generate token
 
   
-  constructor(private login:LoginService) { }
+  constructor() { }
 
   ngOnInit(): void {}
-  formSubmit(){
-     console.log('login btn clicked');
-    this.login.generateToken(this.loginData).subscribe(
-      (data:any)=>{
-        console.log('success');
-        console.log(data);
-      },
-      (error:any)=>{
-          console.log('Error !');
-          console.log(error);
-        }
-      );}
+  // formSubmitz(){
+  //    console.log('login btn clicked');
+  //   this.login.generateToken(this.loginData).subscribe(
+  //     (data:any)=>{
+  //       console.log('success');
+  //       console.log(data);
+  //     },
+  //     (error:any)=>{
+  //         console.log('Error !');
+  //         console.log(error);
+  //       }
+  //     );}
   
   // onPatientactive() {
   //   this.patientActive = true;
