@@ -45,7 +45,7 @@
                     <div class="form-group">
                         <div class="form-flex">
                             <label for="gender">Gender </label>
-                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.gender=$event"></app-input>
+                            <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="patient.gender=$event"></app-dropdown>
                         </div>
                         <div class="form-flex">
                             <label for="age">Age </label>
@@ -93,7 +93,7 @@
                     <div class="form-group">
                     <div class="form-flex">
                         <label for="council">State Medical Council </label>
-                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.stateMedicalCouncil=$event"></app-input>
+                        <app-dropdown [states]="optionList1" [dropConfig]="textDropConfig" (value)="doctor.stateMedicalCouncil=$event"></app-dropdown>
                     </div>
                     <div class="form-flex">
                         <label for="Qualification">Qualification </label>

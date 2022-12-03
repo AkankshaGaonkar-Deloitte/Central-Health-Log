@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="yarn charts">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/CentralHealthLog.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicalDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicalDataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BloodPressure.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BloodPressure.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/MedicalData.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/MedicalData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicalDataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicalDataRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicalDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicalDataService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient/patient-dashboard/patient-dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient/patient-dashboard/patient-dashboard.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
