@@ -42,7 +42,7 @@ public class UserController {
         return ResponseEntity.ok(new AuthenticationResponse(jwt));
 
     }
-    @GetMapping("/patients")
+    @GetMapping("/admin")
     public String patients(){
         return "hii";
 
