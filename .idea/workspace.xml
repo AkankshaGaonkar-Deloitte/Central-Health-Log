@@ -6,12 +6,83 @@
   <component name="ChangeListManager">
     <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="yarn charts">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicalDataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicalDataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BloodPressure.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BloodPressure.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/MedicalData.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/MedicalData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicalDataRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicalDataRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicalDataService.class" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicalDataService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient/patient-dashboard/patient-dashboard.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Frontend/src/app/components/patient/patient-dashboard/patient-dashboard.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/CentralHealthLog.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/constants/StatusCode.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/DocRegController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/GraphController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicalDataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/MedicationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/controller/PatientRegController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/BMI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/BloodPressure.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Doctor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/MedicalData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Medication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/PastRecord.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Patient.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/Pulse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/exception/UsernameAlreadyExistsException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/BMIRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/BloodPressureRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/DoctorRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/MedicalDataRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/MedicationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/PastRecordRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/PatientRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/repository/PulseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/security/SecurityConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/DoctorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/GraphService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicalDataService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/MedicationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PastRecordService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/service/PatientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/src/main/resources/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/CentralHealthLogApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/constants/StatusCode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/DocRegController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/GraphController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicalDataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/MedicationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/PatientRegController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/controller/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BMI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/BloodPressure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Doctor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/MedicalData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Medication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/PastRecord.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Patient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/entity/Pulse.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/exception/UsernameAlreadyExistsException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/exception/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/BMIRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/BloodPressureRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/DoctorRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicalDataRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/MedicationRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/PastRecordRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/PatientRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/PulseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/repository/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/security/SecurityConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/DoctorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/GraphService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicalDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/MedicationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PastRecordService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/PatientService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/classes/com/CentralHealthLog/service/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHL-Backend/target/test-classes/com/CentralHealthLog/CentralHealthLogApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +115,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CHL-Backend/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/CentralHealthLogApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
