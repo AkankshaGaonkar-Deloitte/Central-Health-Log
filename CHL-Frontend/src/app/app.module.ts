@@ -11,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
+import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    TabNavigationComponent
+    TabNavigationComponent,
+    DocPatientMedicalDataComponent
   ],
   imports: [
     BrowserModule,
