@@ -55,6 +55,16 @@ VALUES
   (43190, TRUE, 6, 80, 24, 70, '120/80', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2022-11-21'),
   (43190, FALSE, 6, 81, 24.3, 65, '120/80', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-10-12');
 
-INSERT into
-patient  VALUES
-(1,'Mangalore',21,'akanksha@gmail.com','Akanksha','female','Gaonkar','password','9632946608','ashu@123');
+INSERT
+INTO
+  patient
+  (address, age, email, firstname, gender, lastname, password, phone_no, username)
+VALUES
+  ('Mangalore',21,'akanksha@gmail.com','Akanksha','Female','Gaonkar','password','9632946608','ashu@123');
+
+INSERT
+INTO
+  patient
+  (id, username, password, firstname, lastname, phone_no, email, gender, age, address)
+VALUES
+  (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '8778562434', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');

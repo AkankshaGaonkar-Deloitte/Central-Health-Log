@@ -22,49 +22,49 @@
             <div class="form-cell">
               <div class="cell">
                 <label>First name:</label>
-                <app-input [userInput]="medicalData.bmi" [ipConfig]="fNameConfig" (outputEmit)="medicalData.bmi=$event"></app-input>
+                <app-input [userInput]="patient.firstname" [ipConfig]="fNameConfig" (outputEmit)="patient.firstname=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Last name:</label>
-                <app-input [userInput]="medicalData.allergies" [ipConfig]="lNameConfig" (outputEmit)="medicalData.allergies=$event"></app-input>
+                <app-input [userInput]="patient.lastname" [ipConfig]="lNameConfig" (outputEmit)="patient.lastname=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Email:</label>
-                <app-input [userInput]="medicalData.immunizations" [ipConfig]="emailConfig" (outputEmit)="medicalData.immunizations=$event"></app-input>                
+                <app-input [userInput]="patient.email" [ipConfig]="emailConfig" (outputEmit)="patient.email=$event"></app-input>                
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Contact no:</label>
-                <app-input [userInput]="medicalData.immunizations" [ipConfig]="contactNoConfig" (outputEmit)="medicalData.immunizations=$event"></app-input>
+                <app-input [userInput]="patient.phoneNo" [ipConfig]="contactNoConfig" (outputEmit)="patient.phoneNo=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Gender:</label>
-                <app-dropdown [states]="optionList" [dropConfig]="genderDropConfig" (value)="medicalData.bloodGroup=$event"></app-dropdown>
+                <app-dropdown [states]="optionList" [dropConfig]="genderDropConfig" (value)="patient.gender=$event"></app-dropdown>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Age:</label>
-                <app-input [userInput]="medicalData.pulseRate" [ipConfig]="ageConfig" (outputEmit)="medicalData.pulseRate=$event"></app-input>
+                <app-input [userInput]="patient.age" [ipConfig]="ageConfig" (outputEmit)="patient.age=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell" style="margin-bottom: 1.25em;">
                 <label>Address:</label>
-                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="medicalData.familyMedicalHistory"></textarea>
+                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="patient.address"></textarea>
               </div>
             </div>
           </div>
         </div>
         <div id="button-div">
-          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="medicalDataFormSubmit()"></app-button>
+          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="personalDetailsFormSubmit()"></app-button>
         </div>
       </div>
     </div>

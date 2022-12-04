@@ -1,10 +1,11 @@
 import { PatientService } from './../../../service/patient/patient.service';
-import { Patient } from './../../../model/patient/patient';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { DatePipe, formatDate } from '@angular/common';
 import { MedicalData } from 'src/app/model/medical-data';
 import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
+import { Patient } from 'src/app/model/patient';
+import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
 
 @Component({
   selector: 'app-personal-details',
@@ -13,7 +14,7 @@ import { MedicalDataService } from 'src/app/service/medical-data/medical-data.se
 })
 export class PersonalDetailsComponent implements OnInit {
   patientId:number = 43190
-  medicalData: MedicalData = new MedicalData()
+  patient: Patient = new Patient()
 
   genderDropConfig = {
       styles: {
@@ -135,24 +136,21 @@ export class PersonalDetailsComponent implements OnInit {
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 1], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
 
   constructor(
-    private medicalDataService: MedicalDataService,
+    private patientDetailsService: PatientDetailsService,
     private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
-    this.medicalDataService.getMedicalDataByPatientId(this.patientId)
-      .subscribe(response => this.medicalData=response)
+    this.patientDetailsService.getPatientByPatientId(this.patientId)
+      .subscribe(response => {
+        console.log(response);        
+        this.patient=response
+      })
   }
 
-  medicalDataFormSubmit(){
-    if (this.medicalData.isCurrent === undefined)
-      this.medicalData.isCurrent='true'
-    
-    this.medicalData.patientId=this.patientId
-
-    this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
-    console.log(this.medicalData);
-    this.medicalDataService.saveMedicalData(this.medicalData)
-      .subscribe(response => this.medicalData = response)
+  personalDetailsFormSubmit(){
+    console.log(this.patient);
+    this.patientDetailsService.savePatientDetails(this.patient)
+      .subscribe(response => this.patient = response)
   }
 }
