@@ -60,6 +60,8 @@ export class InputComponent implements OnInit {
 
   @Input() userInput:any = ''
 
+  @Input() disabled:string='false'
+
   emitChanges() {
     console.log(`At child: ${this.userInput}`)
     this.outputEmit.emit(this.userInput)

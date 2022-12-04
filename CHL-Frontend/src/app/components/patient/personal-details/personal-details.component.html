@@ -22,13 +22,13 @@
             <div class="form-cell">
               <div class="cell">
                 <label>First name:</label>
-                <app-input [userInput]="patient.firstname" [ipConfig]="fNameConfig" (outputEmit)="patient.firstname=$event"></app-input>
+                <app-input [disabled]="'true'" [userInput]="patient.firstname" [ipConfig]="fNameConfig" (outputEmit)="patient.firstname=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
               <div class="cell">
                 <label>Last name:</label>
-                <app-input [userInput]="patient.lastname" [ipConfig]="lNameConfig" (outputEmit)="patient.lastname=$event"></app-input>
+                <app-input disabled="'true'" [userInput]="patient.lastname" [ipConfig]="lNameConfig" (outputEmit)="patient.lastname=$event"></app-input>
               </div>
             </div>
             <div class="form-cell">
