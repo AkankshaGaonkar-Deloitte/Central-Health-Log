@@ -10,6 +10,7 @@ import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
-    ButtonComponent
+    ButtonComponent,
+    TabNavigationComponent
   ],
   imports: [
     BrowserModule,
