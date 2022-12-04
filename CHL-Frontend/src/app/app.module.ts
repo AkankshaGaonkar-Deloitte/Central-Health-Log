@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputComponent } from './common/input/input.component';
@@ -10,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
 import { NgChartsModule } from 'ng2-charts';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
@@ -29,17 +31,16 @@ import { DatePipe } from '@angular/common';
   declarations: [
     AppComponent,
     InputComponent,
-    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
+    TabNavigationComponent,
     PatientRegistrationComponent,
     LoginComponent,
     MedicalDataComponent,
     PersonalDetailsComponent,
-    ButtonComponent,
     PastRecordsComponent,
     MedicationsComponent,
     PatientDashboardComponent,
