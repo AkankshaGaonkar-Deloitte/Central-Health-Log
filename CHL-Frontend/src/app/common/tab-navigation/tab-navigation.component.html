@@ -1,7 +1,7 @@
 
 <nav class="nav">
-<div class="tab" (click)="onClick(menu,menus)" [ngClass]="{'active': menu.value[2]===1}"
-    *ngFor="let menu of menus | keyvalue" id="sidebar-element" routerLink={{menu.value[1]}}>
+<div class="tab" (click)="onClick(menu,tabs)" [ngClass]="{'active': menu.value[2]===1}"
+    *ngFor="let menu of tabs | keyvalue" id="sidebar-element" routerLink={{menu.value[1]}}>
     <div class="item">
         {{menu.value[0]}}
     </div>
@@ -12,7 +12,8 @@
 
 <!-- in parent.component.ts file -->
 <!-- in whichever component u r using sidebar,give the value there as 1 and 0 in others -->
-<!-- tabs={'1':["Dashboard","/patient-dashboard",1],'2':["Patient Details","/patient-details",0],'3':["Past Records","/past-records",0]}; -->
+<!--  tabs = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 1],'2': ['Medical Data', '/doc-medical-data', 0],
+  '3': ['Medications', '/doc-medications', 0],'4': ['Past Records', '/doc-past-records', 0] }; -->
 
 <!-- in parent/html -->
-<!-- <app-sidebar [menus]="tabs"></app-sidebar> -->
+<!-- <app-sidebar [tabs]="tabs"></app-sidebar> -->

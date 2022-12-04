@@ -17,7 +17,7 @@ export class TabNavigationComponent implements OnInit {
     }
   }
 
-  @Input() menus = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 1],'2': ['Medical Data', '/doc-medical-data', 0],
+  @Input() tabs = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 1],'2': ['Medical Data', '/doc-medical-data', 0],
   '3': ['Medications', '/doc-medications', 0],'4': ['Past Records', '/doc-past-records', 0] };
 
   constructor() { }
