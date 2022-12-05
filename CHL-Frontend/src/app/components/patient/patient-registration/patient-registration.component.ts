@@ -36,10 +36,13 @@ export class PatientRegistrationComponent implements OnInit {
       String(this.patient.username)).subscribe(data => {
         user = data
         console.warn(user)
-        if (user) { this.usernameExists = true }
+        if (user) { this.usernameExists = true 
+          this.btndisable=true
+         }
         else {
           if (user == null)
             this.usernameExists = false
+           if(!this.contactExists){this.btndisable=false}
         }
       })
   }
@@ -50,17 +53,16 @@ export class PatientRegistrationComponent implements OnInit {
         user = data
         console.warn(user)
         if (user) { this.contactExists = true ;
-          this.btndisable = true;
+          this.btndisable=true
         }
         else {
           if (user == null)
-            this.contactExists = false;
-            this.btndisable = false;
+            this.contactExists = false; 
+            if(!this.usernameExists){this.btndisable=false}
         }
       })
   }
-  btndisable: boolean= !(this.usernameExists) || !(this.contactExists)
-
+  btndisable!: boolean;
   otp!: string | number | null;
 
   displayStyle = "none";
@@ -123,7 +125,7 @@ export class PatientRegistrationComponent implements OnInit {
     patternErrorMessage: ''
   };
   ipConfig1 = {
-    type: 'tel',
+    type: 'number',
     label: 'contact',
     placeholder: '',
     styling: {
