@@ -10,6 +10,7 @@
       [maxlength]="ipConfig.validations.maxLength"
       [required]="ipConfig.validations.required"
       [ngStyle]="ipConfig.styling"
+      [disabled]="disabled"
     />
     <div class="errors" *ngIf="inputField.invalid && (inputField.dirty || inputField.touched)">
       <div *ngIf="inputField.errors?.['required']">Required.</div>
