@@ -23,8 +23,8 @@ public class PatientRegController {
 
     @PostMapping
     public ResponseEntity<Patient> addNewPatient(@RequestBody Patient patient) {
-        patientService.savePatient(patient);
-        return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+        Patient newPatient=patientService.savePatient(patient);
+        return new ResponseEntity<Patient>(newPatient, HttpStatus.OK);
     }
 
     @GetMapping
