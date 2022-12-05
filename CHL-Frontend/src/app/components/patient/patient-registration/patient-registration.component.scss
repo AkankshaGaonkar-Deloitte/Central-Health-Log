@@ -141,5 +141,21 @@
         #login-btn {
             width: 6em;
         }
+        .modal{
+            position: absolute;
+            left: 25em;
+            top: 12em;
+            text-align: center;
+           
+        }
+        .modal-content{
+            width: 25em;
+            align-items: center;
+            background-color: #DAFDFF;
+            color: #1CB5BD;
+        }
+        // .modal-body{
+        //     width: 20em;
+        // }
     }
 }

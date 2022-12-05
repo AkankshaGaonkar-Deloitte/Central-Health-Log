@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
 import { Patient } from 'src/app/model/patient';
 import { Doctor } from 'src/app/model/doctor';
+import { OtpService } from 'src/app/service/otp.service';
 
 @Component({
   selector: 'app-patient-registration',
@@ -11,6 +12,8 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+  constructor(private router: Router, private patientregService: PatientRegService
+    ,private otpService:OtpService) { }
 
   usernameExists: boolean = false;
   contactExists: boolean = false;
@@ -62,15 +65,24 @@ export class PatientRegistrationComponent implements OnInit {
         }
       })
   }
+  msg:string=''
+  
   btndisable!: boolean;
   otp!: string | number | null;
 
   displayStyle = "none";
   openPopup() {
     this.displayStyle = "block";
+      return this.otpService.sendOtp(Number(this.patient.phoneNo)).subscribe(data=>{this.msg=String(data);
+      console.log(this.msg,"debuggg")})
   }
   closePopup() {
     this.displayStyle = "none";
+  }
+
+  Verifyotp(){
+    return this.otpService.VerifyOtp({mobile: Number(this.patient.phoneNo),otp:Number(this.otp)}).subscribe(data=>{this.msg=String(data);
+      console.log(this.msg,"verified")})
   }
   optionList = [
     "Female",
@@ -176,7 +188,7 @@ export class PatientRegistrationComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  constructor(private router: Router, private patientregService: PatientRegService) { }
+
 
   textDropConfig = {
     styles: {
@@ -199,13 +211,15 @@ export class PatientRegistrationComponent implements OnInit {
 
   onSubmit() {
     console.warn(this.patient);
-    return this.patientregService.addPatient(this.patient)
-      .subscribe(data => {
-        this.patient = data;
-        console.log(this.patient);
-      })
+    // return this.patientregService.addPatient(this.patient)
+    //   .subscribe(data => {
+    //     this.patient = data;
+    //     console.log(this.patient);
+    //   })
+      
 
   }
+
 
   DocRegistrationForm = new FormGroup({
     doctorName: new FormControl(''),

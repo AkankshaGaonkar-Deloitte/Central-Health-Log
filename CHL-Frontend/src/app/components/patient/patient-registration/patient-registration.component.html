@@ -127,7 +127,7 @@
                     </div>
                     </div>
                     <div id="login-btn">
-                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()"
+                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()" 
                         ></app-button>
                     </div>
                 </div>
@@ -139,17 +139,12 @@
         <div class="modal-header">
           <h4 class="modal-title">Enter OTP</h4>
         </div>
-        
         <div class="modal-body">
-          <div class="flex-modal">
-            <div class="grid-item">
               <app-input name="uploadDate" (outputEmit)="otp=$event" [ipConfig]="ipConfig2">
               </app-input>
-          </div>
-        </div>
-      
+      <br>
         <div class="modal-footer">
-          <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig" ></app-button>
+          <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig"  ></app-button>
           <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()"></app-button>                     
         </div>
         
