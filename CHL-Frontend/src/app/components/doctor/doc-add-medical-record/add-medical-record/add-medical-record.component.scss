@@ -103,6 +103,27 @@
                             ".";
                     }
 
+                    .current-med {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+                        gap: 0em 0em;
+                        grid-auto-flow: row;
+                        grid-template-areas:
+                            ".";
+                    }
+
+                    .advice {
+                        display: grid;
+                        grid-template-columns: 1fr;
+                        grid-template-rows: 1fr;
+                        gap: 0em 0em;
+                        grid-auto-flow: row;
+                        grid-template-areas:
+                            ".";
+                    }
+
+
                 }
             }
         }
