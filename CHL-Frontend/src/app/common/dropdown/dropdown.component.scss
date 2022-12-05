@@ -15,8 +15,17 @@ select {
     color: #2C2D2D;
   }
   
-  select:hover,
-  select:focus,select:active{
+  select:hover {
+    border: 0.0625em solid #737373;
+  }
+  
+  select:focus {
+    border: 1px solid #1CB5BD;
+    box-shadow: 0px 0px 6px rgba(28, 181, 189, 0.5);
     outline: none;
+  }
+  
+  select.ng-touched.ng-invalid {
+    border: 0.0625em solid #ee0004;
   }
   

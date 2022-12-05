@@ -12,6 +12,7 @@ import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
 
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { DoctorProfileComponent } from './components/doctor/doctor-profile/docto
     CheckboxComponent,
     ButtonComponent,
     DoctorProfileComponent
+    ButtonComponent,
+    TabNavigationComponent
   ],
   imports: [
     BrowserModule,
