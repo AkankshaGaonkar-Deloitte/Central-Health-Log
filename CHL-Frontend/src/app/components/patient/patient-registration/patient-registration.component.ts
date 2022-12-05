@@ -11,20 +11,58 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+
+  usernameExists: boolean = false;
+  contactExists: boolean = false;
+
   ngOnInit(): void {
   }
 
   patientActive: boolean = true;
+
   patient = new Patient();
-
   doctor = new Doctor();
-  textBtnConfig = { type: "submit", styles: { backgroundColor: '#1CB5BD', 
-  color: '#fff', height: '2em',width:'8em',fontSize:'1.1em' } };
 
-  // onUSerID(){
-  //   this.ipConfig.patternErrorMessage
-  // }
-  otp!: string|number|null;
+  textBtnConfig = {
+    type: "submit", styles: {
+      backgroundColor: '#1CB5BD',
+      color: '#fff', height: '2em', width: '8em', fontSize: '1.1em'
+    }
+  };
+
+  onUserID() {
+    let user: Object;
+    this.patientregService.IfUsernameExists(
+      String(this.patient.username)).subscribe(data => {
+        user = data
+        console.warn(user)
+        if (user) { this.usernameExists = true }
+        else {
+          if (user == null)
+            this.usernameExists = false
+        }
+      })
+  }
+  onPhoneNo() {
+    let user: Object;
+    this.patientregService.IfContactExists(
+      Number(this.patient.phoneNo)).subscribe(data => {
+        user = data
+        console.warn(user)
+        if (user) { this.contactExists = true ;
+          this.btndisable = true;
+        }
+        else {
+          if (user == null)
+            this.contactExists = false;
+            this.btndisable = false;
+        }
+      })
+  }
+  btndisable: boolean= !(this.usernameExists) || !(this.contactExists)
+
+  otp!: string | number | null;
+
   displayStyle = "none";
   openPopup() {
     this.displayStyle = "block";
@@ -39,33 +77,33 @@ export class PatientRegistrationComponent implements OnInit {
   ];
   optionList1 = [
     "Andhra Pradesh Medical Council	",
-	"Arunachal Pradesh Medical Council",	
-	"Assam Medical Council",
-	"Bihar Medical Council"	,
-	"Chattisgarh Medical Council"	,	"Delhi Medical Council"	,
-	"Goa Medical Council",
-	"Gujarat Medical Council",	
-	"Haryana State Dental & Medical Council",	
-"Himachal Pradesh Medical Council"	,
-	"Jammu & Kashmir Medical Council",
-	"Jharkhand Medical Council",
-	"Karnataka Medical Council",
-	"Kerala Medical Council",
-	"Madhya Pradesh Medical Council",
-	"Maharashtra Medical Council",
-	"Manipur Medical Council",
-	"Meghalya Medical Council",		"Mizoram Medical Council"	,"Nagaland Medical Council",	
-	"Orissa Medical Council"	,
-	"Punjab Medical Council",
-	"Rajasthan Medical Council",	
-	"Sikkim Medical Council"	,
-	"Tamil Nadu Medical Council",	
-	"Telangana Medical Council"	,
-	"Tripura Medical Council",
-	"Uttarnchal Medical Council",	
-	"Uttar Pradesh Medical Council",	
-	"West Bengal Medical Council"
-    
+    "Arunachal Pradesh Medical Council",
+    "Assam Medical Council",
+    "Bihar Medical Council",
+    "Chattisgarh Medical Council", "Delhi Medical Council",
+    "Goa Medical Council",
+    "Gujarat Medical Council",
+    "Haryana State Dental & Medical Council",
+    "Himachal Pradesh Medical Council",
+    "Jammu & Kashmir Medical Council",
+    "Jharkhand Medical Council",
+    "Karnataka Medical Council",
+    "Kerala Medical Council",
+    "Madhya Pradesh Medical Council",
+    "Maharashtra Medical Council",
+    "Manipur Medical Council",
+    "Meghalya Medical Council", "Mizoram Medical Council", "Nagaland Medical Council",
+    "Orissa Medical Council",
+    "Punjab Medical Council",
+    "Rajasthan Medical Council",
+    "Sikkim Medical Council",
+    "Tamil Nadu Medical Council",
+    "Telangana Medical Council",
+    "Tripura Medical Council",
+    "Uttarnchal Medical Council",
+    "Uttar Pradesh Medical Council",
+    "West Bengal Medical Council"
+
   ];
   ipConfig = {
     type: 'text',
@@ -160,9 +198,11 @@ export class PatientRegistrationComponent implements OnInit {
   onSubmit() {
     console.warn(this.patient);
     return this.patientregService.addPatient(this.patient)
-      .subscribe(data => { this.patient = data; 
-      console.log(this.patient);
+      .subscribe(data => {
+        this.patient = data;
+        console.log(this.patient);
       })
+
   }
 
   DocRegistrationForm = new FormGroup({
