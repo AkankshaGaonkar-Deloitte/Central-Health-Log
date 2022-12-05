@@ -167,12 +167,6 @@ export class DocPatientMedicalDataComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
-
-  
-  
   ngOnInit(): void {
   }
-
-
-
 }
