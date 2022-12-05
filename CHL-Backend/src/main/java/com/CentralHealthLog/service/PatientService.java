@@ -27,6 +27,12 @@ public class PatientService {
     public Patient getPatientById(long id) {
         return patientRepository.findById(id).orElse(null);
     }
+    public Patient getPatientByUsername(String username) {
+        return patientRepository.findByUsername(username).orElse(null);
+    }
+    public Patient getPatientByContact(Long phoneNo) {
+        return patientRepository.findByPhoneNo(phoneNo).orElse(null);
+    }
     public void deletePatient(Long id){
         patientRepository.deleteById(id);
     }

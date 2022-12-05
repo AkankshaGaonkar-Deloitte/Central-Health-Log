@@ -68,3 +68,5 @@ INTO
   (id, username, password, firstname, lastname, phone_no, email, gender, age, address)
 VALUES
   (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '8778562434', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');
+
+
