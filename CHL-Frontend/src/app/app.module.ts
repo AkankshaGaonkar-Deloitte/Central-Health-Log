@@ -8,25 +8,10 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
-import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './components/login-page/login/login.component';
-import { NgChartsModule } from 'ng2-charts';
-import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
-import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} from '@syncfusion/ej2-angular-charts';
-import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
-import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
-import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
-// import { Label } from 'ng2-charts';
-import { PastRecordsComponent } from './components/past-records/past-records.component';
-
-import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
-import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
-import { MedicationsComponent } from './components/patient/medications/medications.component';
-import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
-import { HttpClientModule } from '@angular/common/http';
-import { DatePipe } from '@angular/common';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
+import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 
 @NgModule({
   declarations: [
@@ -38,29 +23,16 @@ import { DatePipe } from '@angular/common';
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    PatientRegistrationComponent,
-    LoginComponent,
-    MedicalDataComponent,
-    PersonalDetailsComponent,
-    PersonalDetailsComponent,
-    ButtonComponent,
-    PastRecordsComponent,
-    MedicationsComponent,
-    PatientDashboardComponent,
-    PulseLineGraphComponent,
-    BpBarGraphComponent,
-    BmiLineGraphComponent,
+    TabNavigationComponent,
+    DocPatientMedicalDataComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    NgChartsModule,
-    HttpClientModule,
-    ChartModule
+    ReactiveFormsModule
   ],
-  providers: [CategoryService,LineSeriesService,ColumnSeriesService, DatePipe],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
