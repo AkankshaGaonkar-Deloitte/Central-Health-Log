@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class DocPatientMedicalDataComponent implements OnInit {
 
   constructor() { }
-  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doc-medical-data', 1],
-  '3': ['Medications', '/doc-medications', 0],'4': ['Past Records', '/doc-past-records', 0] };
+  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doc-patient-medical-data', 1],
+  '3': ['Medications', '/doc-patient-medication', 0],'4': ['Past Records', '/doc-patient-past-records', 0] };
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
   textDropConfig = {
