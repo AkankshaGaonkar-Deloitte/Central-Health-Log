@@ -6,7 +6,7 @@ import { DoctorProfileComponent } from './components/doctor/doctor-profile/docto
 
 const routes: Routes = [
   {
-    path : '',
+    path : 'doctor-profile',
     component : DoctorProfileComponent
   }
 ];
