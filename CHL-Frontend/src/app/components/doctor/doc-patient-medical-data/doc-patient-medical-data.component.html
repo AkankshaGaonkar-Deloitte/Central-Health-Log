@@ -10,12 +10,76 @@
         <div class="main">
           <div class="search">
           <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
-        </div>  
+        </div>
           <div class="tabs">
                 <tab-navigation [tabs]="menus1"></tab-navigation>
             </div>
             <div class="detail">
                 <!-- add everything here -->
+                <div class="outline">
+                  <div class="update-form-container">
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Height:</label>
+                        <app-input  [ipConfig]="heightConfig"></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Weight:</label>
+                        <app-input  [ipConfig]="weightConfig"></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>BMI:</label>
+                        <app-input  [ipConfig]="bmiConfig"></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Allergies:</label>
+                        <app-input  [ipConfig]="allergiesConfig" ></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Immunizations:</label>
+                        <app-input [ipConfig]="immunizationConfig" ></app-input>                
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Blood group:</label>
+                        <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" ></app-dropdown>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Blood pressure:</label>
+                        <app-input [ipConfig]="bpConfig" ></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell">
+                        <label>Pulse (per minute):</label>
+                        <app-input [ipConfig]="pulseConfig"></app-input>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell" style="margin-bottom: 1.25em;">
+                        <label>Family medical history:</label>
+                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                      </div>
+                    </div>
+                    <div class="form-cell">
+                      <div class="cell" style="margin-bottom: 1.25em;">
+                        <label>Chronic health problems:</label>
+                        <textarea name="" id="" cols="30" rows="10" ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
         </div>
       </div>

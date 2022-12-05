@@ -1,5 +1,3 @@
-
-
 .main-container {
     width: 100vw;
     height: 100vh;
@@ -44,6 +42,72 @@
                     color: #737373;
                     padding-top: 1.25em;
                     padding-left: 1.25em;
+                }
+                .outline {
+                    margin-left: 1.25em;
+                    margin-right: 1.25em;
+                    border: 1px solid #EAEBED;
+                    border-radius: 0.625em;
+
+                    .update-form-container {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        grid-template-rows: 1fr 1fr 1fr 1fr 2fr;
+                        gap: 0em 0em;
+                        grid-auto-flow: row;
+                        grid-template-areas:
+                            ". ."
+                            ". ."
+                            ". ."
+                            ". ."
+                            ". .";
+
+                        .form-cell {
+                            margin-top: 1.25em;
+                            margin-left: 1.25em;
+                            margin-right: 1.25em;
+
+                            .cell {
+                                display: grid;
+                                grid-template-columns: 1fr 1.5fr;
+                                grid-template-rows: 1fr;
+                                gap: 0em 0em;
+                                grid-template-areas:
+                                    ". .";
+
+                                label {
+                                    font-family: 'Poppins';
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    font-size: 1em;
+                                    line-height: 1.5em;
+                                    letter-spacing: 0.1em;
+                                    color: #2C2D2D;
+                                }
+
+                                textarea {
+                                    height: 5em;
+                                    border: 0.0625em solid #949494;
+                                    border-radius: 0.625em;
+                                }
+
+                                textarea:hover {
+                                    border: 0.0625em solid #737373;
+                                }
+
+                                textarea:focus {
+                                    border: 1px solid #1CB5BD;
+                                    box-shadow: 0px 0px 6px rgba(28, 181, 189, 0.5);
+                                    outline: none;
+                                }
+
+                                textarea.ng-touched.ng-invalid {
+                                    border: 0.0625em solid #ee0004;
+                                }
+                            }
+
+                        }
+                    }
                 }
             }
         }
