@@ -64,7 +64,7 @@
                     </div>
                     <br>
                     <div id="login-btn">
-                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig"></app-button>
+                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()"></app-button>
                     </div>
                 </div>
             </form>
@@ -121,11 +121,36 @@
                     </div>
                     </div>
                     <div id="login-btn">
-                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="onDocSubmit()"></app-button>
+                        <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()"
+                        ></app-button>
                     </div>
                 </div>
             </form>
-
-
+<!-- modal popup -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Enter OTP</h4>
+        </div>
+        
+        <div class="modal-body">
+          <div class="flex-modal">
+            <div class="grid-item">
+              <app-input name="uploadDate" (outputEmit)="otp=$event" [ipConfig]="ipConfig2">
+              </app-input>
+          </div>
+        </div>
+      
+        <div class="modal-footer">
+          <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig" ></app-button>
+          <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()"></app-button>                     
+        </div>
+        
         </div>
     </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>

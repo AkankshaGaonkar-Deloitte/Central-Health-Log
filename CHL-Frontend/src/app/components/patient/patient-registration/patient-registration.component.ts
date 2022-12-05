@@ -24,6 +24,14 @@ export class PatientRegistrationComponent implements OnInit {
   // onUSerID(){
   //   this.ipConfig.patternErrorMessage
   // }
+  otp!: string|number|null;
+  displayStyle = "none";
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
   optionList = [
     "Female",
     "Male",
