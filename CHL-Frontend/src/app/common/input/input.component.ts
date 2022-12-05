@@ -15,7 +15,7 @@ export class InputComponent implements OnInit {
     type: 'tel',
     label: 'Ph no',
     placeholder: '',
-    styling: {  
+    styling: {
       height: '40px'
     },
     validations : {
@@ -37,15 +37,15 @@ export class InputComponent implements OnInit {
 
   // must be used if you want the added prefil option
   <app-input [userInput]="prefil" [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
-  
+
   */
 
   @Input() ipConfig = {
     type: 'text',
     label: 'Name',
     placeholder: '',
-    styling: {  
-      
+    styling: {
+
     },
     validations : {
       required: '',
@@ -60,10 +60,12 @@ export class InputComponent implements OnInit {
 
   @Input() userInput:any = ''
 
+  @Input() disabled:string='false'
+
   emitChanges() {
     console.log(`At child: ${this.userInput}`)
     this.outputEmit.emit(this.userInput)
-    
+
   }
 
   constructor() { }
