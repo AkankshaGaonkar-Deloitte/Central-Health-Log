@@ -27,6 +27,7 @@ import { MedicationsComponent } from './components/patient/medications/medicatio
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { DatePipe } from '@angular/common';
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
+    ButtonComponent,
+    TabNavigationComponent
     ButtonComponent,
     PatientRegistrationComponent,
     LoginComponent,
