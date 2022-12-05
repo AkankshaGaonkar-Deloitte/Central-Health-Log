@@ -8,177 +8,166 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class DoctorProfileComponent implements OnInit {
 
-  constructor() { }
+  patientId:number = 43190
+  // patient: Patient = new Patient()
 
-  ngOnInit(): void {
-  }
+  genderDropConfig = {
+      styles: {
+        height: '2.375em',
+        width: '100%',
+        border: '0.0625em solid #949494',
+        borderRadius: '0.625em'
+      }
+    }
+  
+    optionList = [
+      "Male",
+      "Female",
+      "Other"
+    ];
 
-  menus = {
-    '1': ['Dashboard', '/doctor-dashboard', 0],
-    '2': ['Doctor Profile', '/doctor-profile', 1]
+    optionList2 = [
+      "Orthpaedic",
+      "Neurologist",
+      "Gynecologist",
+      "Dermatologist",
+      "Chiropractor",
+      "Allergist",
+      "Cardiologist",
+      "Dentist",
+      "Ophthalmologist",
+      "Pediatrician",
+      "Podiatrist",
+      "Anesthesiologist",
+      "Obstetrician",
+      "Oncologist",
+      "Psychiatrist",
+      "Radiologist",
+      "Other"
+    ];
+
+
+  textBtnConfig = {
+    type: "submit",
+    styles: {
+      background: '#1CB5BD',
+      color: '#fff',
+      height: '2em',
+      width: '8em',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
+      textAlign: 'center',
+
+    }
   };
 
-  DoctorProfile = new FormGroup({
-    speciality: new FormControl(''),
-    email: new FormControl(''),
-    gender: new FormControl(''),
-    address: new FormControl(''),
-    consultationFee: new FormControl(''),
-    contactNo: new FormControl(''),
-    age: new FormControl(''),
-  });
-
-  specialityReceived($event: any) {
-    this.DoctorProfile.patchValue({ speciality: $event });
-  }
-  emailReceived($event: any) {
-    this.DoctorProfile.patchValue({ email: $event });
-  }
-  genderReceived($event: any) {
-    this.DoctorProfile.patchValue({ gender: $event });
-  }
-  consultationFeeReceived($event: any) {
-    this.DoctorProfile.patchValue({ consultationFee: $event });
-  }
-  contactNoReceived($event: any) {
-    this.DoctorProfile.patchValue({ contactNo: $event });
-  }
-  ageReceived($event: any) {
-    this.DoctorProfile.patchValue({ age: $event });
-  }
-  addressReceived($event: any) {
-    this.DoctorProfile.patchValue({ address: $event });
-  }
-
-  ipConfig1 = {
-    type: 'text',
-    label: 'speciality',
+  contactNoConfig = {
+    type: 'number',
+    label: 'Contact no',
     placeholder: '',
     styling: {
-      width: '300px',
-      height: '40px',
+      height: '2.375em',
+      width: '100%'
     },
     validations: {
       required: '',
       minLength: '',
       maxLength: '',
-      pattern: '',
+      pattern: ''
     },
-    patternErrorMessage: '',
+    patternErrorMessage: ''
   };
-  ipConfig2 = {
+
+  fNameConfig = {
     type: 'text',
-    label: 'email',
+    label: 'First name',
     placeholder: '',
     styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig3 = {
-    type: 'text',
-    label: 'gender',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig4 = {
-    type: 'text',
-    label: 'consultationFee',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
+      height: '2.375em',
+      width: '100%'
     },
     validations: {
       required: '',
       minLength: '3',
-      maxLength: '',
-      pattern: '',
-    },
-    patternErrorMessage: '',
-  };
-  ipConfig5 = {
-    type: 'text',
-    label: 'contactNo',
-    placeholder: '',
-    styling: {
-      width: '300px',
-      height: '40px',
-    },
-    validations: {
-      required: '',
-      minLength: '',
       maxLength: '10',
-      pattern: '',
+      pattern: ''
     },
-    patternErrorMessage: '',
+    patternErrorMessage: ''
   };
-  ipConfig6 = {
+
+  lNameConfig = {
     type: 'text',
-    label: 'age',
+    label: 'Last name',
     placeholder: '',
     styling: {
-      width: '300px',
-      height: '40px',
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '3',
+      maxLength: '10',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  ageConfig = {
+    type: 'number',
+    label: 'Age',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
     },
     validations: {
       required: '',
       minLength: '',
       maxLength: '',
-      pattern: '',
+      pattern: ''
     },
-    patternErrorMessage: '',
+    patternErrorMessage: ''
   };
-  ipConfig7 = {
-    type: 'text',
-    label: 'address',
+
+  emailConfig = {
+    type: 'email',
+    label: 'Email',
     placeholder: '',
     styling: {
-      width: '900px',
-      height: '100px',
+      height: '2.375em',
+      width: '100%'
     },
     validations: {
       required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: '',
+      minLength: '4',
+      maxLength: '20',
+      pattern: ''
     },
-    patternErrorMessage: '',
+    patternErrorMessage: ''
   };
-  textBtnConfig = {
-    styles: {
-      backgroundColor: '#1CB5BD',
-      color: '#ffff',
-      fontFamily: 'Montserrat',
-      fontSize: '20px',
-      width: '150px',
-      height: '40px',
-      border: '1px solid #1CB5BD',
-      borderRadius: '4px',
-    },
-    type: 'submit',
-  };
-  onupdate() {
-    console.log(this.DoctorProfile.value);
+
+  menus = { '1': ['Dashboard', '/doctor-dashboard', 0],'2':['Doctor Profile','/doctor-profile',1]}
+
+  constructor(
+    // private patientDetailsService: PatientDetailsService,
+    // private datePipe: DatePipe
+  ) { }
+
+  ngOnInit(): void {
+    // this.patientDetailsService.getPatientByPatientId(this.patientId)
+    //   .subscribe(response => {
+    //     console.log(response);        
+    //     this.patient=response
+    //   })
   }
+
+  // personalDetailsFormSubmit(){
+  //   console.log(this.patient);
+  //   this.patientDetailsService.savePatientDetails(this.patient)
+  //     .subscribe(response => this.patient = response)
+  // }
 }
-
-
-
+  

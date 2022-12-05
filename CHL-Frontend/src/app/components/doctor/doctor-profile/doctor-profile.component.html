@@ -1,54 +1,71 @@
-<div id="main-container">
-    <div id="nav">
-    <app-navbar [button]="false" [name]="'Dr.Tashmeet(Orthpaedic)'"></app-navbar></div>
-    <div id="parent-container">
-      <div class="sidebar"><app-sidebar [menus]="menus"></app-sidebar></div>
-      <div id="sub-container">
-        <div id="text1"><a href="#"></a>&lt; &nbsp;Back to Dashboard</div>
-        <div id="text2">Update Details</div>
-        <div id="container">
-          <form (ngSubmit)="onupdate()">
-            <div id="container1">
-              <div id="sub-container1">
-                <div class="form-group">
-                  <label for="speciality">Speciality</label>
-                  <!-- <input id="first name" type="text" class="form-control" /> -->
-                  <app-input [ipConfig]="ipConfig1" (outputEmit)="specialityReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <app-input [ipConfig]="ipConfig2" (outputEmit)="emailReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="gender">Gender</label>
-                  <app-input [ipConfig]="ipConfig3" (outputEmit)="genderReceived($event) "></app-input>
-                </div>
-              </div>
-              <div id="sub-container2">
-                <div class="form-group">
-                  <label for="consultationFee">Consultation Fee</label>
-                  <app-input [ipConfig]="ipConfig4" (outputEmit)="consultationFeeReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="contactno">Contact No</label>
-                  <app-input [ipConfig]="ipConfig5" (outputEmit)="contactNoReceived($event) "></app-input>
-                </div>
-                <div class="form-group">
-                  <label for="contactno">Age</label>
-                  <app-input [ipConfig]="ipConfig6" (outputEmit)="ageReceived($event) "></app-input>
-                </div>
+<div class="main-container">
+  <div id="nav">
+    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+  </div>
+  <div class="subcontainer">
+    <div class="flex-item1">
+      <app-sidebar [menus]="menus"></app-sidebar>
+      
+    </div>
+    <div class="flex-item2">
+      <div class="main">
+        <div id="text1"><a href="#"></a>&lt; &nbsp; Back to Dashboard</div>
+        <div class="search-filter">
+          <div class="left">
+            <div id="sort-by">
+              Update Details
+            </div>
+          </div>
+          <div class="right"></div>
+        </div>
+        <div class="outline">
+          <div class="update-form-container">
+            <div class="form-cell">
+              <div class="cell">
+                <label>Speciality:</label>
+                <app-dropdown [states]="optionList2" [dropConfig]="genderDropConfig" ></app-dropdown>
               </div>
             </div>
-            <div id="container2">
-              <div id="address-bar" class="form-group">
-                <label for="address">Address</label>
-                <app-input [ipConfig]="ipConfig7" (outputEmit)="addressReceived($event) "></app-input>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Consultation Fee:</label>
+                <app-input disabled="'true'"  [ipConfig]="lNameConfig" ></app-input>
               </div>
             </div>
-            <div id="container3">
-              <div id="update-btn"><app-button  class="sub-btn" [btntext]="'UPDATE'" [btnConfig]="textBtnConfig"></app-button></div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Email:</label>
+                <app-input [ipConfig]="emailConfig"></app-input>                
+              </div>
             </div>
-          </form>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Contact no:</label>
+                <app-input [ipConfig]="contactNoConfig" ></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Gender:</label>
+                <app-dropdown [states]="optionList" [dropConfig]="genderDropConfig" ></app-dropdown>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell">
+                <label>Age:</label>
+                <app-input [ipConfig]="ageConfig" ></app-input>
+              </div>
+            </div>
+            <div class="form-cell">
+              <div class="cell" style="margin-bottom: 1.25em;">
+                <label>Address:</label>
+                <textarea name="" id="" cols="30" rows="10" ></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="button-div">
+          <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"></app-button>
         </div>
       </div>
     </div>

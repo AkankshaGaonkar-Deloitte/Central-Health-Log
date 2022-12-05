@@ -23,7 +23,7 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    DoctorProfileComponent
+    DoctorProfileComponent,
     ButtonComponent,
     TabNavigationComponent
   ],
