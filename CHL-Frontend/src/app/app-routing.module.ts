@@ -8,6 +8,7 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { LoginComponent } from './components/login-page/login/login.component';
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
+import { AddMedicalRecordComponent } from './components/doctor/doc-add-medical-record/add-medical-record/add-medical-record.component';
 
 const routes: Routes = [ {path:'registration',component:PatientRegistrationComponent},
 
@@ -16,8 +17,12 @@ const routes: Routes = [ {path:'registration',component:PatientRegistrationCompo
     component : PatientDashboardComponent
   },
   {
-    path:'doc-patient-medical-data',
-    component:DocPatientMedicalDataComponent
+    path:'doctor/patient-medical-data',
+    component : DocPatientMedicalDataComponent
+  },
+  {
+    path: 'doctor/add-medical-data',
+    component : AddMedicalRecordComponent
   },
   {
     path : 'medical-data',

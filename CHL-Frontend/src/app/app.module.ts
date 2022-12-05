@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
+import { AddMedicalRecordComponent } from './components/doctor/doc-add-medical-record/add-medical-record/add-medical-record.component';
 
 @NgModule({
   declarations: [
@@ -40,8 +41,7 @@ import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-
     CheckboxComponent,
     ButtonComponent,
     TabNavigationComponent,
-    DocPatientMedicalDataComponent
-    TabNavigationComponent,
+    DocPatientMedicalDataComponent,
     PatientRegistrationComponent,
     LoginComponent,
     MedicalDataComponent,
@@ -52,6 +52,7 @@ import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-
     PulseLineGraphComponent,
     BpBarGraphComponent,
     BmiLineGraphComponent,
+    AddMedicalRecordComponent,
   ],
   imports: [
     BrowserModule,
