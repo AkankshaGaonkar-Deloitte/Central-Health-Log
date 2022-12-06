@@ -10,59 +10,59 @@ import { Patient } from 'src/app/model/patient';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router, private patientregService: PatientRegService) { }
 
   patientActive: boolean = true;
   doctorActive: boolean = false;
   adminActive: boolean = false;
 
-  LoginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
-  });
-  btndisable!: boolean;
-  usernameExists: boolean=false;
-  usernameReceived($event: any) {
-    this.LoginForm.patchValue({ 'username': $event });
-  }
-  pwdReceived($event: any) {
-    this.LoginForm.patchValue({ 'password': $event });
-  }
+  btndisable: boolean=true;
+  usernameExists: boolean = true;
+
   // onSubmit() {
   //   console.warn(this.LoginForm.value);
   // }
-  user=Patient
+
   userName!: string | number | null;
   password!: string | number | null;
-  loginPatient(){
-    console.warn('patient',this.LoginForm.value);
-    // let user: Patient;
+  user = new Patient();
+
+  onUserPatient() {
     this.patientregService.IfUsernameExists(
       String(this.userName)).subscribe(data => {
-        // this.user = data
+        this.user = data as Patient
         console.warn(this.user)
-        if (this.user) { this.usernameExists = true ;
-          this.btndisable=false;
-    
-         }
-        else {
+        if (this.user) {this.usernameExists=true;
+          this.btndisable = false;
+        }
+        else {this.usernameExists=false;
           if (this.user == null)
-            this.usernameExists = false
-          this.btndisable=true
+            this.btndisable = true
         }
       })
-    this.router.navigate(['/patient-dashboard'])
-    
-  }
-  loginDoctor(){
-    console.warn('doctor',this.LoginForm.value);
-  }
-  loginAdmin(){
-    console.warn('admin',this.LoginForm.value);
-  }
 
 
+  }
+  Userid!: string;
+  loginPatient() {
+    if (this.user.password == this.password) {
+      this.router.navigate(['/patient-dashboard'])
+    }
+    else {
+      console.warn("INVALID PASSWORD")
+    }
+    sessionStorage.setItem(this.Userid, 'this.user.id');
+    let name = sessionStorage.getItem(this.Userid);
+    console.warn(name);
 
-  constructor(private router:Router,private patientregService:PatientRegService ) { }
+  }
+
+  loginDoctor() {
+    console.warn('doctor');
+  }
+  loginAdmin() {
+    console.warn('admin');
+  }
 
   ngOnInit(): void {
   }
@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
     styling: {
       width: '100%',
       height: '2em',
-      borderRadius:'0.35em'
+      borderRadius: '0.35em'
     },
     validations: {
       required: '',
@@ -108,11 +108,11 @@ export class LoginComponent implements OnInit {
     styling: {
       width: '100%',
       height: '2em',
-      borderRadius:'0.35em'
+      borderRadius: '0.35em'
     },
     validations: {
       required: '',
-      minLength: '5',
+      minLength: '3',
       maxLength: '',
       pattern: ''
     },
@@ -127,7 +127,7 @@ export class LoginComponent implements OnInit {
       fontSize: '1.2em',
       borderColor: '#fff',
       height: '2.5em',
-      width:'8em'
+      width: '8em'
     }
   }
 }
