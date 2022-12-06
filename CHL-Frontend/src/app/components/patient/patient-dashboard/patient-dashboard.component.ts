@@ -17,9 +17,10 @@ export class PatientDashboardComponent implements OnInit {
   }
   constructor() {
   }
-
+  Userid!: string;
   ngOnInit(): void {
-
+    
+    console.warn( Number(sessionStorage.getItem(this.Userid)))
   }
 }
 

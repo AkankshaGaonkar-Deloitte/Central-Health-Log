@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
 
   btndisable: boolean=true;
   usernameExists: boolean = true;
-
+  wrongPass:boolean=false
   // onSubmit() {
   //   console.warn(this.LoginForm.value);
   // }
@@ -49,11 +49,11 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/patient-dashboard'])
     }
     else {
-      console.warn("INVALID PASSWORD")
+      this.wrongPass=true
     }
-    sessionStorage.setItem(this.Userid, 'this.user.id');
-    let name = sessionStorage.getItem(this.Userid);
-    console.warn(name);
+    sessionStorage.setItem(this.Userid, String(this.user.id)) ;
+    let id = sessionStorage.getItem(this.Userid);
+    console.warn(Number(id));
 
   }
 

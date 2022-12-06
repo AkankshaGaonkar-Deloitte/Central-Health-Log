@@ -31,6 +31,7 @@
                     <div class="form-group">
                         <div id="pass">Password</div>
                         <app-input [ipConfig]="ipConfig2" (outputEmit)="password= ($event)"></app-input>
+                        <div *ngIf="wrongPass" style="color: red;">Invalid Password*</div>
                     </div>
                 </div>
                 <div id="login-btn">
