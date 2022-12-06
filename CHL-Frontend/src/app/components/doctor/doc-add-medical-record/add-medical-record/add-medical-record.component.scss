@@ -27,6 +27,7 @@
                 margin: 2em;
                 width: 94%;
                 //height: 90%;
+                margin-bottom: 3em;
                 background-color: #fff;
                 box-shadow: 0 0.125em 0.5em rgba(0, 0, 0, 0.15);
                 border-radius: 0.5em;
@@ -35,8 +36,7 @@
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr;
                 gap: 0em 0em;
-                grid-template-areas:
-                    ".";
+                grid-template-areas: ".";
 
                 .tabs {
                     margin: 1.25em;
@@ -66,7 +66,7 @@
 
                         #sort-by {
                             display: flex;
-                            font-family: 'Montserrat';
+                            font-family: "Montserrat";
                             font-style: normal;
                             font-weight: 700;
                             font-size: 1.25em;
@@ -74,7 +74,6 @@
                             letter-spacing: 0.1em;
                             align-items: flex-end;
                             color: #000000;
-
                         }
                     }
 
@@ -85,45 +84,266 @@
                 }
 
                 .outline {
-                    margin: 1.25em;
-                    border: 1px solid #EAEBED;
+                    margin-left: 1.25em;
+                    margin-right: 1.25em;
+                    margin-bottom: 1.25em;
+                    border: 1px solid #eaebed;
                     border-radius: 0.625em;
 
-                    .add-record-form {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 2fr 2fr 1fr 2fr 1fr;
-                        gap: 0em 0em;
-                        grid-auto-flow: row;
-                        grid-template-areas:
-                            "."
-                            "."
-                            "."
-                            "."
-                            ".";
+                    .sub-form {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 1.25em;
+
+                        .left {
+                            display: flex;
+                            justify-content: space-between;
+
+                            #title {
+                                display: flex;
+                                font-family: 'Montserrat';
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 1.25em;
+                                line-height: 1.5em;
+                                letter-spacing: 0.1em;
+                                align-items: flex-end;
+                                color: #000000;
+
+                            }
+                        }
+
+                        .right {
+                            display: flex;
+                            justify-content: space-between;
+                        }
                     }
 
-                    .current-med {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 1fr;
-                        gap: 0em 0em;
-                        grid-auto-flow: row;
-                        grid-template-areas:
-                            ".";
+                    .outline-2 {
+                        margin-left: 1.25em;
+                        margin-right: 1.25em;
+                        margin-bottom: 1.25em;
+                        padding-bottom: 1.25em;
+                        border: 1px solid #eaebed;
+                        border-radius: 0.625em;
+
+                        .form-row {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-template-rows: 1fr 1fr;
+                            gap: 0em 0em;
+                            grid-auto-flow: row;
+                            grid-template-areas:
+                                ". . ."
+                                ". . .";
+
+                            .form-cell {
+                                margin-top: 1.25em;
+                                margin-left: 1.25em;
+                                margin-right: 1.25em;
+
+                                .cell {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1.5fr;
+                                    grid-template-rows: 1fr;
+                                    gap: 0em 0em;
+                                    grid-template-areas:
+                                        ". .";
+
+                                    label {
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 1em;
+                                        line-height: 1.5em;
+                                        letter-spacing: 0.1em;
+                                        color: #2C2D2D;
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        .form-row-2 {
+                            display: grid;
+                            grid-template-columns: 1fr 2fr;
+                            grid-template-rows: 1fr;
+                            gap: 0em 0em;
+                            grid-auto-flow: row;
+                            grid-template-areas:
+                                ". . .";
+
+                            .form-cell {
+                                margin-top: 1.25em;
+                                margin-left: 1.25em;
+                                margin-right: 1.25em;
+
+                                .cell {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1.5fr;
+                                    grid-template-rows: 1fr;
+                                    gap: 0em 0em;
+                                    grid-template-areas:
+                                        ". .";
+
+                                    label {
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 1em;
+                                        line-height: 1.5em;
+                                        letter-spacing: 0.1em;
+                                        color: #2C2D2D;
+                                    }
+
+                                }
+
+                            }
+                        }
+
+                        .form-row-3 {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 1fr 1fr;
+                            gap: 0em 0em;
+                            grid-auto-flow: row;
+                            grid-template-areas:
+                                "."
+                                ".";
+
+                            .form-cell {
+                                margin-top: 1.25em;
+                                margin-left: 1.25em;
+                                margin-right: 1.25em;
+
+                                .cell {
+                                    display: grid;
+                                    grid-template-columns: 1fr 7fr;
+                                    grid-template-rows: 1fr;
+                                    gap: 0em 0em;
+                                    grid-template-areas:
+                                        ". .";
+
+                                    label {
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 1em;
+                                        line-height: 1.5em;
+                                        letter-spacing: 0.1em;
+                                        color: #2C2D2D;
+                                    }
+
+                                }
+
+                            }
+                        }
+
+                        .form-row-4 {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            grid-template-rows: 1fr;
+                            gap: 0em 0em;
+                            grid-template-areas:
+                                ".";
+
+                            .form-cell {
+                                margin-top: 1.25em;
+                                margin-left: 1.25em;
+                                margin-right: 1.25em;
+
+                                .cell {
+                                    display: grid;
+                                    grid-template-columns: 1fr;
+                                    grid-template-rows: 1fr;
+                                    gap: 0em 0em;
+                                    grid-template-areas:
+                                        ".";
+
+                                    label {
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 1em;
+                                        line-height: 1.5em;
+                                        letter-spacing: 0.1em;
+                                        color: #2C2D2D;
+                                    }
+
+                                }
+
+                            }
+                        }
+
+
+
+                        .table-container {
+                            // position: relative;
+                            margin: 1.25em;
+                            height: 30%;
+                            overflow-y: auto;
+
+                            table {
+                                // position: absolute;
+                                font-family: arial, sans-serif;
+                                border-collapse: collapse;
+                                width: 100%;
+                            }
+
+                            td,
+                            th {
+                                border: 0.0625em solid #dddddd;
+                                text-align: left;
+                                padding: 0.5em;
+                            }
+
+                            th {
+                                background-color: #f5f5f5;
+
+                                gap: 0.25em;
+                                isolation: isolate;
+                                width: 17.8em;
+                                height: 3.4375em;
+                                background: #f5f5f5;
+                                border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
+
+                                font-family: "Montserrat";
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 1em;
+                                line-height: 1.375em;
+                                color: rgba(0, 0, 0, 0.85);
+                            }
+
+                            table,
+                            th,
+                            td {
+                                border-left: none;
+                                border-right: none;
+                                border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
+                            }
+
+                            td {
+                                height: 1.375em;
+                                font-family: "Montserrat";
+                                font-style: normal;
+                                font-weight: 400;
+                                font-size: 1em;
+                                line-height: 1.375em;
+                                color: rgba(0, 0, 0, 0.85);
+                            }
+                        }
+
                     }
 
-                    .advice {
-                        display: grid;
-                        grid-template-columns: 1fr;
-                        grid-template-rows: 1fr;
-                        gap: 0em 0em;
-                        grid-auto-flow: row;
-                        grid-template-areas:
-                            ".";
-                    }
 
+                }
 
+                .submit-form{
+                    margin-left: 1.25em;
+                    margin-bottom: 1.25em;
                 }
             }
         }
