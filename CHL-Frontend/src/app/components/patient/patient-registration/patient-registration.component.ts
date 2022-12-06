@@ -5,6 +5,8 @@ import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
 import { Patient } from 'src/app/model/patient';
 import { Doctor } from 'src/app/model/doctor';
 import { OtpService } from 'src/app/service/otp.service';
+import { SMSPojo } from 'src/app/model/SMSPojo';
+import { TempOTP } from 'src/app/model/TempOTP';
 
 @Component({
   selector: 'app-patient-registration',
@@ -13,7 +15,7 @@ import { OtpService } from 'src/app/service/otp.service';
 })
 export class PatientRegistrationComponent implements OnInit {
   constructor(private router: Router, private patientregService: PatientRegService
-    ,private otpService:OtpService) { }
+    , private otpService: OtpService) { }
 
   usernameExists: boolean = false;
   contactExists: boolean = false;
@@ -39,13 +41,14 @@ export class PatientRegistrationComponent implements OnInit {
       String(this.patient.username)).subscribe(data => {
         user = data
         console.warn(user)
-        if (user) { this.usernameExists = true 
-          this.btndisable=true
-         }
+        if (user) {
+          this.usernameExists = true
+          this.btndisable = true
+        }
         else {
           if (user == null)
             this.usernameExists = false
-           if(!this.contactExists){this.btndisable=false}
+          if (!this.contactExists) { this.btndisable = false }
         }
       })
   }
@@ -55,34 +58,40 @@ export class PatientRegistrationComponent implements OnInit {
       Number(this.patient.phoneNo)).subscribe(data => {
         user = data
         console.warn(user)
-        if (user) { this.contactExists = true ;
-          this.btndisable=true
+        if (user) {
+          this.contactExists = true;
+          this.btndisable = true
         }
         else {
           if (user == null)
-            this.contactExists = false; 
-            if(!this.usernameExists){this.btndisable=false}
+            this.contactExists = false;
+          if (!this.usernameExists) { this.btndisable = false }
         }
       })
   }
-  msg:string=''
-  
+  msg: string = ''
+
   btndisable!: boolean;
   otp!: string | number | null;
 
   displayStyle = "none";
   openPopup() {
     this.displayStyle = "block";
-      return this.otpService.sendOtp(Number(this.patient.phoneNo)).subscribe(data=>{this.msg=String(data);
-      console.log(this.msg,"debuggg")})
+    console.warn(this.patient.phoneNo)
+     return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo) )).subscribe(data => {
+      console.log(data, "debuggg")
+    })
   }
   closePopup() {
     this.displayStyle = "none";
   }
 
-  Verifyotp(){
-    return this.otpService.VerifyOtp({mobile: Number(this.patient.phoneNo),otp:Number(this.otp)}).subscribe(data=>{this.msg=String(data);
-      console.log(this.msg,"verified")})
+  Verifyotp() {
+    console.log(new TempOTP((this.patient.phoneNo as string),(this.otp as number) ));
+    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo),Number(this.otp) )).subscribe(data => {
+      console.log(data, "debuggg")
+    })
+  
   }
   optionList = [
     "Female",
@@ -216,7 +225,7 @@ export class PatientRegistrationComponent implements OnInit {
     //     this.patient = data;
     //     console.log(this.patient);
     //   })
-      
+
 
   }
 

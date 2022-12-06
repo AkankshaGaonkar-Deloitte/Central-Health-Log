@@ -1,7 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Pulse } from '../model/Pulse';
+import { SMSPojo } from '../model/SMSPojo';
+import { TempOTP } from '../model/TempOTP';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +14,9 @@ export class OtpService {
   private baseurl="http://localhost:8080";
 
   constructor(private httpClient:HttpClient) { }
+  
+
+  
   createAuthenticationHeader(){
     let username: string = 'nawaz2000'
     let password: string = '123'
@@ -20,16 +26,17 @@ export class OtpService {
       Authorization: basicAuthHeaderString
       })
       }
-    sendOtp(contact:Number){
+    sendOtp(contact:SMSPojo){
       let headers = this.createAuthenticationHeader()
+      // let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', }), responseType: 'text' as 'json' };
       console.warn("sent otp")
-      return this.httpClient.post(`${this.baseurl+'/mobileNo'}`,contact, {headers})
+      return this.httpClient.post<SMSPojo>(`${this.baseurl+'/mobileNo'}`,contact, {headers})
 
     }
-    VerifyOtp(contactAndOtp:{mobile:number,otp:number}){
+    VerifyOtp(contactAndOtp:TempOTP){
       let headers = this.createAuthenticationHeader()
       console.warn("verify")
-      return this.httpClient.post(`${this.baseurl+'/otp'}`,contactAndOtp, {headers})
+      return this.httpClient.post<TempOTP>(`${this.baseurl+'/otp'}`,contactAndOtp, {headers})
 
     }
     

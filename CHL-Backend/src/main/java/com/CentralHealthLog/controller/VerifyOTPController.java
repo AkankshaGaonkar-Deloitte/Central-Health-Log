@@ -4,11 +4,13 @@ import com.CentralHealthLog.dto.StoreOTP;
 import com.CentralHealthLog.dto.TempOTP;
 import com.CentralHealthLog.service.OtpService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin("*")
 public class VerifyOTPController {
 
     @Autowired

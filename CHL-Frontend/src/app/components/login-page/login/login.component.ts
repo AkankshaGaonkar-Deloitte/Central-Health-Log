@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
+import { Patient } from 'src/app/model/patient';
 
 @Component({
   selector: 'app-login',
@@ -17,6 +19,8 @@ export class LoginComponent implements OnInit {
     username: new FormControl(''),
     password: new FormControl('')
   });
+  btndisable!: boolean;
+  usernameExists: boolean=false;
   usernameReceived($event: any) {
     this.LoginForm.patchValue({ 'username': $event });
   }
@@ -26,8 +30,26 @@ export class LoginComponent implements OnInit {
   // onSubmit() {
   //   console.warn(this.LoginForm.value);
   // }
+  user=Patient
+  userName!: string | number | null;
+  password!: string | number | null;
   loginPatient(){
     console.warn('patient',this.LoginForm.value);
+    // let user: Patient;
+    this.patientregService.IfUsernameExists(
+      String(this.userName)).subscribe(data => {
+        // this.user = data
+        console.warn(this.user)
+        if (this.user) { this.usernameExists = true ;
+          this.btndisable=false;
+    
+         }
+        else {
+          if (this.user == null)
+            this.usernameExists = false
+          this.btndisable=true
+        }
+      })
     this.router.navigate(['/patient-dashboard'])
     
   }
@@ -40,7 +62,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private patientregService:PatientRegService ) { }
 
   ngOnInit(): void {
   }
@@ -66,7 +88,7 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em',
+      height: '2em',
       borderRadius:'0.35em'
     },
     validations: {
@@ -85,7 +107,7 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em',
+      height: '2em',
       borderRadius:'0.35em'
     },
     validations: {
@@ -102,9 +124,10 @@ export class LoginComponent implements OnInit {
     styles: {
       backgroundColor: '#1CB5BD',
       color: '#ffff',
-      fontSize: '1em',
+      fontSize: '1.2em',
       borderColor: '#fff',
-      height: '2em'
+      height: '2.5em',
+      width:'8em'
     }
   }
 }

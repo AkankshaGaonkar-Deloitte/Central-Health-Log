@@ -14,6 +14,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("*")
 public class SMSController {
 
     @Autowired
@@ -27,9 +28,10 @@ public class SMSController {
     @PostMapping("/mobileNo")
     public ResponseEntity<String> smsSubmit(@RequestBody SMSPojo sms) {
         try{
-            System.out.println("hello");
+
+            System.out.println(sms);
             service.send(sms);
-            System.out.println("hello");
+
         }
         catch(Exception e){
 

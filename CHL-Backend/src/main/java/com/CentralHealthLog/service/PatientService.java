@@ -30,7 +30,7 @@ public class PatientService {
     public Patient getPatientByUsername(String username) {
         return patientRepository.findByUsername(username).orElse(null);
     }
-    public Patient getPatientByContact(Long phoneNo) {
+        public Patient getPatientByContact(String phoneNo) {
         return patientRepository.findByPhoneNo(phoneNo).orElse(null);
     }
     public void deletePatient(Long id){

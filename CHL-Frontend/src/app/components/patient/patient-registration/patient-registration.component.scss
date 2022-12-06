@@ -59,8 +59,8 @@
         }
 
         #reg-container {
-            width: 47.5%;
-            height: 90%;
+            width: 45%;
+            height: 92%;
             background: #FFFFFF;
             box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
             border-radius: 0.3em;
@@ -159,3 +159,38 @@
         // }
     }
 }
+
+.update-form-container {
+     display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 1em 1em;
+        grid-auto-flow: row;
+        grid-template-areas:
+          ".  ."
+          ".  ."
+          ".  ."
+          ".  .";
+          padding-top: 1.5em;
+
+.cell{
+    display: flex;
+    flex-direction: column
+    // width: ;
+}
+}
+.update-form-container1 {  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 1em 1em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". ."
+      ". ."
+      ". ."
+      ". ."
+      ". .";
+      padding-top: 1.5em;
+    }
+  
+  

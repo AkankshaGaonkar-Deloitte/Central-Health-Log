@@ -33,7 +33,7 @@ public class PatientRegController {
         return new ResponseEntity<Patient>(patient, HttpStatus.OK);
     }
     @GetMapping("phone/{phoneNo}")
-    public ResponseEntity<Patient> findPatientById(@PathVariable Long phoneNo)
+    public ResponseEntity<Patient> findPatientById(@PathVariable String phoneNo)
     {
         Patient patient = patientService.getPatientByContact(phoneNo);
         return new ResponseEntity<Patient>(patient, HttpStatus.OK);

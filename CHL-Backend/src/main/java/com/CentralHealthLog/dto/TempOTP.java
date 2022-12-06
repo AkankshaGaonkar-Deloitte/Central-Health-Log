@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class TempOTP {
-    private Integer otp;
+    private int otp;
     private String phoneNo;
 }
