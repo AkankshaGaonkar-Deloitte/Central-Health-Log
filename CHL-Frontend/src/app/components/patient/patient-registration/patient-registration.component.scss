@@ -142,17 +142,18 @@
             width: 6em;
         }
         .modal{
-            position: absolute;
-            left: 25em;
-            top: 12em;
+            width: 25em;
+            height: 15em;
+            position: relative;
             text-align: center;
-           
+            align-self: center;
         }
         .modal-content{
             width: 25em;
             align-items: center;
-            background-color: #DAFDFF;
+            background-color: #FFF;
             color: #1CB5BD;
+            border: 1em solid #DAFDFF ;
         }
         // .modal-body{
         //     width: 20em;
