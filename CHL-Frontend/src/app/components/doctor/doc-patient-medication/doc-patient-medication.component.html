@@ -1,0 +1,138 @@
+<div class="main-container">
+    <div id="nav">
+        <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+        <div class="flex-item1">
+            <app-sidebar [menus]="menus"></app-sidebar>
+        </div>
+        <div class="flex-item2">
+            <div class="main">
+                <div id="text1"><a href="#"></a>&lt; &nbsp; Back to Dashboard</div>
+                <div class="tabs">
+                    <tab-navigation [tabs]="menus1"></tab-navigation>
+                </div>
+                <div class="search-filter">
+                    <div class="left">
+                        <div id="sort-by">
+                            Current Medications
+                        </div>
+                    </div>
+                    <div class="right">
+                        <!--Modal starts-->
+                        <div>
+                            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add Current Medication</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="flex-modal">
+                                                <div class="grid-item">
+                                                    <label>Medicine:</label>
+                                                    <app-input
+                                                        
+                                                        [ipConfig]="nameConfig">
+                                                    </app-input>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <label>Dosage:</label>
+                                                    <app-input [ipConfig]="nameConfig"
+                                                        >
+                                                    </app-input>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <label>Starting date:</label>
+                                                    <app-input [ipConfig]="dateConfig"
+                                                        >
+                                                    </app-input>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <label>Record ID:</label>
+                                                    <app-input [ipConfig]="idConfig"
+                                                        >
+                                                    </app-input>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"
+                                                ></app-button>
+                                            <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2"
+                                                (click)="closePopup()"></app-button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Modal ends-->
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>Starting date</th>
+                            <th>Record ID</th>
+                            <th>Action</th>
+                        </tr>
+                        <!-- <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                            <tr *ngIf="medication.isCurrent">
+                                <td>{{medication.medicine}}</td>
+                                <td>{{medication.dosage}}</td>
+                                <td>{{medication.startingDate}}</td>
+                                <td>{{medication.recordId}}</td>
+                                <td>
+                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig"
+                                        ></app-button>
+                                </td>
+                            </tr>
+                        </ng-container> -->
+
+                    </table>
+                </div>
+
+                <!--2nd table starts-->
+                <div class="search-filter">
+                    <div class="left">
+                        <div id="sort-by">
+                            Past Medications
+                        </div>
+                    </div>
+                    <div class="right"></div>
+                </div>
+                <div class="table-container">
+                    <table>
+                        <tr>
+                            <th>Medicine</th>
+                            <th>Dosage</th>
+                            <th>Starting date</th>
+                            <th>Record ID</th>
+                            <th>Action</th>
+                        </tr>
+                        <!-- <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                            <tr *ngIf="!medication.isCurrent">
+                                <td>{{medication.medicine}}</td>
+                                <td>{{medication.dosage}}</td>
+                                <td>{{medication.startingDate}}</td>
+                                <td>{{medication.recordId}}</td>
+                                <td>
+                                    <app-button [btntext]="'Delete'" [btnConfig]="deleteBtnConfig"
+                                        ></app-button>
+                                </td>
+                            </tr>
+                        </ng-container> -->
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
