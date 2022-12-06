@@ -11,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
+import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    TabNavigationComponent
+    TabNavigationComponent,
+    ToBeRegisteredComponent
   ],
   imports: [
     BrowserModule,
