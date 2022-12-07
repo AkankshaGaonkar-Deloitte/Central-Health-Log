@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database" />
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="updated backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,13 +30,16 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task-sidebar" />
+        <entry key="$PROJECT_DIR$" value="task-frontend-admin-registered-doctors" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.gitignore" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CHL-Backend/pom.xml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/CentralHealthLogApplication.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/entity/test.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CHL-Backend/src/main/resources/application.properties" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
