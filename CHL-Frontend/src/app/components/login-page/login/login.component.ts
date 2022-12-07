@@ -3,6 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
 import { Patient } from 'src/app/model/patient';
+import { Doctor } from 'src/app/model/doctor';
 
 @Component({
   selector: 'app-login',
@@ -12,36 +13,59 @@ import { Patient } from 'src/app/model/patient';
 export class LoginComponent implements OnInit {
   constructor(private router: Router, private patientregService: PatientRegService) { }
 
+  userName!: string | number | null;
+  password!: string | number | null;
+
   patientActive: boolean = true;
   doctorActive: boolean = false;
   adminActive: boolean = false;
 
-  btndisable: boolean=true;
+  btndisable: boolean = true;
   usernameExists: boolean = true;
-  wrongPass:boolean=false
-  // onSubmit() {
-  //   console.warn(this.LoginForm.value);
-  // }
+  wrongPass: boolean = false
 
-  userName!: string | number | null;
-  password!: string | number | null;
   user = new Patient();
 
-  onUserPatient() {
-    this.patientregService.IfUsernameExists(
-      String(this.userName)).subscribe(data => {
-        this.user = data as Patient
-        console.warn(this.user)
-        if (this.user) {this.usernameExists=true;
-          this.btndisable = false;
-        }
-        else {this.usernameExists=false;
-          if (this.user == null)
-            this.btndisable = true
-        }
-      })
+  docbtndisable: boolean = true;
+  docusernameExists: boolean = true;
+  docUser = new Doctor()
 
+  onUser() {
+    if (this.patientActive) {
+      this.patientregService.IfUsernameExists(
+        String(this.userName)).subscribe(data => {
+          this.user = data as Patient
+          console.warn(this.user)
+          if (this.user) {
+            this.usernameExists = true;
+            this.btndisable = false;
+          }
+          else {
+            this.usernameExists = false;
+            if (this.user == null)
+              this.btndisable = true
+          }
+        })
+    }
 
+    else {
+      if (this.doctorActive) {
+        this.patientregService.IfUsernameExists(
+          String(this.userName)).subscribe(data => {
+            this.docUser = data as Doctor
+            console.warn(this.docUser)
+            if (this.docUser) {
+              this.docusernameExists = true;
+              this.docbtndisable = false;
+            }
+            else {
+              this.docusernameExists = false;
+              if (this.docUser == null)
+                this.docbtndisable = true
+            }
+          })
+      }
+    }
   }
   Userid!: string;
   loginPatient() {
@@ -49,16 +73,28 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/patient-dashboard'])
     }
     else {
-      this.wrongPass=true
+      this.wrongPass = true
     }
-    sessionStorage.setItem(this.Userid, String(this.user.id)) ;
+    sessionStorage.setItem(this.Userid, String(this.user.id));
     let id = sessionStorage.getItem(this.Userid);
     console.warn(Number(id));
 
   }
 
+
+  Docid!: string;
   loginDoctor() {
-    this.router.navigate(['/doctor/patient/medical-data'])
+    if (this.docUser.password == this.password) {
+      this.router.navigate(['/doctor/patient/medical-data'])
+      this.wrongPass = false
+    }
+    else {
+      this.wrongPass = true
+    }
+    sessionStorage.setItem(this.Userid, String(this.user.id));
+    let id = sessionStorage.getItem(this.Docid);
+    console.warn(Number(id));
+
   }
   loginAdmin() {
     console.warn('admin');
