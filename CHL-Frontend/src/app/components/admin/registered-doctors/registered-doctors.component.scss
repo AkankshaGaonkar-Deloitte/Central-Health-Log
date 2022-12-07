@@ -40,6 +40,15 @@
                     padding-top: 1.25em;
                     padding-left: 1.25em;
                 }
+                #doctor-id{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 1.25em;
+                    margin-top: -1.25em;
+                    #search{
+                    margin-left: 0.25em;
+                    }
+                    }
 
                 #registered-doctors{
                     display: flex;
@@ -141,12 +150,3 @@ td {
     color: rgba(0, 0, 0, 0.85);
 }
 
-#patient-id{
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1.25em;
-    margin-top: -1.25em;
-    #search{
-    margin-left: 0.25em;
-    }
-    }

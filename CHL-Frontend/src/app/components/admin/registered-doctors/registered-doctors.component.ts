@@ -331,7 +331,7 @@ export class RegisteredDoctorsComponent implements OnInit {
   searchDoctorId = {
     type: 'text',
     label: 'to',
-    placeholder: 'patient id',
+    placeholder: 'doctor id',
     styling: {
     width: '20em',
     height: '2.5em',
@@ -366,7 +366,7 @@ export class RegisteredDoctorsComponent implements OnInit {
 
 
   
-  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 1],'2':['In Progress','/admin-in-progress'],'3':['Registered Doctors','/admin-registered-doctors']}
+  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 0],'2':['In Progress','/admin-in-progress',0],'3':['Registered Doctors','/admin-registered-doctors',1]}
 
   constructor() { }
 
