@@ -30,6 +30,7 @@ import { DocPatientMedicationComponent } from './components/doctor/doc-patient-m
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
 import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
+import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-
     BmiLineGraphComponent,
     AddMedicalRecordComponent,
     DocPatientMedicationComponent,
-    DocPatientPastRecordsComponent
+    DocPatientPastRecordsComponent,
+    DoctorDashboardComponent
   ],
   imports: [
     BrowserModule,

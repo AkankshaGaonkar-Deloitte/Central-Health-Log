@@ -1,0 +1,73 @@
+<div class="main-container">
+    <div id="nav">
+        <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+        <div class="flex-item1">
+            <app-sidebar [menus]="menus"></app-sidebar>
+        </div>
+        <div class="flex-item2">
+            <div class="main">
+                <div class="search">
+                    <div id="text1"><a routerLink="/doctor-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+                    <div id="patient-id">
+                        <app-input [ipConfig]="searchPatientId"></app-input>
+                       <a [routerLink]="'/doctor/patient/medical-data'"><img src="assets/images/search.png"></a>
+                        </div>
+                </div>
+                <div class="inner-flex">
+                    <div id="cards" class="card1">
+                        <div class="text">
+                            <p>Number of appointments</p>
+                            <h3>500</h3>
+                        </div>
+                        <div id="image" style=" height: 4em; width: 3.8em;"><img src="assets/images/appointments.png">
+                        </div>
+                    </div>
+                    <div id="cards" class="card2">
+                        <div class="text">
+                            <p>Total Patients</p>
+                            <h3>360</h3>
+                        </div>
+                        <div id="image" style=" height: 3.8em; width: 3.6em;"><img src="assets/images/person-icon.png">
+                        </div>
+                    </div>
+                    <div id="cards" class="card1">
+                        <div class="text">
+                            <p>Male:Female ratio</p>
+                            <h3>2:3</h3>
+                        </div>
+                        <div id="image" style=" height: 4em; width: 3.8em;"><img src="assets/images/person-icon.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="past-app">
+                    <b style="margin: 1.3em;">Past Appointments</b>
+                    <div class="table-container">
+                        <table>
+                            <tr>
+                                <th>Date</th>
+                                <th>Patient name</th>
+                                <th>Diagnosis</th>
+                                <th>Severity</th>
+                                <th>Prescription</th>
+                            </tr>
+                            <!-- <tr *ngFor="let pastRecord of allPastRecords">
+                    <td>{{pastRecord.uploadDate}}</td>
+                    <td>{{pastRecord.doctorName}}</td>
+                    <td>{{pastRecord.diagnosis}}</td>
+                    <td>{{pastRecord.severity}}</td>
+                    <td>{{pastRecord.uploadedBy}}</td> -->
+
+                            <!-- <td>
+                      <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+                    </td>
+                </tr> -->
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
