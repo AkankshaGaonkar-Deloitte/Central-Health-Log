@@ -1,9 +1,5 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
-import { ChartOptions, ChartType } from 'chart.js';
-import { Pulse } from 'src/app/model/Pulse';
-import { GraphServiceService } from 'src/app/service/graph-service.service';
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -21,9 +17,10 @@ export class PatientDashboardComponent implements OnInit {
   }
   constructor() {
   }
-
+  Userid!: string;
   ngOnInit(): void {
-
+    
+    console.warn( Number(sessionStorage.getItem(this.Userid)))
   }
 }
 

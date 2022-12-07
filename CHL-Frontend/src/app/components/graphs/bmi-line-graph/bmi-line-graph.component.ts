@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 import { Browser } from '@syncfusion/ej2-base';
+import { BMI } from 'src/app/model/BMI';
 
 @Component({
   selector: 'bmi-line-graph',
@@ -51,9 +52,14 @@ export class BmiLineGraphComponent implements OnInit {
   };
   // custom code end
   public title: string = 'BMI';
+  Userid!: string;
+  
+    
+    
 
   ngOnInit(): void {
     let pr:Object[]=[];
+    console.warn( Number(sessionStorage.getItem(this.Userid)))
     this.graphService.getBMI().subscribe(data =>{
     for(let i in data) {
       pr.push(data[i]);

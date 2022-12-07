@@ -11,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
 import { NgChartsModule } from 'ng2-charts';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
@@ -18,16 +19,13 @@ import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} fro
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
 import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
 import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
-// import { Label } from 'ng2-charts';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
-
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
 import { MedicationsComponent } from './components/patient/medications/medications.component';
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
-import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { DocPatientMedicationComponent } from './components/doctor/doc-patient-medication/doc-patient-medication.component';
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
@@ -37,6 +35,7 @@ import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-
   declarations: [
     AppComponent,
     InputComponent,
+    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,

@@ -36,7 +36,7 @@ public class Doctor {
     private String email;
 
     @Column(unique=true,nullable = false)
-    private Long phoneNo;
+    private String phoneNo;
 
     private String speciality;
 

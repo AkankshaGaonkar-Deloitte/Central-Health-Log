@@ -1,14 +1,12 @@
 export class Patient {
-    constructor(
-        public id?: number,
-        public username?: string|number|null,
-        public firstname ?: string|number|null,
-        public lastname ?: string|number|null,
-        public password?: string|number|null,
-        public email ?: string|number|null,
-        public phoneNo ?: string|number|null,
-        public gender ?: string|number|null,
-        public address ?: string|number|null,
-        public age ?: string|number|null
-    ) { }
+   id !: number;
+       username!: string|number|null;
+       firstname !: string|number|null;
+       lastname !: string|number|null;
+       password!:string|number|null;
+       email !: string|number|null;
+       phoneNo !: string|number|null;
+       gender !: string|number|null;
+       address !:string|number|null;
+       age !: string|number|null;
 }

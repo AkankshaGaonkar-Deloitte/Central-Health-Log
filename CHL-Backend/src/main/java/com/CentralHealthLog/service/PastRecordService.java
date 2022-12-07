@@ -30,7 +30,6 @@ public class PastRecordService {
     }
 
     public List<PastRecord> filterByDate(Long patientId, String from, String to) throws ParseException {
-        System.out.println("Date parsed: " + new SimpleDateFormat("yyyy-MM-dd").parse(from));
         Date fromDate = new SimpleDateFormat("yyyy-MM-dd").parse(from);
         Date toDate = new SimpleDateFormat("yyyy-MM-dd").parse(to);
         return pastRecordRepository.findByPatientIdAndUploadDateBetween(patientId, fromDate, toDate).get();

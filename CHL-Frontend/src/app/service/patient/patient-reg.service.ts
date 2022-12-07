@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Doctor } from 'src/app/model/doctor';
 import { Patient } from 'src/app/model/patient';
 
@@ -21,7 +21,7 @@ export class PatientRegService {
       }
 
       private baseurl="http://localhost:8080";
-    addPatient(newPatient:Patient):Observable<Patient>{
+    addPatient(newPatient:Patient){
       let headers = this.createAuthenticationHeader()
       return this.httpClient.post<Patient>(`${this.baseurl+'/patient'}`, newPatient,{headers})
 
@@ -31,6 +31,17 @@ export class PatientRegService {
       return this.httpClient.post<Doctor>(`${this.baseurl+'/doctor'}`,newDoctor, {headers})
 
     }
-   
+   IfUsernameExists( username: string){
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get(`${this.baseurl+'/patient/user/'+ username}`, {headers})
+  }
+  IfContactExists( phoneNo: number){
+    let headers = this.createAuthenticationHeader()
+    console.log('phone')
+    return this.httpClient.get(`${this.baseurl+'/patient/phone/'+ phoneNo}`, {headers})
+  }
     
-}
+    
+   }
+    
+
