@@ -1,5 +1,5 @@
 
-  <button [type]="btnConfig.type" class="btn" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
+  <button [type]="btnConfig.type" [disabled]="disabled" class="btn" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
    {{btntext}}
   </button>
 

@@ -1,6 +1,8 @@
 import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
+import { Patient } from 'src/app/model/patient';
 
 @Component({
   selector: 'app-login',
@@ -8,39 +10,59 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  constructor(private router: Router, private patientregService: PatientRegService) { }
 
   patientActive: boolean = true;
   doctorActive: boolean = false;
   adminActive: boolean = false;
 
-  LoginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
-  });
-  usernameReceived($event: any) {
-    this.LoginForm.patchValue({ 'username': $event });
-  }
-  pwdReceived($event: any) {
-    this.LoginForm.patchValue({ 'password': $event });
-  }
+  btndisable: boolean=true;
+  usernameExists: boolean = true;
+  wrongPass:boolean=false
   // onSubmit() {
   //   console.warn(this.LoginForm.value);
   // }
-  loginPatient(){
-    console.warn('patient',this.LoginForm.value);
-    this.router.navigate(['/patient-dashboard'])
-    
-  }
-  loginDoctor(){
-    console.warn('doctor',this.LoginForm.value);
-  }
-  loginAdmin(){
-    console.warn('admin',this.LoginForm.value);
-  }
+
+  userName!: string | number | null;
+  password!: string | number | null;
+  user = new Patient();
+
+  onUserPatient() {
+    this.patientregService.IfUsernameExists(
+      String(this.userName)).subscribe(data => {
+        this.user = data as Patient
+        console.warn(this.user)
+        if (this.user) {this.usernameExists=true;
+          this.btndisable = false;
+        }
+        else {this.usernameExists=false;
+          if (this.user == null)
+            this.btndisable = true
+        }
+      })
 
 
+  }
+  Userid!: string;
+  loginPatient() {
+    if (this.user.password == this.password) {
+      this.router.navigate(['/patient-dashboard'])
+    }
+    else {
+      this.wrongPass=true
+    }
+    sessionStorage.setItem(this.Userid, String(this.user.id)) ;
+    let id = sessionStorage.getItem(this.Userid);
+    console.warn(Number(id));
 
-  constructor(private router:Router) { }
+  }
+
+  loginDoctor() {
+    console.warn('doctor');
+  }
+  loginAdmin() {
+    console.warn('admin');
+  }
 
   ngOnInit(): void {
   }
@@ -66,8 +88,8 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em',
-      borderRadius:'0.35em'
+      height: '2em',
+      borderRadius: '0.35em'
     },
     validations: {
       required: '',
@@ -85,12 +107,12 @@ export class LoginComponent implements OnInit {
     placeholder: '',
     styling: {
       width: '100%',
-      height: '1.8em',
-      borderRadius:'0.35em'
+      height: '2em',
+      borderRadius: '0.35em'
     },
     validations: {
       required: '',
-      minLength: '5',
+      minLength: '3',
       maxLength: '',
       pattern: ''
     },
@@ -102,9 +124,10 @@ export class LoginComponent implements OnInit {
     styles: {
       backgroundColor: '#1CB5BD',
       color: '#ffff',
-      fontSize: '1em',
+      fontSize: '1.2em',
       borderColor: '#fff',
-      height: '2em'
+      height: '2.5em',
+      width: '8em'
     }
   }
 }

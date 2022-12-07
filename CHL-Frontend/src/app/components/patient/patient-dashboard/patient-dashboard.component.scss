@@ -15,121 +15,110 @@
         background-color: #F5FEFF;
         display: flex;
         flex-direction: row;
-    }
 
-    .flex-item1 {
-        width: 18%;
-        height: 100%;
-    }
 
-    .flex-item2 {
-        width: 77%;
-        height: 94%;
-        box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
-        border-radius: 0.7em;
-        background: #FFFFFF;
-        margin: auto;
-        padding: 1em;
-
-        #heading {
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 1.1em;
-            line-height: 1.2em;
-            color: #2C2D2D;
-
+        .flex-item1 {
+            width: 18%;
+            height: 100%;
         }
 
-        .main-flex {
-            display: flex;
-            flex-direction: column;
+        .flex-item2 {
+            width: 78%;
+            height: 90%;
+            box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
+            border-radius: 0.7em;
+            background: #FFFFFF;
+            padding: 1em;
+            margin: auto;
+            #heading {
+                font-family: 'Montserrat';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 1.1em;
+                line-height: 1.2em;
+                color: #2C2D2D;
 
-            .chart0 {
+            }
+
+            .main-flex {
                 display: flex;
-                flex-direction: row;
-                gap: 1em;
-                // height: 200px;
-                flex-grow: 0;
-                flex-shrink: 0;
-                flex-basis: 50%;
-
-                .bpGraph {
+                flex-direction: column;
+                gap: 2em;
+                .chart0 {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
                     flex-grow: 0;
                     flex-shrink: 0;
-                    flex-basis: 70%;
-                    height: 50%;
-                    // width:650px;
-                    //  height:35px;
-                }
+                    flex-basis: 50%;
 
-                .inner-flex {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1em;
-                    width: 100%;
-                    height: 20%;
-
-
-                    #cards {
-                        background: #FFFFFF;
-                        border: 0.1em solid #EAEBED;
-                        border-radius: 0.4em;
-                        padding: 0.2em;
+                    .bpGraph {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        flex-basis: 70%;
+                        height: 50%;
+                    }
+                    .inner-flex {
                         display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        
+                        flex-direction: column;
+                        gap: 1em;
+                        width: 100%;
+                        height: 20%;
 
-                        p {
-                            font-weight: 600;
-                            font-size: 0.9em;
-                            line-height: 1.1em;
-                            color: #2C2D2D;
-                        }
 
-                        h3 {
-                            font-weight: 600;
-                            font-size: 2em;
-                            color: #2C2D2D;
-                        }
-                        #image{
-                            margin-top: 0.5em;
+                        #cards {
+                            background: #FFFFFF;
+                            border: 0.1em solid #EAEBED;
+                            border-radius: 0.4em;
                             padding: 0.2em;
-                            padding-left: 0.1em;
-                            margin-right: 0.6em;
-                            align-items: center;
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+
+
+                            p {
+                                font-weight: 600;
+                                font-size: 0.9em;
+                                line-height: 1.1em;
+                                color: #2C2D2D;
+                            }
+
+                            h3 {
+                                font-weight: 600;
+                                font-size: 2em;
+                                color: #2C2D2D;
+                            }
+
+                            #image {
+                                margin-top: 0.5em;
+                                padding: 0.2em;
+                                padding-left: 0.1em;
+                                margin-right: 0.6em;
+                                align-items: center;
+                            }
                         }
                     }
                 }
 
-            }
+                .chart1 {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
 
-            .chart1 {
-                display: flex;
-                flex-direction: row;
-                gap: 1em;
+                    .pulseRate {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        flex-basis: 50%;
+                    }
 
-                .pulseRate {
-                    flex-grow: 0;
-                    flex-shrink: 0;
-                    flex-basis: 50%;
+                    .bmiGraph {
+                        flex-grow: 0;
+                        flex-shrink: 0;
+                        flex-basis: 50%;
+
+                    }
                 }
-
-                .bmiGraph {
-                    flex-grow: 0;
-                    flex-shrink: 0;
-                    flex-basis: 50%;
-
-                }
             }
-
-            // .refresh {
-            //     width: 4.5em;
-            // }
         }
-
     }
-
-
 }

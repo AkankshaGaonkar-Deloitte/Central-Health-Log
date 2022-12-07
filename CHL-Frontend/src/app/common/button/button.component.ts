@@ -12,6 +12,7 @@ export class ButtonComponent implements OnInit {
 
   @Input() btnConfig={type:"button",styles:{}};
   @Input() btntext!: string;
+  @Input() disabled: boolean=false;
   @Output() onClick = new EventEmitter<any>();
 
   constructor(private router: Router) { }
@@ -21,10 +22,5 @@ export class ButtonComponent implements OnInit {
   onClickBtn($event: any) {
     this.onClick.emit($event);
   }
-  // emitEvent() {
-  //   this.onClick.emit('clicked')
-  // }
-
-
 
 }
