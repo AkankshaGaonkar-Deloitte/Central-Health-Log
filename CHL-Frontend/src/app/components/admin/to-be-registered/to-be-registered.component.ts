@@ -366,7 +366,7 @@ export class ToBeRegisteredComponent implements OnInit {
 
 
   
-  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 1],'2':['In Progress','/admin-in-progress'],'3':['Registered Doctors','/admin-registered-doctors']}
+  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 1],'2':['In Progress','/admin-in-progress',0],'3':['Registered Doctors','/admin-registered-doctors',0]}
 
   constructor() { }
 
