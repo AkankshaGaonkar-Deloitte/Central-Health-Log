@@ -8,6 +8,10 @@ import { NavbarComponent } from './common/navbar/navbar.component';
 import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { DropdownComponent } from './common/dropdown/dropdown.component';
 import { CheckboxComponent } from './common/checkbox/checkbox.component';
+import { DocPatientDashboardComponent } from './components/doctor/doc-patient-dashboard/doc-patient-dashboard.component';
+import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
+import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
+import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -36,11 +40,14 @@ import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/d
   declarations: [
     AppComponent,
     InputComponent,
-    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
+    DocPatientDashboardComponent,
+    BmiLineGraphComponent,
+    PulseLineGraphComponent,
+    BpBarGraphComponent,
     ButtonComponent,
     TabNavigationComponent,
     DocPatientMedicalDataComponent,

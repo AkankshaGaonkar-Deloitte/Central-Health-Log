@@ -12,6 +12,7 @@ import { AddMedicalRecordComponent } from './components/doctor/add-medical-recor
 import { DocPatientMedicationComponent } from './components/doctor/doc-patient-medication/doc-patient-medication.component';
 import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
+import { DocPatientDashboardComponent } from './components/doctor/doc-patient-dashboard/doc-patient-dashboard.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,11 @@ const routes: Routes = [
     redirectTo : 'login',
     pathMatch : 'full'
   },
+  {
+    path : 'doc-patient-dashboard',
+    component : DocPatientDashboardComponent
+  }
+
 ];
 
 @NgModule({
