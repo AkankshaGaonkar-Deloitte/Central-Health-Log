@@ -13,7 +13,7 @@ import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
-import { NgChartsModule } from 'ng2-charts';
+
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
@@ -62,7 +62,6 @@ import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgChartsModule,
     HttpClientModule,
     ChartModule
   ],

@@ -80,17 +80,17 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/tkaurkhanuja/Desktop/Central-Health-Log/CHL-Backend/pom.xml&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "last_opened_file_path": "/home/tkaurkhanuja/Desktop/Central-Health-Log",
+    "settings.editor.selected.configurable": "advanced.settings"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.com.CentralHealthLog.CentralHealthLogApplication">
     <configuration name="CentralHealthLogApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="product.CentralHealthLogApplication" />
@@ -110,6 +110,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.CentralHealthLog.CentralHealthLogApplication" />
       <module name="CentralHealthLog" />
+      <option name="VM_PARAMETERS" value="-Djasypt.encryptor.password=chl" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.CentralHealthLog.*" />
@@ -120,17 +121,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.CentralHealthLogApplication" />
+      <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
@@ -236,7 +230,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/CentralHealthLogApplication.java</url>
           <line>10</line>
-          <properties class="com.CentralHealthLog.CentralHealthLogApplication" method="main">
+          <properties class="com.CentralHealthLog.CentralHealthLogApplication">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
