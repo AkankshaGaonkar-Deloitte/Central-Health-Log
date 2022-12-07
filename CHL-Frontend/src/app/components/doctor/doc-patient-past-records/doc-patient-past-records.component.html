@@ -1,0 +1,68 @@
+<div class="main-container">
+    <div id="nav">
+      <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+      <div class="flex-item1">
+        <app-sidebar [menus]="menus"></app-sidebar>
+      </div>
+      <div class="flex-item2">
+        <div class="main">
+          <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+          <div class="tabs">
+            <tab-navigation [tabs]="menus1"></tab-navigation>
+        </div>
+          <div class="search-filter">
+            <div class="left">
+              <!-- Select filter -->
+              <div id="sort-by">
+                <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="filterSelectEventReceived($event)"></app-dropdown>
+              </div>
+              <!--filter type-->
+              <div style="margin-right: 10px;">
+                <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateFrom" (outputEmit)="onClickFromDateReceived($event)"></app-input>
+                <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityFrom" (outputEmit)="onClickSeverityFromReceived($event)"></app-input>
+                <app-input *ngIf="filterSelector === 'Doctor'" [ipConfig]="searchWithDoctorId" (outputEmit)="onClickDoctorReceived($event)"></app-input>
+              </div>
+              <div style="margin-right: 10px;">
+                <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateTo" (outputEmit)="onClickToDateReceived($event)"></app-input>
+                <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityTo" (outputEmit)="onClickSeverityToReceived($event)"></app-input>
+              </div>
+              <div>
+                <app-button [btntext]="'Search'" [btnConfig]="searchBtnConfig"></app-button>
+              </div>
+            </div>
+            <div class="right">
+            </div>
+          </div>
+          <div class="table-container">
+            <table>
+              <tr>
+                <th>Date</th>
+                <th>Doctor ID</th>
+                <th>Doctor name</th>
+                <th>Diagnosis</th>
+                <th>Severity</th>
+                <th>Uploaded by</th>
+                <th>Prescription</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td>{{todo.targetDate | date}}</td> -->
+                <td>
+                  <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+                </td>
+            </tr>
+  
+            </table>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>

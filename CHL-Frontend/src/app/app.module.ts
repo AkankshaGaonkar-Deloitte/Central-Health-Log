@@ -31,6 +31,7 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
 import { DocPatientMedicationComponent } from './components/doctor/doc-patient-medication/doc-patient-medication.component';
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
+import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { AddMedicalRecordComponent } from './components/doctor/add-medical-recor
     BpBarGraphComponent,
     BmiLineGraphComponent,
     AddMedicalRecordComponent,
-    DocPatientMedicationComponent
+    DocPatientMedicationComponent,
+    DocPatientPastRecordsComponent
   ],
   imports: [
     BrowserModule,

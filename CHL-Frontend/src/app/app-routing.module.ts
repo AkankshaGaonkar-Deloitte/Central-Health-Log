@@ -10,8 +10,13 @@ import { PatientRegistrationComponent } from './components/patient/patient-regis
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
 import { DocPatientMedicationComponent } from './components/doctor/doc-patient-medication/doc-patient-medication.component';
+import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 
 const routes: Routes = [
+  {
+    path : 'doctor/patient/past-records',
+    component : DocPatientPastRecordsComponent
+  },
   {
     path : 'doctor/patient/medication',
     component : DocPatientMedicationComponent
