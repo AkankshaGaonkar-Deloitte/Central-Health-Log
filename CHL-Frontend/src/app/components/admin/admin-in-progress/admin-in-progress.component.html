@@ -9,7 +9,7 @@
       <div class="flex-item2">
         <div class="main">
           <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
-          <div id="registered-doctors">Registered Doctors</div>
+          <div id="registered-doctors">In Progress</div>
           <div class="table-container">
             <table>
               <tr>
@@ -27,8 +27,9 @@
                 <td></td>
                 <td></td>
                 <!-- <td>{{todo.targetDate | date}}</td> -->
-                <td>
-                  <app-button [btntext]="'Send'" [btnConfig]="textBtnConfig"></app-button>
+                <td id="btn">
+                  <app-button [btntext]="'Approve'" [btnConfig]="textBtnConfig "></app-button>
+                  <app-button [btntext]="'Deny'" [btnConfig]="textBtnConfig3"></app-button>
                 </td>
             </tr>
   
