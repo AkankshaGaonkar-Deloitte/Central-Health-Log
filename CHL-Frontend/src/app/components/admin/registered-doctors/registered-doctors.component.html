@@ -1,1 +1,41 @@
-<p>registered-doctors works!</p>
+<div class="main-container">
+    <div id="nav">
+      <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+      <div class="flex-item1">
+        <app-sidebar [menus]="menus"></app-sidebar>
+      </div>
+      <div class="flex-item2">
+        <div class="main">
+          <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+          <div id="registered-doctors">Registered Doctors</div>
+          <div class="table-container">
+            <table>
+              <tr>
+                <th>ID</th>
+                <th>Doctor Name</th>
+                <th>Hospital Name</th>
+                <th>Speciality</th>
+                <th>Contact</th>
+                <th>Action</th>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <!-- <td>{{todo.targetDate | date}}</td> -->
+                <td>
+                  <app-button [btntext]="'Delete'" [btnConfig]="textBtnConfig"></app-button>
+                </td>
+            </tr>
+  
+            </table>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>

@@ -22,10 +22,10 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
     DropdownComponent,
     CheckboxComponent,
     ButtonComponent,
-    RegisteredDoctorsComponent
+    RegisteredDoctorsComponent,
     ButtonComponent,
     TabNavigationComponent,
-    AdminInProgressComponent
+    RegisteredDoctorsComponent
   ],
   imports: [
     BrowserModule,
