@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
+import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
+
 
 
 const routes: Routes = [
   {
-    path : 'to-be-registered',
-    component : ToBeRegisteredComponent
+    path : 'in-progress',
+    component : AdminInProgressComponent
   }
 ];
 

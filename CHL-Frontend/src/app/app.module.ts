@@ -1,3 +1,4 @@
+import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +12,6 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
-import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-
     CheckboxComponent,
     ButtonComponent,
     TabNavigationComponent,
-    ToBeRegisteredComponent
+    AdminInProgressComponent
   ],
   imports: [
     BrowserModule,
