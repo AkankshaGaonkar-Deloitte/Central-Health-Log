@@ -1,4 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { MedicalData } from 'src/app/model/medical-data';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
 
 @Component({
   selector: 'app-doc-patient-medical-data',
@@ -6,10 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doc-patient-medical-data.component.scss']
 })
 export class DocPatientMedicalDataComponent implements OnInit {
+  
+  patientId:number = 43190
+  medicalData: MedicalData = new MedicalData()
 
-  constructor() { }
   menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doc-patient-medical-data', 1],
   '3': ['Medications', '/doc-patient-medication', 0],'4': ['Past Records', '/doc-patient-past-records', 0] };
+
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
   textDropConfig = {
@@ -167,6 +173,14 @@ export class DocPatientMedicalDataComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
+  
+  constructor(
+    private medicalDataService: MedicalDataService,
+    private datePipe: DatePipe
+  ) { }
+
   ngOnInit(): void {
+    this.medicalDataService.getMedicalDataByPatientId(this.patientId)
+      .subscribe(response => this.medicalData=response)
   }
 }

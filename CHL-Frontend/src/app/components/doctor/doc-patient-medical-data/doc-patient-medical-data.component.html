@@ -20,61 +20,62 @@
                     <div class="form-cell">
                       <div class="cell">
                         <label>Height:</label>
-                        <app-input  [ipConfig]="heightConfig"></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.height" [ipConfig]="heightConfig"></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Weight:</label>
-                        <app-input  [ipConfig]="weightConfig"></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.weight" [ipConfig]="weightConfig"></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>BMI:</label>
-                        <app-input  [ipConfig]="bmiConfig"></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.bmi" [ipConfig]="bmiConfig"></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Allergies:</label>
-                        <app-input  [ipConfig]="allergiesConfig" ></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.allergies" [ipConfig]="allergiesConfig" ></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Immunizations:</label>
-                        <app-input [ipConfig]="immunizationConfig" ></app-input>                
+                        <app-input [disabled]="'true'" [userInput]="medicalData.immunizations" [ipConfig]="immunizationConfig" ></app-input>                
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Blood group:</label>
-                        <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" ></app-dropdown>
+                        <!-- <app-dropdown [(ngModel)]="medicalData.bloodGroup" [states]="optionList" [dropConfig]="textDropConfig" ></app-dropdown> -->
+                        <app-input [disabled]="'true'" [userInput]="medicalData.bloodGroup" [ipConfig]="bpConfig" ></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Blood pressure:</label>
-                        <app-input [ipConfig]="bpConfig" ></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.bloodPressure" [ipConfig]="bpConfig" ></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell">
                         <label>Pulse (per minute):</label>
-                        <app-input [ipConfig]="pulseConfig"></app-input>
+                        <app-input [disabled]="'true'" [userInput]="medicalData.pulseRate" [ipConfig]="pulseConfig"></app-input>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell" style="margin-bottom: 1.25em;">
                         <label>Family medical history:</label>
-                        <textarea name="" id="" cols="30" rows="10"></textarea>
+                        <textarea disabled [(ngModel)]="medicalData.familyMedicalHistory" name="" id="" cols="30" rows="10"></textarea>
                       </div>
                     </div>
                     <div class="form-cell">
                       <div class="cell" style="margin-bottom: 1.25em;">
                         <label>Chronic health problems:</label>
-                        <textarea name="" id="" cols="30" rows="10" ></textarea>
+                        <textarea disabled [(ngModel)]="medicalData.chronicHealthProblems" name="" id="" cols="30" rows="10" ></textarea>
                       </div>
                     </div>
                   </div>
