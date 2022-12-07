@@ -24,7 +24,8 @@ import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.c
     ButtonComponent,
     RegisteredDoctorsComponent
     ButtonComponent,
-    TabNavigationComponent
+    TabNavigationComponent,
+    AdminInProgressComponent
   ],
   imports: [
     BrowserModule,
