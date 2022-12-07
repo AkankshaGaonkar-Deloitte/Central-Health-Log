@@ -347,6 +347,41 @@ export class AdminInProgressComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
+  searchDoctorId = {
+    type: 'text',
+    label: 'to',
+    placeholder: 'doctor id',
+    styling: {
+    width: '20em',
+    height: '2.5em',
+    background: '#FFFFFF',
+    border: '0.0625em solid #949494',
+    borderRadius: '0.25em'
+    },
+    validations: {
+    required: 'false',
+    minLength: '',
+    maxLength: '',
+    pattern: '',
+    min: '6',
+    max: '10'
+    },
+    patternErrorMessage: ''
+    };
+    searchBtnConfig2 = {
+    type: "submit",
+    styles: {
+    color: '#fff',
+    height: '3em',
+    width: '3em',
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontWeight: '500',
+    textAlign: 'center',
+    background: '#000',
+    borderRadius: '0.25em'
+    }
+    };
 
 
   
