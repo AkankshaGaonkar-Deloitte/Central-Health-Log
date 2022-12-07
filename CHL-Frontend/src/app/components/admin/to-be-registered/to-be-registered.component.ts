@@ -231,7 +231,7 @@ export class ToBeRegisteredComponent implements OnInit {
       background: '#fff',
       color: '#1CB5BD',
       height: '2em',
-      width: '8em',
+      width: '5em',
       fontFamily: 'Montserrat',
       fontStyle: 'normal',
       fontWeight: '500',
@@ -259,22 +259,7 @@ export class ToBeRegisteredComponent implements OnInit {
     }
   };
 
-  dateConfig = {
-    type: 'date',
-    label: 'Date',
-    placeholder: '',
-    styling: {
-      width: '12.5em',
-      height: '2.5em'
-    },
-    validations: {
-      required: 'false',
-      minLength: '',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
+
 
   idConfig = {
     type: 'number',
@@ -345,9 +330,8 @@ export class ToBeRegisteredComponent implements OnInit {
   };
 
 
-  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doc-patient-medical-data', 0],
-  '3': ['Medications', '/doc-patient-medication', 0],'4': ['Past Records', '/doc-patient-past-records', 1] };
-  menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
+  
+  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 1],'2':['In Progress','/admin-in-progress'],'3':['Registered Doctors','/admin-registered-doctors']}
 
   constructor() { }
 

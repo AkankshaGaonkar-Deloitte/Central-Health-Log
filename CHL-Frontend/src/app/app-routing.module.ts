@@ -5,7 +5,7 @@ import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-
 
 const routes: Routes = [
   {
-    path : 'admin-to-be-registered',
+    path : 'to-be-registered',
     component : ToBeRegisteredComponent
   }
 ];
