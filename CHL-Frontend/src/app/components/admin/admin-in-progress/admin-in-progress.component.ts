@@ -238,6 +238,8 @@ export class AdminInProgressComponent implements OnInit {
       fontSize: '1.25em',
       lineHeight: '1.5em',
       textAlign: 'center',
+      margin: '0.15em',
+      border: '2px solid #52C41A',
 
     }
   };
@@ -245,7 +247,7 @@ export class AdminInProgressComponent implements OnInit {
     type: "submit",
     styles: {
       background: '#fff',
-      color: '#FB2E86',
+      color: 'red',
       height: '2em',
       width: '5em',
       fontFamily: 'Montserrat',
@@ -254,10 +256,9 @@ export class AdminInProgressComponent implements OnInit {
       fontSize: '1.25em',
       lineHeight: '1.5em',
       textAlign: 'center',
-      // border-color: '#1CB5BD',
-      
-
-    }
+      margin: '0.15em',
+      border: '2px solid red',
+      }
   };
 
   textBtnConfig2 = {
