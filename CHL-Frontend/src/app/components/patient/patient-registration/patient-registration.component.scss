@@ -144,16 +144,20 @@
         .modal{
             width: 25em;
             height: 15em;
-            position: relative;
+            position: absolute;
+            left:40em;
+            top:5em;
             text-align: center;
             align-self: center;
+            border: 1em solid #DAFDFF;
         }
         .modal-content{
             width: 25em;
             align-items: center;
             background-color: #FFF;
             color: #1CB5BD;
-            border: 1em solid #DAFDFF ;
+            padding-right:2em;
+            
         }
         // .modal-body{
         //     width: 20em;
