@@ -35,6 +35,7 @@ import { AddMedicalRecordComponent } from './components/doctor/doc-add-medical-r
   declarations: [
     AppComponent,
     InputComponent,
+    ButtonComponent,
     NavbarComponent,
     SidebarComponent,
     DropdownComponent,
@@ -53,6 +54,8 @@ import { AddMedicalRecordComponent } from './components/doctor/doc-add-medical-r
     BpBarGraphComponent,
     BmiLineGraphComponent,
     AddMedicalRecordComponent,
+    TabNavigationComponent,
+    DocPatientMedicalDataComponent
   ],
   imports: [
     BrowserModule,

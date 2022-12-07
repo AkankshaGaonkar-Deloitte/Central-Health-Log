@@ -49,6 +49,10 @@ const routes: Routes = [ {path:'registration',component:PatientRegistrationCompo
     redirectTo : 'login',
     pathMatch : 'full'
   },
+import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
+
+const routes: Routes = [
+  {path:'doc-patient-medical-data',component:DocPatientMedicalDataComponent},
 ];
 
 @NgModule({
