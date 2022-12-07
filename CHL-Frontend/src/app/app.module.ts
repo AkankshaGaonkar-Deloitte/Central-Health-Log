@@ -54,8 +54,7 @@ import { AddMedicalRecordComponent } from './components/doctor/add-medical-recor
     BpBarGraphComponent,
     BmiLineGraphComponent,
     AddMedicalRecordComponent,
-    TabNavigationComponent,
-    DocPatientMedicalDataComponent
+    DocPatientMedicationComponent
   ],
   imports: [
     BrowserModule,

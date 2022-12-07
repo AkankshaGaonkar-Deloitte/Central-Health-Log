@@ -18,60 +18,7 @@
                             Current Medications
                         </div>
                     </div>
-                    <div class="right">
-                        <!--Modal starts-->
-                        <div>
-                            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-                                <div class="modal-dialog modal-lg" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Add Current Medication</h4>
-                                        </div>
-
-                                        <div class="modal-body">
-                                            <div class="flex-modal">
-                                                <div class="grid-item">
-                                                    <label>Medicine:</label>
-                                                    <app-input
-                                                        
-                                                        [ipConfig]="nameConfig">
-                                                    </app-input>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <label>Dosage:</label>
-                                                    <app-input [ipConfig]="nameConfig"
-                                                        >
-                                                    </app-input>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <label>Starting date:</label>
-                                                    <app-input [ipConfig]="dateConfig"
-                                                        >
-                                                    </app-input>
-                                                </div>
-                                                <div class="grid-item">
-                                                    <label>Record ID:</label>
-                                                    <app-input [ipConfig]="idConfig"
-                                                        >
-                                                    </app-input>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <div class="modal-footer">
-                                            <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"
-                                                ></app-button>
-                                            <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2"
-                                                (click)="closePopup()"></app-button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!--Modal ends-->
-                    </div>
+                    <div class="right"></div>
                 </div>
                 <div class="table-container">
                     <table>
@@ -80,20 +27,15 @@
                             <th>Dosage</th>
                             <th>Starting date</th>
                             <th>Record ID</th>
-                            <th>Action</th>
                         </tr>
-                        <!-- <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                        <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
                             <tr *ngIf="medication.isCurrent">
                                 <td>{{medication.medicine}}</td>
                                 <td>{{medication.dosage}}</td>
                                 <td>{{medication.startingDate}}</td>
                                 <td>{{medication.recordId}}</td>
-                                <td>
-                                    <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig"
-                                        ></app-button>
-                                </td>
                             </tr>
-                        </ng-container> -->
+                        </ng-container>
 
                     </table>
                 </div>
@@ -114,20 +56,15 @@
                             <th>Dosage</th>
                             <th>Starting date</th>
                             <th>Record ID</th>
-                            <th>Action</th>
                         </tr>
-                        <!-- <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                        <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
                             <tr *ngIf="!medication.isCurrent">
                                 <td>{{medication.medicine}}</td>
                                 <td>{{medication.dosage}}</td>
                                 <td>{{medication.startingDate}}</td>
                                 <td>{{medication.recordId}}</td>
-                                <td>
-                                    <app-button [btntext]="'Delete'" [btnConfig]="deleteBtnConfig"
-                                        ></app-button>
-                                </td>
                             </tr>
-                        </ng-container> -->
+                        </ng-container>
 
                     </table>
                 </div>

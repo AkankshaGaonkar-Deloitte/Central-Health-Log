@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Medication } from 'src/app/model/patient/medication';
+import { MedicationService } from 'src/app/service/medication/medication.service';
 
 @Component({
   selector: 'app-doc-patient-medication',
@@ -7,8 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocPatientMedicationComponent implements OnInit {
 
-  // pastRecord: PastRecord = new PastRecord(-1)
-  // medicationData: Medication = new Medication(-1)
+  allMedicalDataOfAPatient: Medication[] = []
 
   patientId: number = 43190
   filterSelector: string = 'Date'
@@ -17,8 +18,6 @@ export class DocPatientMedicationComponent implements OnInit {
   severityFrom: number = -1
   severityTo: number = -1
   doctor: number = -1
-
-  // allMedicalDataOfAPatient: Medication[] = []
 
   textBtnConfig = {
     type: "submit",
@@ -160,16 +159,18 @@ export class DocPatientMedicationComponent implements OnInit {
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
 
-  constructor() { }
+  constructor(private medicationService: MedicationService) { }
 
-  ngOnInit(): void {}
-  //   this.medicationService.getAllPatientRecords(this.patientId)
-  //     .subscribe(response => {
-  //       this.allMedicalDataOfAPatient = response
-  //       console.log(this.allMedicalDataOfAPatient);
+  ngOnInit(): void {
+    this.medicationService.getAllPatientRecords(this.patientId)
+      .subscribe(response => {
+        this.allMedicalDataOfAPatient = response
+        console.log(this.allMedicalDataOfAPatient);
         
-  //     }
-  //   )}
+      }
+    )
+
+  }
 
   // removeOrDeleteMedication(id?: number){
   //   this.medicationService.removeOrDeleteMedication(id)
