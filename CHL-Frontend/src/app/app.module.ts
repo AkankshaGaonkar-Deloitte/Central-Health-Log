@@ -11,6 +11,7 @@ import { CheckboxComponent } from './common/checkbox/checkbox.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
+import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { RegisteredDoctorsComponent } from './components/admin/registered-doctor
     CheckboxComponent,
     ButtonComponent,
     RegisteredDoctorsComponent
+    ButtonComponent,
+    TabNavigationComponent
   ],
   imports: [
     BrowserModule,
