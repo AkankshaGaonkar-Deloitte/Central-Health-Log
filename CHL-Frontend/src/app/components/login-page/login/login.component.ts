@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
   }
 
   loginDoctor() {
-    console.warn('doctor');
+    this.router.navigate(['/doctor/patient/medical-data'])
   }
   loginAdmin() {
     console.warn('admin');

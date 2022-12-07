@@ -36,7 +36,7 @@
                 </div>
                 <div id="login-btn">
                     <app-button *ngIf="patientActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginPatient()" [disabled]="btndisable"></app-button>
-                    <app-button *ngIf="doctorActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginDoctor()"[disabled]="btndisable"></app-button>
+                    <app-button *ngIf="doctorActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginDoctor()"></app-button>
                     <app-button *ngIf="adminActive" [btntext]="'LOGIN'" [btnConfig]="textBtnConfig" (onClick)="loginAdmin()"[disabled]="btndisable"></app-button>
                 </div>
             </form>
