@@ -50,7 +50,7 @@ export class LoginComponent implements OnInit {
 
     else {
       if (this.doctorActive) {
-        this.patientregService.IfUsernameExists(
+        this.patientregService.IfDocUsernameExists(
           String(this.userName)).subscribe(data => {
             this.docUser = data as Doctor
             console.warn(this.docUser)
@@ -85,13 +85,13 @@ export class LoginComponent implements OnInit {
   Docid!: string;
   loginDoctor() {
     if (this.docUser.password == this.password) {
-      this.router.navigate(['/doctor/patient/medical-data'])
+      this.router.navigate(['/doctor-dashboard'])
       this.wrongPass = false
     }
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem(this.Userid, String(this.user.id));
+    sessionStorage.setItem(this.Docid, String(this.docUser.id));
     let id = sessionStorage.getItem(this.Docid);
     console.warn(Number(id));
 
