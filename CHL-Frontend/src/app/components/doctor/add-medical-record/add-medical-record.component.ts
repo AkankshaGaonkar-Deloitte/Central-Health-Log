@@ -29,8 +29,8 @@ export class AddMedicalRecordComponent implements OnInit {
     }
   };
 
-  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doc-medical-data', 0],
-  '3': ['Medications', '/doc-medications', 0],'4': ['Past Records', '/doc-past-records', 1] };
+  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doctor/patient/medical-data', 0],
+  '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 1] };
   
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 

@@ -155,8 +155,8 @@ export class DocPatientMedicationComponent implements OnInit {
   };
 
   menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doctor/patient/medical-data', 0],
-  '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 1] };
-  
+  '3': ['Medications', '/doctor/patient/medication', 1],'4': ['Past Records', '/doctor/patient/past-records', 0] };
+
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
 

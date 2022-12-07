@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PastRecord } from 'src/app/model/past-record';
 import { PastRecordService } from 'src/app/service/past-record.service';
 
@@ -352,7 +353,10 @@ export class DocPatientPastRecordsComponent implements OnInit {
 
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
-  constructor(private pastRecordService: PastRecordService) { }
+  constructor(
+    private pastRecordService: PastRecordService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.pastRecordService.getAllPatientRecords(43190)
@@ -369,14 +373,8 @@ export class DocPatientPastRecordsComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  // submitNewPastRecord() {
-  //   console.log(this.pastRecord);
-  //   this.pastRecordService.addPastRecord(this.pastRecord)
-  //     .subscribe(data => {
-  //       console.log(`Newly added data ${data}`);
-  //       this.allPastRecordsOfAPatient.push(data)
-  //     })
-  //   this.closePopup()
-  // }
+  addMedicalRecord(){
+    this.router.navigate(['/doctor/patient/add-medical-data'])
+  }
 
 } 
