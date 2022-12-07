@@ -38,6 +38,9 @@ export class InputComponent implements OnInit {
   // must be used if you want the added prefil option
   <app-input [userInput]="prefil" [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
 
+  // Input disabled feature (can be used with prefill option too)
+  <app-input [disabled]="'true'" [ipConfig]="ipConfig" (outputEmit)="onClickEventReceived($event)"></app-input>
+
   */
 
   @Input() ipConfig = {

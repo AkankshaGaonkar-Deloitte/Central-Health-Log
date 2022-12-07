@@ -9,8 +9,13 @@ import { LoginComponent } from './components/login-page/login/login.component';
 import { PatientRegistrationComponent } from './components/patient/patient-registration/patient-registration.component';
 import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-medical-data/doc-patient-medical-data.component';
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
+import { DocPatientMedicationComponent } from './components/doctor/doc-patient-medication/doc-patient-medication.component';
 
-const routes: Routes = [ 
+const routes: Routes = [
+  {
+    path : 'doctor/patient/medication',
+    component : DocPatientMedicationComponent
+  },
   {
     path:'registration',
     component:PatientRegistrationComponent
