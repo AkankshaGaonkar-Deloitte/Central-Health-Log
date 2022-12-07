@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PastRecord } from 'src/app/model/past-record';
+import { PastRecordService } from 'src/app/service/past-record.service';
 
 @Component({
   selector: 'app-doc-patient-past-records',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocPatientPastRecordsComponent implements OnInit {
 
-  // pastRecord: PastRecord = new PastRecord(-1)
+  pastRecord: PastRecord = new PastRecord(-1)
 
   patientId: number = 43190
 
@@ -18,7 +20,7 @@ export class DocPatientPastRecordsComponent implements OnInit {
   severityTo: number = -1
   doctor: number = -1
 
-  // allPastRecordsOfAPatient: PastRecord[] = []
+  allPastRecordsOfAPatient: PastRecord[] = []
 
   // filter selector block starts
   textDropConfig = {
@@ -204,26 +206,26 @@ export class DocPatientPastRecordsComponent implements OnInit {
     }
   };
 
-  // search() {
-  //   if (this.filterSelector === 'Date') {
-  //     console.log(`${this.dateFrom} ${this.dateTo}`);
-  //     this.pastRecordService.filterByDate(this.patientId, this.dateFrom, this.dateTo)
-  //       .subscribe(data => this.allPastRecordsOfAPatient = data)
+  search() {
+    if (this.filterSelector === 'Date') {
+      console.log(`${this.dateFrom} ${this.dateTo}`);
+      this.pastRecordService.filterByDate(this.patientId, this.dateFrom, this.dateTo)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
 
-  //   } else if (this.filterSelector === 'Severity') {
-  //     console.log(`${this.severityFrom} ${this.severityTo}`);
-  //     this.pastRecordService.filterBySeverity(this.patientId, this.severityFrom, this.severityTo)
-  //       .subscribe(data => this.allPastRecordsOfAPatient = data)
+    } else if (this.filterSelector === 'Severity') {
+      console.log(`${this.severityFrom} ${this.severityTo}`);
+      this.pastRecordService.filterBySeverity(this.patientId, this.severityFrom, this.severityTo)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
 
-  //   } else if (this.filterSelector === 'Doctor') {
-  //     console.log(this.doctor);
-  //     this.pastRecordService.filterByDoctor(this.patientId, this.doctor)
-  //       .subscribe(data => this.allPastRecordsOfAPatient = data)
+    } else if (this.filterSelector === 'Doctor') {
+      console.log(this.doctor);
+      this.pastRecordService.filterByDoctor(this.patientId, this.doctor)
+        .subscribe(data => this.allPastRecordsOfAPatient = data)
 
-  //   }
+    }
 
-  // }
-  // on search button click ends
+  }
+  //on search button click ends
 
   textBtnConfig = {
     type: "submit",
@@ -349,11 +351,11 @@ export class DocPatientPastRecordsComponent implements OnInit {
   '3': ['Medications', '/doc-patient-medication', 0],'4': ['Past Records', '/doc-patient-past-records', 1] };
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
 
-  constructor() { }
+  constructor(private pastRecordService: PastRecordService) { }
 
   ngOnInit(): void {
-    // this.pastRecordService.getAllPatientRecords(43190)
-    //   .subscribe(data => this.allPastRecordsOfAPatient = data);
+    this.pastRecordService.getAllPatientRecords(43190)
+      .subscribe(data => this.allPastRecordsOfAPatient = data);
 
   }
 
