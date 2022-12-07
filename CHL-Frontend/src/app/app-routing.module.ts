@@ -20,11 +20,11 @@ const routes: Routes = [
     component : PatientDashboardComponent
   },
   {
-    path:'doctor/patient-medical-data',
+    path:'doctor/patient/patient-medical-data',
     component : DocPatientMedicalDataComponent
   },
   {
-    path: 'doctor/add-medical-data',
+    path: 'doctor/patient/add-medical-data',
     component : AddMedicalRecordComponent
   },
   {
