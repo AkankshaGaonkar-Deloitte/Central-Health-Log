@@ -40,7 +40,9 @@ public class OtpService {
     public int getOtp(String key){
         try{
             return otpCache.get(key);
+
         }catch(Exception e){
+            System.out.println("exception occured after otp");
             return 0;
         }
     }

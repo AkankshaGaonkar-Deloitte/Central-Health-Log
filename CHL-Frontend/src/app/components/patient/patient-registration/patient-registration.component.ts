@@ -14,6 +14,7 @@ import { TempOTP } from 'src/app/model/TempOTP';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+  errors: any;
   constructor(private router: Router, private patientregService: PatientRegService
     , private otpService: OtpService) { }
 
@@ -78,20 +79,32 @@ export class PatientRegistrationComponent implements OnInit {
   openPopup() {
     this.displayStyle = "block";
     console.warn(this.patient.phoneNo)
-     return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo) )).subscribe(data => {
-      console.log(data, "debuggg")
-    })
+    return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo))).subscribe(data => {
+      console.log(data + "debuggg")
+    } ,
+    error => {
+    console.log(error);
+     error;
+    },
+    () => {
+      // 'onCompleted' callback.
+      // No errors, route to new page here
+    }
+  );
+    
+
+
   }
   closePopup() {
     this.displayStyle = "none";
   }
 
   Verifyotp() {
-    console.log(new TempOTP((this.patient.phoneNo as string),(this.otp as number) ));
-    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo),Number(this.otp) )).subscribe(data => {
+    console.log(new TempOTP((this.patient.phoneNo as string), (this.otp as number)));
+    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp))).subscribe(data => {
       console.log(data, "debuggg")
     })
-  
+
   }
   optionList = [
     "Female",
