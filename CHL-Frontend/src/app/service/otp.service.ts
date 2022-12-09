@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { SMSPojo } from '../model/SMSPojo';
 import { TempOTP } from '../model/TempOTP';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from '@angular/common/http';
+import { PostResponse } from '../model/post-response';
 
 
 @Injectable({
@@ -26,11 +27,11 @@ export class OtpService {
       Authorization: basicAuthHeaderString
       })
       }
-    sendOtp(contact:SMSPojo):Observable<String>{
+    sendOtp(contact:SMSPojo): Observable<PostResponse>{
       let headers = this.createAuthenticationHeader()
       // let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', }), responseType: 'text' as 'json' };
       console.warn("sent otp")
-      return this.httpClient.post<String>(`${this.baseurl+'/mobileNo'}`,contact, {headers})
+      return this.httpClient.post<PostResponse>(`${this.baseurl+'/mobileNo'}`,contact, {headers})
 
     }
     VerifyOtp(contactAndOtp:TempOTP):Observable<String>{

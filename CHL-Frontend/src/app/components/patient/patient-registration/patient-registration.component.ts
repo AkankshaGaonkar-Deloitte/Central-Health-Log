@@ -7,6 +7,7 @@ import { Doctor } from 'src/app/model/doctor';
 import { OtpService } from 'src/app/service/otp.service';
 import { SMSPojo } from 'src/app/model/SMSPojo';
 import { TempOTP } from 'src/app/model/TempOTP';
+import { PostResponse } from 'src/app/model/post-response';
 
 @Component({
   selector: 'app-patient-registration',
@@ -74,22 +75,20 @@ export class PatientRegistrationComponent implements OnInit {
 
   btndisable!: boolean;
   otp!: string | number | null;
+  response: PostResponse = new PostResponse('')
 
   displayStyle = "none";
   openPopup() {
     this.displayStyle = "block";
     console.warn(this.patient.phoneNo)
-    return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo))).subscribe(data => {
-      console.log(data + "debuggg")
-    } ,
-    error => {
-    console.log(error);
-     error;
-    },
-    () => {
-      // 'onCompleted' callback.
-      // No errors, route to new page here
-    }
+    return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo)))
+      .subscribe(
+        data => {
+          console.log("Our return data: "+data.responseMessage as string);
+          this.response = data
+          console.log("actual response "+this.response.responseMessage);
+          
+        }
   );
     
 
@@ -101,9 +100,13 @@ export class PatientRegistrationComponent implements OnInit {
 
   Verifyotp() {
     console.log(new TempOTP((this.patient.phoneNo as string), (this.otp as number)));
-    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp))).subscribe(data => {
-      console.log(data, "debuggg")
-    })
+    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp)))
+      .subscribe(
+        data => {
+          console.log(data);
+          
+        }
+      )
 
   }
   optionList = [

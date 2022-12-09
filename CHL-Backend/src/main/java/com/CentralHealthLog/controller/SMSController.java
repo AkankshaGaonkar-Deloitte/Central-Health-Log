@@ -3,6 +3,7 @@ package com.CentralHealthLog.controller;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import com.CentralHealthLog.dto.PostResponse;
 import com.CentralHealthLog.dto.SMSPojo;
 import com.CentralHealthLog.service.SmsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,8 @@ public class SMSController {
     private final String  TOPIC_DESTINATION = "/lesson/sms";
     //You can send SMS in verified Number
     @PostMapping("/mobileNo")
-    public ResponseEntity<String> smsSubmit(@RequestBody SMSPojo sms) {
+    public ResponseEntity<PostResponse> smsSubmit(@RequestBody SMSPojo sms) {
+        PostResponse response = new PostResponse();
         try{
 
             System.out.println(sms);
@@ -34,11 +36,12 @@ public class SMSController {
 
         }
         catch(Exception e){
-
-            return new ResponseEntity<String>("Error Occured!",HttpStatus.INTERNAL_SERVER_ERROR);
+            response.setResponseMessage("Error Occured!");
+            return new ResponseEntity<PostResponse>(response,HttpStatus.INTERNAL_SERVER_ERROR);
         }
+        response.setResponseMessage("OTP sent successfully!");
         webSocket.convertAndSend(TOPIC_DESTINATION, getTimeStamp() + ": SMS has been sent!: "+sms.getPhoneNo());
-        return new ResponseEntity<String>("OTP sent successfully!",HttpStatus.OK);
+        return new ResponseEntity<PostResponse>(response,HttpStatus.OK);
     }
 
     @RequestMapping(value = "/smscallback", method = RequestMethod.POST,
