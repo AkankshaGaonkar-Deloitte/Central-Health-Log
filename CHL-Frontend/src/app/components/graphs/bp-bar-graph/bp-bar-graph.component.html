@@ -3,8 +3,8 @@
                     [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
                     (load)='load($event)' [chartArea]='chartArea'  [legendSettings]='legend'>
 
-                    <e-series-collection>
-                        <e-series [dataSource]='BP' type='Line' xName='date' yName='systolic' [marker]='circleMarker'  width=2 opacity=1>
+                    <e-series-collection  >
+                        <e-series [dataSource]='BP' type='MultiColoredArea' xName='date' [name]="'systolic'" yName='systolic' [marker]='circleMarker'  width=2 opacity=1  name='England'>
                         </e-series>
                         <e-series [dataSource]='BP' type='Line' xName='date' yName='diastolic'[marker]='circleMarker'  width=2 opacity=1>
                         </e-series>

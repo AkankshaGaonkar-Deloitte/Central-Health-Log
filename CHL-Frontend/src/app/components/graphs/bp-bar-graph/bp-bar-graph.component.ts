@@ -31,6 +31,9 @@ export class BpBarGraphComponent implements OnInit {
       width: 0.2
     }
   };
+  public segments: Object[] = [{
+    color: 'url(#winter)'
+}];
   public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
   // public width: string = Browser.isDevice ? '100%' : '75%';
   public tooltip: Object = {

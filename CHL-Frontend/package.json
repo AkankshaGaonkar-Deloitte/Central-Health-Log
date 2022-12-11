@@ -20,7 +20,6 @@
     "@angular/router": "^14.0.0",
     "@syncfusion/ej2-angular-charts": "^20.3.58",
     "chart.js": "^4.0.1",
-    "ng2-charts": "^4.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
