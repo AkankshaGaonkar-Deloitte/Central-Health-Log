@@ -37,25 +37,25 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Patient ID:</label>
-                                    <app-input [ipConfig]="idConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="patient.id" [disabled]="'true'" [ipConfig]="idConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>First name:</label>
-                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="patient.firstname" [disabled]="'true'" [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Last name:</label>
-                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="patient.lastname" [disabled]="'true'" [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Age:</label>
-                                    <app-input [ipConfig]="ageConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="patient.age" [disabled]="'true'" [ipConfig]="ageConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
@@ -67,7 +67,7 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Contact no:</label>
-                                    <app-input [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="patient.phoneNo" [disabled]="'true'" [userInput]="patient.firstname" [disabled]="'true'" [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>

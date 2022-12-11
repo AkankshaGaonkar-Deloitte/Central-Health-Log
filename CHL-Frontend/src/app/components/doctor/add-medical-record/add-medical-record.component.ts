@@ -6,6 +6,10 @@ import jspdf from 'jspdf';
 import html2canvas from 'html2canvas';
 
 import domtoimage from 'dom-to-image';
+import { MedicalData } from 'src/app/model/medical-data';
+import { Patient } from 'src/app/model/patient';
+import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
+import { Doctor } from 'src/app/model/doctor';
 
 @Component({
   selector: 'app-add-medical-record',
@@ -15,7 +19,11 @@ import domtoimage from 'dom-to-image';
 export class AddMedicalRecordComponent implements OnInit {
 
   patientId: number = 43190
+  patient: Patient = new Patient()
+  doctorId: number = 1
+  doctor: Doctor = new Doctor()
   allMedicalDataOfAPatient: Medication[] = []
+  medicalData: MedicalData = new MedicalData()
 
   idConfig = {
     type: 'number',
@@ -329,7 +337,11 @@ export class AddMedicalRecordComponent implements OnInit {
     }
   };
 
-  constructor(private medicationService: MedicationService) { }
+  constructor(
+    private medicationService: MedicationService,
+    private patientDetailsService: PatientDetailsService,
+    
+  ) { }
 
   ngOnInit(): void {
     this.medicationService.getAllPatientRecords(this.patientId)
@@ -338,7 +350,13 @@ export class AddMedicalRecordComponent implements OnInit {
         console.log(this.allMedicalDataOfAPatient);
 
       }
-      )
+    )
+
+    this.patientDetailsService.getPatientByPatientId(this.patientId)
+      .subscribe(response => {
+        console.log(response);        
+        this.patient=response
+      })
   }
 
   removeOrDeleteMedication(id?: number) {
