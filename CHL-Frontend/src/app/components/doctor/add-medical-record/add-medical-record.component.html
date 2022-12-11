@@ -23,7 +23,7 @@
                     <div class="right"></div>
                 </div>
 
-                <div class="outline">
+                <div class="outline" id="contentToConvert">
                     <div class="sub-form">
                         <div class="left">
                             <div id="title">
@@ -262,7 +262,7 @@
                     </div>
                 </div>
                 <div class="submit-form">
-                    <app-button [btntext]="'Submit'" [btnConfig]="textBtnConfig2" (click)="''"></app-button>
+                    <app-button [btntext]="'Submit'" [btnConfig]="textBtnConfig2" (click)="convertToPDF()"></app-button>
                 </div>
             </div>
         </div>

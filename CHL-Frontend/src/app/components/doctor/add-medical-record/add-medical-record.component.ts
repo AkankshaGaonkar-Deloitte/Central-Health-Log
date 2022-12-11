@@ -1,6 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Medication } from 'src/app/model/patient/medication';
 import { MedicationService } from 'src/app/service/medication/medication.service';
+
+import jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
+
+import domtoimage from 'dom-to-image';
 
 @Component({
   selector: 'app-add-medical-record',
@@ -14,7 +19,7 @@ export class AddMedicalRecordComponent implements OnInit {
 
   idConfig = {
     type: 'number',
-    label: 'Patient ID',
+    label: 'ID',
     placeholder: '',
     styling: {
       height: '2.375em',
@@ -23,7 +28,7 @@ export class AddMedicalRecordComponent implements OnInit {
     validations: {
       required: '',
       minLength: '1',
-      maxLength: '2',
+      maxLength: '',
       pattern: ''
     },
     patternErrorMessage: ''
@@ -345,6 +350,41 @@ export class AddMedicalRecordComponent implements OnInit {
         }
       )
   }
+
+  public convertToPDF() {
+    var data = document.getElementById('contentToConvert');
+    html2canvas(data as HTMLElement).then(canvas => {
+      // Few necessary setting options
+      var imgWidth = 208;
+      var pageHeight = 295;
+      var imgHeight = canvas.height * imgWidth / canvas.width;
+      var heightLeft = imgHeight;
+
+      const contentDataURL = canvas.toDataURL('image/png')
+      let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
+      var position = 0;
+      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
+      pdf.save('new-file.pdf'); // Generated PDF
+    });
+  }
+
+//   toPdf() {
+//     const dashboard = document.getElementById('contentToConvert');
+
+//     const dashboardHeight = (dashboard as HTMLElement).clientHeight;
+//     const dashboardWidth = (dashboard as HTMLElement).clientWidth + 40;
+//     const options = { background: 'white', width: dashboardWidth, height: dashboardHeight };
+
+//     domtoimage.toPng((dashboard as Node), options).then((imgData) => {
+//          const doc = new jspdf(dashboardWidth > dashboardHeight ? 'l' : 'p', 'mm', [dashboardWidth, dashboardHeight]);
+//          const imgProps = doc.getImageProperties(imgData);
+//          const pdfWidth = doc.internal.pageSize.getWidth();
+//          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+//          doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+//          doc.save('Dashboard for hyperpanels.pdf');
+//     });
+// }
 
 
 
