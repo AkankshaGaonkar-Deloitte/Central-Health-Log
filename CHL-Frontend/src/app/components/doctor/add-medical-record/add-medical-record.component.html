@@ -37,37 +37,37 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Patient ID:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="idConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>First name:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Last name:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Age:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="ageConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Gender:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-dropdown [states]="optionList" [dropConfig]="genderConfig"></app-dropdown>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Contact no:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -86,37 +86,37 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Docotr ID:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="idConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Docotr name:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Mode:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-dropdown [states]="modeList" [dropConfig]="genderConfig"></app-dropdown>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Date:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="dateConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Email:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="emailConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Contact no:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -135,13 +135,13 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Facility:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="facilityConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Complaints:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="complaintConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -166,19 +166,19 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Weight:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="weightConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>BP:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="BPConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Pulse:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="pulseConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +196,7 @@
                         <div class="form-row-4">
                             <div class="form-cell">
                                 <div class="cell">
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="diagnosisConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -249,13 +249,13 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Lab tests:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="labTestConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Instrutions:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="instructionsConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
