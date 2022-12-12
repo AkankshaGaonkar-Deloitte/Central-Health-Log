@@ -37,11 +37,17 @@ export class PatientRegService {
   }
   IfContactExists( phoneNo: number){
     let headers = this.createAuthenticationHeader()
-    console.log('phone')
     return this.httpClient.get(`${this.baseurl+'/patient/phone/'+ phoneNo}`, {headers})
   }
-    
-    
+  IfDocUsernameExists( username: string){
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get(`${this.baseurl+'/doctor/user/'+ username}`, {headers})
+  }
+  IfDocContactExists( phoneNo: number){
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get(`${this.baseurl+'/doctor/phone/'+ phoneNo}`, {headers})
+  }
+     
    }
     
 

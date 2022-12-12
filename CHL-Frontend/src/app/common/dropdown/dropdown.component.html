@@ -1,5 +1,4 @@
 <select [ngStyle]="dropConfig.styles" #state (change)="emitEvent(state.value)">
-    <option value="none" selected disabled hidden>Select</option>
     <option *ngFor="let state of states">
         {{state}}
     </option>

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="added doc medical data comp">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="34321c7e-b3a3-4e3c-a940-9ec627657f4e" name="Changes" comment="added doctor controller" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,7 +30,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="task-frontend-doctorspage-patient-medical-data" />
+        <entry key="$PROJECT_DIR$" value="common-component" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,7 +53,7 @@
     <option name="myId2Visible">
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
         <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
@@ -68,7 +64,6 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
         <option name="useMavenConfig" value="true" />
       </MavenGeneralSettings>
     </option>
@@ -110,6 +105,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.CentralHealthLog.CentralHealthLogApplication" />
       <module name="CentralHealthLog" />
+      <option name="VM_PARAMETERS" value="-Djasypt.encryptor.password=chl" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.CentralHealthLog.*" />
@@ -120,17 +116,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.CentralHealthLogApplication" />
+      <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.com.CentralHealthLog.CentralHealthLogApplication" />
@@ -192,21 +181,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670090033385</updated>
     </task>
-    <task id="LOCAL-00007" summary="added doc medical data comp">
-      <created>1670151754768</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1670151754768</updated>
-    </task>
-    <task id="LOCAL-00008" summary="added doc medical data comp">
-      <created>1670151785859</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1670151785859</updated>
-    </task>
-    <option name="localTasksCounter" value="9" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -227,8 +202,7 @@
     <MESSAGE value="1. updated Doctor.ts file to contain every field as per table&#10;2. added DoctorRepository.java, DoctorService.java&#10;3. post request now saves data into h2 database" />
     <MESSAGE value="backend from last commit" />
     <MESSAGE value="updated backend" />
-    <MESSAGE value="added doc medical data comp" />
-    <option name="LAST_COMMIT_MESSAGE" value="added doc medical data comp" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -236,7 +210,7 @@
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/CHL-Backend/src/main/java/com/CentralHealthLog/CentralHealthLogApplication.java</url>
           <line>10</line>
-          <properties class="com.CentralHealthLog.CentralHealthLogApplication" method="main">
+          <properties class="com.CentralHealthLog.CentralHealthLogApplication">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>

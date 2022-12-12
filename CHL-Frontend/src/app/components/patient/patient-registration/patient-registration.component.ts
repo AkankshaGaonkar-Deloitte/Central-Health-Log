@@ -7,6 +7,7 @@ import { Doctor } from 'src/app/model/doctor';
 import { OtpService } from 'src/app/service/otp.service';
 import { SMSPojo } from 'src/app/model/SMSPojo';
 import { TempOTP } from 'src/app/model/TempOTP';
+import { PostResponse } from 'src/app/model/post-response';
 
 @Component({
   selector: 'app-patient-registration',
@@ -14,6 +15,7 @@ import { TempOTP } from 'src/app/model/TempOTP';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+  errors: any;
   constructor(private router: Router, private patientregService: PatientRegService
     , private otpService: OtpService) { }
 
@@ -73,25 +75,39 @@ export class PatientRegistrationComponent implements OnInit {
 
   btndisable!: boolean;
   otp!: string | number | null;
+  response: PostResponse = new PostResponse('')
 
   displayStyle = "none";
   openPopup() {
     this.displayStyle = "block";
     console.warn(this.patient.phoneNo)
-     return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo) )).subscribe(data => {
-      console.log(data, "debuggg")
-    })
+    return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo)))
+      .subscribe(
+        data => {
+          console.log("Our return data: "+data.responseMessage as string);
+          this.response = data
+          console.log("actual response "+this.response.responseMessage);
+          
+        }
+  );
+    
+
+
   }
   closePopup() {
     this.displayStyle = "none";
   }
 
   Verifyotp() {
-    console.log(new TempOTP((this.patient.phoneNo as string),(this.otp as number) ));
-    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo),Number(this.otp) )).subscribe(data => {
-      console.log(data, "debuggg")
-    })
-  
+    console.log(new TempOTP((this.patient.phoneNo as string), (this.otp as number)));
+    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp)))
+      .subscribe(
+        data => {
+          console.log(data);
+          
+        }
+      )
+
   }
   optionList = [
     "Female",

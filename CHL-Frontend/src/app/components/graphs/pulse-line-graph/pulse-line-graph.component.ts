@@ -17,7 +17,8 @@ export class PulseLineGraphComponent implements OnInit {
     title: 'Date',
     valueType: 'Category',
     edgeLabelPlacement: 'Shift',
-    // labelFormat: 'yMMM',
+    labelFormat: 'MMM',
+    intervalType: 'Months',
     majorGridLines: { width: 0 }
   };
   //Initializing Primary Y Axis
@@ -29,6 +30,7 @@ export class PulseLineGraphComponent implements OnInit {
     lineStyle: { width: 0 },
     majorTickLines: { width: 0 },
   };
+ 
   public chartArea: Object = {
     border: {
       width: 0.2
@@ -36,13 +38,18 @@ export class PulseLineGraphComponent implements OnInit {
   };
   public circleMarker: Object = { visible: true, height: 7, width: 7 , shape: 'Circle' , isFilled: true };
   // public width: string = Browser.isDevice ? '100%' : '75%';
+  public legend: Object = { visible: false };
+  public segments: Object[] = [{
+     
+  
+      color: 'url(#spring)'
+  }];
   public tooltip: Object = {
-    enable: true
+      enable: true,
+      header: '<b>Revenue</b>',
+      format: '${point.x} : <b>${point.y}</b>',
+      shared: true
   };
-  public legend: Object = {
-    visible: true,
-    enableHighlight: true
-  }
   // custom code start
   public load(args: ILoadedEventArgs): void {
     let selectedTheme: string = location.hash.split('/')[1];
@@ -66,3 +73,4 @@ export class PulseLineGraphComponent implements OnInit {
   }
 
 }
+

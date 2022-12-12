@@ -73,6 +73,6 @@ VALUES
 INSERT
 INTO
   doctor
-  (username, password, doctor_name, phone_no, registration_no, year_of_reg, state_medical_council, qualification, email, speciality, age, gender, status_code)
+  (id,username, password, doctor_name, phone_no, registration_no, year_of_reg, state_medical_council, qualification, email, speciality, age, gender, status_code)
 VALUES
-  ('Amit23', '123', 'Amit Tiwari', '99999999', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'tiwari@gmail.com', 'Neurologist', 49, 'Male', 'REGISTERED');
+  (1,'Amit23', '123', 'Amit Tiwari', '99999999', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'tiwari@gmail.com', 'Neurologist', 49, 'Male', 'REGISTERED');
