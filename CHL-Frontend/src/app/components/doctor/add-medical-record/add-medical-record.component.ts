@@ -435,11 +435,11 @@ export class AddMedicalRecordComponent implements OnInit {
     this.pastRecord.doctorName=this.doctor.doctorName
     this.pastRecord.uploadDate=formatDate(new Date(), 'yyyy-MM-dd', 'en')
     this.pastRecord.uploadedBy='Doctor'
-    this.pastRecordService.addPastRecord(this.pastRecord)
-    .subscribe(response => {
-      console.log(response);
+    // this.pastRecordService.addPastRecord(this.pastRecord)
+    // .subscribe(response => {
+    //   console.log(response);
       
-    })
+    // })
     //medications
     
     //medicalData
@@ -461,8 +461,14 @@ export class AddMedicalRecordComponent implements OnInit {
       var position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
       //pdf.save(`${this.patientId}_${new Date()}.pdf`); // Generated PDF
-      this.pastRecord.prescription = pdf.output('blob')
-      console.log('at convert '+this.pastRecord.prescription.size);
+      window.open(pdf.output('bloburl'))
+
+      this.pastRecordService.uploadPrescription(pdf.output('blob'))
+      .subscribe(response => {
+        console.log('Inside post prescription')
+        console.log(response);
+        
+      })
       
     });
     // return retPdf

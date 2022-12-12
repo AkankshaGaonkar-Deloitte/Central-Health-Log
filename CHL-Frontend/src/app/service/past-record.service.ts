@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PastRecord } from '../model/past-record';
@@ -46,9 +46,14 @@ export class PastRecordService {
     return this.http.post<PastRecord>(`http://localhost:8080/patient/past-record`, newPastRecord, {headers})
   }
 
-  addPrescription(prescription: Blob){
+  uploadPrescription(prescription: Blob){
     let headers = this.createAuthenticationHeader()
-    return this.http.post<PastRecord>(`http://localhost:8080/patient/past-record/prescription`, prescription, {headers})
+    const formData: FormData = new FormData();
+
+    formData.append('prescription', prescription);
+
+    // return this.http.request(req, {{headers}});
+    return this.http.post<PastRecord>('http://localhost:8080/patient/past-record/prescription', formData, {headers})
   }
 
   
