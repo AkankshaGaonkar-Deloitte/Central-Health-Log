@@ -9,13 +9,7 @@
         <div class="flex-item2">
             <p id="heading"><b>Dashboard</b></p>
             <div class="main-flex">
-                <div class="chart0">
-                    <div class="bpGraph">
-                        <app-area-graph></app-area-graph>
-                        <!-- <bp-graph></bp-graph> -->
-                    </div>
-<!-- 
-                    <div class="inner-flex">
+                <div class="inner-flex">
                         <div id="cards" class="card1">
                             <div class="text">
                                 <p>Number of appointments</p>
@@ -30,13 +24,22 @@
                             </div>
                             <div id="image" style="background-color:#FCEAEE; height: 3.8em; width: 3.6em;"><img src="assets/images/diseases.png" ></div>
                         </div>
-                        <div class="refresh">
-                            <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
+                        <div id="cards" class="card2">
+                            <div class="text">
+                                <p>Total diseases</p>
+                                <h3>03</h3>
+                            </div>
+                            <div id="image" style="background-color:#FCEAEE; height: 3.8em; width: 3.6em;"><img src="assets/images/diseases.png" ></div>
                         </div>
-                    </div> -->
-                </div>
+                    </div>
+                        <!-- <div class="refresh">
+                            <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
+                        </div> -->
+                
 
                 <div class="chart1">
+                        <div class="bpGraph">
+                            <app-area-graph></app-area-graph>
                     <div class="pulseRate">
                         <!-- <pulse-line-graph></pulse-line-graph> -->
                     </div>
@@ -49,4 +52,5 @@
             </div>
     </div>
     </div>
+</div>
 </div>
