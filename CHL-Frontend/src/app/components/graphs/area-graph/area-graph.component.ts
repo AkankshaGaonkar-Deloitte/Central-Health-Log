@@ -42,6 +42,7 @@ export class AreaGraphComponent implements OnInit {
 
 
 
+  public BMI: Object[]=[] ;
   public title: string = 'BMI';
   Userid!: string;
   
@@ -49,15 +50,13 @@ export class AreaGraphComponent implements OnInit {
 
   public legend: Object = { visible: false };
   public segments: Object[] = [{
-     
-  
       color: 'url(#spring)'
   }];
   public tooltip: Object = {
       enable: true,
-      header: '<b>Revenue</b>',
-      format: '${point.x} : <b>${point.y}</b>',
-      shared: true
+      header: 'BMI',
+      // format: '{x} : <b>{y}</b>',
+      // shared: true
   };
      // custom code start
   public load(args: ILoadedEventArgs): void {
@@ -72,7 +71,6 @@ export class AreaGraphComponent implements OnInit {
 
   constructor(private graphService: GraphServiceService) { }
 
-  public BMI: Object[]=[] ;
   ngOnInit(): void {
     let pr:Object[]=[];
     // console.warn( Number(sessionStorage.getItem(this.Userid)))

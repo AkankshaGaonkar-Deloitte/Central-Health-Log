@@ -14,7 +14,7 @@ import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
-
+import { registerLicense } from '@syncfusion/ej2-base';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
 import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService,SplineAreaSeries, SplineRangeAreaSeriesService, SplineAreaSeriesService, AreaSeriesService, MultiColoredAreaSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
@@ -33,6 +33,7 @@ import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.component';
 
+registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39Rd0djXn9bdXBWRWBZ');
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,5 +73,7 @@ import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.co
   ],
   providers: [CategoryService,LineSeriesService,ColumnSeriesService, MultiColoredAreaSeriesService,SplineAreaSeriesService,AreaSeriesService,DatePipe],
   bootstrap: [AppComponent]
-})
+}
+)
+
 export class AppModule { }
