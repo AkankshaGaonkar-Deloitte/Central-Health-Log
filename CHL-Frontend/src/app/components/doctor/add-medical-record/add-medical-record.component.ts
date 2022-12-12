@@ -426,31 +426,20 @@ export class AddMedicalRecordComponent implements OnInit {
   }
 
   public submit() {
-    // let pdf = this.convertToPdf()
-
-    //past record
-    this.convertToPdf();
-
     //upload past record
-    this.pastRecordService.addPastRecord(this.pastRecord)
-      .subscribe(response => {
-        console.log('after uploading past record');
-        console.log(response);
+    this.uploadPastRecord();
 
-      })
-
-    // this.pastRecordService.addPastRecord(this.pastRecord)
-    // .subscribe(response => {
-    //   console.log(response);
-
-    // })
     //medications
 
+
     //medicalData
+    this.medicalDataService.saveMedicalData(this.medicalData)
+      .subscribe(data => console.log(data))
 
   }
 
-  public convertToPdf() {
+  public uploadPastRecord() {
+    // convert to pdf
     var data = document.getElementById('contentToConvert');
     html2canvas(data as HTMLElement).then(canvas => {
       // Few necessary setting options
@@ -466,6 +455,8 @@ export class AddMedicalRecordComponent implements OnInit {
       //pdf.save(`${this.patientId}_${new Date()}.pdf`); // Generated PDF
       window.open(pdf.output('bloburl'))
 
+
+      // upload generated prescription
       this.pastRecordService.uploadPrescription(pdf.output('blob'))
         .subscribe(response => {
           // after uploading the prescription fetch the id and set it in pastRecord.prescriptionId
@@ -476,8 +467,18 @@ export class AddMedicalRecordComponent implements OnInit {
           this.pastRecord.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
           this.pastRecord.uploadedBy = 'Doctor'
 
+          // upload past record
           this.pastRecordService.addPastRecord(this.pastRecord)
-          .subscribe(response => console.log(response))
+            .subscribe(response => {
+              console.log(response)
+
+              // upload medications
+              this.medications.forEach(med => {
+                med.recordId = response.id
+                this.medicationService.addMedication(med)
+                  .subscribe(data => console.log(data))
+              });
+            })
 
         })
 
