@@ -1,4 +1,4 @@
-<div  style="width:100%; height:17em;">
+<!-- <div  style="width:100%; height:17em;">
 <ejs-chart style='display:block' align='center' id='bpchart-container' [title]='title'
                     [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [tooltip]='tooltip'
                     (load)='load($event)' [chartArea]='chartArea'  [legendSettings]='legend'>
@@ -10,4 +10,58 @@
                         </e-series>
                     </e-series-collection>
                 </ejs-chart>
-            </div>
+            </div> -->
+
+    <div align='center'>
+        <ejs-chart style='display:block' align='center' id='bpchart-container' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [legendSettings]='legend'>
+                 
+            <e-series-collection>
+                <e-series [dataSource]='BP' type='MultiColoredArea'  xName='date' yName='systolic'[marker]='circleMarker' segmentAxis='X' name='systolic' width=2
+                    [segments]='segments'>
+                </e-series>
+                    <e-series [dataSource]='BP' type='MultiColoredArea'  xName='date' yName='diastolic'[marker]='circleMarker' segmentAxis='X' name='diastolic' width=2
+                    [segments]='segments2'>
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+
+<style>
+
+#bpchart stop {
+        stop-color:#a7beae;
+    }
+
+    #bpchart stop[offset="0"] {
+        stop-color:  #d9a5b3 ;
+    }
+
+    #bpchart stop[offset="1"] {
+        stop-color: #e7e8d1;
+    }
+
+#bpchart2 stop {
+        stop-color:#a7beae;
+    }
+
+    #bpchart2 stop[offset="0"] {
+        stop-color:  #1868ae ;
+    }
+
+    #bpchart2 stop[offset="1"] {
+        stop-color: #c6d7eb;
+    }
+</style>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="bpchart" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+        <linearGradient id="bpchart2" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

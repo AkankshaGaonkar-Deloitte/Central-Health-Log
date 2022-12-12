@@ -19,7 +19,6 @@ import { PatientDashboardComponent } from './components/patient/patient-dashboar
 import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService,SplineAreaSeries, SplineRangeAreaSeriesService, SplineAreaSeriesService, AreaSeriesService, MultiColoredAreaSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
 import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
-import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
@@ -43,7 +42,6 @@ import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.co
     DropdownComponent,
     CheckboxComponent,
     DocPatientDashboardComponent,
-    BmiLineGraphComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
     ButtonComponent,
@@ -58,7 +56,6 @@ import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.co
     PatientDashboardComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
-    BmiLineGraphComponent,
     AddMedicalRecordComponent,
     DocPatientMedicationComponent,
     DocPatientPastRecordsComponent,
