@@ -6,7 +6,7 @@ export class PastRecord {
         public doctorName?: string|number|null,
         public uploadDate?: string|number|null,
         public diagnosis?: string|number|null,
-        public prescription?: Blob,
+        public prescriptionId?: number,
         public uploadedBy?: string|number|null,
         public severity?: string|number|null
     ) { }

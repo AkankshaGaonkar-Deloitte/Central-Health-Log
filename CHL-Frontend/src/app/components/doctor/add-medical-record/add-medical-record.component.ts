@@ -374,21 +374,21 @@ export class AddMedicalRecordComponent implements OnInit {
   ngOnInit(): void {
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {
-        console.log(response);        
-        this.patient=response
-    })
+        console.log(response);
+        this.patient = response
+      })
 
     this.doctorDetailsService.getDoctorByDoctorId(this.doctorId)
       .subscribe(response => {
-        this.doctor=response
-    })
+        this.doctor = response
+      })
 
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)
-    .subscribe(response => {
-      this.medicalData=response
-      this.medicalData.id=-1
-    })
-    
+      .subscribe(response => {
+        this.medicalData = response
+        this.medicalData.id = -1
+      })
+
   }
 
   openPopup() {
@@ -398,9 +398,9 @@ export class AddMedicalRecordComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  submitNewMedication(){
-    this.medicationData.isCurrent=true
-    this.medicationData.patientId=this.patientId
+  submitNewMedication() {
+    this.medicationData.isCurrent = true
+    this.medicationData.patientId = this.patientId
     this.medications.push(this.medicationData)
     this.medicationData = new Medication()
     // this.medicationService.addMedication(this.medicationData)
@@ -422,33 +422,36 @@ export class AddMedicalRecordComponent implements OnInit {
     const index = this.medications.indexOf(currMed, 0);
     if (index > -1) {
       this.medications.splice(index, 1);
-}
+    }
   }
 
   public submit() {
     // let pdf = this.convertToPdf()
-    
+
     //past record
-    this.convertToPdf()
-    this.pastRecord.patientId=this.patientId
-    this.pastRecord.doctorId=this.doctorId
-    this.pastRecord.doctorName=this.doctor.doctorName
-    this.pastRecord.uploadDate=formatDate(new Date(), 'yyyy-MM-dd', 'en')
-    this.pastRecord.uploadedBy='Doctor'
+    this.convertToPdf();
+
+    //upload past record
+    this.pastRecordService.addPastRecord(this.pastRecord)
+      .subscribe(response => {
+        console.log('after uploading past record');
+        console.log(response);
+
+      })
+
     // this.pastRecordService.addPastRecord(this.pastRecord)
     // .subscribe(response => {
     //   console.log(response);
-      
+
     // })
     //medications
-    
+
     //medicalData
-    
+
   }
 
-  public convertToPdf(){
+  public convertToPdf() {
     var data = document.getElementById('contentToConvert');
-    // var retPdf = new Blob()
     html2canvas(data as HTMLElement).then(canvas => {
       // Few necessary setting options
       var imgWidth = 208;
@@ -464,14 +467,21 @@ export class AddMedicalRecordComponent implements OnInit {
       window.open(pdf.output('bloburl'))
 
       this.pastRecordService.uploadPrescription(pdf.output('blob'))
-      .subscribe(response => {
-        console.log('Inside post prescription')
-        console.log(response);
-        
-      })
-      
+        .subscribe(response => {
+          // after uploading the prescription fetch the id and set it in pastRecord.prescriptionId
+          this.pastRecord.prescriptionId = response.id
+          this.pastRecord.patientId = this.patientId
+          this.pastRecord.doctorId = this.doctorId
+          this.pastRecord.doctorName = this.doctor.doctorName
+          this.pastRecord.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
+          this.pastRecord.uploadedBy = 'Doctor'
+
+          this.pastRecordService.addPastRecord(this.pastRecord)
+          .subscribe(response => console.log(response))
+
+        })
+
     });
-    // return retPdf
   }
 
 

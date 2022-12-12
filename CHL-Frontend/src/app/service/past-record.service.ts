@@ -2,6 +2,7 @@ import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PastRecord } from '../model/past-record';
+import { Prescription } from '../model/prescription';
 
 @Injectable({
   providedIn: 'root'
@@ -53,7 +54,7 @@ export class PastRecordService {
     formData.append('prescription', prescription);
 
     // return this.http.request(req, {{headers}});
-    return this.http.post<PastRecord>('http://localhost:8080/patient/past-record/prescription', formData, {headers})
+    return this.http.post<Prescription>('http://localhost:8080/patient/past-record/prescription', formData, {headers})
   }
 
   
