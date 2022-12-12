@@ -1,0 +1,133 @@
+<div class="main-container">
+  <div id="nav">
+    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+  </div>
+  <div class="subcontainer">
+    <div class="flex-item1">
+      <app-sidebar [menus]="menus"></app-sidebar>
+    </div>
+    <div class="flex-item2">
+      <div class="main">
+        <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+        <div class="search-filter">
+          <div class="left">
+            <!-- Select filter -->
+            <div id="sort-by">
+              <app-dropdown [states]="optionList" [dropConfig]="textDropConfig" (value)="filterSelectEventReceived($event)"></app-dropdown>
+            </div>
+            <!--filter type-->
+            <div style="margin-right: 10px;">
+              <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateFrom" (outputEmit)="onClickFromDateReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityFrom" (outputEmit)="onClickSeverityFromReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Doctor'" [ipConfig]="searchWithDoctorId" (outputEmit)="onClickDoctorReceived($event)"></app-input>
+            </div>
+            <div style="margin-right: 10px;">
+              <app-input *ngIf="filterSelector === 'Date'" [ipConfig]="searchWithDateTo" (outputEmit)="onClickToDateReceived($event)"></app-input>
+              <app-input *ngIf="filterSelector === 'Severity'" [ipConfig]="searchWithSeverityTo" (outputEmit)="onClickSeverityToReceived($event)"></app-input>
+            </div>
+            <div>
+              <app-button [btntext]="'Search'" [btnConfig]="searchBtnConfig" (click)="search()"></app-button>
+            </div>
+          </div>
+          <div class="right">
+            <div>
+              <app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" (click)="openPopup()"></app-button>
+            </div>
+            <!--Modal starts-->
+            <div>
+              <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h4 class="modal-title">Add past record</h4>
+                    </div>
+                    
+                    <div class="modal-body">
+                      <div class="flex-modal">
+                        <div class="grid-item">
+                          <label>Upload Date:</label>
+                          <app-input name="uploadDate" (outputEmit)="pastRecord.uploadDate=$event" [ipConfig]="dateConfig">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Patient ID:</label>
+                          <app-input name="patientId" [ipConfig]="idConfig" (outputEmit)="pastRecord.patientId=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Doctor ID:</label>
+                          <app-input name="doctorId" [ipConfig]="idConfig" (outputEmit)="pastRecord.doctorId=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Doctor name:</label>
+                          <app-input name="doctorName" [ipConfig]="nameConfig" (outputEmit)="pastRecord.doctorName=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label>Diagnosis:</label>
+                          <app-input name="diagnosis" [ipConfig]="diagnosisConfig" (outputEmit)="pastRecord.diagnosis=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label id="prescription-label">Prescription:</label>
+                          <app-input name="prescription" [ipConfig]="presscriptionConfig" (outputEmit)="''">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label id="prescription-label">Uploaded by:</label>
+                          <app-input name="uploadedBy" [ipConfig]="nameConfig" (outputEmit)="pastRecord.uploadedBy=$event">
+                          </app-input>
+                        </div>
+                        <div class="grid-item">
+                          <label id="prescription-label">Severity:</label>
+                          <app-input name="severity" [ipConfig]="idConfig" (outputEmit)="pastRecord.severity=$event">
+                          </app-input>
+                        </div>
+                      </div>
+
+                    </div>
+                  
+                    <div class="modal-footer">
+                      <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig" (click)="submitNewPastRecord()"></app-button>
+                      <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2" (click)="closePopup()"></app-button>                     
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Modal ends-->
+          </div>
+        </div>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Date</th>
+              <th>Doctor ID</th>
+              <th>Doctor name</th>
+              <th>Diagnosis</th>
+              <th>Severity</th>
+              <th>Uploaded by</th>
+              <th>Prescription</th>
+            </tr>
+            <tr *ngFor="let pastRecord of allPastRecordsOfAPatient">
+              <td>{{pastRecord.uploadDate}}</td>
+              <td>{{pastRecord.doctorId}}</td>
+              <td>{{pastRecord.doctorName}}</td>
+              <td>{{pastRecord.diagnosis}}</td>
+              <td>{{pastRecord.severity}}</td>
+              <td>{{pastRecord.uploadedBy}}</td>
+              <!-- <td>{{todo.targetDate | date}}</td> -->
+              <td>
+                <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+              </td>
+          </tr>
+
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

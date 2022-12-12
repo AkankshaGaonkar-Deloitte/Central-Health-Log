@@ -1,1 +1,21 @@
-<p>button works!</p>
+
+  <button [type]="btnConfig.type" [disabled]="disabled" class="btn" [ngStyle]="btnConfig.styles" (click)="onClickBtn($event)">
+   {{btntext}}
+  </button>
+
+
+<!-- How to use -->
+<!-- <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" ></app-button> -->
+
+<!-- give styling like this in component.ts file -->
+
+<!-- textBtnConfig = {
+  textBtnConfig = {
+    type:"submit",
+    styles: {
+       background: '#fff',
+       color: '#1CB5BD',
+       height: '40px'
+
+    }
+}; -->

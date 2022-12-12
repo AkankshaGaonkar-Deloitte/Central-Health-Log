@@ -1,0 +1,36 @@
+
+    <div align='center'>
+        <ejs-chart style='display:block' align='center' id='bmi-chart-container' [title]='title' [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
+            [tooltip]='tooltip' (load)='load($event)' [chartArea]='chartArea' [legendSettings]='legend'>
+                 
+            <e-series-collection>
+                <e-series [dataSource]='BMI' type='MultiColoredArea'  xName='date' yName='bmi'[marker]='circleMarker' segmentAxis='X' name='US' width=2
+                    [segments]='segments'>
+                  
+                </e-series>
+            </e-series-collection>
+        </ejs-chart>
+    </div>
+
+<style>
+
+#spring stop {
+        stop-color:#a7beae;
+    }
+
+    #spring stop[offset="0"] {
+        stop-color:  #e52165 ;
+    }
+
+    #spring stop[offset="1"] {
+        stop-color: #e7e8d1;
+    }
+</style>
+<svg style="height: 0">
+    <defs>
+        <linearGradient id="spring" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0"></stop>
+            <stop offset="1"></stop>
+        </linearGradient>
+    </defs>
+</svg>

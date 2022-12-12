@@ -1,0 +1,41 @@
+.ipField {
+  width: 100%;
+  height: 100%;
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 0.025em solid #949494;
+    border-radius: 0.625em;
+  
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    color: rgba(0, 0, 0, 0.85);
+  }
+  
+  input:hover {
+    border: 0.0625em solid #737373;
+  }
+  
+  input:focus {
+    border: 1px solid #1CB5BD;
+    box-shadow: 0px 0px 6px rgba(28, 181, 189, 0.5);
+    outline: none;
+  }
+  
+  input.ng-touched.ng-invalid {
+    border: 0.0625em solid #ee0004;
+  }
+
+  .errors {
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8em;
+    line-height: 0.833em;
+    color: #ee0004;
+  }
+}

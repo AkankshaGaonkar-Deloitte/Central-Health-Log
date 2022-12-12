@@ -1,0 +1,157 @@
+<div id="main-container">
+    <div id="nav">
+        <app-navbar [button]="true" [btntext]="'Login'"></app-navbar>
+    </div>
+    <div id="sub-container">
+        <div id="image-container">
+            <img id="reg-image" src="assets/images/reg-img.png" alt="reg-image">
+            <div class="content">
+                <div id="main-text">Your Health Comes First</div>
+                <div id="moto-text">With Central Health Log you can manage your personal health reports effectively.
+                </div>
+            </div>
+        </div>
+        <div id="reg-container">
+            <div id="reg-heading">Register Account</div>
+            <div class="select-user">
+                <p>Select the User Type</p>
+                <div id="buttons"><button type="button" [ngClass]="{'active': patientActive}"
+                        (click)="addPatient($event)">Patient</button>
+                    <button [ngClass]="{'active': !patientActive}" (click)="addDoctor($event)">Doctor</button>
+                </div>
+            </div>
+            <form *ngIf="patientActive==true" [formGroup]="RegistrationForm">
+                <div class="outline">
+                    <div class="update-form-container">
+                        <div class="cell">
+                            <label for="firstName">First Name </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.firstname=$event"></app-input>
+                        </div>
+                        <div class="cell">
+                            <label for="lastName">Last Name </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.lastname=$event"></app-input>
+                        </div>
+
+                        <div class="cell">
+                            <label for="email">Email </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.email=$event"></app-input>
+                        </div>
+                        <div class="cell">
+                            <label for="contact">Contact Number </label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.phoneNo=$event"
+                                (change)="onPhoneNo()"></app-input>
+                            <div *ngIf="contactExists" class="userexists" style="color: red;">
+                                This number is already registered*
+                            </div>
+                        </div>
+
+                        <div class="cell">
+                            <label for="gender">Gender </label>
+                            <app-dropdown [states]="optionList" [dropConfig]="textDropConfig"
+                                (value)="patient.gender=$event"></app-dropdown>
+                        </div>
+                        <div class="cell">
+                            <label for="age">Age </label>
+                            <app-input [ipConfig]="ipConfig3" (outputEmit)="patient.age=$event"></app-input>
+                        </div>
+
+                        <div class="cell">
+                            <label for="userID">User ID</label>
+                            <app-input [ipConfig]="ipConfig" (outputEmit)="patient.username=$event"
+                                (change)="onUserID()"></app-input>
+                                <div *ngIf="usernameExists" class="userexists" style="color: red;">
+                                    This username already exists*
+                                </div>
+                        </div>
+                        <div class="cell">
+                            <label for="password">Password </label>
+                            <app-input [ipConfig]="ipConfig2" (outputEmit)="patient.password=$event"></app-input>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div id="login-btn">
+                    <app-button [disabled]="btndisable" [btntext]="'Register'" [btnConfig]="textBtnConfig"
+                        (onClick)="openPopup()" (click)="onSubmit()"></app-button>
+                </div>
+            </form>
+            <form *ngIf="patientActive==false" (ngSubmit)="onDocSubmit()">
+                <div class="update-form-container1">
+
+                    <div class="cell">
+                        <label for="doctorName">Doctor Name </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.doctorName=$event"></app-input>
+                    </div>
+                    <div class="cell">
+                        <label for="aadhar">Aadhar No </label>
+                        <app-input [ipConfig]="ipConfig3" (outputEmit)="doctor.aadharNo=$event"></app-input>
+                    </div>
+
+                    <div class="cell">
+                        <label for="regNO">Registration No </label>
+                        <app-input [ipConfig]="ipConfig3" (outputEmit)="doctor.registrationNo=$event"></app-input>
+                    </div>
+                    <div class="cell">
+                        <label for="year">Year of Registration </label>
+                        <app-input [ipConfig]="ipConfig3" (outputEmit)="doctor.yearOfReg=$event"></app-input>
+                    </div>
+
+                    <div class="cell">
+                        <label for="council">State Medical Council </label>
+                        <app-dropdown [states]="optionList1" [dropConfig]="textDropConfig"
+                            (value)="doctor.stateMedicalCouncil=$event"></app-dropdown>
+                    </div>
+                    <div class="cell">
+                        <label for="Qualification">Qualification </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.qualification=$event"></app-input>
+                    </div>
+
+                    <div class="cell">
+                        <label for="email">Email </label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.email=$event"></app-input>
+                    </div>
+                    <div class="cell">
+                        <label for="contact">Contact Number </label>
+                        <app-input [ipConfig]="ipConfig1" (outputEmit)="doctor.phoneNo=$event"></app-input>
+                    </div>
+
+                    <div class="cell">
+                        <label for="userID">User ID</label>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.username=$event"> </app-input>
+                    </div>
+                    <div class="cell">
+                        <label for="password">Password </label>
+                        <app-input [ipConfig]="ipConfig2" (outputEmit)="doctor.password=$event"></app-input>
+                    </div>
+                </div>
+                <br>
+                <div id="login-btn">
+                    <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()"></app-button>
+                </div>
+
+            </form>
+            <!-- modal popup -->
+            <!-- <div class="modal"  "> -->
+                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Enter OTP</h4>
+                        </div>
+                        <div class="modal-body">
+                            <app-input name="uploadDate" (outputEmit)="otp=$event" [ipConfig]="ipConfig">
+                            </app-input>
+                            <br>
+                            <div class="modal-footer">
+                                <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig" (onClick)="Verifyotp()">
+                                </app-button>
+                                <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()">
+                                </app-button>
+                            </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,270 @@
+<div class="main-container">
+    <div id="nav">
+        <app-navbar [button]="false" [name]="'Dr Amit Tiwari'"></app-navbar>
+    </div>
+    <div class="subcontainer">
+        <div class="flex-item1">
+            <app-sidebar [menus]="menus"></app-sidebar>
+        </div>
+        <div class="flex-item2">
+            <div class="main">
+                <div class="search">
+                    <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+                </div>
+                <div class="tabs">
+                    <tab-navigation [tabs]="menus1"></tab-navigation>
+                </div>
+                <div class="search-filter">
+                    <div class="left">
+                        <div id="sort-by">
+                            Add medical record/ prescription
+                        </div>
+                    </div>
+                    <div class="right"></div>
+                </div>
+
+                <div class="outline" id="contentToConvert">
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Patient details
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Patient ID:</label>
+                                    <app-input [userInput]="patient.id" [disabled]="'true'" [ipConfig]="idConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>First name:</label>
+                                    <app-input [userInput]="patient.firstname" [disabled]="'true'" [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Last name:</label>
+                                    <app-input [userInput]="patient.lastname" [disabled]="'true'" [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Age:</label>
+                                    <app-input [userInput]="patient.age" [disabled]="'true'" [ipConfig]="ageConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Gender:</label>
+                                    <app-dropdown [states]="optionList" [dropConfig]="genderConfig"></app-dropdown>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Contact no:</label>
+                                    <app-input [userInput]="patient.phoneNo" [disabled]="'true'" [userInput]="patient.firstname" [disabled]="'true'" [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--row 2-->
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Doctor details
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Docotr ID:</label>
+                                    <app-input [ipConfig]="idConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Docotr name:</label>
+                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Mode:</label>
+                                    <app-dropdown [states]="modeList" [dropConfig]="genderConfig"></app-dropdown>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Date:</label>
+                                    <app-input [ipConfig]="dateConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Email:</label>
+                                    <app-input [ipConfig]="emailConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Contact no:</label>
+                                    <app-input [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--form row 3-->
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Visit summary
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row-2">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Facility:</label>
+                                    <app-input [ipConfig]="facilityConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Complaints:</label>
+                                    <app-input [ipConfig]="complaintConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--form row 4-->
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Vitals
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Height:</label>
+                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Weight:</label>
+                                    <app-input [ipConfig]="weightConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>BP:</label>
+                                    <app-input [ipConfig]="BPConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Pulse:</label>
+                                    <app-input [ipConfig]="pulseConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--form row 5-->
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Diagnosis
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row-4">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <app-input [ipConfig]="diagnosisConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--form row 6-->
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Medications prescribed
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div>
+                                <app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" (click)="''"></app-button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="table-container">
+                            <table>
+                                <tr>
+                                    <th>Medicine</th>
+                                    <th>Dosage</th>
+                                    <th>Action</th>
+                                </tr>
+                                <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                                    <tr *ngIf="medication.isCurrent">
+                                        <td>{{medication.medicine}}</td>
+                                        <td>{{medication.dosage}}</td>
+                                        <td>
+                                            <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig"
+                                                (click)="removeOrDeleteMedication(medication.id)"></app-button>
+                                        </td>
+                                    </tr>
+                                </ng-container>
+        
+                            </table>
+                        </div>
+                    </div>
+                    <div class="sub-form">
+                        <div class="left">
+                            <div id="title">
+                                Advice
+                            </div>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <div class="outline-2">
+                        <div class="form-row-3">
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Lab tests:</label>
+                                    <app-input [ipConfig]="labTestConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Instrutions:</label>
+                                    <app-input [ipConfig]="instructionsConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-form">
+                    <app-button [btntext]="'Submit'" [btnConfig]="textBtnConfig2" (click)="convertToPDF()"></app-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
