@@ -272,6 +272,42 @@
                             }
                         }
 
+                        .form-row-5 {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr 1fr;
+                            grid-template-rows: 1fr;
+                            gap: 0em 0em;
+                            grid-template-areas:
+                                ". . .";
+
+                            .form-cell {
+                                margin-top: 1.25em;
+                                margin-left: 1.25em;
+                                margin-right: 1.25em;
+
+                                .cell {
+                                    display: grid;
+                                    grid-template-columns: 1fr 1.5fr;
+                                    grid-template-rows: 1fr;
+                                    gap: 0em 0em;
+                                    grid-template-areas:
+                                        ". .";
+
+                                    label {
+                                        font-family: 'Poppins';
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        font-size: 1em;
+                                        line-height: 1.5em;
+                                        letter-spacing: 0.1em;
+                                        color: #2C2D2D;
+                                    }
+
+                                }
+
+                            }
+                        }
+
 
 
                         .table-container {

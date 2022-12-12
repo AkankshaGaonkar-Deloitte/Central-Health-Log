@@ -46,5 +46,10 @@ export class PastRecordService {
     return this.http.post<PastRecord>(`http://localhost:8080/patient/past-record`, newPastRecord, {headers})
   }
 
+  addPrescription(prescription: Blob){
+    let headers = this.createAuthenticationHeader()
+    return this.http.post<PastRecord>(`http://localhost:8080/patient/past-record/prescription`, prescription, {headers})
+  }
+
   
 }

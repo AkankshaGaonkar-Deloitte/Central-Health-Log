@@ -86,13 +86,13 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Docotr ID:</label>
-                                    <app-input [ipConfig]="idConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="doctor.id" [disabled]="'true'" [ipConfig]="idConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
-                                    <label>Docotr name:</label>
-                                    <app-input [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
+                                    <label>Doctor name:</label>
+                                    <app-input [userInput]="doctor.doctorName" [disabled]="'true'" [ipConfig]="nameConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
@@ -110,13 +110,13 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Email:</label>
-                                    <app-input [ipConfig]="emailConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="doctor.email" [disabled]="'true'" [ipConfig]="emailConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Contact no:</label>
-                                    <app-input [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
+                                    <app-input [userInput]="doctor.phoneNo" [disabled]="'true'" [ipConfig]="contactConfig" (outputEmit)="''"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                         <div class="right"></div>
                     </div>
                     <div class="outline-2">
-                        <div class="form-row-2">
+                        <div class="form-row-5">
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Facility:</label>
@@ -142,6 +142,12 @@
                                 <div class="cell">
                                     <label>Complaints:</label>
                                     <app-input [ipConfig]="complaintConfig" (outputEmit)="''"></app-input>
+                                </div>
+                            </div>
+                            <div class="form-cell">
+                                <div class="cell">
+                                    <label>Severity:</label>
+                                    <app-input [ipConfig]="severityConfig" (outputEmit)="pastRecord.severity=$event"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -160,25 +166,25 @@
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Height:</label>
-                                    <app-input [ipConfig]="heightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="heightConfig" (outputEmit)="medicalData.height=$event"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Weight:</label>
-                                    <app-input [ipConfig]="weightConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="weightConfig" (outputEmit)="medicalData.weight=$event"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>BP:</label>
-                                    <app-input [ipConfig]="BPConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="BPConfig" (outputEmit)="medicalData.bloodPressure=$event"></app-input>
                                 </div>
                             </div>
                             <div class="form-cell">
                                 <div class="cell">
                                     <label>Pulse:</label>
-                                    <app-input [ipConfig]="pulseConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="pulseConfig" (outputEmit)="medicalData.pulseRate=$event"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -196,7 +202,7 @@
                         <div class="form-row-4">
                             <div class="form-cell">
                                 <div class="cell">
-                                    <app-input [ipConfig]="diagnosisConfig" (outputEmit)="''"></app-input>
+                                    <app-input [ipConfig]="diagnosisConfig" (outputEmit)="pastRecord.diagnosis=$event"></app-input>
                                 </div>
                             </div>
                         </div>
@@ -210,8 +216,54 @@
                         </div>
                         <div class="right">
                             <div>
-                                <app-button [btntext]="'Add past record'" [btnConfig]="textBtnConfig2" (click)="''"></app-button>
+                                <app-button [btntext]="'Add medication'" [btnConfig]="textBtnConfig2" (click)="openPopup()"></app-button>
                             </div>
+                            <!--Modal starts-->
+                        <div>
+                            <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+                                <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Add Current Medication</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="flex-modal">
+                                                <div class="grid-item">
+                                                    <label>Medicine:</label>
+                                                    <app-input
+                                                        (outputEmit)="medicationData.medicine=$event"
+                                                        [ipConfig]="nameConfig">
+                                                    </app-input>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <label>Dosage:</label>
+                                                    <app-input [ipConfig]="nameConfig"
+                                                        (outputEmit)="medicationData.dosage=$event">
+                                                    </app-input>
+                                                </div>
+                                                <div class="grid-item">
+                                                    <label>Starting date:</label>
+                                                    <app-input [ipConfig]="dateConfig"
+                                                        (outputEmit)="medicationData.startingDate=$event">
+                                                    </app-input>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig"
+                                                (click)="submitNewMedication()"></app-button>
+                                            <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig2"
+                                                (click)="closePopup()"></app-button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Modal ends-->
                         </div>
                     </div>
                     <div class="outline-2">
@@ -222,13 +274,13 @@
                                     <th>Dosage</th>
                                     <th>Action</th>
                                 </tr>
-                                <ng-container *ngFor="let medication of allMedicalDataOfAPatient">
+                                <ng-container *ngFor="let medication of medications">
                                     <tr *ngIf="medication.isCurrent">
                                         <td>{{medication.medicine}}</td>
                                         <td>{{medication.dosage}}</td>
                                         <td>
                                             <app-button [btntext]="'Remove'" [btnConfig]="textBtnConfig"
-                                                (click)="removeOrDeleteMedication(medication.id)"></app-button>
+                                                (click)="removeOrDeleteMedication(medication)"></app-button>
                                         </td>
                                     </tr>
                                 </ng-container>
@@ -262,7 +314,7 @@
                     </div>
                 </div>
                 <div class="submit-form">
-                    <app-button [btntext]="'Submit'" [btnConfig]="textBtnConfig2" (click)="convertToPDF()"></app-button>
+                    <app-button [btntext]="'Submit'" [btnConfig]="textBtnConfig2" (click)="submit()"></app-button>
                 </div>
             </div>
         </div>

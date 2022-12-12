@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.File;
+import java.sql.Blob;
 import java.util.Date;
 
 @Entity
@@ -29,9 +30,10 @@ public class PastRecord {
 
     private String diagnosis;
 
-    private File prescription;
+    private Long prescriptionId;
 
     private String uploadedBy;
 
     private Integer severity;
+
 }

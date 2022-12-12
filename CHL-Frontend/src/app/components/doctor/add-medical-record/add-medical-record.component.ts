@@ -10,6 +10,11 @@ import { MedicalData } from 'src/app/model/medical-data';
 import { Patient } from 'src/app/model/patient';
 import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
 import { Doctor } from 'src/app/model/doctor';
+import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.service';
+import { PastRecord } from 'src/app/model/past-record';
+import { formatDate } from '@angular/common';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
+import { PastRecordService } from 'src/app/service/past-record.service';
 
 @Component({
   selector: 'app-add-medical-record',
@@ -22,8 +27,12 @@ export class AddMedicalRecordComponent implements OnInit {
   patient: Patient = new Patient()
   doctorId: number = 1
   doctor: Doctor = new Doctor()
-  allMedicalDataOfAPatient: Medication[] = []
   medicalData: MedicalData = new MedicalData()
+  medicationData: Medication = new Medication()
+  pastRecord: PastRecord = new PastRecord()
+  medications: Medication[] = []
+
+  displayStyle = "none";
 
   idConfig = {
     type: 'number',
@@ -172,6 +181,23 @@ export class AddMedicalRecordComponent implements OnInit {
       required: '',
       minLength: '2',
       maxLength: '30',
+      pattern: ''
+    },
+    patternErrorMessage: ''
+  };
+
+  severityConfig = {
+    type: 'number',
+    label: 'Severity',
+    placeholder: '',
+    styling: {
+      height: '2.375em',
+      width: '100%'
+    },
+    validations: {
+      required: '',
+      minLength: '1',
+      maxLength: '2',
       pattern: ''
     },
     patternErrorMessage: ''
@@ -340,37 +366,89 @@ export class AddMedicalRecordComponent implements OnInit {
   constructor(
     private medicationService: MedicationService,
     private patientDetailsService: PatientDetailsService,
-    
+    private doctorDetailsService: DoctorDetailsService,
+    private medicalDataService: MedicalDataService,
+    private pastRecordService: PastRecordService
   ) { }
 
   ngOnInit(): void {
-    this.medicationService.getAllPatientRecords(this.patientId)
-      .subscribe(response => {
-        this.allMedicalDataOfAPatient = response
-        console.log(this.allMedicalDataOfAPatient);
-
-      }
-    )
-
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {
         console.log(response);        
         this.patient=response
-      })
+    })
+
+    this.doctorDetailsService.getDoctorByDoctorId(this.doctorId)
+      .subscribe(response => {
+        this.doctor=response
+    })
+
+    this.medicalDataService.getMedicalDataByPatientId(this.patientId)
+    .subscribe(response => {
+      this.medicalData=response
+      this.medicalData.id=-1
+    })
+    
   }
 
-  removeOrDeleteMedication(id?: number) {
-    this.medicationService.removeOrDeleteMedication(id)
-      .subscribe(
-        response => {
-          this.medicationService.getAllPatientRecords(this.patientId)
-            .subscribe(data => this.allMedicalDataOfAPatient = data)
-        }
-      )
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
   }
 
-  public convertToPDF() {
+  submitNewMedication(){
+    this.medicationData.isCurrent=true
+    this.medicationData.patientId=this.patientId
+    this.medications.push(this.medicationData)
+    this.medicationData = new Medication()
+    // this.medicationService.addMedication(this.medicationData)
+    //   .subscribe(data => {
+    //     console.log(`Newly added data ${data}`);
+    //     this.medications.push(data)
+    //   })
+    this.closePopup()
+  }
+
+  removeOrDeleteMedication(currMed: Medication) {
+    // this.medicationService.removeOrDeleteMedication(id)
+    //   .subscribe(
+    //     response => {
+    //       this.medicationService.getAllPatientRecords(this.patientId)
+    //         .subscribe(data => this.medications = data)
+    //     }
+    //   )
+    const index = this.medications.indexOf(currMed, 0);
+    if (index > -1) {
+      this.medications.splice(index, 1);
+}
+  }
+
+  public submit() {
+    // let pdf = this.convertToPdf()
+    
+    //past record
+    this.convertToPdf()
+    this.pastRecord.patientId=this.patientId
+    this.pastRecord.doctorId=this.doctorId
+    this.pastRecord.doctorName=this.doctor.doctorName
+    this.pastRecord.uploadDate=formatDate(new Date(), 'yyyy-MM-dd', 'en')
+    this.pastRecord.uploadedBy='Doctor'
+    this.pastRecordService.addPastRecord(this.pastRecord)
+    .subscribe(response => {
+      console.log(response);
+      
+    })
+    //medications
+    
+    //medicalData
+    
+  }
+
+  public convertToPdf(){
     var data = document.getElementById('contentToConvert');
+    // var retPdf = new Blob()
     html2canvas(data as HTMLElement).then(canvas => {
       // Few necessary setting options
       var imgWidth = 208;
@@ -382,27 +460,13 @@ export class AddMedicalRecordComponent implements OnInit {
       let pdf = new jspdf('p', 'mm', 'a4'); // A4 size page of PDF
       var position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)
-      pdf.save('new-file.pdf'); // Generated PDF
+      //pdf.save(`${this.patientId}_${new Date()}.pdf`); // Generated PDF
+      this.pastRecord.prescription = pdf.output('blob')
+      console.log('at convert '+this.pastRecord.prescription.size);
+      
     });
+    // return retPdf
   }
-
-//   toPdf() {
-//     const dashboard = document.getElementById('contentToConvert');
-
-//     const dashboardHeight = (dashboard as HTMLElement).clientHeight;
-//     const dashboardWidth = (dashboard as HTMLElement).clientWidth + 40;
-//     const options = { background: 'white', width: dashboardWidth, height: dashboardHeight };
-
-//     domtoimage.toPng((dashboard as Node), options).then((imgData) => {
-//          const doc = new jspdf(dashboardWidth > dashboardHeight ? 'l' : 'p', 'mm', [dashboardWidth, dashboardHeight]);
-//          const imgProps = doc.getImageProperties(imgData);
-//          const pdfWidth = doc.internal.pageSize.getWidth();
-//          const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-//          doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-//          doc.save('Dashboard for hyperpanels.pdf');
-//     });
-// }
 
 
 
