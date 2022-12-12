@@ -14,12 +14,11 @@ import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
-
+import { registerLicense } from '@syncfusion/ej2-base';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
-import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService} from '@syncfusion/ej2-angular-charts';
+import { ChartModule,CategoryService,ColumnSeriesService ,LineSeriesService,SplineAreaSeries, SplineRangeAreaSeriesService, SplineAreaSeriesService, AreaSeriesService, MultiColoredAreaSeriesService} from '@syncfusion/ej2-angular-charts';
 import { PulseLineGraphComponent } from './components/graphs/pulse-line-graph/pulse-line-graph.component';
 import { BpBarGraphComponent } from './components/graphs/bp-bar-graph/bp-bar-graph.component';
-import { BmiLineGraphComponent } from './components/graphs/bmi-line-graph/bmi-line-graph.component';
 import { PastRecordsComponent } from './components/past-records/past-records.component';
 import { HttpInterceptorAuthService } from './service/http/http-interceptor-auth.service';
 import { MedicalDataComponent } from './components/patient/medical-data/medical-data.component';
@@ -32,7 +31,9 @@ import { DocPatientMedicalDataComponent } from './components/doctor/doc-patient-
 import { AddMedicalRecordComponent } from './components/doctor/add-medical-record/add-medical-record.component';
 import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
+import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.component';
 
+registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39Rd0djXn9bdXBWRWBZ');
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,6 @@ import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/d
     DropdownComponent,
     CheckboxComponent,
     DocPatientDashboardComponent,
-    BmiLineGraphComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
     ButtonComponent,
@@ -57,11 +57,11 @@ import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/d
     PatientDashboardComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
-    BmiLineGraphComponent,
     AddMedicalRecordComponent,
     DocPatientMedicationComponent,
     DocPatientPastRecordsComponent,
-    DoctorDashboardComponent
+    DoctorDashboardComponent,
+    AreaGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -71,7 +71,9 @@ import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/d
     HttpClientModule,
     ChartModule
   ],
-  providers: [CategoryService,LineSeriesService,ColumnSeriesService, DatePipe],
+  providers: [CategoryService,LineSeriesService,ColumnSeriesService, MultiColoredAreaSeriesService,SplineAreaSeriesService,AreaSeriesService,DatePipe],
   bootstrap: [AppComponent]
-})
+}
+)
+
 export class AppModule { }

@@ -16,9 +16,52 @@ export class DocPatientDashboardComponent implements OnInit {
   '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 0] };
 
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
-  onClick() {
-    window.location.reload();
+  bmi: boolean = false;
+  pulse: boolean = false;
+  bp: boolean = true;
 
+  // onClick() {
+  //   window.location.reload();
+  // }
+  onClick(tab: any, menus: any) {
+    for (let key in menus) {
+      if (menus[key] == tab.value) {
+        menus[key][1] = true;
+    
+        if (menus[key][0]=='BMI'){
+          console.log(menus[key][0]);
+          this.bmi=true
+          this.pulse=false
+          this.bp=false
+        }
+        else{
+          if(menus[key][0]=='BLOOD PRESSURE'){
+            console.log(menus[key][0]);
+            this.bmi=false
+          this.pulse=false
+          this.bp=true
+          }
+          else{
+            if(menus[key][0]=='PULSE RATE'){
+              console.log(menus[key][0]);
+              this.bmi=false
+          this.pulse=true
+          this.bp=false
+            }
+          }
+        }
+      } else {
+        menus[key][1] = false;
+
+      }
+    }
   }
+
+  Graphmenus = {
+    '1': ['BLOOD PRESSURE', true], 
+    '2': ['PULSE RATE', false],
+    '3': ['BMI', false]
+  };
+
 
 }
