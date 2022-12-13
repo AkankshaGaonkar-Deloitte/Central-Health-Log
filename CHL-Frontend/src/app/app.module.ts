@@ -13,6 +13,7 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
+import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { LoginComponent } from './components/login-page/login/login.component';
 import { registerLicense } from '@syncfusion/ej2-base';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
@@ -46,6 +47,8 @@ registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39
     PulseLineGraphComponent,
     BpBarGraphComponent,
     ButtonComponent,
+    TabNavigationComponent,
+    ToBeRegisteredComponent
     TabNavigationComponent,
     DocPatientMedicalDataComponent,
     PatientRegistrationComponent,
