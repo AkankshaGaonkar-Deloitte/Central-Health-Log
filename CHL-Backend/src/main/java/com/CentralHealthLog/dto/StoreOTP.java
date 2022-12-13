@@ -1,6 +1,6 @@
 package com.CentralHealthLog.dto;
 
-import lombok.Data;
+        import lombok.Data;
 
 public class StoreOTP {
     private static int otp;

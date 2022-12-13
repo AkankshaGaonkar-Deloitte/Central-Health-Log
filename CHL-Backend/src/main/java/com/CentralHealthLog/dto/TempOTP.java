@@ -7,3 +7,4 @@ public class TempOTP {
     private int otp;
     private String phoneNo;
 }
+
