@@ -30,6 +30,8 @@ export class PatientService {
 
   getPatientDetailsById(id: number): Observable<Patient> {
     let headers = this.createAuthenticationHeader()
+    console.log('hit patientbyID');
+    
     return this.httpClient.get<Patient>(`${this.baseurl + '/patient'}/${id}`, { headers });
 
   }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Patient } from 'src/app/model/patient';
+import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -6,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./doctor-dashboard.component.scss']
 })
 export class DoctorDashboardComponent implements OnInit {
+patient=new Patient()
+  patientId!: string|number|null;
+GetPatient() {
+this.patientService.getPatientDetailsById(this.patientId as number).subscribe(data =>{this.patient=data; console.warn(this.patient.phoneNo);});
+console.log('after');
 
-  constructor() { }
+
+}
+ 
+  constructor(private patientService:PatientService) { }
   menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doctor/patient/medical-data', 1],
   '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 0] };
 

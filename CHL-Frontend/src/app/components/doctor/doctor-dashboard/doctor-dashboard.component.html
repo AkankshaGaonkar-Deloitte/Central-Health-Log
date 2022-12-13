@@ -13,10 +13,10 @@
                             [routerLink]="'/doctor-dashboard'">&lt; &nbsp; Back to Dashboard</a></div>
                     <div id="patient-id">
                         <div class="inp">
-                            <app-input [ipConfig]="searchPatientId"></app-input>
+                            <app-input [ipConfig]="searchPatientId" (outputEmit)="patientId=$event"></app-input>
                         </div>
-                        <div class="img-btn"><a [routerLink]="'/doc-patient-dashboard'"><img
-                                    src="assets/images/search.png" style="height: 2.5em;"></a>
+                        <div class="img-btn"><img (click)="GetPatient()"
+                                    src="assets/images/search.png" style="height: 2.5em;">
                         </div>
                     </div>
                 </div>
@@ -42,12 +42,12 @@
                             <p>Male:Female ratio</p>
                             <h3>2:3</h3>
                         </div>
-                        <div id="image"><img src="assets/images/person-icon.png" style=" height: 4.2em; width: 4em;">
+                        <div id="image" ><img src="assets/images/person-icon.png" style=" height: 4.2em; width: 4em;">
                         </div>
                     </div>
                 </div>
                 <div class="past-app">
-                    <b style="margin: 1.3em;">Past Appointments</b>
+                    <b style="margin: 1em; font-size: 1.2em;">Past Appointments</b>
                     <div class="table-container">
                         <table>
                             <tr>
