@@ -8,12 +8,11 @@
       </div>
       <div class="flex-item2">
         <div class="main">
-          <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+          <div id="text1"><a routerLink="/patient-dashboard"></a>Registered Doctors</div>
           <div id="doctor-id">
             <app-input [ipConfig]="searchDoctorId"></app-input>
             <app-button id="search"[btnConfig]="searchBtnConfig2" [btntext]="'search'"></app-button>
             </div>
-          <div id="registered-doctors">Registered Doctors</div>
           <div class="table-container">
             <table>
               <tr>
@@ -30,15 +29,12 @@
                 <td>{{doctor.qualification}}</td>
                 <td>{{doctor.speciality}}</td>
                 <td>{{doctor.phoneNo}}</td>
-                <!-- <td>{{todo.targetDate | date}}</td> -->
                 <td>
                   <app-button (onClick)="onClickEventReceived($event, doctor.id)" [btntext]="'Delete'" [btnConfig]="textBtnConfig"></app-button>
                 </td>
             </tr>
-  
-            </table>
+          </table>
           </div>
-  
         </div>
       </div>
     </div>

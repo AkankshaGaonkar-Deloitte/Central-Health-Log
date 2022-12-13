@@ -31,26 +31,6 @@
                 border-radius: 0.5em; 
 
                 #text1 {
-                    font-family: "Montserrat";
-                    font-style: normal;
-                    font-weight: 500;
-                    font-size: 1em;
-                    line-height: 1.25em;
-                    color: #737373;
-                    padding-top: 1.25em;
-                    padding-left: 1.25em;
-                }
-                #doctor-id{
-                    display: flex;
-                    justify-content: flex-end;
-                    margin-right: 1.25em;
-                    margin-top: -1.25em;
-                    #search{
-                    margin-left: 0.25em;
-                    }
-                    }
-
-                #registered-doctors{
                     display: flex;
                     font-family: 'Montserrat';
                     font-style: normal;
@@ -62,7 +42,16 @@
                     color: #000000;
                     padding-top: 1.25em;
                     padding-left: 1.25em;
+                }
+                #doctor-id{
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-right: 1.25em;
+                    margin-top: -1.25em;
+                    #search{
+                    margin-left: 0.25em;
                     }
+                }
                 .table-container {
                     position: relative;
                     margin: 1.25em;
@@ -143,19 +132,3 @@ td {
     display:flex;
 }
 
-
-
-
-.modal-title {
-    width: 10.25em;
-    height: 1.875em;
-
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.25em;
-    line-height: 1.875em;
-    letter-spacing: 0.1em;
-    color: rgba(0, 0, 0, 0.85);
-    
-}
