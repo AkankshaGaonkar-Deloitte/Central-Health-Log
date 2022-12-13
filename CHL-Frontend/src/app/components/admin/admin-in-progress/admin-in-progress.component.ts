@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Doctor } from 'src/app/model/doctor';
+import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.service';
 
 @Component({
   selector: 'app-admin-in-progress',
@@ -385,11 +387,14 @@ export class AdminInProgressComponent implements OnInit {
 
 
 
-  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 0],'2':['In Progress','/admin-in-progress',1],'3':['Registered Doctors','/admin-registered-doctors']}
+  menus = { '1': ['To Be Regsitered', '/to-be-registered', 0],'2':['In Progress','/in-progress',1],'3':['Registered Doctors','/registered-doctors']}
 
-  constructor() { }
+  constructor(public doctorDetailsService : DoctorDetailsService) { }
+  public doctors !: Doctor[];
 
   ngOnInit(): void {
+    this.doctorDetailsService.getDoctorByStatusCode("IN_PROGRESS").subscribe(data =>
+      this.doctors = data);
     // this.pastRecordService.getAllPatientRecords(43190)
     //   .subscribe(data => this.allPastRecordsOfAPatient = data);
 
@@ -403,6 +408,14 @@ export class AdminInProgressComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
   }
+
+  onClickEventReceived($event: any, id : any, statusCode : string){
+    this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
+      console.log("doctor status updated succesfully")
+      window.location.reload();
+    });
+  }
+  
 
   // submitNewPastRecord() {
   //   console.log(this.pastRecord);

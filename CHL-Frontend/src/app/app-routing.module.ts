@@ -13,8 +13,9 @@ import { DocPatientMedicationComponent } from './components/doctor/doc-patient-m
 import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { DocPatientDashboardComponent } from './components/doctor/doc-patient-dashboard/doc-patient-dashboard.component';
-import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
+import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
+import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 
 
 
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path : 'to-be-registered',
     component : ToBeRegisteredComponent
+  },
+  {
+    path : 'registered-doctors',
+    component : RegisteredDoctorsComponent
   },
   {
     path:'doctor-dashboard',
@@ -79,6 +84,8 @@ const routes: Routes = [
   {
     path : 'doc-patient-dashboard',
     component : DocPatientDashboardComponent
+  },
+  {
     path : 'in-progress',
     component : AdminInProgressComponent
   }

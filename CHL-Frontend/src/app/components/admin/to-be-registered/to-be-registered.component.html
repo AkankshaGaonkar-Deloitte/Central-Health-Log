@@ -11,9 +11,9 @@
           <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
           <div id="doctor-id">
             <app-input [ipConfig]="searchDoctorId"></app-input>
-            <app-button id="search"[btnConfig]="searchBtnConfig2" [btntext]="'search'"></app-button>
+            <app-button  [btntext]="'Search'" id="search"[btnConfig]="searchBtnConfig1"></app-button>
             </div>
-          <div id="registered-doctors">In Progress</div>
+          <div id="registered-doctors">To Be Registered Doctors</div>
           <div class="table-container">
             <table>
               <tr>
@@ -30,15 +30,15 @@
                 <td>{{doctor.qualification}}</td>
                 <td>{{doctor.speciality}}</td>
                 <td>{{doctor.phoneNo}}</td>
-                <td id="btn">
-                  <app-button (onClick)="onClickEventReceived($event, doctor.id, 'REGISTERED')" [btntext]="'Approve'" [btnConfig]="textBtnConfig "></app-button>
-                  <app-button (onClick)="onClickEventReceived($event, doctor.id,'TO_BE_REGISTERED')"  [btntext]="'Deny'" [btnConfig]="textBtnConfig3"></app-button>
+                <!-- <td>{{todo.targetDate | date}}</td> -->
+                <td>
+                  <app-button (onClick)="onClickEventReceived($event, doctor.id, 'IN_PROGRESS')" [btntext]="'Send'" [btnConfig]="textBtnConfig"></app-button>
                 </td>
             </tr>
-
+  
             </table>
           </div>
-
+  
         </div>
       </div>
     </div>

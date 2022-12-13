@@ -14,7 +14,6 @@ import { PersonalDetailsComponent } from './components/patient/personal-details/
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
-import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { LoginComponent } from './components/login-page/login/login.component';
 import { registerLicense } from '@syncfusion/ej2-base';
 import { PatientDashboardComponent } from './components/patient/patient-dashboard/patient-dashboard.component';
@@ -34,6 +33,8 @@ import { AddMedicalRecordComponent } from './components/doctor/add-medical-recor
 import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-past-records/doc-patient-past-records.component';
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.component';
+import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
+import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 
 registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39Rd0djXn9bdXBWRWBZ');
 @NgModule({
@@ -49,9 +50,7 @@ registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39
     BpBarGraphComponent,
     ButtonComponent,
     TabNavigationComponent,
-    AdminInProgressComponent
-    ToBeRegisteredComponent
-    TabNavigationComponent,
+    AdminInProgressComponent,
     DocPatientMedicalDataComponent,
     PatientRegistrationComponent,
     LoginComponent,
@@ -66,7 +65,9 @@ registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39
     DocPatientMedicationComponent,
     DocPatientPastRecordsComponent,
     DoctorDashboardComponent,
-    AreaGraphComponent
+    AreaGraphComponent,
+    ToBeRegisteredComponent,
+    RegisteredDoctorsComponent
   ],
   imports: [
     BrowserModule,
