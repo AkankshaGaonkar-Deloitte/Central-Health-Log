@@ -9,11 +9,16 @@
         <div class="flex-item2">
             <div class="main">
                 <div class="search">
-                    <div id="text1"><a routerLink="/doctor-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
+                    <div id="text1"><a style="text-decoration:none ; color: #737373;;"
+                            [routerLink]="'/doctor-dashboard'">&lt; &nbsp; Back to Dashboard</a></div>
                     <div id="patient-id">
-                        <app-input [ipConfig]="searchPatientId"></app-input>
-                       <a [routerLink]="'/doc-patient-dashboard'"><img src="assets/images/search.png"></a>
+                        <div class="inp">
+                            <app-input [ipConfig]="searchPatientId"></app-input>
                         </div>
+                        <div class="img-btn"><a [routerLink]="'/doc-patient-dashboard'"><img
+                                    src="assets/images/search.png" style="height: 2.5em;"></a>
+                        </div>
+                    </div>
                 </div>
                 <div class="inner-flex">
                     <div id="cards" class="card1">
@@ -21,7 +26,7 @@
                             <p>Number of appointments</p>
                             <h3>500</h3>
                         </div>
-                        <div id="image" style=" height: 4em; width: 3.8em;"><img src="assets/images/appointments.png">
+                        <div id="image"><img src="assets/images/appointments.png" style=" height: 4.2em; width: 4em;">
                         </div>
                     </div>
                     <div id="cards" class="card2">
@@ -29,7 +34,7 @@
                             <p>Total Patients</p>
                             <h3>360</h3>
                         </div>
-                        <div id="image" style=" height: 3.8em; width: 3.6em;"><img src="assets/images/person-icon.png">
+                        <div id="image"><img src="assets/images/person-icon.png" style=" height: 4.2em; width: 4em;">
                         </div>
                     </div>
                     <div id="cards" class="card1">
@@ -37,7 +42,7 @@
                             <p>Male:Female ratio</p>
                             <h3>2:3</h3>
                         </div>
-                        <div id="image" style=" height: 4em; width: 3.8em;"><img src="assets/images/person-icon.png">
+                        <div id="image"><img src="assets/images/person-icon.png" style=" height: 4.2em; width: 4em;">
                         </div>
                     </div>
                 </div>

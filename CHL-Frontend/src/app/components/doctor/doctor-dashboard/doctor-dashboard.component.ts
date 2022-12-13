@@ -19,7 +19,7 @@ export class DoctorDashboardComponent implements OnInit {
     label: 'to',
     placeholder: 'patient id',
     styling: {
-    width: '20em',
+    width: '18em',
     height: '2.5em',
     background: '#FFFFFF',
     border: '0.0625em solid #949494',
