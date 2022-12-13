@@ -375,4 +375,19 @@ export class PastRecordsComponent implements OnInit {
     this.closePopup()
   }
 
+  viewPrescription(prescriptionId: number | undefined) {
+    console.log('received presId: ' + prescriptionId)
+    this.pastRecordService.getPrescription(prescriptionId as number)
+      .subscribe(response => {
+        console.log('Inside view prescription');
+        console.log(response);
+        let pdf: Blob = response.prescription as Blob
+        const source = `data:application/pdf;base64,${pdf}`;
+        const link = document.createElement("a");
+        link.href = source;
+        link.download = `${this.patientId}_${new Date()}.pdf`
+        link.click();      
+      })
+  }
+
 }
