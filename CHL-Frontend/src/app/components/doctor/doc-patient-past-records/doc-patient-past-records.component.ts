@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PastRecord } from 'src/app/model/past-record';
+import { Prescription } from 'src/app/model/prescription';
 import { PastRecordService } from 'src/app/service/past-record.service';
 
 @Component({
@@ -348,10 +349,12 @@ export class DocPatientPastRecordsComponent implements OnInit {
   };
 
 
-  menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doctor/patient/medical-data', 0],
-  '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 1] };
+  menus1 = {
+    '1': ['Patient Dashboard', '/doc-patient-dashboard', 0], '2': ['Medical Data', '/doctor/patient/medical-data', 0],
+    '3': ['Medications', '/doctor/patient/medication', 0], '4': ['Past Records', '/doctor/patient/past-records', 1]
+  };
 
-  menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
+  menus = { '1': ['Dashboard', '/doctor-dashboard', 1], '2': ['Doctor Profile', '/doctor-profile'] }
 
   constructor(
     private pastRecordService: PastRecordService,
@@ -373,8 +376,23 @@ export class DocPatientPastRecordsComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  addMedicalRecord(){
+  addMedicalRecord() {
     this.router.navigate(['/doctor/patient/add-medical-data'])
+  }
+
+  viewPrescription(prescriptionId: number | undefined) {
+    console.log('received presId: ' + prescriptionId)
+    this.pastRecordService.getPrescription(prescriptionId as number)
+      .subscribe(response => {
+        console.log('Inside view prescription');
+        console.log(response);
+        let pdf: Blob = response.prescription as Blob
+        const source = `data:application/pdf;base64,${pdf}`;
+        const link = document.createElement("a");
+        link.href = source;
+        link.download = `${this.patientId}_${new Date()}.pdf`
+        link.click();      
+      })
   }
 
 } 

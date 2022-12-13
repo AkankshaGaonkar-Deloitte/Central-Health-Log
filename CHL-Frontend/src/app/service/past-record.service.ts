@@ -57,5 +57,10 @@ export class PastRecordService {
     return this.http.post<Prescription>('http://localhost:8080/patient/past-record/prescription', formData, {headers})
   }
 
+  getPrescription(prescriptionId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<Prescription>(`http://localhost:8080/patient/past-record/prescription/${prescriptionId}`, {headers})
+  }
+
   
 }

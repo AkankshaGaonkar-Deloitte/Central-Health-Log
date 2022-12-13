@@ -58,7 +58,7 @@
                 <td>{{pastRecord.uploadedBy}}</td>
                 <!-- <td>{{todo.targetDate | date}}</td> -->
                 <td>
-                  <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
+                  <app-button [btntext]="'View'" [btnConfig]="textBtnConfig" (click)="viewPrescription(pastRecord.prescriptionId)"></app-button>
                 </td>
             </tr>
   
