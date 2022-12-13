@@ -1,12 +1,10 @@
 package com.CentralHealthLog.controller;
 
-import com.CentralHealthLog.entity.PastRecord;
 import com.CentralHealthLog.entity.Prescription;
 import com.CentralHealthLog.service.PrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -15,7 +13,7 @@ import java.sql.SQLException;
 
 @RestController
 @CrossOrigin("*")
-public class FileUploadController {
+public class PrescriptionController {
 
     @Autowired
     private PrescriptionService prescriptionService;
@@ -30,5 +28,10 @@ public class FileUploadController {
             System.out.println(e.getMessage());
         }
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
+    @GetMapping("/patient/past-record/prescription/{id}")
+    public Prescription getPrescriptionById(@PathVariable Long id){
+        return prescriptionService.getPrescriptionById(id);
     }
 }
