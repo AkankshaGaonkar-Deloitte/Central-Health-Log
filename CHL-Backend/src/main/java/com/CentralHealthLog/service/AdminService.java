@@ -21,36 +21,18 @@ public class AdminService {
 //            return repository.saveAll(admins);
 //        }
 
-        public List<Doctor> get_all_to_be_registered_Doctors(){
-            return repository.findByStatusCode("TO_BE_REGISTERED");
+        public List<Doctor> get_doctors_based_on_status_code(String status_code){
+            return repository.findByStatusCode(status_code);
         }
-        public List<Doctor> get_all_in_progress_Doctors(){
-        return repository.findByStatusCode("IN_PROGRESS");
-    }
-        public List<Doctor> get_all_registered_Doctors(){
-        return repository.findByStatusCode("REGISTERED");
-    }
 
+        public  Doctor updateDoctorStatus(long id, String status_code){
+            Doctor doctor =  repository.findById(id).orElse(null);
+            doctor.setStatusCode(status_code);
+            return repository.save(doctor);
+        }
 
-//        public Admin get_to_be_registered_Doctors_By_Id(long id){
-//            return repository.findById(id).orElse(null);
-//        }
-//        public  Admin updateStatus(Admin admin){
-//            Admin to_be_registered_Doctors =  repository.findById(admin.getId()).orElse(null);
-//            if (admin.getDoctor_name() != null)
-//            {
-//                System.out.println(admin.getDoctor_name());
-//                to_be_registered_Doctors.setDoctor_name(admin.getDoctor_name());
-//            }
-//            if (admin.getHospital_name() != null)
-//            {
-//                System.out.println(admin.getHospital_name());
-//                to_be_registered_Doctors.setHospital_name(admin.getHospital_name());
-//            }
-//            if (admin.getSpeciality() != null) {
-//                System.out.println(admin.getSpeciality());
-//                to_be_registered_Doctors.setSpeciality(admin.getSpeciality());
-//            }
-//            return repository.save(to_be_registered_Doctors);
-//        }
+        public void deleteDoctor(long id)
+        {
+             repository.deleteById(id);
+        }
 }
