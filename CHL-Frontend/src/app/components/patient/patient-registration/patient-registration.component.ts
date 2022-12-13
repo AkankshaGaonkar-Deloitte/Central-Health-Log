@@ -42,7 +42,6 @@ export class PatientRegistrationComponent implements OnInit {
     this.patientregService.IfUsernameExists(
       String(this.patient.username)).subscribe(data => {
         user = data
-        console.warn(user)
         if (user) {
           this.usernameExists = true
           this.btndisable = true
@@ -59,7 +58,6 @@ export class PatientRegistrationComponent implements OnInit {
     this.patientregService.IfContactExists(
       Number(this.patient.phoneNo)).subscribe(data => {
         user = data
-        console.warn(user)
         if (user) {
           this.contactExists = true;
           this.btndisable = true
@@ -84,7 +82,6 @@ export class PatientRegistrationComponent implements OnInit {
     return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo)))
       .subscribe(
         data => {
-          console.log("Our return data: "+data.responseMessage as string);
           this.response = data
           console.log("actual response "+this.response.responseMessage);
           
