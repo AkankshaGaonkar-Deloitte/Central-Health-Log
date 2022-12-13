@@ -24,4 +24,8 @@ public class PrescriptionService {
         prescriptionRepository.save(prescription);
         return prescription;
     }
+
+    public Prescription getPrescriptionById(Long id){
+        return prescriptionRepository.findById(id).get();
+    }
 }
