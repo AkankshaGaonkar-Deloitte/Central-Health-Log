@@ -23,42 +23,42 @@
                             <p>Total diseases</p>
                             <h3>03</h3>
                         </div>
-                        <div id="image" style="background-color:#FCEAEE; height: 3.8em; width: 3.6em;"><img
+                        <div id="image" style="background-color:#FCEAEE; height: 4em; width: 3.8em;"><img
                                 src="assets/images/diseases.png"></div>
                     </div>
                     <div id="cards" class="card2">
                         <div class="text">
                             <p>Last Health Check-up</p>
-                          
+
                         </div>
-                        
+
                     </div>
                 </div>
                 <!-- <div class="refresh">
                             <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
                         </div> -->
 
-<div class="tab-nav">
-                <nav class="nav">
-                    <div class="tab" (click)="onClick(menu,menus)" [ngClass]="{'active': menu.value[1]===true}"
-                        *ngFor="let menu of menus | keyvalue" id="sidebar-element" >
-                        <div class="item">
-                            {{menu.value[0]}}
+                <div class="tabs">
+                    <nav class="nav">
+                        <div class="tab" (click)="onClick(menu,menus)" [ngClass]="{'active': menu.value[1]===true}"
+                            *ngFor="let menu of menus | keyvalue" id="sidebar-element">
+                            <div class="item">
+                                {{menu.value[0]}}
+                            </div>
                         </div>
-                    </div>
-                </nav>
-            </div>
+                    </nav>
+                </div>
                 <div class="charts">
                     <div *ngIf="bmi" class="bmiGraph">
                         <app-area-graph></app-area-graph>
                     </div>
-                        <div *ngIf="pulse" class="pulseRate">
-                            <pulse-line-graph></pulse-line-graph>
-                        </div>
-                        <div *ngIf="bp" class="bpGraph">
-                            <bp-graph></bp-graph>
-                        </div>
-                    
+                    <div *ngIf="pulse" class="pulseRate">
+                        <pulse-line-graph></pulse-line-graph>
+                    </div>
+                    <div *ngIf="bp" class="bpGraph">
+                        <bp-graph></bp-graph>
+                    </div>
+
                 </div>
             </div>
         </div>
