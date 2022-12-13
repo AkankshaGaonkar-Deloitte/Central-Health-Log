@@ -29,8 +29,6 @@ export class OtpService {
       }
     sendOtp(contact:SMSPojo): Observable<PostResponse>{
       let headers = this.createAuthenticationHeader()
-      // let httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json', }), responseType: 'text' as 'json' };
-      console.warn("sent otp")
       return this.httpClient.post<PostResponse>(`${this.baseurl+'/mobileNo'}`,contact, {headers})
 
     }
