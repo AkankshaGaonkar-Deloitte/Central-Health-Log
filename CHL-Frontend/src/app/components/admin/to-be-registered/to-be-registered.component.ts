@@ -43,8 +43,6 @@ textBtnConfig2 = {
   }
 };
 
-
-
 idConfig = {
   type: 'number',
   label: 'ID',
@@ -61,8 +59,6 @@ idConfig = {
   },
   patternErrorMessage: ''
 };
-
-
 searchDoctorId = {
   type: 'text',
   label: 'to',
@@ -98,9 +94,6 @@ searchDoctorId = {
   borderRadius: '0.25em'
   }
   };
-
-
-
 menus = { '1': ['To Be Registered', '/to-be-registered', 1],'2':['In Progress','/in-progress',0],'3':['Registered Doctors','/registered-doctors',0]}
 
 constructor(public doctorDetailsService : DoctorDetailsService) { }
@@ -113,13 +106,9 @@ ngOnInit(): void {
 
 }
 
-displayStyle = "none";
-
 onClickEventReceived($event: any, id : any, statusCode : string){
   this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
     console.log("doctor status updated succesfully")
-
-
     window.location.reload();
   });
 }

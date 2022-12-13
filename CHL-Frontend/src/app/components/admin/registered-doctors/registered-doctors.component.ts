@@ -25,8 +25,7 @@ export class RegisteredDoctorsComponent implements OnInit {
  
      }
    };
- 
-   textBtnConfig2 = {
+ textBtnConfig2 = {
      type: "submit",
      styles: {
        background: '#1CB5BD',
@@ -103,8 +102,6 @@ export class RegisteredDoctorsComponent implements OnInit {
       this.doctors = data);
  
    }
- 
-   displayStyle = "none";
    onClickEventReceived($event : any, id : any){
     this.doctorDetailsService.deleteDoctorById(id).subscribe(data => {
       console.log("deleted successfully");

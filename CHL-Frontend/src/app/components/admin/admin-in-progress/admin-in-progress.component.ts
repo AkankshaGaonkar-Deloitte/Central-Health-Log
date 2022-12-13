@@ -25,9 +25,7 @@ export class AdminInProgressComponent implements OnInit {
 
     }
   };
-
-  
-  textBtnConfig = {
+textBtnConfig = {
     type: "submit",
     styles: {
       background: '#fff',
@@ -133,10 +131,7 @@ export class AdminInProgressComponent implements OnInit {
     borderRadius: '0.25em'
     }
     };
-
-
-
-  menus = { '1': ['To Be Regsitered', '/to-be-registered', 0],'2':['In Progress','/in-progress',1],'3':['Registered Doctors','/registered-doctors']}
+ menus = { '1': ['To Be Regsitered', '/to-be-registered', 0],'2':['In Progress','/in-progress',1],'3':['Registered Doctors','/registered-doctors']}
 
   constructor(public doctorDetailsService : DoctorDetailsService) { }
   public doctors !: Doctor[];
@@ -146,9 +141,7 @@ export class AdminInProgressComponent implements OnInit {
       this.doctors = data);
    
   }
-
- 
-  onClickEventReceived($event: any, id : any, statusCode : string){
+onClickEventReceived($event: any, id : any, statusCode : string){
     this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
       console.log("doctor status updated succesfully")
       window.location.reload()
