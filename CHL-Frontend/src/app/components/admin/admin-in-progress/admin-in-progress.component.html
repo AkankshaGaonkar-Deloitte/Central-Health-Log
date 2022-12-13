@@ -11,9 +11,9 @@
           <div id="text1"><a routerLink="/patient-dashboard"></a>&lt; &nbsp; Back to Dashboard</div>
           <div id="doctor-id">
             <app-input [ipConfig]="searchDoctorId"></app-input>
-            <app-button  [btntext]="'Search'" id="search"[btnConfig]="searchBtnConfig1"></app-button>
+            <app-button id="search"[btnConfig]="searchBtnConfig2" [btntext]="'search'"></app-button>
             </div>
-          <div id="registered-doctors">To Be Registered Doctors</div>
+          <div id="registered-doctors">In Progress</div>
           <div class="table-container">
             <table>
               <tr>
@@ -31,14 +31,15 @@
                 <td></td>
                 <td></td>
                 <!-- <td>{{todo.targetDate | date}}</td> -->
-                <td>
-                  <app-button [btntext]="'Send'" [btnConfig]="textBtnConfig"></app-button>
+                <td id="btn">
+                  <app-button [btntext]="'Approve'" [btnConfig]="textBtnConfig "></app-button>
+                  <app-button [btntext]="'Deny'" [btnConfig]="textBtnConfig3"></app-button>
                 </td>
             </tr>
-  
+
             </table>
           </div>
-  
+
         </div>
       </div>
     </div>

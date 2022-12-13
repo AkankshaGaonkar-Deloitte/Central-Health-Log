@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-to-be-registered',
-  templateUrl: './to-be-registered.component.html',
-  styleUrls: ['./to-be-registered.component.scss']
+  selector: 'app-admin-in-progress',
+  templateUrl: './admin-in-progress.component.html',
+  styleUrls: ['./admin-in-progress.component.scss']
 })
-export class ToBeRegisteredComponent implements OnInit {
+export class AdminInProgressComponent implements OnInit {
 
   // pastRecord: PastRecord = new PastRecord(-1)
 
@@ -229,7 +229,7 @@ export class ToBeRegisteredComponent implements OnInit {
     type: "submit",
     styles: {
       background: '#fff',
-      color: '#1CB5BD',
+      color: '#52C41A',
       height: '2em',
       width: '5em',
       fontFamily: 'Montserrat',
@@ -238,8 +238,27 @@ export class ToBeRegisteredComponent implements OnInit {
       fontSize: '1.25em',
       lineHeight: '1.5em',
       textAlign: 'center',
+      margin: '0.15em',
+      border: '2px solid #52C41A',
 
     }
+  };
+  textBtnConfig3 = {
+    type: "submit",
+    styles: {
+      background: '#fff',
+      color: 'red',
+      height: '2em',
+      width: '5em',
+      fontFamily: 'Montserrat',
+      fontStyle: 'normal',
+      fontWeight: '500',
+      fontSize: '1.25em',
+      lineHeight: '1.5em',
+      textAlign: 'center',
+      margin: '0.15em',
+      border: '2px solid red',
+      }
   };
 
   textBtnConfig2 = {
@@ -349,7 +368,7 @@ export class ToBeRegisteredComponent implements OnInit {
     },
     patternErrorMessage: ''
     };
-    searchBtnConfig1 = {
+    searchBtnConfig2 = {
     type: "submit",
     styles: {
     color: '#fff',
@@ -365,8 +384,8 @@ export class ToBeRegisteredComponent implements OnInit {
     };
 
 
-  
-  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 1],'2':['In Progress','/admin-in-progress',0],'3':['Registered Doctors','/admin-registered-doctors',0]}
+
+  menus = { '1': ['To Be Regsitered', '/admin-to-be-registered', 0],'2':['In Progress','/admin-in-progress',1],'3':['Registered Doctors','/admin-registered-doctors']}
 
   constructor() { }
 
@@ -395,4 +414,4 @@ export class ToBeRegisteredComponent implements OnInit {
   //   this.closePopup()
   // }
 
-} 
+}

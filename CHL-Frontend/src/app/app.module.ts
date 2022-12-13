@@ -1,3 +1,4 @@
+import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -48,6 +49,7 @@ registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39
     BpBarGraphComponent,
     ButtonComponent,
     TabNavigationComponent,
+    AdminInProgressComponent
     ToBeRegisteredComponent
     TabNavigationComponent,
     DocPatientMedicalDataComponent,

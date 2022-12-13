@@ -118,23 +118,32 @@ th {
     color: rgba(0, 0, 0, 0.85);
 }
 
+
 table,
 th,
 td {
     border-left: none;
     border-right: none;
     border-bottom: 0.0625em solid rgba(0, 0, 0, 0.06);
+    
+    
 }
 
 td {
-    height: 1.375em;
+    height: 3.5em;
     font-family: "Montserrat";
     font-style: normal;
     font-weight: 400;
     font-size: 1em;
     line-height: 1.375em;
     color: rgba(0, 0, 0, 0.85);
+    
+      
+}#btn{
+    display:flex;
 }
+
+
 
 
 .modal-title {
@@ -148,4 +157,5 @@ td {
     line-height: 1.875em;
     letter-spacing: 0.1em;
     color: rgba(0, 0, 0, 0.85);
+    
 }

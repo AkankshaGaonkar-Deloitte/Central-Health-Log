@@ -14,6 +14,8 @@ import { DocPatientPastRecordsComponent } from './components/doctor/doc-patient-
 import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/doctor-dashboard.component';
 import { DocPatientDashboardComponent } from './components/doctor/doc-patient-dashboard/doc-patient-dashboard.component';
 import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
+import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
+
 
 
 const routes: Routes = [
@@ -77,8 +79,9 @@ const routes: Routes = [
   {
     path : 'doc-patient-dashboard',
     component : DocPatientDashboardComponent
+    path : 'in-progress',
+    component : AdminInProgressComponent
   }
-
 ];
 
 @NgModule({
