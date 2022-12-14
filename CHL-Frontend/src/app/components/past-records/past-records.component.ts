@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PastRecord } from 'src/app/model/past-record';
+import { Patient } from 'src/app/model/patient';
 import { PastRecordService } from 'src/app/service/past-record.service';
+import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
 
 @Component({
   selector: 'app-past-records',
@@ -10,7 +12,7 @@ import { PastRecordService } from 'src/app/service/past-record.service';
 export class PastRecordsComponent implements OnInit {
   pastRecord: PastRecord = new PastRecord(-1)
 
-  patientId: number = 43190
+  patientId!: number; 
 
   filterSelector: string = 'Date'
   dateFrom: string = ''
@@ -39,6 +41,7 @@ export class PastRecordsComponent implements OnInit {
     "Severity",
     "Doctor"
   ];
+  Userid!: string;
 
   filterSelectEventReceived(selectedFilter: string) {
     console.log(`At parent filter select ${selectedFilter}`);
@@ -348,10 +351,15 @@ export class PastRecordsComponent implements OnInit {
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 1] };
 
-  constructor(private pastRecordService: PastRecordService) { }
+  constructor(private pastRecordService: PastRecordService,private patientservice:PatientDetailsService) { }
+patient=new Patient()
 
   ngOnInit(): void {
-    this.pastRecordService.getAllPatientRecords(43190)
+    let id=sessionStorage.getItem(this.Userid)
+    this.patientId=Number(id)
+    this.patientservice.getPatientByPatientId(this.patientId).subscribe(data=>{this.patient=data; console.warn(this.patient);}
+    )
+    this.pastRecordService.getAllPatientRecords(this.patientId)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
 
   }
@@ -376,7 +384,6 @@ export class PastRecordsComponent implements OnInit {
   }
 
   viewPrescription(prescriptionId: number | undefined) {
-    console.log('received presId: ' + prescriptionId)
     this.pastRecordService.getPrescription(prescriptionId as number)
       .subscribe(response => {
         console.log('Inside view prescription');

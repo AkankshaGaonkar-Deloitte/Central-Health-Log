@@ -1,5 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
+import { Patient } from 'src/app/model/patient';
+import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
+import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
+import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -14,30 +18,24 @@ export class PatientDashboardComponent implements OnInit {
   pulse: boolean = false;
   bp: boolean = true;
 
-  // onClick() {
-  //   window.location.reload();
-  // }
   onClick(tab: any, menus: any) {
     for (let key in menus) {
       if (menus[key] == tab.value) {
         menus[key][1] = true;
     
         if (menus[key][0]=='BMI'){
-          console.log(menus[key][0]);
           this.bmi=true
           this.pulse=false
           this.bp=false
         }
         else{
           if(menus[key][0]=='BLOOD PRESSURE'){
-            console.log(menus[key][0]);
             this.bmi=false
           this.pulse=false
           this.bp=true
           }
           else{
             if(menus[key][0]=='PULSE RATE'){
-              console.log(menus[key][0]);
               this.bmi=false
           this.pulse=true
           this.bp=false
@@ -57,12 +55,16 @@ export class PatientDashboardComponent implements OnInit {
     '3': ['BMI', false]
   };
 
-  constructor() {
+  constructor(private patientDetailsService:PatientDetailsService) {
   }
   Userid!: string;
+  patient=new Patient()
   ngOnInit(): void {
-
-    console.warn(Number(sessionStorage.getItem(this.Userid)))
+    let id=sessionStorage.getItem(this.Userid)
+    this.patientDetailsService.getPatientByPatientId(Number(id))
+      .subscribe(response => {     
+        this.patient=response
+      })
   }
 }
 

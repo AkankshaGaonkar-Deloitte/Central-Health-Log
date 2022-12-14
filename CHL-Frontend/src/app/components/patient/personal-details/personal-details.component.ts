@@ -13,7 +13,7 @@ import { PatientDetailsService } from 'src/app/service/patient-details/patient-d
   styleUrls: ['./personal-details.component.scss'],
 })
 export class PersonalDetailsComponent implements OnInit {
-  patientId:number = 43190
+  patientId!: number;
   patient: Patient = new Patient()
 
   genderDropConfig = {
@@ -134,6 +134,7 @@ export class PersonalDetailsComponent implements OnInit {
   };
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 1], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
+  Userid!: string;
 
   constructor(
     private patientDetailsService: PatientDetailsService,
@@ -141,15 +142,16 @@ export class PersonalDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    let id=sessionStorage.getItem(this.Userid)
+    this.patientId=Number(id)
     this.patientDetailsService.getPatientByPatientId(this.patientId)
-      .subscribe(response => {
-        console.log(response);        
+      .subscribe(response => {       
         this.patient=response
       })
   }
 
+
   personalDetailsFormSubmit(){
-    console.log(this.patient);
     this.patientDetailsService.savePatientDetails(this.patient)
       .subscribe(response => this.patient = response)
   }

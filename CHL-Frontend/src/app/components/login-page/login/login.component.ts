@@ -36,7 +36,7 @@ adminbtndisable: boolean=false;
       this.patientregService.IfUsernameExists(
         String(this.userName)).subscribe(data => {
           this.user = data as Patient
-          console.warn(this.user)
+  
           if (this.user) {
             this.usernameExists = true;
             this.btndisable = false;
@@ -54,7 +54,7 @@ adminbtndisable: boolean=false;
         this.patientregService.IfDocUsernameExists(
           String(this.userName)).subscribe(data => {
             this.docUser = data as Doctor
-            console.warn(this.docUser)
+    
             if (this.docUser) {
               this.docusernameExists = true;
               this.docbtndisable = false;
@@ -68,7 +68,8 @@ adminbtndisable: boolean=false;
       }
     }
   }
-  Userid!: string;
+  Patientid!: string;
+
   loginPatient() {
     if (this.user.password == this.password) {
       this.router.navigate(['/patient-dashboard'])
@@ -76,9 +77,10 @@ adminbtndisable: boolean=false;
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem(this.Userid, String(this.user.id));
-    let id = sessionStorage.getItem(this.Userid);
-    console.warn(Number(id));
+    sessionStorage.setItem(this.Patientid, String(this.user.id));
+    let id = sessionStorage.getItem(this.Patientid);
+    console.warn(id);
+    
 
   }
 
@@ -94,7 +96,7 @@ adminbtndisable: boolean=false;
     }
     sessionStorage.setItem(this.Docid, String(this.docUser.id));
     let id = sessionStorage.getItem(this.Docid);
-    console.warn(Number(id));
+   
 
   }
   loginAdmin() {

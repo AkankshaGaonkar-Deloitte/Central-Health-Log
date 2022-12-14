@@ -11,7 +11,7 @@ import { MedicationService } from 'src/app/service/medication/medication.service
 })
 export class MedicalDataComponent implements OnInit {
 
-  patientId:number = 43190
+  patientId!: number;
   medicalData: MedicalData = new MedicalData()
 
   textDropConfig = {
@@ -171,6 +171,7 @@ export class MedicalDataComponent implements OnInit {
   };
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 1], '4': ["Medications", "/medications", 0], '5': ["Past Records", "/past-records", 0] };
+  Userid!: string;
 
   constructor(
     private medicalDataService: MedicalDataService,
@@ -178,9 +179,12 @@ export class MedicalDataComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    let id=sessionStorage.getItem(this.Userid)
+    this.patientId=Number(id)
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)
       .subscribe(response => this.medicalData=response)
   }
+
 
   medicalDataFormSubmit(){
     if (this.medicalData.isCurrent === undefined)
@@ -189,7 +193,6 @@ export class MedicalDataComponent implements OnInit {
     this.medicalData.patientId=this.patientId
 
     this.medicalData.uploadDate = formatDate(new Date(), 'yyyy-MM-dd', 'en')
-    console.log(this.medicalData);
     this.medicalDataService.saveMedicalData(this.medicalData)
       .subscribe(response => this.medicalData = response)
   }

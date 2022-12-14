@@ -25,7 +25,7 @@
 
             #main-text {
                 font-size: 2em;
-                padding-top: 1.5em;
+                // padding-top: 1.5em;
             }
 
             #moto-text {
@@ -43,17 +43,16 @@
             border-radius: 0.4em;
             display: flex;
             flex-direction: column;
-            width: 30%;
-            height: 60%;
+            width: 32%;
+            height: 62%;
             justify-content: space-evenly;
             align-items: center;
+            margin: 1.25em;
 
             form {
                 display: flex;
                 flex-direction: column;
                 gap: 1.7em;
-                // align-items: center;
-
 
                 #login-heading {
                     text-align: left;
@@ -75,7 +74,7 @@
                 #form-container {
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
                 }
 
                 .form-group {
@@ -89,7 +88,7 @@
                     font-size: 1em;
                     line-height: 1.1em;
                     color: #1A1A1A;
-                    padding-bottom: 0.4em;
+                    margin-bottom: 0.5em;
                 }
 
                 #buttons {
@@ -97,12 +96,11 @@
                     flex-direction: row;
                     gap: 0.5em;
                     align-items: center;
-
                 }
 
                 button {
                     font-weight: 500;
-                    font-size: 1emem;
+                    font-size: 1em;
                     line-height: 1.1em;
                     width: 8em;
                     height: 2.4em;
@@ -136,7 +134,6 @@
             }
             #login-btn {
                 width: 6em;
-                margin-bottom: 1em;
     
             }
         }
