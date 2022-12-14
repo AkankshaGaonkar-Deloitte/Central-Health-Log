@@ -79,3 +79,11 @@ VALUES
   (2,'Akanksha', '123', 'Akanksha Jain', '99999946', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'ashu@gmail.com', 'Neurologist', 49, 'Female', 'TO_BE_REGISTERED'),
   (3,'Prasad15', '123', 'Prasad Singh', '99999993', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'prasi@gmail.com', 'Neurologist', 49, 'Male', 'TO_BE_REGISTERED'),
   (4,'Bhishma', '123', 'Bhishma Malhotra', '99999992', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'bhi@gmail.com', 'Neurologist', 49, 'Male', 'IN_PROGRESS');
+
+  INSERT
+INTO
+  admin(
+    name
+  )
+VALUES
+  ('Admin');

@@ -11,6 +11,7 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+adminbtndisable: boolean=false;
   constructor(private router: Router, private patientregService: PatientRegService) { }
 
   userName!: string | number | null;
@@ -97,7 +98,8 @@ export class LoginComponent implements OnInit {
 
   }
   loginAdmin() {
-    console.warn('admin');
+    this.router.navigate(['/to-be-registered'])
+
   }
 
   ngOnInit(): void {

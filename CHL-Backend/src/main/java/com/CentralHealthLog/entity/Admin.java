@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.List;
 
@@ -15,9 +16,10 @@ import java.util.List;
 public class Admin {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-//    private String doctor_name;
+
+    private String name;
 //    private String hospital_name;
 //    private String speciality;
 //    private int contact_number;

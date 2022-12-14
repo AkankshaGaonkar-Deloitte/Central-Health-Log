@@ -25,7 +25,7 @@ const routes: Routes = [
   {
     path : 'doctor-profile',
     component : DoctorProfileComponent
-  }
+  },
   {
     path : 'to-be-registered',
     component : ToBeRegisteredComponent

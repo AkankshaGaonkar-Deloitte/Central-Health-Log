@@ -36,6 +36,7 @@ import { DoctorDashboardComponent } from './components/doctor/doctor-dashboard/d
 import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.component';
 import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
+import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
 
 @NgModule({
   declarations: [
