@@ -28,13 +28,14 @@ export class NavbarComponent implements OnInit {
   textBtnConfig = {
     type:"button",
     styles: {
-      height: '1.2em',
+      height: '2em',
 
     }
   };
 
   saveValue($event:string){
     if ($event==='Logout'){this.router.navigate(['/login']);
+    sessionStorage.clear();
   }
   }
 
