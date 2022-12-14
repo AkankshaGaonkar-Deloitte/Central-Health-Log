@@ -373,8 +373,10 @@
                 }
 
                 .submit-form{
-                    margin-left: 1.25em;
-                    margin-bottom: 1.25em;
+                    display: inline-flex;
+                    justify-content: space-between;
+                    margin: 1.25em;
+
                 }
             }
         }

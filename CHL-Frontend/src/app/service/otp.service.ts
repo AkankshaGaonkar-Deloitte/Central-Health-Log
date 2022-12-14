@@ -32,10 +32,12 @@ export class OtpService {
       return this.httpClient.post<PostResponse>(`${this.baseurl+'/mobileNo'}`,contact, {headers})
 
     }
-    VerifyOtp(contactAndOtp:TempOTP):Observable<String>{
+    VerifyOtp(contactAndOtp:TempOTP):Observable<PostResponse>{
       let headers = this.createAuthenticationHeader()
       console.warn("verify")
-      return this.httpClient.post<String>(`${this.baseurl+'/otp'}`,contactAndOtp, {headers})
+      console.log(contactAndOtp);
+      
+      return this.httpClient.post<PostResponse>(`${this.baseurl+'/otp'}`,contactAndOtp, {headers})
 
     }
     

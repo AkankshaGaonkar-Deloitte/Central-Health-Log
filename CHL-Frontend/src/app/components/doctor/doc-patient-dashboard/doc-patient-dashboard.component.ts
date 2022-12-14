@@ -1,4 +1,7 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Patient } from 'src/app/model/patient';
+import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
 
 @Component({
   selector: 'app-doc-patient-dashboard',
@@ -7,11 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DocPatientDashboardComponent implements OnInit {
 
-  constructor() { }
+  patientId:number = 43190
+  patient: Patient = new Patient()
+  constructor(private patientDetailsService: PatientDetailsService,
+    private datePipe: DatePipe
+  ) { }
 
   ngOnInit(): void {
-  }
-  
+    this.patientDetailsService.getPatientByPatientId(this.patientId)
+      .subscribe(data => {
+        console.log(data);        
+        this.patient=data
+      })
+    }
+
   menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 1],'2': ['Medical Data', '/doctor/patient/medical-data', 0],
   '3': ['Medications', '/doctor/patient/medication', 0],'4': ['Past Records', '/doctor/patient/past-records', 0] };
 
@@ -66,3 +78,4 @@ export class DocPatientDashboardComponent implements OnInit {
 
 
 }
+

@@ -9,13 +9,11 @@
         <div class="flex-item2">
             <div class="main">
                 <div class="search">
-                    <div id="text1"><a style="text-decoration:none ; color: #737373;;"
-                            [routerLink]="'/doctor-dashboard'">&lt; &nbsp; Back to Dashboard</a></div>
                     <div id="patient-id">
                         <div class="inp">
                             <app-input [ipConfig]="searchPatientId" (outputEmit)="patientId=$event"></app-input>
                         </div>
-                        <div class="img-btn"><img (click)="GetPatient()" [routerLink]="'/doc-patient-dashboard'"
+                        <div class="img-btn"><img (click)="GetPatient()" 
                                     src="assets/images/search.png" style="height: 2.5em;">
                         </div>
                     </div>

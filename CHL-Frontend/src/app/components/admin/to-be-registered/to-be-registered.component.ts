@@ -8,6 +8,12 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./to-be-registered.component.scss']
 })
 export class ToBeRegisteredComponent implements OnInit {
+  displayStyle = "none";
+
+
+  closePopup() {
+    this.displayStyle = "none";
+  }
 
 textBtnConfig = {
   type: "submit",
@@ -109,7 +115,8 @@ ngOnInit(): void {
 onClickEventReceived($event: any, id : any, statusCode : string){
   this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
     console.log("doctor status updated succesfully")
-    window.location.reload();
+    this.displayStyle = "block";
+    // window.location.reload();
   });
 }
 

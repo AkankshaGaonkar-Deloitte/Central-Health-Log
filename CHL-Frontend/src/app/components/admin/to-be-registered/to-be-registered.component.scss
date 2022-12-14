@@ -126,3 +126,21 @@ td {
 }
 
 
+.modal{
+    width: 25em;
+    height: 9em;
+    position: absolute;
+    left:40em;
+    top:5em;
+    text-align: center;
+    align-self: center;
+    border: 1em solid #DAFDFF;
+}
+.modal-content{
+    width: 25em;
+    align-items: center;
+    background-color: #FFF;
+    color: #1CB5BD;
+    padding-right:2em;
+    
+}

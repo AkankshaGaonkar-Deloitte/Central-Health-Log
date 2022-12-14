@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Patient } from 'src/app/model/patient';
 import { PostResponse } from 'src/app/model/post-response';
 import { SMSPojo } from 'src/app/model/SMSPojo';
@@ -16,7 +17,7 @@ export class DoctorDashboardComponent implements OnInit {
   patientId!: string | number | null;
   response: PostResponse = new PostResponse('')
 
-  constructor(private patientService: PatientService, private otpService: OtpService) { }
+  constructor(private patientService: PatientService, private otpService: OtpService,private router:Router) { }
   displayStyle = "none";
 
   GetPatient() {
@@ -61,14 +62,22 @@ export class DoctorDashboardComponent implements OnInit {
     this.displayStyle = "none";
   }
 
+
   Verifyotp() {
-    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp)))
+    return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
       .subscribe(
         data => {
           console.log(data);
-          
+          if (data.responseMessage=="OTP verified!"){
+            this.router.navigate(['/doc-patient-dashboard'])
+          }
+          else{
+            console.log(data.responseMessage);
+            
+          }
         }
       )
+
 
   }
   menus1 = {

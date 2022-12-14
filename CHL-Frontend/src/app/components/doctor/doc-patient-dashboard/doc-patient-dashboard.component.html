@@ -7,58 +7,67 @@
             <app-sidebar [menus]="menus"></app-sidebar>
         </div>
         <div class="flex-item2">
-            <div id="text1">&lt; &nbsp; Back to Dashboard</div>
-          <div id="tabs">
+            <div id="text1"><a style="text-decoration:none ; color: #737373;;" [routerLink]="'/doctor-dashboard'">&lt;
+                    &nbsp; Back to Dashboard</a></div>
+
+            <div id="tabs">
                 <tab-navigation [tabs]="menus1"></tab-navigation>
             </div>
             <div class="main-flex">
                 <div class="inner-flex">
-                    <div id="cards" class="card1">
-                        <div class="text">
-                            <p>Number of appointments</p>
-                            <h3>16</h3>
-                        </div>
-                        <div id="image" ><img src="assets/images/appointments.png" style=" height: 4.1em; width: 3.8em;"s></div>
-                    </div>
-                    <div id="cards" class="card2">
-                        <div class="text">
-                            <p>Total diseases</p>
-                            <h3>03</h3>
-                        </div>
-                        <div id="image" ><img
-                                src="assets/images/diseases.png" style=" height: 4.1em; width: 3.8em;"></div>
-                    </div>
-                    <div id="cards" class="card2">
-                        <div class="text">
-                            <p>Last Health Check-up</p>
-
-                        </div>
-
-                    </div>
-                </div>
-                <!-- <div class="refresh">
-                            <app-button [btntext]="'Refresh'" (onClick)="onClick()"></app-button>
-                        </div> -->
-
-                <div class="tabs">
-                    <nav class="nav">
-                        <div class="tab" (click)="onClick(menu,Graphmenus)" [ngClass]="{'active': menu.value[1]===true}"
-                            *ngFor="let menu of Graphmenus | keyvalue" id="sidebar-element">
-                            <div class="item">
-                                {{menu.value[0]}}
+                    <div class="details">
+                        <div id="cards">
+                            <div class="text">
+                                <p>{{patient.firstname}} {{patient.lastname}}</p>
+                                <div>Age :   {{patient.age}} years</div>
+                                <div>Gender : {{patient.gender}} </div>
+                            </div>
+                            <div id="image"><img src="assets/images/person-icon.png"
+                                    style=" height: 4.1em; width: 3.8em;">
                             </div>
                         </div>
-                    </nav>
-                </div>
-                <div class="charts">
-                    <div *ngIf="bmi" class="bmiGraph">
-                        <app-area-graph></app-area-graph>
+                        <div id="cards">
+                            <div class="text">
+                                <p>Contact Details</p>
+                                <div>{{patient.email}}</div>
+                                <div>{{patient.phoneNo}}</div>
+                                <div>{{patient.address}}</div>
+                                
+                                
+                                
+                            </div>
+                            <div id="image"><img src="assets/images/appointments.png"
+                                    style=" height: 4.1em; width: 3.8em;">
+                            </div>
+                        </div>
                     </div>
-                    <div *ngIf="pulse" class="pulseRate">
-                        <pulse-line-graph></pulse-line-graph>
-                    </div>
-                    <div *ngIf="bp" class="bpGraph">
-                        <bp-graph></bp-graph>
+                    <div class="graphs">
+                        <div class="head">
+                            <p></p>
+                        </div>
+                        <div class="tabs">
+                            <nav class="nav">
+                                <div class="tab" (click)="onClick(menu,Graphmenus)"
+                                    [ngClass]="{'active': menu.value[1]===true}"
+                                    *ngFor="let menu of Graphmenus | keyvalue" id="sidebar-element">
+                                    <div class="item">
+                                        {{menu.value[0]}}
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="charts">
+                            <div *ngIf="bmi" class="bmiGraph">
+                                <app-area-graph></app-area-graph>
+                            </div>
+                            <div *ngIf="pulse" class="pulseRate">
+                                <pulse-line-graph></pulse-line-graph>
+                            </div>
+                            <div *ngIf="bp" class="bpGraph">
+                                <bp-graph></bp-graph>
+                            </div>
+
+                        </div>
                     </div>
 
                 </div>

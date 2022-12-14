@@ -36,7 +36,7 @@ public class OtpService {
         return otp;
     }
 
-    //this method is used to return the otp number against key. Where key is the username
+
     public int getOtp(String key){
         try{
             return otpCache.get(key);
@@ -47,8 +47,14 @@ public class OtpService {
         }
     }
 
+
     //this method is used to clear the otp cache
     public void clearOtp(String key){
         otpCache.invalidate(key);
     }
 }
+
+
+
+
+
