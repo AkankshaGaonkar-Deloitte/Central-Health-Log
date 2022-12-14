@@ -15,7 +15,7 @@
                         <div class="inp">
                             <app-input [ipConfig]="searchPatientId" (outputEmit)="patientId=$event"></app-input>
                         </div>
-                        <div class="img-btn"><img (click)="GetPatient()"
+                        <div class="img-btn"><img (click)="GetPatient()" [routerLink]="'/doc-patient-dashboard'"
                                     src="assets/images/search.png" style="height: 2.5em;">
                         </div>
                     </div>
