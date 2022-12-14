@@ -18,8 +18,14 @@ import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 
 
+import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+
 
 const routes: Routes = [
+  {
+    path : 'doctor-profile',
+    component : DoctorProfileComponent
+  }
   {
     path : 'to-be-registered',
     component : ToBeRegisteredComponent

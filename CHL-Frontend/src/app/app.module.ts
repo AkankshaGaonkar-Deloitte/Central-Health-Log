@@ -1,4 +1,3 @@
-import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +12,8 @@ import { DocPatientDashboardComponent } from './components/doctor/doc-patient-da
 import { PersonalDetailsComponent } from './components/patient/personal-details/personal-details.component';
 import { ButtonComponent } from './common/button/button.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+
 import { TabNavigationComponent } from './common/tab-navigation/tab-navigation.component';
 import { LoginComponent } from './components/login-page/login/login.component';
 import { registerLicense } from '@syncfusion/ej2-base';
@@ -36,7 +37,6 @@ import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.co
 import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 
-registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39Rd0djXn9bdXBWRWBZ');
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,10 +45,11 @@ registerLicense('ORg4AjUWIQA/Gnt2VVhjQlFac1dJXHxIf0x0RWFab1h6cVxMYllBNQtUQF1hS39
     SidebarComponent,
     DropdownComponent,
     CheckboxComponent,
+    ButtonComponent,
     DocPatientDashboardComponent,
     PulseLineGraphComponent,
     BpBarGraphComponent,
-    ButtonComponent,
+    DoctorProfileComponent,
     TabNavigationComponent,
     AdminInProgressComponent,
     DocPatientMedicalDataComponent,
