@@ -20,6 +20,8 @@ public class Admin {
     private Long id;
 
     private String name;
+    private String username;
+    private String password;
 //    private String hospital_name;
 //    private String speciality;
 //    private int contact_number;
