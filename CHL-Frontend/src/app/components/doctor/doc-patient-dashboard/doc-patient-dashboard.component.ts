@@ -57,6 +57,7 @@ export class DocPatientDashboardComponent implements OnInit {
     }
   }
 
+  
   Graphmenus = {
     '1': ['BLOOD PRESSURE', true], 
     '2': ['PULSE RATE', false],
