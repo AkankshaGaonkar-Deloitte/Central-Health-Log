@@ -116,7 +116,7 @@ onClickEventReceived($event: any, id : any, statusCode : string){
   this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
     console.log("doctor status updated succesfully")
     this.displayStyle = "block";
-    // window.location.reload();
+    window.location.reload();
   });
 }
 
