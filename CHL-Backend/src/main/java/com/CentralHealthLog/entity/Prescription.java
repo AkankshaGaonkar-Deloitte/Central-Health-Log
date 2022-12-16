@@ -18,4 +18,6 @@ public class Prescription {
 
     @Lob
     private byte[] prescription;
+
+    private String checksum;
 }
