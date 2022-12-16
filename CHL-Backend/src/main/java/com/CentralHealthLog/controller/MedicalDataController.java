@@ -23,6 +23,6 @@ public class MedicalDataController {
     public ResponseEntity<MedicalData> addNewMedicalData(@RequestBody MedicalData medicalData){
         System.out.println("--------------------> " + medicalData.toString());
         MedicalData savedMedicalData = medicalDataService.saveMedicalData(medicalData);
-        return new ResponseEntity<MedicalData>(savedMedicalData, HttpStatus.OK);
+        return new ResponseEntity<MedicalData>(savedMedicalData, HttpStatus.CREATED);
     }
 }

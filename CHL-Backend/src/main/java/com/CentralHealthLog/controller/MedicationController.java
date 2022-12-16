@@ -25,7 +25,7 @@ public class MedicationController {
     @PostMapping("/patient/medications")
     public ResponseEntity<Medication> addMedication(@RequestBody Medication medication){
         Medication savedMedication = medicationService.addMedication(medication);
-        return new ResponseEntity<Medication>(savedMedication, HttpStatus.OK);
+        return new ResponseEntity<Medication>(savedMedication, HttpStatus.CREATED);
     }
 
     @DeleteMapping("/patient/medications/{id}")

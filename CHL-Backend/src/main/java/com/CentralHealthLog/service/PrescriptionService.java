@@ -39,4 +39,18 @@ public class PrescriptionService {
     public Prescription getPrescriptionById(Long id){
         return prescriptionRepository.findById(id).get();
     }
+
+    public boolean verifyPrescription(MultipartFile prescriptionToVerify) throws IOException {
+        try {
+            InputStream is = prescriptionToVerify.getInputStream();
+            String ipChecksum = DigestUtils.md5Hex(is);
+            System.out.println("Input checksum: "+ipChecksum);
+            if (!prescriptionRepository.findByChecksum(ipChecksum).isEmpty())
+                return true;
+            else
+                return false;
+        }catch(IOException e){
+            throw new IOException(e.getMessage());
+        }
+    }
 }

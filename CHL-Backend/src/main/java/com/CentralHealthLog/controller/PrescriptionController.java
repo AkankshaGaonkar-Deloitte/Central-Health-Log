@@ -23,10 +23,28 @@ public class PrescriptionController {
         try {
             System.out.println(prescription.getContentType());
             Prescription savedPrescription =  prescriptionService.addPrescription(prescription);
-            return new ResponseEntity(savedPrescription, HttpStatus.OK);
+            return new ResponseEntity(savedPrescription, HttpStatus.CREATED);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+    }
+
+    @PostMapping("/patient/past-record/verify-prescription")
+    public ResponseEntity<String> verifyPrescription(@RequestBody MultipartFile prescription) throws SQLException, IOException {
+        try {
+            System.out.println(prescription.getContentType());
+            boolean found = prescriptionService.verifyPrescription(prescription);
+            System.out.println(found);
+            if (found == true)
+                return new ResponseEntity<String>(new String("Prescription Verified!"), HttpStatus.FOUND);
+            else if (found == false){
+                return new ResponseEntity<String>(new String("Invalid prescription!"), HttpStatus.NO_CONTENT);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("At outer return");
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
