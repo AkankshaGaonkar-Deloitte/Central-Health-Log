@@ -77,7 +77,7 @@ adminbtndisable: boolean=false;
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem(this.Patientid, String(this.user.id));
+    sessionStorage.setItem('user-id', String(this.user.id));
     let id = sessionStorage.getItem(this.Patientid);
     console.warn(id);
     
@@ -94,7 +94,7 @@ adminbtndisable: boolean=false;
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem(this.Docid, String(this.docUser.id));
+    sessionStorage.setItem('user-id', String(this.docUser.id));
     let id = sessionStorage.getItem(this.Docid);
    
 

@@ -142,7 +142,7 @@ export class PersonalDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id=sessionStorage.getItem(this.Userid)
+    let id=sessionStorage.getItem('user-id')
     this.patientId=Number(id)
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {       

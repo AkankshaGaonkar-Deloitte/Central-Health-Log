@@ -355,7 +355,7 @@ export class PastRecordsComponent implements OnInit {
 patient=new Patient()
 
   ngOnInit(): void {
-    let id=sessionStorage.getItem(this.Userid)
+    let id=sessionStorage.getItem('user-id')
     this.patientId=Number(id)
     this.patientservice.getPatientByPatientId(this.patientId).subscribe(data=>{this.patient=data; console.warn(this.patient);}
     )

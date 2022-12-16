@@ -179,7 +179,7 @@ export class MedicalDataComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    let id=sessionStorage.getItem(this.Userid)
+    let id=sessionStorage.getItem('user-id')
     this.patientId=Number(id)
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)
       .subscribe(response => this.medicalData=response)

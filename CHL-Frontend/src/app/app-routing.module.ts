@@ -19,32 +19,39 @@ import { RegisteredDoctorsComponent } from './components/admin/registered-doctor
 
 
 import { DoctorProfileComponent } from './components/doctor/doctor-profile/doctor-profile.component';
+import { RouteGuardService } from './service/route-guard/route-guard.service';
 
 
 const routes: Routes = [
   {
     path : 'doctor-profile',
-    component : DoctorProfileComponent
+    component : DoctorProfileComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'to-be-registered',
-    component : ToBeRegisteredComponent
+    component : ToBeRegisteredComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'registered-doctors',
-    component : RegisteredDoctorsComponent
+    component : RegisteredDoctorsComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path:'doctor-dashboard',
-    component:DoctorDashboardComponent
+    component:DoctorDashboardComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'doctor/patient/past-records',
-    component : DocPatientPastRecordsComponent
+    component : DocPatientPastRecordsComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'doctor/patient/medication',
-    component : DocPatientMedicationComponent
+    component : DocPatientMedicationComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path:'registration',
@@ -52,31 +59,38 @@ const routes: Routes = [
   },
   {
     path : 'patient-dashboard',
-    component : PatientDashboardComponent
+    component : PatientDashboardComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path:'doctor/patient/medical-data',
-    component : DocPatientMedicalDataComponent
+    component : DocPatientMedicalDataComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path: 'doctor/patient/add-medical-data',
-    component : AddMedicalRecordComponent
+    component : AddMedicalRecordComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'medical-data',
-    component : MedicalDataComponent
+    component : MedicalDataComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'medications',
-    component : MedicationsComponent
+    component : MedicationsComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'personal-details',
-    component : PersonalDetailsComponent
+    component : PersonalDetailsComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'past-records',
-    component : PastRecordsComponent
+    component : PastRecordsComponent,
+    canActivate: [RouteGuardService]
   },
   {
     path : 'login',
