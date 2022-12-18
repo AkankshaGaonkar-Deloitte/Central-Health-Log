@@ -15,6 +15,7 @@ import { PostResponse } from 'src/app/model/post-response';
   styleUrls: ['./patient-registration.component.scss']
 })
 export class PatientRegistrationComponent implements OnInit {
+  [x: string]: any;
   errors: any;
   constructor(private router: Router, private patientregService: PatientRegService
     , private otpService: OtpService) { }
@@ -39,35 +40,69 @@ export class PatientRegistrationComponent implements OnInit {
 
   onUserID() {
     let user: Object;
-    this.patientregService.IfUsernameExists(
-      String(this.patient.username)).subscribe(data => {
-        user = data
-        if (user) {
-          this.usernameExists = true
-          this.btndisable = true
-        }
-        else {
-          if (user == null)
-            this.usernameExists = false
-          if (!this.contactExists) { this.btndisable = false }
-        }
-      })
+    if (this.patientActive) {
+      this.patientregService.IfUsernameExists(
+        String(this.patient.username)).subscribe(data => {
+          user = data
+          if (user) {
+            this.usernameExists = true
+            this.btndisable = true
+          }
+          else {
+            if (user == null)
+              this.usernameExists = false
+            if (!this.contactExists) { this.btndisable = false }
+          }
+        })
+    }
+    else {
+      this.patientregService.IfDocUsernameExists(
+        String(this.doctor.username)).subscribe(data => {
+          user = data
+          if (user) {
+            this.usernameExists = true
+            this.btndisable = true
+          }
+          else {
+            if (user == null)
+              this.usernameExists = false
+            if (!this.contactExists) { this.btndisable = false }
+          }
+        })
+    }
   }
   onPhoneNo() {
     let user: Object;
-    this.patientregService.IfContactExists(
-      Number(this.patient.phoneNo)).subscribe(data => {
-        user = data
-        if (user) {
-          this.contactExists = true;
-          this.btndisable = true
-        }
-        else {
-          if (user == null)
-            this.contactExists = false;
-          if (!this.usernameExists) { this.btndisable = false }
-        }
-      })
+    if (this.patientActive) {
+      this.patientregService.IfContactExists(
+        Number(this.patient.phoneNo)).subscribe(data => {
+          user = data
+          if (user) {
+            this.contactExists = true;
+            this.btndisable = true
+          }
+          else {
+            if (user == null)
+              this.contactExists = false;
+            if (!this.usernameExists) { this.btndisable = false }
+          }
+        })
+    }
+    else {
+      this.patientregService.IfDocContactExists(
+        Number(this.doctor.phoneNo)).subscribe(data => {
+          user = data
+          if (user) {
+            this.contactExists = true;
+            this.btndisable = true
+          }
+          else {
+            if (user == null)
+              this.contactExists = false;
+            if (!this.usernameExists) { this.btndisable = false }
+          }
+        })
+    }
   }
   msg: string = ''
 
@@ -76,36 +111,65 @@ export class PatientRegistrationComponent implements OnInit {
   response: PostResponse = new PostResponse('')
 
   displayStyle = "none";
+
   openPopup() {
     this.displayStyle = "block";
-    console.warn(this.patient.phoneNo)
-    return this.otpService.sendOtp(new SMSPojo(String(this.patient.phoneNo)))
-      .subscribe(
-        data => {
+    if (this.patientActive) {
+      return this.otpService.sendOtp(new SMSPojo('+91' + this.patient.phoneNo as string))
+        .subscribe(data => {
           this.response = data
-          console.log("actual response "+this.response.responseMessage);
-          
+          console.log(this.response.responseMessage);
         }
-  );
-    
-
-
+        );
+    }
+    else {
+      return this.otpService.sendOtp(new SMSPojo('+91' + this.doctor.phoneNo as string))
+        .subscribe(data => {
+          this.response = data
+          console.log(this.response.responseMessage);
+        }
+        );
+    }
   }
+
   closePopup() {
     this.displayStyle = "none";
   }
 
+  verified: boolean = false;
+  invalid:boolean=false;
+
   Verifyotp() {
-    console.log(new TempOTP((this.patient.phoneNo as string), (this.otp as number)));
-    return this.otpService.VerifyOtp(new TempOTP(String(this.patient.phoneNo), Number(this.otp)))
+    return this.otpService.VerifyOtp(new TempOTP(String('+91' + this.patient.phoneNo), Number(this.otp)))
       .subscribe(
         data => {
           console.log(data);
-          
+
+          if (data.responseMessage == "OTP verified!") {
+            if (this.patientActive) {
+              this.patientregService.addPatient(this.patient)
+                .subscribe(data => {
+                  this.patient = data;
+                })
+              this.verified = true
+            }
+            else {
+              this.patientregService.addDoctor(this.doctor)
+                .subscribe(data => {
+                  this.doctor = data;
+                  console.log(this.doctor);
+                })
+                this.verified = true
+            }
+          }
+          else {
+            this.invalid=true;
+
+          }
         }
       )
-
   }
+
   optionList = [
     "Female",
     "Male",
@@ -146,7 +210,7 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'firstname',
     placeholder: '',
     styling: {
-      width: '17em',
+      width: '15.5em',
       height: '2em',
       borderRadius: '0.2em'
     },
@@ -163,7 +227,7 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'contact',
     placeholder: '',
     styling: {
-      width: '17em',
+      width: '15.5em',
       height: '2em',
       borderRadius: '0.2em'
     },
@@ -180,7 +244,7 @@ export class PatientRegistrationComponent implements OnInit {
     label: 'password',
     placeholder: '',
     styling: {
-      width: '17em',
+      width: '15.5em',
       height: '2em',
       borderRadius: '0.2em'
     },
@@ -197,7 +261,7 @@ export class PatientRegistrationComponent implements OnInit {
     label: '',
     placeholder: '',
     styling: {
-      width: '17em',
+      width: '15.5em',
       height: '2em',
       borderRadius: '0.2em',
     },
@@ -215,7 +279,7 @@ export class PatientRegistrationComponent implements OnInit {
   textDropConfig = {
     styles: {
       height: '2em',
-      width: '17em',
+      width: '15.5em',
       borderRadius: '0.2em',
       border: '0.025em solid #949494'
     }
@@ -231,16 +295,6 @@ export class PatientRegistrationComponent implements OnInit {
     password: new FormControl('')
   });
 
-  onSubmit() {
-    console.warn(this.patient);
-    // return this.patientregService.addPatient(this.patient)
-    //   .subscribe(data => {
-    //     this.patient = data;
-    //     console.log(this.patient);
-    //   })
-
-
-  }
 
 
   DocRegistrationForm = new FormGroup({

@@ -360,8 +360,10 @@ export class DocPatientPastRecordsComponent implements OnInit {
     private pastRecordService: PastRecordService,
     private router: Router
   ) { }
-
+  doctorId!: number;
   ngOnInit(): void {
+      let id=sessionStorage.getItem('user-id')
+      this.doctorId=Number(id)
     this.pastRecordService.getAllPatientRecords(43190)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
 

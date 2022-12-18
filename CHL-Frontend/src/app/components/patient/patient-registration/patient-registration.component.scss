@@ -59,16 +59,17 @@
         }
 
         #reg-container {
-            width: 45%;
-            height: 92%;
+            width: 43.5%;
+            height: 94%;
             background: #FFFFFF;
             box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.15);
             border-radius: 0.3em;
-            margin: auto;
-            padding: 2em;
+            display: flex;
+            flex-direction: column;
+            padding: 1.75em;
 
             p {
-                padding-top: 1em;
+                padding-top: 0.5em;
                 font-weight: 400;
                 font-size: 1em;
                 line-height: 1.1em;
@@ -79,14 +80,8 @@
         #reg-heading {
             font-weight: 700;
             font-size: 1.5em;
-            line-height: 1.4em;
+            line-height: 1em;
             color: #2C2D2D;
-        }
-
-        .main-form {
-            padding: auto;
-            padding-top: 2em;
-            margin: auto;
         }
 
         #buttons {
@@ -98,13 +93,11 @@
         .form-group {
             display: flex;
             flex-direction: row;
-            gap: 5em;
         }
 
         .form-flex {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
 
         button {
@@ -112,7 +105,7 @@
             font-size: 1.1em;
             line-height: 1.1em;
             width: 7em;
-            height: 2em;
+            height: 1.8em;
             border: 0.0625em solid #949494;
             border-radius: 0.0625em 0.0625em 0 0;
             box-sizing: border-box;
@@ -141,61 +134,77 @@
         #login-btn {
             width: 6em;
         }
-        .modal{
+
+        .modal {
             width: 25em;
             height: 15em;
+            background-color: #FFF;
             position: absolute;
-            left:40em;
-            top:5em;
+            left: 31em;
+            top: 10em;
             text-align: center;
             align-self: center;
-            border: 1em solid #DAFDFF;
-        }
-        .modal-content{
-            width: 25em;
+            border: 0.8em solid #DAFDFF;
             align-items: center;
-            background-color: #FFF;
-            color: #1CB5BD;
-            padding-right:2em;
-            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .modal-header {
+                text-align: center;
+                align-self: center;
+                align-items: center;
+                justify-content: center;
+
+            }
+
+            .modal-next {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 3.5em;
+            }
         }
-        // .modal-body{
-        //     width: 20em;
-        // }
     }
 }
 
 .update-form-container {
-     display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        gap: 1em 1em;
-        grid-auto-flow: row;
-        grid-template-areas:
-          ".  ."
-          ".  ."
-          ".  ."
-          ".  .";
-          padding-top: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 1em 1em;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ".  ."
+        ".  ."
+        ".  ."
+        ".  .";
+    padding-top: 1.5em;
 
-.cell{
-    display: flex;
-    flex-direction: column
-    // width: ;
+    .cell {
+        display: flex;
+        flex-direction: column
+    }
 }
-}
-.update-form-container1 {  display: grid;
+
+.update-form-container1 {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     gap: 1em 1em;
     grid-auto-flow: row;
     grid-template-areas:
-      ". ."
-      ". ."
-      ". ."
-      ". ."
-      ". .";
-      padding-top: 1.5em;
+        ". ."
+        ". ."
+        ". ."
+        ". ."
+        ". .";
+    margin-top: 1em;
+
+    .cell {
+        display: flex;
+        flex-direction: column
     }
-  
-  
+}

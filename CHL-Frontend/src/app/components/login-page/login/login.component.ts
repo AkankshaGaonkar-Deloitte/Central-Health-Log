@@ -79,13 +79,13 @@ adminbtndisable: boolean=false;
     }
     sessionStorage.setItem('user-id', String(this.user.id));
     let id = sessionStorage.getItem(this.Patientid);
-    console.warn(id);
     
 
   }
 
 
   Docid!: string;
+
   loginDoctor() {
     if (this.docUser.password == this.password) {
       this.router.navigate(['/doctor-dashboard'])

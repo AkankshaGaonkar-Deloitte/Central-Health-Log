@@ -59,9 +59,9 @@
                             <label for="userID">User ID</label>
                             <app-input [ipConfig]="ipConfig" (outputEmit)="patient.username=$event"
                                 (change)="onUserID()"></app-input>
-                                <div *ngIf="usernameExists" class="userexists" style="color: red;">
-                                    This username already exists*
-                                </div>
+                            <div *ngIf="usernameExists" class="userexists" style="color: red;">
+                                This username already exists*
+                            </div>
                         </div>
                         <div class="cell">
                             <label for="password">Password </label>
@@ -72,7 +72,7 @@
                 </div>
                 <div id="login-btn">
                     <app-button [disabled]="btndisable" [btntext]="'Register'" [btnConfig]="textBtnConfig"
-                        (onClick)="openPopup()" (click)="onSubmit()"></app-button>
+                        (onClick)="openPopup()"></app-button>
                 </div>
             </form>
             <form *ngIf="patientActive==false" (ngSubmit)="onDocSubmit()">
@@ -112,12 +112,20 @@
                     </div>
                     <div class="cell">
                         <label for="contact">Contact Number </label>
-                        <app-input [ipConfig]="ipConfig1" (outputEmit)="doctor.phoneNo=$event"></app-input>
+                        <app-input [ipConfig]="ipConfig1" (outputEmit)="doctor.phoneNo=$event" (change)="onPhoneNo()">
+                        </app-input>
+                        <div *ngIf="contactExists" class="userexists" style="color: red;">
+                            This number is already registered*
+                        </div>
                     </div>
 
                     <div class="cell">
                         <label for="userID">User ID</label>
-                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.username=$event"> </app-input>
+                        <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.username=$event" (change)="onUserID()">
+                        </app-input>
+                        <div *ngIf="usernameExists" class="userexists" style="color: red;">
+                            This username already exists*
+                        </div>
                     </div>
                     <div class="cell">
                         <label for="password">Password </label>
@@ -126,30 +134,40 @@
                 </div>
                 <br>
                 <div id="login-btn">
-                    <app-button [btntext]="'Register'" [btnConfig]="textBtnConfig" (onClick)="openPopup()"></app-button>
+                    <app-button [btntext]="'Register'" [disabled]="btndisable" [btnConfig]="textBtnConfig"
+                        (onClick)="openPopup()"></app-button>
                 </div>
 
             </form>
             <!-- modal popup -->
             <!-- <div class="modal"  "> -->
-                <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title">Enter OTP</h4>
-                        </div>
-                        <div class="modal-body">
-                            <app-input name="uploadDate" (outputEmit)="otp=$event" [ipConfig]="ipConfig">
-                            </app-input>
-                            <br>
-                            <div class="modal-footer">
-                                <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig" (onClick)="Verifyotp()">
-                                </app-button>
-                                <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()">
-                                </app-button>
-                            </div>
 
-                    
+            <div class="modal" role="dialog" [ngStyle]="{'display':displayStyle}">
+                <div *ngIf="!verified" class="modal-header">
+                    <h4 class="modal-title">Enter OTP</h4>
+                </div>
+                <div *ngIf="!verified" class="modal-body">
+                    <app-input name="uploadDate" (outputEmit)="otp=$event" [ipConfig]="ipConfig">
+                    </app-input>
+                    <br>
+                    <div class="modal-footer">
+                        <app-button [btntext]="'Verify'" [btnConfig]="textBtnConfig" (onClick)="Verifyotp()">
+                        </app-button>
+                        <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()">
+                        </app-button>
                     </div>
+                </div>
+                <div *ngIf="verified" class="modal-next">
+                    <div style="font-size: 1.5em;">Registered successfully !!</div>
+                    <br>
+                    <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()">
+                    </app-button>
+                </div>
+                <div *ngIf="invalid" class="modal-next">
+                    <div>Invalid OTP</div>
+                    <div>Try Again</div>
+                    <app-button [btntext]="'Close'" [btnConfig]="textBtnConfig" (click)="closePopup()">
+                    </app-button>
                 </div>
             </div>
         </div>

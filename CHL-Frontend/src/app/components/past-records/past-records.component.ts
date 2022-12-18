@@ -10,9 +10,9 @@ import { PatientDetailsService } from 'src/app/service/patient-details/patient-d
   styleUrls: ['./past-records.component.scss']
 })
 export class PastRecordsComponent implements OnInit {
-  pastRecord: PastRecord = new PastRecord(-1)
 
-  patientId!: number; 
+  pastRecord: PastRecord = new PastRecord(-1)
+  patientId!: number;
 
   filterSelector: string = 'Date'
   dateFrom: string = ''
@@ -42,6 +42,7 @@ export class PastRecordsComponent implements OnInit {
     "Doctor"
   ];
   Userid!: string;
+  patientName!: string;
 
   filterSelectEventReceived(selectedFilter: string) {
     console.log(`At parent filter select ${selectedFilter}`);
@@ -356,9 +357,15 @@ patient=new Patient()
 
   ngOnInit(): void {
     let id=sessionStorage.getItem('user-id')
-    this.patientId=Number(id)
-    this.patientservice.getPatientByPatientId(this.patientId).subscribe(data=>{this.patient=data; console.warn(this.patient);}
-    )
+    this.patientId = Number(id)
+    
+    this.patientservice.getPatientByPatientId(this.patientId).
+      subscribe(data => {
+        this.patient = data; console.warn(this.patient);
+        this.patientName = this.patient.firstname as string+" "+this.patient.lastname as string
+      }
+      )
+
     this.pastRecordService.getAllPatientRecords(this.patientId)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
 
@@ -384,6 +391,7 @@ patient=new Patient()
   }
 
   viewPrescription(prescriptionId: number | undefined) {
+
     this.pastRecordService.getPrescription(prescriptionId as number)
       .subscribe(response => {
         console.log('Inside view prescription');
@@ -393,8 +401,9 @@ patient=new Patient()
         const link = document.createElement("a");
         link.href = source;
         link.download = `${this.patientId}_${new Date()}.pdf`
-        link.click();      
+        link.click();
       })
+    // this.router.navigate(['/prescription',])
   }
 
 }

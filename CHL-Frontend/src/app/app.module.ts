@@ -38,6 +38,7 @@ import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
