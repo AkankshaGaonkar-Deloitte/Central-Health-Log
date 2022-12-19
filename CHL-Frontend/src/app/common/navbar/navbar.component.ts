@@ -81,6 +81,7 @@ export class NavbarComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
     this.checked=false
+    window.location.reload()
   }
 
   verifyPresc(){
