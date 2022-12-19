@@ -373,8 +373,8 @@ export class AddMedicalRecordComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
-    this.patientId=Number(sessionStorage.getItem('searched-patient'))
+    this.doctorName = 'Dr ' + String(sessionStorage.getItem('Doctor-name'))
+    this.patientId = Number(sessionStorage.getItem('searched-patient'))
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {
         console.log(response);
@@ -406,22 +406,10 @@ export class AddMedicalRecordComponent implements OnInit {
     this.medicationData.patientId = this.patientId
     this.medications.push(this.medicationData)
     this.medicationData = new Medication()
-    // this.medicationService.addMedication(this.medicationData)
-    //   .subscribe(data => {
-    //     console.log(`Newly added data ${data}`);
-    //     this.medications.push(data)
-    //   })
     this.closePopup()
   }
 
   removeOrDeleteMedication(currMed: Medication) {
-    // this.medicationService.removeOrDeleteMedication(id)
-    //   .subscribe(
-    //     response => {
-    //       this.medicationService.getAllPatientRecords(this.patientId)
-    //         .subscribe(data => this.medications = data)
-    //     }
-    //   )
     const index = this.medications.indexOf(currMed, 0);
     if (index > -1) {
       this.medications.splice(index, 1);
@@ -431,9 +419,6 @@ export class AddMedicalRecordComponent implements OnInit {
   public submit() {
     //upload past record
     this.uploadPastRecord();
-
-    //medications
-
 
     //medicalData
     this.medicalDataService.saveMedicalData(this.medicalData)
@@ -483,7 +468,8 @@ export class AddMedicalRecordComponent implements OnInit {
               });
             })
 
-        })
+        }
+      )
 
     });
   }
