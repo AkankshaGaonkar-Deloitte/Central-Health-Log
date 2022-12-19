@@ -140,8 +140,9 @@ export class PersonalDetailsComponent implements OnInit {
     private patientDetailsService: PatientDetailsService,
     private datePipe: DatePipe
   ) { }
-
+  patientName!: string;
   ngOnInit(): void {
+    this.patientName=String(sessionStorage.getItem('Patient-name'))
     let id=sessionStorage.getItem('user-id')
     this.patientId=Number(id)
     this.patientDetailsService.getPatientByPatientId(this.patientId)

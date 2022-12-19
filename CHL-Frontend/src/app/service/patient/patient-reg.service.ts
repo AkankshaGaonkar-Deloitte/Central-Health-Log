@@ -47,7 +47,10 @@ export class PatientRegService {
     let headers = this.createAuthenticationHeader()
     return this.httpClient.get(`${this.baseurl+'/doctor/phone/'+ phoneNo}`, {headers})
   }
-     
+  IfAdminUsernameExists( username: string){
+    let headers = this.createAuthenticationHeader()
+    return this.httpClient.get(`${this.baseurl+'/admin/username/'+ username}`, {headers})
+  }
    }
     
 

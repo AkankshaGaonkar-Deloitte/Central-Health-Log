@@ -1,6 +1,6 @@
 <div class="main-container">
   <div id="nav">
-    <app-navbar [button]="false" [name]="'Rohit Pandey'"></app-navbar>
+    <app-navbar [button]="false" [name]="adminName"></app-navbar>
   </div>
   <div class="subcontainer">
     <div class="flex-item1">
@@ -11,7 +11,7 @@
         <div id="text1"><a routerLink="/patient-dashboard"></a>To Be Registered Doctors</div>
         <div id="doctor-id">
           <app-input [ipConfig]="searchDoctorId"></app-input>
-          <img src="assets/images/search.png" style="height: 2.5em;margin-left: 0.3em;">
+          <img src="assets/images/search.png" style="height: 2.5em;">
         </div>
           <div class="table-container">
             <table>

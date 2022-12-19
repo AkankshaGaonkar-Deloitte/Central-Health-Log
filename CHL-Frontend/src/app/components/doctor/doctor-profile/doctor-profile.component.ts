@@ -151,6 +151,7 @@ export class DoctorProfileComponent implements OnInit {
 
   menus = { '1': ['Dashboard', '/doctor-dashboard', 0],'2':['Doctor Profile','/doctor-profile',1]}
   doctorId!: number;
+  doctorName!: string;
 
   constructor(
     // private patientDetailsService: PatientDetailsService,
@@ -158,8 +159,10 @@ export class DoctorProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     let id=sessionStorage.getItem('user-id')
     this.doctorId=Number(id)
+    
     // this.patientDetailsService.getPatientByPatientId(this.patientId)
     //   .subscribe(response => {
     //     console.log(response);        

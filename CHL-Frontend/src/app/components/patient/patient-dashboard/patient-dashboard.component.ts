@@ -59,12 +59,16 @@ export class PatientDashboardComponent implements OnInit {
   }
   Userid!: string;
   patient=new Patient()
+  patientName!: string;
+  
   ngOnInit(): void {
+    this.patientName=String(sessionStorage.getItem('Patient-name'))
     let id=sessionStorage.getItem('user-id')
     this.patientDetailsService.getPatientByPatientId(Number(id))
       .subscribe(response => {     
         this.patient=response
       })
+    
   }
 }
 

@@ -17,6 +17,7 @@ export class DoctorDashboardComponent implements OnInit {
   patientId!: string | number | null;
   response: PostResponse = new PostResponse('')
   doctorId!: number;
+  doctorName!: string;
 
   constructor(private patientService: PatientService, private otpService: OtpService,private router:Router) { }
   displayStyle = "none";
@@ -88,6 +89,7 @@ export class DoctorDashboardComponent implements OnInit {
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1], '2': ['Doctor Profile', '/doctor-profile'] }
   
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     let id=sessionStorage.getItem('doc-user-id')
     console.warn(id);
     

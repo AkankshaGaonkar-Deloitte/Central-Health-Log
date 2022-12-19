@@ -9,6 +9,7 @@ import { Doctor } from 'src/app/model/doctor';
 })
 export class ToBeRegisteredComponent implements OnInit {
   displayStyle = "none";
+  adminName!: string;
 
 
   closePopup() {
@@ -107,6 +108,7 @@ constructor(public doctorDetailsService : DoctorDetailsService) { }
 public doctors !: Doctor[];
 
 ngOnInit(): void {
+  this.adminName=String(sessionStorage.getItem('Admin-name'))
     this.doctorDetailsService.getDoctorByStatusCode("TO_BE_REGISTERED").subscribe(data =>
       this.doctors = data);
 

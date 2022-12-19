@@ -42,6 +42,7 @@ export class DocPatientPastRecordsComponent implements OnInit {
     "Severity",
     "Doctor"
   ];
+  doctorName!: string;
 
   filterSelectEventReceived(selectedFilter: string) {
     console.log(`At parent filter select ${selectedFilter}`);
@@ -362,6 +363,7 @@ export class DocPatientPastRecordsComponent implements OnInit {
   ) { }
   doctorId!: number;
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
       let id=sessionStorage.getItem('user-id')
       this.doctorId=Number(id)
     this.pastRecordService.getAllPatientRecords(43190)

@@ -356,6 +356,7 @@ export class PastRecordsComponent implements OnInit {
 patient=new Patient()
 
   ngOnInit(): void {
+    this.patientName=String(sessionStorage.getItem('Patient-name'))
     let id=sessionStorage.getItem('user-id')
     this.patientId = Number(id)
     

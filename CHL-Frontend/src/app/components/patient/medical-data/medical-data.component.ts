@@ -177,8 +177,9 @@ export class MedicalDataComponent implements OnInit {
     private medicalDataService: MedicalDataService,
     private datePipe: DatePipe
   ) { }
-
+  patientName!: string;
   ngOnInit(): void {
+   this.patientName=String(sessionStorage.getItem('Patient-name'))
     let id=sessionStorage.getItem('user-id')
     this.patientId=Number(id)
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)

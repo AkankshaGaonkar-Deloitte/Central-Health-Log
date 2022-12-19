@@ -1,9 +1,9 @@
 import { Router } from '@angular/router';
-import { Component, Input, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
 import { Patient } from 'src/app/model/patient';
 import { Doctor } from 'src/app/model/doctor';
+import { Admin } from 'src/app/model/Admin';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,8 @@ import { Doctor } from 'src/app/model/doctor';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-adminbtndisable: boolean=false;
+
+
   constructor(private router: Router, private patientregService: PatientRegService) { }
 
   userName!: string | number | null;
@@ -21,22 +22,26 @@ adminbtndisable: boolean=false;
   doctorActive: boolean = false;
   adminActive: boolean = false;
 
-  btndisable: boolean = true;
-  usernameExists: boolean = true;
   wrongPass: boolean = false
 
+  btndisable: boolean = true;
+  usernameExists: boolean = true;
   user = new Patient();
 
   docbtndisable: boolean = true;
   docusernameExists: boolean = true;
   docUser = new Doctor()
 
+  adminbtndisable: boolean = true;
+  adminUsernameExists: boolean = true;
+  adminUser = new Admin()
+
   onUser() {
     if (this.patientActive) {
       this.patientregService.IfUsernameExists(
         String(this.userName)).subscribe(data => {
           this.user = data as Patient
-  
+
           if (this.user) {
             this.usernameExists = true;
             this.btndisable = false;
@@ -54,7 +59,7 @@ adminbtndisable: boolean=false;
         this.patientregService.IfDocUsernameExists(
           String(this.userName)).subscribe(data => {
             this.docUser = data as Doctor
-    
+
             if (this.docUser) {
               this.docusernameExists = true;
               this.docbtndisable = false;
@@ -66,33 +71,44 @@ adminbtndisable: boolean=false;
             }
           })
       }
+      else {
+        if (this.adminActive) {
+          this.patientregService.IfAdminUsernameExists(
+            String(this.userName)).subscribe(data => {
+              this.adminUser = data as Admin
+
+              if (this.adminUser) {
+                this.adminUsernameExists = true;
+                this.adminbtndisable = false;
+              }
+              else {
+                this.adminUsernameExists = false;
+                if (this.adminUser == null)
+                  this.adminbtndisable = true
+              }
+            })
+        }
+      }
     }
   }
-  Patientid!: string;
 
   loginPatient() {
     if (this.user.password == this.password) {
+      this.wrongPass = false
+      sessionStorage.setItem('user-id', String(this.user.id));
+      sessionStorage.setItem('Patient-name', String(this.user.firstname)+" "+String(this.user.lastname));
       this.router.navigate(['/patient-dashboard'])
     }
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem('user-id', String(this.user.id));
-    let id = sessionStorage.getItem(this.Patientid);
-    
-
   }
-
-
-  Docid!: string;
-
   loginDoctor() {
     if (this.docUser.password == this.password) {
       this.wrongPass = false
       sessionStorage.setItem('user-id', String(this.docUser.id));
+      sessionStorage.setItem('Doctor-name', String(this.docUser.doctorName));
       this.router.navigate(['/doctor-dashboard'])
-      let id = sessionStorage.getItem('user-id');
-      console.warn('doc id: ' + id);
     }
     else {
       this.wrongPass = true
@@ -100,8 +116,15 @@ adminbtndisable: boolean=false;
 
   }
   loginAdmin() {
-    this.router.navigate(['/to-be-registered'])
-
+    if (this.adminUser.password == this.password) {
+      this.wrongPass = false
+      sessionStorage.setItem('user-id', String(this.adminUser.id));
+      sessionStorage.setItem('Admin-name', String(this.adminUser.name));
+      this.router.navigate(['/to-be-registered'])
+    }
+    else {
+      this.wrongPass = true
+    }
   }
 
   ngOnInit(): void {

@@ -362,6 +362,7 @@ export class AddMedicalRecordComponent implements OnInit {
 
     }
   };
+  doctorName!: string;
 
   constructor(
     private medicationService: MedicationService,
@@ -372,6 +373,7 @@ export class AddMedicalRecordComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {
         console.log(response);

@@ -160,30 +160,35 @@ export class MedicationsComponent implements OnInit {
 
   menus = { '1': ["Dashboard", "/patient-dashboard", 0], '2': ["Personal Details", "/personal-details", 0], '3': ["Medical Data", "/medical-data", 0], '4': ["Medications", "/medications", 1], '5': ["Past Records", "/past-records", 0] };
 
-  constructor(private medicationService: MedicationService) {  
-   }
+  constructor(private medicationService: MedicationService) {
+  }
   Userid!: string;
-
+  patientName!: string;
   ngOnInit(): void {
-    let id=sessionStorage.getItem('user-id')
-    this.patientId=Number(id)
+
+
+
+    this.patientName = String(sessionStorage.getItem('Patient-name'))
+    let id = sessionStorage.getItem('user-id')
+    this.patientId = Number(id)
     this.medicationService.getAllPatientRecords(Number(id))
       .subscribe(response => {
         this.allMedicalDataOfAPatient = response
-  
+
       }
-    )
+      )
 
   }
 
-  removeOrDeleteMedication(id?: number){
+  removeOrDeleteMedication(id?: number) {
     this.medicationService.removeOrDeleteMedication(id)
       .subscribe(
         response => {
           this.medicationService.getAllPatientRecords(Number(this.patientId))
             .subscribe(data => this.allMedicalDataOfAPatient = data)
         }
-      ) }
+      )
+  }
   displayStyle = "none";
 
   openPopup() {
@@ -193,9 +198,9 @@ export class MedicationsComponent implements OnInit {
     this.displayStyle = "none";
   }
 
-  submitNewMedication(){
-    this.medicationData.isCurrent=true
-    this.medicationData.patientId=this.patientId
+  submitNewMedication() {
+    this.medicationData.isCurrent = true
+    this.medicationData.patientId = this.patientId
     this.medicationService.addMedication(this.medicationData)
       .subscribe(data => {
         this.allMedicalDataOfAPatient.push(data)

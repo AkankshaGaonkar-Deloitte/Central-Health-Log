@@ -158,11 +158,13 @@ export class DocPatientMedicationComponent implements OnInit {
   '3': ['Medications', '/doctor/patient/medication', 1],'4': ['Past Records', '/doctor/patient/past-records', 0] };
 
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1],'2':['Doctor Profile','/doctor-profile']}
+  doctorName!: string;
 
 
   constructor(private medicationService: MedicationService) { }
 
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.medicationService.getAllPatientRecords(this.patientId)
       .subscribe(response => {
         this.allMedicalDataOfAPatient = response

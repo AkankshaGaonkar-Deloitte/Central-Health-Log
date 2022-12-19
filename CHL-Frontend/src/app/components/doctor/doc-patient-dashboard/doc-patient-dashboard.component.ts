@@ -12,11 +12,13 @@ export class DocPatientDashboardComponent implements OnInit {
 
   patientId:number = 43190
   patient: Patient = new Patient()
+  doctorName!: string;
   constructor(private patientDetailsService: PatientDetailsService,
     private datePipe: DatePipe
   ) { }
 
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(data => {
         console.log(data);        

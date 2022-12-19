@@ -93,11 +93,13 @@ export class RegisteredDoctorsComponent implements OnInit {
      }
      };
   menus = { '1': ['To Be Registered', '/to-be-registered', 0],'2':['In Progress','/in-progress',0],'3':['Registered Doctors','/registered-doctors',1]}
+  adminName!: string;
  
    constructor(public doctorDetailsService : DoctorDetailsService) { }
  
    public doctors !: Doctor[];
    ngOnInit(): void {
+    this.adminName=String(sessionStorage.getItem('Admin-name'))
     this.doctorDetailsService.getDoctorByStatusCode("REGISTERED").subscribe(data =>
       this.doctors = data);
  

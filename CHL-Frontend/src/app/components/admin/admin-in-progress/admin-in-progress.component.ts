@@ -132,11 +132,13 @@ textBtnConfig = {
     }
     };
  menus = { '1': ['To Be Regsitered', '/to-be-registered', 0],'2':['In Progress','/in-progress',1],'3':['Registered Doctors','/registered-doctors']}
+  adminName!: string;
 
   constructor(public doctorDetailsService : DoctorDetailsService) { }
   public doctors !: Doctor[];
 
   ngOnInit(): void {
+    this.adminName=String(sessionStorage.getItem('Admin-name'))
     this.doctorDetailsService.getDoctorByStatusCode("IN_PROGRESS").subscribe(data =>
       this.doctors = data);
    

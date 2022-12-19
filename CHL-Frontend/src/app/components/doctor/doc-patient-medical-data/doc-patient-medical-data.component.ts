@@ -173,6 +173,7 @@ export class DocPatientMedicalDataComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
+  doctorName!: string;
   
   constructor(
     private medicalDataService: MedicalDataService,
@@ -180,6 +181,7 @@ export class DocPatientMedicalDataComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)
       .subscribe(response => this.medicalData=response)
   }
