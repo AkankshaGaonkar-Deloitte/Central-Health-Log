@@ -11,6 +11,7 @@ export class NavbarComponent implements OnInit {
   @Input('btntext') Text: string = "Login";
   @Input('name') name: string = "Your Profile";
   @Input('button') btn: boolean = true;
+  @Input() verifyPrescription: boolean = false
 
   constructor(private router: Router) { }
 
