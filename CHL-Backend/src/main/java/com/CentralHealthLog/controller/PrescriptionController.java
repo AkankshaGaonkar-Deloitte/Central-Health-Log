@@ -1,5 +1,6 @@
 package com.CentralHealthLog.controller;
 
+import com.CentralHealthLog.dto.PostResponse;
 import com.CentralHealthLog.entity.Prescription;
 import com.CentralHealthLog.service.PrescriptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,22 +31,22 @@ public class PrescriptionController {
         return new ResponseEntity(HttpStatus.BAD_REQUEST);
     }
 
-    @PostMapping("/patient/past-record/verify-prescription")
-    public ResponseEntity<String> verifyPrescription(@RequestBody MultipartFile prescription) throws SQLException, IOException {
+    @PostMapping("/verify-prescription")
+    public ResponseEntity<PostResponse> verifyPrescription(@RequestBody MultipartFile prescription) throws SQLException, IOException {
         try {
             System.out.println(prescription.getContentType());
             boolean found = prescriptionService.verifyPrescription(prescription);
             System.out.println(found);
             if (found == true)
-                return new ResponseEntity<String>(new String("Prescription Verified!"), HttpStatus.FOUND);
+                return new ResponseEntity<PostResponse>(new PostResponse("Prescription verified!"), HttpStatus.OK);
             else if (found == false){
-                return new ResponseEntity<String>(new String("Invalid prescription!"), HttpStatus.NO_CONTENT);
+                return new ResponseEntity<PostResponse>(new PostResponse("Invalid prescription!"), HttpStatus.OK);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         System.out.println("At outer return");
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<PostResponse>(new PostResponse("Bad request!"),HttpStatus.BAD_REQUEST);
     }
 
     @GetMapping("/patient/past-record/prescription/{id}")
