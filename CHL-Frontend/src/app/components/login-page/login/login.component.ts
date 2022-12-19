@@ -88,15 +88,15 @@ adminbtndisable: boolean=false;
 
   loginDoctor() {
     if (this.docUser.password == this.password) {
-      this.router.navigate(['/doctor-dashboard'])
       this.wrongPass = false
+      sessionStorage.setItem('user-id', String(this.docUser.id));
+      this.router.navigate(['/doctor-dashboard'])
+      let id = sessionStorage.getItem('user-id');
+      console.warn('doc id: ' + id);
     }
     else {
       this.wrongPass = true
     }
-    sessionStorage.setItem('user-id', String(this.docUser.id));
-    let id = sessionStorage.getItem(this.Docid);
-   
 
   }
   loginAdmin() {

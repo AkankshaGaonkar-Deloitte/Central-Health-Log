@@ -88,7 +88,9 @@ export class DoctorDashboardComponent implements OnInit {
   menus = { '1': ['Dashboard', '/doctor-dashboard', 1], '2': ['Doctor Profile', '/doctor-profile'] }
   
   ngOnInit(): void {
-    let id=sessionStorage.getItem('user-id')
+    let id=sessionStorage.getItem('doc-user-id')
+    console.warn(id);
+    
     this.doctorId=Number(id)
     
   }
