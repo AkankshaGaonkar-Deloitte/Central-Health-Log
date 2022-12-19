@@ -24,24 +24,22 @@ public class DocRegController {
         return new ResponseEntity<Doctor>(savedDoctor, HttpStatus.OK);
     }
     @GetMapping("/user/{username}")
-    public ResponseEntity<Doctor> findPatientByUsername(@PathVariable String username)
+    public ResponseEntity<Doctor> findDoctorByUsername(@PathVariable String username)
     {
         Doctor doctor = doctorService.getDoctorByUsername(username);
         return new ResponseEntity<Doctor>(doctor, HttpStatus.OK);
     }
-    @GetMapping("phone/{phoneNo}")
-    public ResponseEntity<Doctor> findPatientById(@PathVariable String phoneNo)
+    @GetMapping("/phone/{phoneNo}")
+    public ResponseEntity<Doctor> findDoctorByContact(@PathVariable String phoneNo)
     {
         Doctor doctor = doctorService.getDoctorByContact(phoneNo);
         return new ResponseEntity<Doctor>(doctor, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Doctor> findPatientById(@PathVariable long id)
+    @GetMapping("/id/{id}")
+    public ResponseEntity<Doctor> findDoctorById(@PathVariable long id)
     {
         Doctor doctor = doctorService.getDoctorById(id);
         return new ResponseEntity<Doctor>(doctor, HttpStatus.OK);
     }
-
-
 }

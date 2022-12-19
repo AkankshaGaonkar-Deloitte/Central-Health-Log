@@ -32,12 +32,19 @@ public class PatientRegController {
         Patient patient = patientService.getPatientByUsername(username);
         return new ResponseEntity<Patient>(patient, HttpStatus.OK);
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Patient> findPatientById(@PathVariable long id)
+    {
+        Patient patient = patientService.getPatientById(id);
+        return new ResponseEntity<Patient>(patient, HttpStatus.OK);
+    }
     @GetMapping("phone/{phoneNo}")
     public ResponseEntity<Patient> findPatientById(@PathVariable String phoneNo)
     {
         Patient patient = patientService.getPatientByContact(phoneNo);
         return new ResponseEntity<Patient>(patient, HttpStatus.OK);
     }
+
     @GetMapping
     public ResponseEntity<List<Patient>>getPatient()
     {
@@ -45,12 +52,6 @@ public class PatientRegController {
             return new ResponseEntity<>(patients, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Patient> findPatientById(@PathVariable long id)
-    {
-        Patient patient = patientService.getPatientById(id);
-        return new ResponseEntity<Patient>(patient, HttpStatus.OK);
-    }
 
     @PutMapping
     public ResponseEntity<Patient> updatePatient(@RequestBody Patient patient) {

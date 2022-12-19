@@ -67,8 +67,8 @@ INTO
   patient
   (id, username, password, firstname, lastname, phone_no, email, gender, age, address)
 VALUES
-  (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '8778562434', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');
---  (12345, 'Tash12', '123', 'Tashmeet', 'Kaur', '6264934388', 'tash12@gmail.com', 'Female', 23, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');
+  (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '8778562434', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087'),
+  (12345, 'Tash12', '123', 'Tashmeet', 'Kaur', '6264934388', 'tash12@gmail.com', 'Female', 23, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');
 
 INSERT
 INTO
@@ -80,10 +80,8 @@ VALUES
   ('Prasad15', '123', 'Prasad Singh', '99999993', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'prasi@gmail.com', 'Neurologist', 49, 'Male', 'TO_BE_REGISTERED'),
   ('Bhishma', '123', 'Bhishma Malhotra', '99999992', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'bhi@gmail.com', 'Neurologist', 49, 'Male', 'IN_PROGRESS');
 
-  INSERT
+INSERT
 INTO
-  admin(
-    name
-  )
+  admin (name, username, password)
 VALUES
-  ('Admin');
+  ('Kunal Shukla', 'admin', 'admin');

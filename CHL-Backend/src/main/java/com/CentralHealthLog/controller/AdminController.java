@@ -3,6 +3,7 @@ package com.CentralHealthLog.controller;
 
 import com.CentralHealthLog.entity.Admin;
 import com.CentralHealthLog.entity.Doctor;
+import com.CentralHealthLog.entity.Patient;
 import com.CentralHealthLog.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,11 +19,17 @@ public class AdminController {
 
     @Autowired
     private AdminService service;
-
-//    @PostMapping("/add-to-be-registered-doctors")
-//    public Admin add_to_be_registered_Doctors(@RequestBody Admin admin){
-//        return service.save_to_be_registered_Doctors(admin);
-//    }
+    @GetMapping("/admin/id/{id}")
+//    @RequestMapping(value = "/admin/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Admin> GetAdminByID(@PathVariable long id){
+        Admin admin= service.getAdminByID(id);
+        return new ResponseEntity <Admin> (admin,HttpStatus.OK);
+    }
+    @GetMapping("/admin/username/{username}")
+    public ResponseEntity<Admin> GetAdminByUsername(@PathVariable String username){
+        Admin admin = service.getAdminByUsername(username);
+        return new ResponseEntity <Admin> (admin, HttpStatus.OK);
+    }
 
     @GetMapping(value = "/doctor/{status_code}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity <List<Doctor>> get_all_to_be_registered_doctors(@PathVariable String status_code){
@@ -70,4 +77,8 @@ public class AdminController {
 //        return service.updateStatus(admin);
 //    }
 
+//    @PostMapping("/add-to-be-registered-doctors")
+//    public Admin add_to_be_registered_Doctors(@RequestBody Admin admin){
+//        return service.save_to_be_registered_Doctors(admin);
+//    }
 }
