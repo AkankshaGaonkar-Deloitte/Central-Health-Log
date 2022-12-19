@@ -1,24 +1,84 @@
 <nav class="navbar">
-  <div class="name">
-    <img class="plus" src="assets/images/plus_image.png" /><b>Central <span> Health Log</span></b>
+  <div class="navbar-left">
+    <img class="plus" src="assets/images/plus_image.png" /><b
+      >Central <span> Health Log</span></b
+    >
   </div>
-  <div>
-    <div class="navbar-nav">
+
+  <div class="navbar-right">
+    <div style="margin-right: 1em">
+      <app-button
+        *ngIf="verifyPrescription"
+        [btntext]="'Verify Prescription'"
+        [btnConfig]="textBtnConfig"
+        (onClick)="openPopup()"
+      >
+      </app-button>
+    </div>
+    <div>
       <div id="button" *ngIf="btn">
-        <app-button *ngIf="btn" [btntext]="Text" [btnConfig]="textBtnConfig" (onClick)="onClickEventReceived($event)">
+        <app-button
+          *ngIf="btn"
+          [btntext]="Text"
+          [btnConfig]="textBtnConfig"
+          (onClick)="onClickEventReceived($event)"
+        >
         </app-button>
       </div>
       <div id="Profile" *ngIf="!btn">
-        <img class="image" src="assets/images/Person.png">
-        <app-dropdown (value)="saveValue($event)" class="dropdown" [states]="[name,'Logout']"
-          [dropConfig]="textDropConfig">
+        <img class="image" src="assets/images/Person.png" />
+        <app-dropdown
+          (value)="saveValue($event)"
+          class="dropdown"
+          [states]="[name, 'Logout']"
+          [dropConfig]="textDropConfig"
+        >
         </app-dropdown>
       </div>
     </div>
   </div>
+
+  <!-- <div class="modal"  "> -->
+
+  <div class="modal" role="dialog" [ngStyle]="{ display: displayStyle }">
+    <div *ngIf="!checked" class="modal-header">
+      <h4 class="modal-title">Verify Prescription</h4>
+    </div>
+    <div *ngIf="!checked" class="modal-body">
+      <div class="form-cell">
+        <div class="cell">
+          <label>Upload file:</label>
+          <input (change)="changeVerify($event)" type="file" id="myfile" name="myfile" accept="application/pdf"/>
+        </div>
+      </div>
+      <br />
+      <div class="modal-footer">
+        <app-button
+          [btntext]="'Verify'"
+          [btnConfig]="textBtnConfig"
+          (click)="verifyPresc()"
+        >
+        </app-button>
+        <app-button
+          [btntext]="'Close'"
+          [btnConfig]="textBtnConfig"
+          (click)="closePopup()"
+        >
+        </app-button>
+      </div>
+    </div>
+    <div class="modal-next">
+      <div style="font-size: 1.5em">{{verificationStatus}}</div>
+      <br />
+      <app-button
+        [btntext]="'Close'"
+        [btnConfig]="textBtnConfig"
+        (click)="closePopup()"
+      >
+      </app-button>
+    </div>
+  </div>
 </nav>
-
-
 
 <!-- How to use -->
 <!-- for button in navbar -->
