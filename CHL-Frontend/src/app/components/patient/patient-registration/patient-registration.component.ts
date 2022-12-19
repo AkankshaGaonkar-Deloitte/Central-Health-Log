@@ -134,19 +134,18 @@ export class PatientRegistrationComponent implements OnInit {
 
   closePopup() {
     this.displayStyle = "none";
+    window.location.reload();
   }
 
   verified: boolean = false;
-  invalid:boolean=false;
+  invalid: boolean = false;
 
   Verifyotp() {
-    return this.otpService.VerifyOtp(new TempOTP(String('+91' + this.patient.phoneNo), Number(this.otp)))
-      .subscribe(
-        data => {
-          console.log(data);
-
-          if (data.responseMessage == "OTP verified!") {
-            if (this.patientActive) {
+    if (this.patientActive) {
+      return this.otpService.VerifyOtp(new TempOTP(String('+91' + this.patient.phoneNo), Number(this.otp)))
+        .subscribe(
+          data => {
+            if (data.responseMessage == "OTP verified!") {
               this.patientregService.addPatient(this.patient)
                 .subscribe(data => {
                   this.patient = data;
@@ -154,175 +153,181 @@ export class PatientRegistrationComponent implements OnInit {
               this.verified = true
             }
             else {
-              this.patientregService.addDoctor(this.doctor)
-                .subscribe(data => {
-                  this.doctor = data;
-                  console.log(this.doctor);
-                })
-                this.verified = true
+              this.invalid = true;
             }
-          }
-          else {
-            this.invalid=true;
-
-          }
-        }
-      )
-  }
-
-  optionList = [
-    "Female",
-    "Male",
-    "Other"
-  ];
-  optionList1 = [
-    "Andhra Pradesh Medical Council	",
-    "Arunachal Pradesh Medical Council",
-    "Assam Medical Council",
-    "Bihar Medical Council",
-    "Chattisgarh Medical Council", "Delhi Medical Council",
-    "Goa Medical Council",
-    "Gujarat Medical Council",
-    "Haryana State Dental & Medical Council",
-    "Himachal Pradesh Medical Council",
-    "Jammu & Kashmir Medical Council",
-    "Jharkhand Medical Council",
-    "Karnataka Medical Council",
-    "Kerala Medical Council",
-    "Madhya Pradesh Medical Council",
-    "Maharashtra Medical Council",
-    "Manipur Medical Council",
-    "Meghalya Medical Council", "Mizoram Medical Council", "Nagaland Medical Council",
-    "Orissa Medical Council",
-    "Punjab Medical Council",
-    "Rajasthan Medical Council",
-    "Sikkim Medical Council",
-    "Tamil Nadu Medical Council",
-    "Telangana Medical Council",
-    "Tripura Medical Council",
-    "Uttarnchal Medical Council",
-    "Uttar Pradesh Medical Council",
-    "West Bengal Medical Council"
-
-  ];
-  ipConfig = {
-    type: 'text',
-    label: 'firstname',
-    placeholder: '',
-    styling: {
-      width: '15.5em',
-      height: '2em',
-      borderRadius: '0.2em'
-    },
-    validations: {
-      required: '',
-      minLength: '3',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
-  ipConfig1 = {
-    type: 'number',
-    label: 'contact',
-    placeholder: '',
-    styling: {
-      width: '15.5em',
-      height: '2em',
-      borderRadius: '0.2em'
-    },
-    validations: {
-      required: '',
-      minLength: '3',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
-  ipConfig2 = {
-    type: 'password',
-    label: 'password',
-    placeholder: '',
-    styling: {
-      width: '15.5em',
-      height: '2em',
-      borderRadius: '0.2em'
-    },
-    validations: {
-      required: '',
-      minLength: '3',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
-  ipConfig3 = {
-    type: 'number',
-    label: '',
-    placeholder: '',
-    styling: {
-      width: '15.5em',
-      height: '2em',
-      borderRadius: '0.2em',
-    },
-    validations: {
-      required: '',
-      minLength: '',
-      maxLength: '',
-      pattern: ''
-    },
-    patternErrorMessage: ''
-  };
-
-
-
-  textDropConfig = {
-    styles: {
-      height: '2em',
-      width: '15.5em',
-      borderRadius: '0.2em',
-      border: '0.025em solid #949494'
+          })
+    }
+    else {
+      return this.otpService.VerifyOtp(new TempOTP(String('+91' + this.doctor.phoneNo), Number(this.otp)))
+        .subscribe(
+          data => {
+            if (data.responseMessage == "OTP verified!") {
+              this.patientregService.addDoctor(this.doctor)
+              .subscribe(data => {
+                this.doctor = data;
+                })
+              this.verified = true
+            }
+            else {
+              this.invalid = true;
+            }
+          })
     }
   }
-  RegistrationForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    email: new FormControl(''),
-    contact: new FormControl(''),
-    gender: new FormControl(''),
-    age: new FormControl(''),
-    userID: new FormControl(''),
-    password: new FormControl('')
-  });
+
+optionList = [
+  "Female",
+  "Male",
+  "Other"
+];
+optionList1 = [
+  "Andhra Pradesh Medical Council	",
+  "Arunachal Pradesh Medical Council",
+  "Assam Medical Council",
+  "Bihar Medical Council",
+  "Chattisgarh Medical Council", "Delhi Medical Council",
+  "Goa Medical Council",
+  "Gujarat Medical Council",
+  "Haryana State Dental & Medical Council",
+  "Himachal Pradesh Medical Council",
+  "Jammu & Kashmir Medical Council",
+  "Jharkhand Medical Council",
+  "Karnataka Medical Council",
+  "Kerala Medical Council",
+  "Madhya Pradesh Medical Council",
+  "Maharashtra Medical Council",
+  "Manipur Medical Council",
+  "Meghalya Medical Council", "Mizoram Medical Council", "Nagaland Medical Council",
+  "Orissa Medical Council",
+  "Punjab Medical Council",
+  "Rajasthan Medical Council",
+  "Sikkim Medical Council",
+  "Tamil Nadu Medical Council",
+  "Telangana Medical Council",
+  "Tripura Medical Council",
+  "Uttarnchal Medical Council",
+  "Uttar Pradesh Medical Council",
+  "West Bengal Medical Council"
+
+];
+ipConfig = {
+  type: 'text',
+  label: '',
+  placeholder: '',
+  styling: {
+    width: '16em',
+    height: '2em',
+    borderRadius: '0.2em'
+  },
+  validations: {
+    required: '',
+    minLength: '3',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
+ipConfig1 = {
+  type: 'tel',
+  label: '',
+  placeholder: '',
+  styling: {
+    width: '16em',
+    height: '2em',
+    borderRadius: '0.2em'
+  },
+  validations: {
+    required: '',
+    minLength: '3',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
+ipConfig2 = {
+  type: 'password',
+  label: 'password',
+  placeholder: '',
+  styling: {
+    width: '16em',
+    height: '2em',
+    borderRadius: '0.2em'
+  },
+  validations: {
+    required: '',
+    minLength: '3',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
+ipConfig3 = {
+  type: 'number',
+  label: '',
+  placeholder: '',
+  styling: {
+    width: '16em',
+    height: '2em',
+    borderRadius: '0.2em',
+  },
+  validations: {
+    required: '',
+    minLength: '',
+    maxLength: '',
+    pattern: ''
+  },
+  patternErrorMessage: ''
+};
 
 
 
-  DocRegistrationForm = new FormGroup({
-    doctorName: new FormControl(''),
-    aadharNo: new FormControl(''),
-    registrationNo: new FormControl(''),
-    yearOfReg: new FormControl(''),
-    stateCouncil: new FormControl(''),
-    qualification: new FormControl(''),
-    email: new FormControl(''),
-    contact: new FormControl(''),
-    userID: new FormControl(''),
-    password: new FormControl('')
-  });
-
-  onDocSubmit() {
-    console.warn(this.DocRegistrationForm.value);
-    return this.patientregService.addDoctor(this.doctor)
-      .subscribe(data => {
-        this.doctor = data;
-        console.warn(this.doctor)
-      })
+textDropConfig = {
+  styles: {
+    height: '2em',
+    width: '16em',
+    borderRadius: '0.2em',
+    border: '0.025em solid #949494'
   }
-  addPatient($event: any) {
-    this.patientActive = true;
-  }
-  addDoctor($event: any) {
-    this.patientActive = false;
+}
+RegistrationForm = new FormGroup({
+  firstName: new FormControl(''),
+  lastName: new FormControl(''),
+  email: new FormControl(''),
+  contact: new FormControl(''),
+  gender: new FormControl(''),
+  age: new FormControl(''),
+  userID: new FormControl(''),
+  password: new FormControl('')
+});
 
-  }
+
+
+DocRegistrationForm = new FormGroup({
+  doctorName: new FormControl(''),
+  aadharNo: new FormControl(''),
+  registrationNo: new FormControl(''),
+  yearOfReg: new FormControl(''),
+  stateCouncil: new FormControl(''),
+  qualification: new FormControl(''),
+  email: new FormControl(''),
+  contact: new FormControl(''),
+  userID: new FormControl(''),
+  password: new FormControl('')
+});
+
+onDocSubmit() {
+  console.warn(this.DocRegistrationForm.value);
+  return this.patientregService.addDoctor(this.doctor)
+    .subscribe(data => {
+      this.doctor = data;
+      console.warn(this.doctor)
+    })
+}
+addPatient($event: any) {
+  this.patientActive = true;
+}
+addDoctor($event: any) {
+  this.patientActive = false;
+
+}
 }
