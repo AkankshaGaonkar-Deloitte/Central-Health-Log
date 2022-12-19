@@ -8,6 +8,8 @@ import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.serv
   styleUrls: ['./admin-in-progress.component.scss']
 })
 export class AdminInProgressComponent implements OnInit {
+  DocID!: string | number | null;
+  allDoctors!: Doctor[]; 
   searchBtnConfig = {
     type: "submit",
     styles: {
@@ -101,7 +103,7 @@ textBtnConfig = {
     label: 'to',
     placeholder: 'doctor id',
     styling: {
-    width: '20em',
+    width: '17em',
     height: '2.5em',
     background: '#FFFFFF',
     border: '0.0625em solid #949494',
@@ -140,13 +142,15 @@ textBtnConfig = {
   ngOnInit(): void {
     this.adminName=String(sessionStorage.getItem('Admin-name'))
     this.doctorDetailsService.getDoctorByStatusCode("IN_PROGRESS").subscribe(data =>
-      this.doctors = data);
+      this.allDoctors = data);
    
+  }
+  searchDoc(){
+    this.doctorDetailsService.getDoctorByStatusCodeAndId(this.DocID as number ,"IN_PROGRESS").subscribe(data =>
+      this.allDoctors = [data]);
   }
 onClickEventReceived($event: any, id : any, statusCode : string){
     this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
-      console.log("doctor status updated succesfully")
-      window.location.reload()
     });
   }
 

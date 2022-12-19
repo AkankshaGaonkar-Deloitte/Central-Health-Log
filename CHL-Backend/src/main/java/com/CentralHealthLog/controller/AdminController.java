@@ -36,6 +36,11 @@ public class AdminController {
         List<Doctor> doctors = service.get_doctors_based_on_status_code(status_code);
         return new ResponseEntity <List<Doctor>> (doctors, HttpStatus.OK);
     }
+    @GetMapping("/doctor/{id}/{status_code}")
+    public ResponseEntity <Doctor> get_all_to_be_registered_doctor(@PathVariable long id,@PathVariable String status_code){
+        Doctor doctor = service.get_doctor_by_status_code_and_id(id, status_code);
+        return new ResponseEntity <Doctor> (doctor, HttpStatus.OK);
+    }
 
     @PutMapping("/doctor/{id}/{status_code}")
     public ResponseEntity<Doctor> update_doctor_status(@PathVariable long id, @PathVariable String status_code)

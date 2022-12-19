@@ -58,6 +58,7 @@ export class AreaGraphComponent implements OnInit {
       // format: '{x} : <b>{y}</b>',
       // shared: true
   };
+  patientid!: number;
      // custom code start
   public load(args: ILoadedEventArgs): void {
       let selectedTheme: string = location.hash.split('/')[1];
@@ -72,8 +73,20 @@ export class AreaGraphComponent implements OnInit {
   constructor(private graphService: GraphServiceService) { }
 
   ngOnInit(): void {
+
     let pr:Object[]=[];
-    // console.warn( Number(sessionStorage.getItem(this.Userid)))
+    // this.patientid=Number(sessionStorage.getItem('user-id'))
+    
+    this.patientid=Number(sessionStorage.getItem('searched-patient'))
+
+
+
+
+
+
+
+
+
     this.graphService.getBMI().subscribe(data =>{
     for(let i in data) {
       pr.push(data[i]);

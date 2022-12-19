@@ -45,7 +45,6 @@ export class PastRecordsComponent implements OnInit {
   patientName!: string;
 
   filterSelectEventReceived(selectedFilter: string) {
-    console.log(`At parent filter select ${selectedFilter}`);
     this.filterSelector = selectedFilter
 
   }

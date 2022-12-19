@@ -91,8 +91,6 @@ export class DoctorDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     let id=sessionStorage.getItem('doc-user-id')
-    console.warn(id);
-    
     this.doctorId=Number(id)
     
   }
@@ -100,7 +98,7 @@ export class DoctorDashboardComponent implements OnInit {
   searchPatientId = {
     type: 'text',
     label: 'to',
-    placeholder: 'patient id',
+    placeholder: 'health id',
     styling: {
       width: '18em',
       height: '2.5em',

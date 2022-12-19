@@ -62,7 +62,7 @@ export class RegisteredDoctorsComponent implements OnInit {
      label: 'to',
      placeholder: 'doctor id',
      styling: {
-     width: '20em',
+     width: '17em',
      height: '2.5em',
      background: '#FFFFFF',
      border: '0.0625em solid #949494',
@@ -96,14 +96,19 @@ export class RegisteredDoctorsComponent implements OnInit {
   adminName!: string;
  
    constructor(public doctorDetailsService : DoctorDetailsService) { }
- 
+   allDoctors: Doctor[] = []
    public doctors !: Doctor[];
    ngOnInit(): void {
     this.adminName=String(sessionStorage.getItem('Admin-name'))
     this.doctorDetailsService.getDoctorByStatusCode("REGISTERED").subscribe(data =>
-      this.doctors = data);
+      this.allDoctors = data);
  
    }
+   DocID!: string | number | null;
+   searchDoc(){
+    this.doctorDetailsService.getDoctorByStatusCodeAndId(this.DocID as number ,"REGISTERED").subscribe(data =>
+      this.allDoctors = [data]);
+  }
    onClickEventReceived($event : any, id : any){
     this.doctorDetailsService.deleteDoctorById(id).subscribe(data => {
       console.log("deleted successfully");

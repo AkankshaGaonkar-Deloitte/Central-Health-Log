@@ -31,6 +31,9 @@ public class AdminService {
         return adminRepository.findByUsername(username).orElse(null);
         }
 
+        public Doctor get_doctor_by_status_code_and_id(long id,String status_code){
+            return repository.findByIdAndStatusCode(id,status_code).orElse(null);
+        }
         public List<Doctor> get_doctors_based_on_status_code(String status_code){
             return repository.findByStatusCode(status_code);
         }

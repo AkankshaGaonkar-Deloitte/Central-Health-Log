@@ -14,6 +14,7 @@ export class ToBeRegisteredComponent implements OnInit {
 
   closePopup() {
     this.displayStyle = "none";
+    window.location.reload()
   }
 
 textBtnConfig = {
@@ -71,7 +72,7 @@ searchDoctorId = {
   label: 'to',
   placeholder: 'doctor id',
   styling: {
-  width: '20em',
+  width: '17em',
   height: '2.5em',
   background: '#FFFFFF',
   border: '0.0625em solid #949494',
@@ -113,12 +114,16 @@ ngOnInit(): void {
       this.doctors = data);
 
 }
+DocID!: string | number | null;
+searchDoc(){
+  this.doctorDetailsService.getDoctorByStatusCodeAndId(this.DocID as number ,"TO_BE_REGISTERED").subscribe(data =>
+    this.doctors = [data]);
+}
 
 onClickEventReceived($event: any, id : any, statusCode : string){
   this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
     console.log("doctor status updated succesfully")
     this.displayStyle = "block";
-    window.location.reload();
   });
 }
 

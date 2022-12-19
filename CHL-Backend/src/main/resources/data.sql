@@ -33,11 +33,11 @@ BMI VALUES
 
 INSERT INTO
 blood_pressure VALUES
-  (1,'2021-09-09',90,110),
-  (2,'2021-10-09',80,120),
-  (3,'2021-11-09',75,105),
-  (4,'2021-12-09',82,100),
-  (5,'2022-01-09',67,110);
+  (1,'2021-09-09',90,43190,110),
+  (2,'2021-10-09',80,43190,120),
+  (3,'2021-11-09',75,43190,105),
+  (4,'2021-12-09',82,43190,100),
+  (5,'2022-01-09',67,43190,110);
 
 INSERT INTO
 pulse VALUES
@@ -67,7 +67,7 @@ INTO
   patient
   (id, username, password, firstname, lastname, phone_no, email, gender, age, address)
 VALUES
-  (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '8778562434', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087'),
+  (43190, 'Rohit123', '123', 'Rohit', 'Pandey', '626493438', 'rohit12@gmail.com', 'Male', 29, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087'),
   (12345, 'Tash12', '123', 'Tashmeet', 'Kaur', '6264934388', 'tash12@gmail.com', 'Female', 23, 'Sector 2, HSR layout, Bangalore, Karnataka, 560087');
 
 INSERT

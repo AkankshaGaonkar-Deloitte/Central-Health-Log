@@ -17,9 +17,14 @@ public class Pulse {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
+
     @Column
     @JsonFormat(pattern="yyyy-MM-dd")
     public Date date;
+
+//    @Column(nullable = false)
+//    private Long patientId;
+
     @Column(nullable = false)
     public Integer pulse;
 

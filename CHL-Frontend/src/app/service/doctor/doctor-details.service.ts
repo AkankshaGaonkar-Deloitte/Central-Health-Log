@@ -35,6 +35,12 @@ export class DoctorDetailsService {
     return this.http.get<Doctor[]>(`${this.baseurl}/${statusCode}`, { headers });
 
   }
+  getDoctorByStatusCodeAndId(id:number,statusCode: string):Observable<Doctor>{
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<Doctor>(`${this.baseurl}/${id}/${statusCode}`, { headers });
+
+  }
+
 
   updateDoorStatusCode(id : string, statusCode : string):Observable<Doctor>{
     let headers = this.createAuthenticationHeader()

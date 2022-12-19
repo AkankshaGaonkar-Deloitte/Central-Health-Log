@@ -10,8 +10,8 @@
         <div class="main">
           <div id="text1"><a routerLink="/patient-dashboard"></a>Registered Doctors</div>
           <div id="doctor-id">
-            <app-input [ipConfig]="searchDoctorId"></app-input>
-            <img src="assets/images/search.png" style="height: 2.5em;">
+            <app-input [ipConfig]="searchDoctorId" (outputEmit)="DocID=$event"></app-input>
+            <img src="assets/images/search.png" style="height: 2.5em;cursor: pointer" (click)="searchDoc()">
             </div>
           <div class="table-container">
             <table>
@@ -23,7 +23,7 @@
                 <th>Contact</th>
                 <th>Action</th>
               </tr>
-              <tr *ngFor="let doctor of doctors">
+              <tr *ngFor="let doctor of allDoctors">
                 <td>{{doctor.id}}</td>
                 <td>{{doctor.doctorName}}</td>
                 <td>{{doctor.qualification}}</td>

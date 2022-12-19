@@ -22,7 +22,9 @@ public class MedicalData {
     private Double weight;
     private Double bmi;
     private Double pulseRate;
+
     private String bloodPressure;
+
     private String bloodGroup;
     private String allergies;
     private String immunizations;
