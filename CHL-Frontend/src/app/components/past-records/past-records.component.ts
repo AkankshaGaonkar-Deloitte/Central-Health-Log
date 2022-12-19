@@ -391,6 +391,8 @@ patient=new Patient()
     this.closePopup()
   }
 
+  presc!: Blob
+
   viewPrescription(prescriptionId: number | undefined) {
 
     this.pastRecordService.getPrescription(prescriptionId as number)
@@ -405,6 +407,31 @@ patient=new Patient()
         link.click();
       })
     // this.router.navigate(['/prescription',])
+  }
+
+  uploadPresc(event: Event){
+    console.log(event);
+    const element = event.currentTarget as HTMLInputElement;
+    let fileList: FileList | null = element.files;
+    if (fileList) {
+      console.log("FileUpload -> files", fileList);
+      this.presc=fileList[0]
+    }
+
+    this.pastRecordService.uploadPrescription(this.presc)
+        .subscribe(response => {
+          // after uploading the prescription fetch the id and set it in pastRecord.prescriptionId
+          this.pastRecord.uploadedBy = 'Patient'
+          this.pastRecord.prescriptionId = response.id
+          this.pastRecord.patientId = this.patientId
+          // upload past record
+          this.pastRecordService.addPastRecord(this.pastRecord)
+            .subscribe(response => {
+              console.log(response)
+            })
+
+        }
+      )
   }
 
 }

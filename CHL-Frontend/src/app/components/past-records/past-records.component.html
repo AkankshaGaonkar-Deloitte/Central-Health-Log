@@ -51,7 +51,7 @@
                         </div>
                         <div class="grid-item">
                           <label>Patient ID:</label>
-                          <app-input name="patientId" [ipConfig]="idConfig" (outputEmit)="pastRecord.patientId=$event">
+                          <app-input name="patientId" [disabled]="'true'" [userInput]="patientId" [ipConfig]="idConfig" (outputEmit)="pastRecord.patientId=$event">
                           </app-input>
                         </div>
                         <div class="grid-item">
@@ -70,13 +70,14 @@
                           </app-input>
                         </div>
                         <div class="grid-item">
-                          <label id="prescription-label">Prescription:</label>
-                          <app-input name="prescription" [ipConfig]="presscriptionConfig" (outputEmit)="''">
-                          </app-input>
+                          <div class="cell">
+                            <label>Upload file:</label>
+                            <input (change)="uploadPresc($event)" type="file" accept="application/pdf"/>
+                          </div>
                         </div>
                         <div class="grid-item">
                           <label id="prescription-label">Uploaded by:</label>
-                          <app-input name="uploadedBy" [ipConfig]="nameConfig" (outputEmit)="pastRecord.uploadedBy=$event">
+                          <app-input [disabled]="'true'" [userInput]="'Patient'" name="uploadedBy" [ipConfig]="nameConfig" (outputEmit)="pastRecord.uploadedBy=$event">
                           </app-input>
                         </div>
                         <div class="grid-item">

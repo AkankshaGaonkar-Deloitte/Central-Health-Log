@@ -1,6 +1,7 @@
 import { ConditionalExpr } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PastRecordService } from 'src/app/service/past-record.service';
 import { VerifyPrescriptionService } from 'src/app/service/verify-prescription/verify-prescription.service';
 
 @Component({
@@ -21,7 +22,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private verifyPrescriptionService: VerifyPrescriptionService
+    private verifyPrescriptionService: VerifyPrescriptionService,
+    private pastRecordService: PastRecordService
   ) { }
 
   ngOnInit(): void {
