@@ -11,7 +11,8 @@ export class DocPatientMedicationComponent implements OnInit {
 
   allMedicalDataOfAPatient: Medication[] = []
 
-  patientId: number = 43190
+  patientId!: number;
+  
   filterSelector: string = 'Date'
   dateFrom: string = ''
   dateTo: string = ''
@@ -164,6 +165,7 @@ export class DocPatientMedicationComponent implements OnInit {
   constructor(private medicationService: MedicationService) { }
 
   ngOnInit(): void {
+    this.patientId=Number(sessionStorage.getItem('searched-patient'))
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.medicationService.getAllPatientRecords(this.patientId)
       .subscribe(response => {

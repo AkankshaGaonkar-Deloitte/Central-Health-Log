@@ -23,7 +23,7 @@ import { PastRecordService } from 'src/app/service/past-record.service';
 })
 export class AddMedicalRecordComponent implements OnInit {
 
-  patientId: number = 43190
+  patientId!: number;
   patient: Patient = new Patient()
   doctorId: number = 1
   doctor: Doctor = new Doctor()
@@ -374,6 +374,7 @@ export class AddMedicalRecordComponent implements OnInit {
 
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
+    this.patientId=Number(sessionStorage.getItem('searched-patient'))
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(response => {
         console.log(response);

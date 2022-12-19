@@ -10,7 +10,8 @@ import { PatientDetailsService } from 'src/app/service/patient-details/patient-d
 })
 export class DocPatientDashboardComponent implements OnInit {
 
-  patientId:number = 43190
+  patientId!: number;
+  
   patient: Patient = new Patient()
   doctorName!: string;
   constructor(private patientDetailsService: PatientDetailsService,
@@ -19,6 +20,7 @@ export class DocPatientDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
+    this.patientId=Number(sessionStorage.getItem('searched-patient'))
     this.patientDetailsService.getPatientByPatientId(this.patientId)
       .subscribe(data => {
         console.log(data);        

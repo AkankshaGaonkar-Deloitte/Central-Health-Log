@@ -10,7 +10,8 @@ import { MedicalDataService } from 'src/app/service/medical-data/medical-data.se
 })
 export class DocPatientMedicalDataComponent implements OnInit {
   
-  patientId:number = 43190
+  patientId!: number;
+  
   medicalData: MedicalData = new MedicalData()
 
   menus1 = { '1': ['Patient Dashboard', '/doc-patient-dashboard', 0],'2': ['Medical Data', '/doctor/patient/medical-data', 1],
@@ -181,6 +182,7 @@ export class DocPatientMedicalDataComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.patientId=Number(sessionStorage.getItem('searched-patient'))
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     this.medicalDataService.getMedicalDataByPatientId(this.patientId)
       .subscribe(response => this.medicalData=response)

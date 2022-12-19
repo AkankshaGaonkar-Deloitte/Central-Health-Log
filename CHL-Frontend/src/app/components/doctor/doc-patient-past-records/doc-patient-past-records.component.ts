@@ -13,7 +13,7 @@ export class DocPatientPastRecordsComponent implements OnInit {
 
   pastRecord: PastRecord = new PastRecord(-1)
 
-  patientId: number = 43190
+  patientId!: number;
 
   filterSelector: string = 'Date'
   dateFrom: string = ''
@@ -364,9 +364,10 @@ export class DocPatientPastRecordsComponent implements OnInit {
   doctorId!: number;
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
+    this.patientId=Number(sessionStorage.getItem('searched-patient'))
       let id=sessionStorage.getItem('user-id')
       this.doctorId=Number(id)
-    this.pastRecordService.getAllPatientRecords(43190)
+    this.pastRecordService.getAllPatientRecords(this.patientId)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
 
   }

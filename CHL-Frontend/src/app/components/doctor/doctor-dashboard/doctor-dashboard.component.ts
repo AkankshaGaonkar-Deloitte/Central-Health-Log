@@ -29,7 +29,6 @@ export class DoctorDashboardComponent implements OnInit {
         this.displayStyle = "block";
         this.otpService.sendOtp(new SMSPojo('+91' + this.patient.phoneNo as string)).subscribe(data => {
           this.response = data
-          console.log(this.response.responseMessage);
         })
       }
     });
@@ -71,6 +70,7 @@ export class DoctorDashboardComponent implements OnInit {
         data => {
           console.log(data);
           if (data.responseMessage=="OTP verified!"){
+            sessionStorage.setItem('searched-patient',String(this.patient.id))
             this.router.navigate(['/doc-patient-dashboard'])
           }
           else{
