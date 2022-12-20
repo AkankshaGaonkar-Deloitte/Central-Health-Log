@@ -21,5 +21,7 @@ public interface PastRecordRepository extends JpaRepository<PastRecord, Long> {
 
     long countByPatientId(Long patientId);
     long countByPatientIdAndSeverityBetween(Long patientId,Integer severityFrom, Integer severityTo);
-    Optional<PastRecord> findByOrderByUploadDate(Date uploadDate);
+
+    List<PastRecord> findByPatientIdOrderByUploadDateDesc(Long patientId);
+    PastRecord findTopByPatientIdOrderByUploadDateDesc(Long patientId);
 }

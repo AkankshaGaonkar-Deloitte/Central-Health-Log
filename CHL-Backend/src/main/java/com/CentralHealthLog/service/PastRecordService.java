@@ -46,5 +46,10 @@ public class PastRecordService {
     public Long countOfRecordsByIdAndSeverity(Long patientId, Integer severityFrom, Integer severityTo){
         return pastRecordRepository.countByPatientIdAndSeverityBetween(patientId,severityFrom, severityTo);
     }
-
+    public List<PastRecord> orderByUploadDate(Long patientId){
+        return pastRecordRepository.findByPatientIdOrderByUploadDateDesc(patientId);
+    }
+    public PastRecord LastAppointment(Long patientId){
+        return pastRecordRepository.findTopByPatientIdOrderByUploadDateDesc(patientId);
+    }
 }

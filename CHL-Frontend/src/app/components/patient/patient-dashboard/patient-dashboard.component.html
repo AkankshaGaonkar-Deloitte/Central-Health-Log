@@ -13,22 +13,26 @@
                     <div id="cards" class="card1">
                         <div class="text">
                             <p>Number of appointments</p>
-                            <h3>16</h3>
+                            <h3>{{appointments}}</h3>
                         </div>
-                        <div id="image" ><img src="assets/images/appointments.png" style=" height: 4.1em; width: 3.8em;"s></div>
+                        <div id="image"><img src="assets/images/appointments.png" style=" height: 4.1em; width: 3.8em;"
+                                s></div>
                     </div>
                     <div id="cards" class="card2">
                         <div class="text">
                             <p>Total diseases</p>
-                            <h3>03</h3>
+                            <h3>{{diseases}}</h3>
                         </div>
-                        <div id="image" ><img
-                                src="assets/images/diseases.png" style=" height: 4.1em; width: 3.8em;"></div>
+                        <div id="image"><img src="assets/images/diseases.png" style=" height: 4.1em; width: 3.8em;">
+                        </div>
                     </div>
                     <div id="cards" class="card2">
-                        <div class="text">
+                        <div class="text1">
                             <p>Last Health Check-up</p>
-
+                            <div>Doctor : <span>{{lastHealthCheckup.doctorName}} </span></div>
+                            <div>Diagnosis   : <span>{{lastHealthCheckup.diagnosis}}</span> </div>
+                            <div>Date   : <span>{{lastHealthCheckup.uploadDate}}</span> </div>
+                            
                         </div>
 
                     </div>

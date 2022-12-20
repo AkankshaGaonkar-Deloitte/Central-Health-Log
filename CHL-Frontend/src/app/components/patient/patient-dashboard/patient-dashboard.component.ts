@@ -1,9 +1,10 @@
 
 import { Component, OnInit } from '@angular/core';
+import { PastRecord } from 'src/app/model/past-record';
 import { Patient } from 'src/app/model/patient';
+import { PastRecordService } from 'src/app/service/past-record.service';
 import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
-import { PatientRegService } from 'src/app/service/patient/patient-reg.service';
-import { PatientService } from 'src/app/service/patient/patient.service';
+
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -55,19 +56,22 @@ export class PatientDashboardComponent implements OnInit {
     '3': ['BMI', false]
   };
 
-  constructor(private patientDetailsService:PatientDetailsService) {
+  constructor(private pastRecordService:PastRecordService) {
   }
   Userid!: string;
   patient=new Patient()
   patientName!: string;
+  appointments!: Number;
+  diseases!: Number;
+  lastHealthCheckup=new PastRecord()
   
   ngOnInit(): void {
     this.patientName=String(sessionStorage.getItem('Patient-name'))
-    let id=sessionStorage.getItem('user-id')
-    this.patientDetailsService.getPatientByPatientId(Number(id))
-      .subscribe(response => {     
-        this.patient=response
-      })
+    let id=Number(sessionStorage.getItem('user-id'))
+    
+    this.pastRecordService.NumberOfAppOintments(id).subscribe(data=>this.appointments=data )
+    this.pastRecordService.TotalDiseases(id).subscribe(data=>this.diseases=data)
+    this.pastRecordService.LastHealthCheckUp(id).subscribe(data=>this.lastHealthCheckup=data)
     
   }
 }

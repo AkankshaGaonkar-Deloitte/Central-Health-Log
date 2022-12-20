@@ -52,6 +52,15 @@ public class PatientController {
     public Long CountById(@PathVariable Long patientId) {
         return pastRecordService.countOfRecordsById(patientId);
     }
+    @GetMapping("/record/{patientId}/sortByDate")
+    public List<PastRecord> SortByDate(@PathVariable Long patientId) {
+        return pastRecordService.orderByUploadDate(patientId);
+    }
+
+    @GetMapping("/{patientId}/last-record")
+    public PastRecord LastHealthCheckup( @PathVariable Long patientId) {
+        return pastRecordService.LastAppointment(patientId);
+    }
 
     @GetMapping("/diseases/{patientId}/{severityFrom}/{severityTo}")
     public Long CountById(@PathVariable Long patientId, @PathVariable Integer severityFrom, @PathVariable Integer severityTo) {

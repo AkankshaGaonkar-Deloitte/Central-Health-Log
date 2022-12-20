@@ -1,12 +1,23 @@
 .main-container {
     width: 100vw;
     height: 100vh;
+    background-color: #f5feff;
 
     #nav {
         height: 7%;
         width: 100%;
     }
 
+    .status{
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 10em;
+        // background-color: #f5feff;
+    }
+    
     .subcontainer {
         display: flex;
         flex-direction: row;

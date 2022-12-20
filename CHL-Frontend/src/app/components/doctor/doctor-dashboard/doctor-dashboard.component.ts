@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Doctor } from 'src/app/model/doctor';
 import { Patient } from 'src/app/model/patient';
 import { PostResponse } from 'src/app/model/post-response';
 import { SMSPojo } from 'src/app/model/SMSPojo';
 import { TempOTP } from 'src/app/model/TempOTP';
+import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.service';
 import { OtpService } from 'src/app/service/otp.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
 
@@ -16,10 +18,10 @@ export class DoctorDashboardComponent implements OnInit {
   patient = new Patient()
   patientId!: string | number | null;
   response: PostResponse = new PostResponse('')
-  doctorId!: number;
+  doctor=new Doctor()
   doctorName!: string;
 
-  constructor(private patientService: PatientService, private otpService: OtpService,private router:Router) { }
+  constructor(private doctorService:DoctorDetailsService, private patientService: PatientService, private otpService: OtpService,private router:Router) { }
   displayStyle = "none";
 
   GetPatient() {
@@ -90,8 +92,10 @@ export class DoctorDashboardComponent implements OnInit {
   
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
-    let id=sessionStorage.getItem('doc-user-id')
-    this.doctorId=Number(id)
+    let id=Number(sessionStorage.getItem('user-id'))
+    this.doctorService.getDoctorByDoctorId(id).subscribe(data=>{this.doctor=data;console.warn(this.doctor);}
+    )
+
     
   }
 

@@ -62,5 +62,17 @@ export class PastRecordService {
     return this.http.get<Prescription>(`http://localhost:8080/patient/past-record/prescription/${prescriptionId}`, {headers})
   }
 
-  
+  NumberOfAppOintments(patientId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<Number>(`http://localhost:8080/appointments/${patientId}`, {headers})
+  } 
+
+  TotalDiseases(patientId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<Number>(`http://localhost:8080/diseases/${patientId}/8/10`, {headers})
+  } 
+  LastHealthCheckUp(patientId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<PastRecord>(`http://localhost:8080/${patientId}/last-record`, {headers})
+  } 
 }
