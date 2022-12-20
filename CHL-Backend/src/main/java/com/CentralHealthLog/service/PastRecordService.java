@@ -38,4 +38,13 @@ public class PastRecordService {
     public List<PastRecord> filterBySeverity(Long patientId, Integer severityFrom, Integer severityTo) {
         return pastRecordRepository.findByPatientIdAndSeverityBetween(patientId, severityFrom, severityTo).get();
     }
+
+    public Long countOfRecordsById(Long patientId){
+        return pastRecordRepository.countByPatientId(patientId);
+    }
+
+    public Long countOfRecordsByIdAndSeverity(Long patientId, Integer severityFrom, Integer severityTo){
+        return pastRecordRepository.countByPatientIdAndSeverityBetween(patientId,severityFrom, severityTo);
+    }
+
 }

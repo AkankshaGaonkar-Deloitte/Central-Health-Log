@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 
@@ -9,6 +9,8 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
 })
 export class AreaGraphComponent implements OnInit {
 
+  @Input()
+  patientid!: number;
   public dataValues: Object[] = [];
   //Initializing Primary X Axis
   public primaryXAxis: Object = {
@@ -58,7 +60,7 @@ export class AreaGraphComponent implements OnInit {
       // format: '{x} : <b>{y}</b>',
       // shared: true
   };
-  patientid!: number;
+  
      // custom code start
   public load(args: ILoadedEventArgs): void {
       let selectedTheme: string = location.hash.split('/')[1];
@@ -75,18 +77,6 @@ export class AreaGraphComponent implements OnInit {
   ngOnInit(): void {
 
     let pr:Object[]=[];
-    // this.patientid=Number(sessionStorage.getItem('user-id'))
-    
-    this.patientid=Number(sessionStorage.getItem('searched-patient'))
-
-
-
-
-
-
-
-
-
     this.graphService.getBMI().subscribe(data =>{
     for(let i in data) {
       pr.push(data[i]);

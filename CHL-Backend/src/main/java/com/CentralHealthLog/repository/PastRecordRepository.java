@@ -18,4 +18,8 @@ public interface PastRecordRepository extends JpaRepository<PastRecord, Long> {
     Optional<List<PastRecord>> findByPatientIdAndUploadDateBetween(Long patientId, Date from, Date to);
 
     Optional<List<PastRecord>> findByPatientIdAndSeverityBetween(Long patientId, Integer severityFrom, Integer severityTo);
+
+    long countByPatientId(Long patientId);
+    long countByPatientIdAndSeverityBetween(Long patientId,Integer severityFrom, Integer severityTo);
+    Optional<PastRecord> findByOrderByUploadDate(Date uploadDate);
 }
