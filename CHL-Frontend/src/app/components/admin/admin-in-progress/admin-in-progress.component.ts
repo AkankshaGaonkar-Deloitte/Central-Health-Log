@@ -11,7 +11,7 @@ export class AdminInProgressComponent implements OnInit {
   DocID!: string | number | null;
   allDoctors!: Doctor[];
 
-  comment!: string|number|null
+  comment!: string | number | null
 
   searchBtnConfig = {
     type: "submit",
@@ -155,7 +155,7 @@ export class AdminInProgressComponent implements OnInit {
   };
 
   textBtnConfig4 = {
-    type:"button",
+    type: "button",
     styles: {
       height: '2em',
 
@@ -187,31 +187,29 @@ export class AdminInProgressComponent implements OnInit {
 
   denied($event: any, id: any, statusCode: string) {
     this.openPopup()
-    this.doctorDetailsService.updateDoorStatusCode(id, statusCode).subscribe(data => {
-
-    });
   }
 
-  submitComment(id: string|number|null){
+  submitComment(id: string | number | null) {
     console.log(this.allDoctors);
-    let doc: Doctor
+    let doc: Doctor = new Doctor()
     this.allDoctors.forEach(element => {
-      if (element.id === id){
+      if (element.id === id) {
         console.log(element);
         doc = element
-        doc.statusCode = 'TO_BE_REGISTERED'
-        this.doctorDetailsService.updateDoctor(doc)
-        .subscribe(response => {
-          console.log(response);
-          
-        })
       }
     });
+
+    doc.statusCode = 'TO_BE_REGISTERED'
+    this.doctorDetailsService.updateDoctor(doc)
+      .subscribe(response => {
+        console.log(response);
+        window.location.reload()
+      })
     this.closePopup()
   }
 
   openPopup() {
-    this.displayStyle = "block";    
+    this.displayStyle = "block";
   }
 
   closePopup() {
