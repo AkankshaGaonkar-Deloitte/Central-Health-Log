@@ -366,7 +366,7 @@ patient=new Patient()
       }
       )
 
-    this.pastRecordService.getAllPatientRecords(this.patientId)
+    this.pastRecordService.SortedPastRecordsById(this.patientId)
       .subscribe(data => this.allPastRecordsOfAPatient = data);
 
   }
@@ -388,6 +388,7 @@ patient=new Patient()
         this.allPastRecordsOfAPatient.push(data)
       })
     this.closePopup()
+    window.location.reload()
   }
 
   presc!: Blob

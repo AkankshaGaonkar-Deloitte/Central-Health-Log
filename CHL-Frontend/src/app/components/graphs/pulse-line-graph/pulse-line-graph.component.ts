@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
 import { Pulse } from 'src/app/model/Pulse';
@@ -10,6 +10,7 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
   styleUrls: ['./pulse-line-graph.component.scss']
 })
 export class PulseLineGraphComponent implements OnInit {
+  @Input('id') patientid!: number;
 
   constructor(private graphService: GraphServiceService) { }
   public pulseRate: Object[] = [];
@@ -60,11 +61,11 @@ export class PulseLineGraphComponent implements OnInit {
   public title: string = 'Pulse Rate';
 
   ngOnInit(): void {
+    console.warn(this.patientid);
     let pr: Object[] = [];
     this.graphService.getPulse().subscribe(data => {
       for (let i in data) {
         pr.push(data[i]);
-        console.warn(data[i]);
       }
       this.pulseRate = pr;
     }

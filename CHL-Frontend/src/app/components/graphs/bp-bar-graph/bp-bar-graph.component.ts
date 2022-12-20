@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 
@@ -8,6 +8,7 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
   styleUrls: ['./bp-bar-graph.component.scss']
 })
 export class BpBarGraphComponent implements OnInit {
+  @Input('id') patientid!: number;
 
   constructor(private graphService: GraphServiceService) { }
   public BP: Object[] = [];
@@ -61,11 +62,11 @@ export class BpBarGraphComponent implements OnInit {
   // custom code end
   public title: string = 'Blood Pressure';
   ngOnInit(): void {
+    console.warn(this.patientid);
     let pr: Object[] = [];
     this.graphService.getBloodPressure().subscribe(data => {
       for (let i in data) {
         pr.push(data[i]);
-        console.warn(data[i]);
       }
       this.BP = pr;
     }

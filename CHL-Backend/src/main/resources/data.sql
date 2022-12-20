@@ -23,37 +23,32 @@ VALUES
   ('Crocin', 2, '1-1-1', '2012-09-12', false, 43190),
   ('Shelcal XT', 3, '0-0-1', '2021-01-25', false, 43190);
 
-INSERT INTO
-BMI VALUES
-  (1,20,'2021-09-09'),
-  (2,24,'2021-10-09'),
-  (3,22,'2021-11-09'),
-  (4,28,'2021-12-09'),
-  (5,23,'2022-01-09');
+--INSERT INTO
+--blood_pressure VALUES
+--  (1,'2021-09-09',90,110),
+--  (2,'2021-10-09',80,120),
+--  (3,'2021-11-09',75,105),
+--  (4,'2021-12-09',82,100),
+--  (5,'2022-01-09',67,110);
 
-INSERT INTO
-blood_pressure VALUES
-  (1,'2021-09-09',90,43190,110),
-  (2,'2021-10-09',80,43190,120),
-  (3,'2021-11-09',75,43190,105),
-  (4,'2021-12-09',82,43190,100),
-  (5,'2022-01-09',67,43190,110);
-
-INSERT INTO
-pulse VALUES
-  (1,'2021-09-09',100),
-  (2,'2021-10-09',110),
-  (3,'2021-11-09',90),
-  (4,'2021-12-09',85),
-  (5,'2022-01-09',97);
+--INSERT INTO
+--pulse VALUES
+--  (1,'2021-09-09',100),
+--  (2,'2021-10-09',110),
+--  (3,'2021-11-09',90),
+--  (4,'2021-12-09',85),
+--  (5,'2022-01-09',97);
 
 INSERT
 INTO
   medical_data
   (patient_id, is_current, height, weight, bmi, pulse_rate, blood_pressure, blood_group, allergies, immunizations, chronic_health_problems, family_medical_history, upload_date)
 VALUES
-  (43190, TRUE, 6, 80, 24, 70, '120/80', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2022-11-21'),
-  (43190, FALSE, 6, 81, 24.3, 65, '120/80', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-10-12');
+  (43190, TRUE, 6, 80, 20, 100, '110/90', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-09-09'),
+  (43190, FALSE, 6, 81, 24.3, 112, '120/80', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-10-09'),
+  (43190, FALSE, 6, 81, 22.8, 90, '105/75', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-11-09'),
+  (43190, FALSE, 6, 81, 27.3, 82, '100/82', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2021-12-09'),
+  (43190, FALSE, 6, 81, 22.3, 95, '112/68', 'AB+', 'Pollen', 'Polio,Encephalitis', 'Diabetes,Low BP', 'Allopecia', '2022-10-12');
 
 INSERT
 INTO

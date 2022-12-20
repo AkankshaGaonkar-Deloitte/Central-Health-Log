@@ -27,7 +27,7 @@ public class BloodPressure {
     @Column(nullable = false)
     public Integer diastolic;
 
-    @Column(nullable = false)
-    private Long patientId;
+//    @Column(nullable = false)
+//    private Long patientId;
 
 }

@@ -186,7 +186,6 @@ export class MedicalDataComponent implements OnInit {
       .subscribe(response => this.medicalData=response)
   }
 
-
   medicalDataFormSubmit(){
     if (this.medicalData.isCurrent === undefined)
       this.medicalData.isCurrent='true'
