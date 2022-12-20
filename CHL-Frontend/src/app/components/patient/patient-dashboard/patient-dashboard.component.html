@@ -30,11 +30,11 @@
                         <div class="text1">
                             <p>Last Health Check-up</p>
                             <div>Doctor : <span>{{lastHealthCheckup.doctorName}} </span></div>
-                            <div>Diagnosis   : <span>{{lastHealthCheckup.diagnosis}}</span> </div>
-                            <div>Date   : <span>{{lastHealthCheckup.uploadDate}}</span> </div>
-                            
+                            <div>Diagnosis : <span>{{lastHealthCheckup.diagnosis}}</span> </div>
+                            <div>Date : <span>{{lastHealthCheckup.uploadDate}}</span> </div>
                         </div>
-
+                        <div id="image"><img src="assets/images/person-icon.png" style=" height: 4.1em; width: 3.8em;">
+                        </div>
                     </div>
                 </div>
                 <div class="tabs">
@@ -49,13 +49,13 @@
                 </div>
                 <div class="charts">
                     <div *ngIf="bmi" class="bmiGraph">
-                        <app-area-graph></app-area-graph>
+                        <app-area-graph [id]="patientId"></app-area-graph>
                     </div>
                     <div *ngIf="pulse" class="pulseRate">
-                        <pulse-line-graph></pulse-line-graph>
+                        <pulse-line-graph [id]="patientId"></pulse-line-graph>
                     </div>
                     <div *ngIf="bp" class="bpGraph">
-                        <bp-graph></bp-graph>
+                        <bp-graph [id]="patientId"></bp-graph>
                     </div>
 
                 </div>

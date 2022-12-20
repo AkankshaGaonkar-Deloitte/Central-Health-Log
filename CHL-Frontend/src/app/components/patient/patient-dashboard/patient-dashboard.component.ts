@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { PastRecord } from 'src/app/model/past-record';
 import { Patient } from 'src/app/model/patient';
 import { PastRecordService } from 'src/app/service/past-record.service';
-import { PatientDetailsService } from 'src/app/service/patient-details/patient-details.service';
-
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -23,23 +21,23 @@ export class PatientDashboardComponent implements OnInit {
     for (let key in menus) {
       if (menus[key] == tab.value) {
         menus[key][1] = true;
-    
-        if (menus[key][0]=='BMI'){
-          this.bmi=true
-          this.pulse=false
-          this.bp=false
+
+        if (menus[key][0] == 'BMI') {
+          this.bmi = true
+          this.pulse = false
+          this.bp = false
         }
-        else{
-          if(menus[key][0]=='BLOOD PRESSURE'){
-            this.bmi=false
-          this.pulse=false
-          this.bp=true
+        else {
+          if (menus[key][0] == 'BLOOD PRESSURE') {
+            this.bmi = false
+            this.pulse = false
+            this.bp = true
           }
-          else{
-            if(menus[key][0]=='PULSE RATE'){
-              this.bmi=false
-          this.pulse=true
-          this.bp=false
+          else {
+            if (menus[key][0] == 'PULSE RATE') {
+              this.bmi = false
+              this.pulse = true
+              this.bp = false
             }
           }
         }
@@ -51,28 +49,29 @@ export class PatientDashboardComponent implements OnInit {
   }
 
   menus = {
-    '1': ['BLOOD PRESSURE', true], 
+    '1': ['BLOOD PRESSURE', true],
     '2': ['PULSE RATE', false],
     '3': ['BMI', false]
   };
 
-  constructor(private pastRecordService:PastRecordService) {
+  constructor(private pastRecordService: PastRecordService) {
   }
   Userid!: string;
-  patient=new Patient()
+  patient = new Patient()
   patientName!: string;
   appointments!: Number;
   diseases!: Number;
-  lastHealthCheckup=new PastRecord()
+  lastHealthCheckup = new PastRecord()
+  patientId!: number;
   
   ngOnInit(): void {
-    this.patientName=String(sessionStorage.getItem('Patient-name'))
-    let id=Number(sessionStorage.getItem('user-id'))
+    this.patientName = String(sessionStorage.getItem('Patient-name'))
+    this.patientId = Number(sessionStorage.getItem('user-id'))
     
-    this.pastRecordService.NumberOfAppOintments(id).subscribe(data=>this.appointments=data )
-    this.pastRecordService.TotalDiseases(id).subscribe(data=>this.diseases=data)
-    this.pastRecordService.LastHealthCheckUp(id).subscribe(data=>this.lastHealthCheckup=data)
-    
+    this.pastRecordService.NumberOfAppOintments(this.patientId ).subscribe(data => this.appointments = data)
+    this.pastRecordService.TotalDiseases(this.patientId ).subscribe(data => this.diseases = data)
+    this.pastRecordService.LastHealthCheckUp(this.patientId ).subscribe(data => this.lastHealthCheckup = data)
+
   }
 }
 
