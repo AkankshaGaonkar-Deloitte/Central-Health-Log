@@ -49,6 +49,13 @@ public class AdminController {
         return new ResponseEntity<>(doctor, HttpStatus.OK);
     }
 
+    @PutMapping("/doctor/update")
+    public ResponseEntity<Doctor> updateDoctor(@RequestBody Doctor doctor)
+    {
+        Doctor updatedDoctor = service.updateDoctor(doctor);
+        return new ResponseEntity<>(updatedDoctor, HttpStatus.OK);
+    }
+
     @DeleteMapping("/doctor/{id}")
     public void delete_doctor_by_id(@PathVariable long id)
     {

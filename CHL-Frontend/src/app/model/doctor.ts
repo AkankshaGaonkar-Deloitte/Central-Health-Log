@@ -15,4 +15,5 @@ export class Doctor {
     gender !: string|number|null;
     address !:string|number|null;
     statusCode!:string|number|null;
+    comment!: string|number|null;
 }

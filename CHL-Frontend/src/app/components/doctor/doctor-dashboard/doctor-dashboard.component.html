@@ -5,7 +5,8 @@
     <div *ngIf="doctor.statusCode!='REGISTERED'" class="status"><b>
         You do not have permission to access our site.
         <div>Your Details are sent to the Admin for verification </div>
-        <div>Your status is = {{doctor.statusCode}}</div></b>
+        <div *ngIf="doctor.comment === ''">Your status is = {{doctor.statusCode}}</div>
+        <div *ngIf="doctor.comment != ''">Reason = {{doctor.comment}}</div></b>
     </div>
     <div *ngIf="doctor.statusCode=='REGISTERED'" class="subcontainer">
         <div class="flex-item1">

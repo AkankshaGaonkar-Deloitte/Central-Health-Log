@@ -47,4 +47,6 @@ public class Doctor {
     private String address;
 
     private String statusCode;
+
+    private String comment;
 }
