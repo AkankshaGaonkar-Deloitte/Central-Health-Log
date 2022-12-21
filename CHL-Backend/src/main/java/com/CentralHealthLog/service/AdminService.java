@@ -48,8 +48,7 @@ public class AdminService {
             return repository.save(doctor);
         }
 
-        public void deleteDoctor(long id)
-        {
-             repository.deleteById(id);
+        public void deleteDoctor(Long id) {
+            repository.deleteById(id);
         }
 }

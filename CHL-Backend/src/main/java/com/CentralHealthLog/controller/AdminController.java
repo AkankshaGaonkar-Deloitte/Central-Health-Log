@@ -57,8 +57,8 @@ public class AdminController {
     }
 
     @DeleteMapping("/doctor/{id}")
-    public void delete_doctor_by_id(@PathVariable long id)
-    {
+    public void delete_doctor_by_id(@PathVariable long id) {
+        System.out.println("Doctor id to be deleted: " + id);
         service.deleteDoctor(id);
     }
 

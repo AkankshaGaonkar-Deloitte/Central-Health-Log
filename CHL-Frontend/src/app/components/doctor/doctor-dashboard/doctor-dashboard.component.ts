@@ -21,7 +21,13 @@ export class DoctorDashboardComponent implements OnInit {
   doctor=new Doctor()
   doctorName!: string;
 
-  constructor(private doctorService:DoctorDetailsService, private patientService: PatientService, private otpService: OtpService,private router:Router) { }
+  constructor(
+    private doctorService:DoctorDetailsService, 
+    private patientService: PatientService, 
+    private otpService: OtpService,
+    private router:Router,
+    public doctorDetailsService: DoctorDetailsService
+  ) { }
   displayStyle = "none";
 
   GetPatient() {
@@ -123,6 +129,18 @@ export class DoctorDashboardComponent implements OnInit {
   closePopup() {
     this.displayStyle = "none";
     //window.location.reload()
+  }
+
+  removeDoctor(){
+    console.log('doctor to be deleted!');
+    console.log(this.doctor);
+    
+    this.doctorDetailsService.deleteDoctorById(this.doctor.id as string)
+    .subscribe(response => {
+      
+    })
+    this.router.navigate(['/login'])
+    
   }
 
 
