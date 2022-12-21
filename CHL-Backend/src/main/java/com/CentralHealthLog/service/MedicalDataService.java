@@ -19,6 +19,13 @@ public class MedicalDataService {
         System.out.println("Medical data found for patient with id " + patientId + ": " + medicalData);
         return medicalData;
     }
+    public List<MedicalData> getAllMedicalDataByPatientId(Long patientId) {
+        List<MedicalData> medicalData = medicalDataRepository.findByPatientId(patientId);
+        if (medicalData == null)
+            throw new IllegalStateException("Medical data not found for patient with id " + patientId);
+        return medicalData;
+    }
+
 
     public MedicalData saveMedicalData(MedicalData medicalData){
         if (medicalData.getId() != null){

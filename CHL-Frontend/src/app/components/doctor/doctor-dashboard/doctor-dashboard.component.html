@@ -8,10 +8,10 @@
         <div>Your Details are sent to the Admin for verification </div>
         <div *ngIf="doctor.comment === ''">Your status is = {{doctor.statusCode}}</div>
         <div *ngIf="doctor.comment != ''">Reason = {{doctor.comment}}</div></b>
-        {{openPopup()}}
+        {{openPopup1()}}
     </div>
     <!--modal 2-->
-    <div *ngIf="doctor.statusCode=='TO_BE_REGISTERED' && doctor.comment != ''" class="modal2" role="dialog" [ngStyle]="{ display: displayStyle }">
+    <div *ngIf="doctor.statusCode=='TO_BE_REGISTERED' && doctor.comment != ''" class="modal2" role="dialog" [ngStyle]="{ display: displayStyle1 }">
         <div class="modal-header">
           <h4 class="modal-title">Important!</h4>
         </div>

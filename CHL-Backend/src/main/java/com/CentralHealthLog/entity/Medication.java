@@ -21,7 +21,7 @@ public class Medication {
     @Column(nullable = false)
     private Long patientId;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String medicine;
 
     private String dosage;

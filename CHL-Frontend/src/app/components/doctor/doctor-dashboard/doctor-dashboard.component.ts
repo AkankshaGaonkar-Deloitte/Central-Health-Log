@@ -28,6 +28,7 @@ export class DoctorDashboardComponent implements OnInit {
     private router:Router,
     public doctorDetailsService: DoctorDetailsService
   ) { }
+  displayStyle1 = "none";
   displayStyle = "none";
 
   GetPatient() {
@@ -122,8 +123,8 @@ export class DoctorDashboardComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  openPopup() {
-    this.displayStyle = "block";
+  openPopup1() {
+    this.displayStyle1 = "block";
   }
 
   closePopup() {

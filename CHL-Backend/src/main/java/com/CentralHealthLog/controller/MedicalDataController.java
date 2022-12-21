@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("*")
 public class MedicalDataController {
@@ -19,6 +21,10 @@ public class MedicalDataController {
         return medicalDataService.getMedicalDataByPatientId(patientId);
     }
 
+    @GetMapping("/patient/all-medical-data/{patientId}")
+    public List<MedicalData> getAllMedicalDataById(@PathVariable Long patientId){
+        return medicalDataService.getAllMedicalDataByPatientId(patientId);
+    }
     @PostMapping("/patient/medical-data")
     public ResponseEntity<MedicalData> addNewMedicalData(@RequestBody MedicalData medicalData){
         System.out.println("--------------------> " + medicalData.toString());
