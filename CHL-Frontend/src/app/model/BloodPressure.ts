@@ -1,8 +1,9 @@
 
 export class BloodPressure {
-    id!: number;
-    date!: Date;
-    systolic!: number;
-    diastolic!:number;
-
+  
+   
+    id?: string|number|null
+    date?: string|number|null
+    systolic?: string|number|null
+    diastolic?: string|number|null
   }

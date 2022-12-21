@@ -1,6 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { BloodPressure } from 'src/app/model/BloodPressure';
+import { BMI } from 'src/app/model/BMI';
+import { MedicalData } from 'src/app/model/medical-data';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
 
 @Component({
   selector: 'bp-graph',
@@ -10,7 +14,7 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
 export class BpBarGraphComponent implements OnInit {
   @Input('id') patientid!: number;
 
-  constructor(private graphService: GraphServiceService) { }
+  constructor(private medicalDataService:MedicalDataService,private graphService: GraphServiceService) { }
   public BP: Object[] = [];
 
   public primaryXAxis: Object = {
@@ -61,17 +65,34 @@ export class BpBarGraphComponent implements OnInit {
   };
   // custom code end
   public title: string = 'Blood Pressure';
-  ngOnInit(): void {
-    console.warn(this.patientid);
-    let pr: Object[] = [];
-    this.graphService.getBloodPressure().subscribe(data => {
-      for (let i in data) {
-        pr.push(data[i]);
-      }
-      this.BP = pr;
-    }
 
-    )
+  ngOnInit(): void {
+    let medicalData:MedicalData[]
+    let pr: Object[] = [];
+    let bp: BloodPressure
+    
+    this.medicalDataService.getAllMedicalDataById(this.patientid)
+      .subscribe(response => {
+        medicalData = response;
+        for (let i in medicalData) {
+          bp=new BMI()
+          bp.id=medicalData[i].id
+          bp.date=medicalData[i].uploadDate
+          let bloodpressure:string[]=String(medicalData[i].bloodPressure).split("/")
+          bp.systolic=bloodpressure[0]
+          bp.diastolic=bloodpressure[1]
+          pr.push(bp);
+          console.log(pr);  
+        }
+        this.BP = pr;
+      }
+      )
+    // this.graphService.getBloodPressure().subscribe(data => {
+    //   for (let i in data) {
+    //     pr.push(data[i]);
+    //   }
+    //   this.BP = pr;
+    // })
   }
 
 }

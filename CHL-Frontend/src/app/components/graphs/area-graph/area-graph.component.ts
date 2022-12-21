@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
+import { BMI } from 'src/app/model/BMI';
 import { MedicalData } from 'src/app/model/medical-data';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
 import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
@@ -80,26 +81,31 @@ export class AreaGraphComponent implements OnInit {
     private datePipe: DatePipe, private graphService: GraphServiceService) { }
 
   ngOnInit(): void {
-    let medicalData = new MedicalData()
-
-    // this.medicalDataService.getMedicalDataByPatientId(this.patientid)
-    //   .subscribe(response => {
-    //     medicalData = response;
-    //     for (let i in response.bmi) {
-    //       pr.push(response.bmi[i]);
-    //     }
-    //   }
-    //   )
-
+    let medicalData:MedicalData[]
     let pr: Object[] = [];
-    this.graphService.getBMI().subscribe(data => {
-      for (let i in data) {
-        pr.push(data[i]);
+    let bmi: BMI
+    this.medicalDataService.getAllMedicalDataById(this.patientid)
+      .subscribe(response => {
+        medicalData = response;
+        for (let i in medicalData) {
+          console.warn("md",medicalData[i]);
+          bmi=new BMI()
+          bmi.id=medicalData[i].id
+          bmi.date=medicalData[i].uploadDate
+          bmi.bmi=medicalData[i].bmi
+          pr.push(bmi);
+          console.log(pr);  
+        }
+        this.BMI = pr;
       }
-      this.BMI = pr;
-    }
-
-    )
+      )
+    
+    // this.graphService.getBMI().subscribe(data => {
+    //   for (let i in data) {
+    //     pr.push(data[i]);
+    //   }
+    //   this.BMI = pr;
+    // })
   }
 
 }

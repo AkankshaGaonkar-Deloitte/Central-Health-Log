@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ILoadedEventArgs, ChartTheme } from '@syncfusion/ej2-angular-charts';
 import { Browser } from '@syncfusion/ej2-base';
+import { MedicalData } from 'src/app/model/medical-data';
 import { Pulse } from 'src/app/model/Pulse';
 import { GraphServiceService } from 'src/app/service/graph-service.service';
+import { MedicalDataService } from 'src/app/service/medical-data/medical-data.service';
 
 @Component({
   selector: 'pulse-line-graph',
@@ -12,7 +14,7 @@ import { GraphServiceService } from 'src/app/service/graph-service.service';
 export class PulseLineGraphComponent implements OnInit {
   @Input('id') patientid!: number;
 
-  constructor(private graphService: GraphServiceService) { }
+  constructor(private medicalDataService:MedicalDataService,private graphService: GraphServiceService) { }
   public pulseRate: Object[] = [];
   public primaryXAxis: Object = {
     title: 'Date',
@@ -61,16 +63,30 @@ export class PulseLineGraphComponent implements OnInit {
   public title: string = 'Pulse Rate';
 
   ngOnInit(): void {
-    console.warn(this.patientid);
+    let medicalData:MedicalData[]
+    let pulse: Pulse
     let pr: Object[] = [];
-    this.graphService.getPulse().subscribe(data => {
-      for (let i in data) {
-        pr.push(data[i]);
+    this.medicalDataService.getAllMedicalDataById(this.patientid)
+      .subscribe(response => {
+        medicalData = response;
+        for (let i in medicalData) {
+          pulse=new Pulse()
+          pulse.id=medicalData[i].id
+          pulse.date=medicalData[i].uploadDate
+          pulse.pulse=medicalData[i].pulseRate
+          pr.push(pulse);
+        }
+        this.pulseRate = pr;
       }
-      this.pulseRate = pr;
-    }
+      )
 
-    )
+    // this.graphService.getPulse().subscribe(data => {
+    //   for (let i in data) {
+    //     console.warn(data[i]);
+    //     pr.push(data[i]);
+    //   }
+    //   this.pulseRate = pr;
+    // })
   }
 
 }
