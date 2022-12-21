@@ -45,7 +45,7 @@
                     <div id="cards" class="card1">
                         <div class="text">
                             <p>Number of appointments</p>
-                            <h3>500</h3>
+                            <h3>{{appointments}}</h3>
                         </div>
                         <div id="image"><img src="assets/images/appointments.png" style=" height: 4.2em; width: 4em;">
                         </div>
@@ -67,29 +67,23 @@
                         </div>
                     </div>
                 </div>
+                <br>
                 <div class="past-app">
                     <b style="margin: 1em; font-size: 1.2em;">Past Appointments</b>
+                    <br>
                     <div class="table-container">
                         <table>
                             <tr>
                                 <th>Date</th>
-                                <th>Patient name</th>
+                                <th>Patient Id</th>
                                 <th>Diagnosis</th>
                                 <th>Severity</th>
-                                <th>Prescription</th>
                             </tr>
-                            <!-- <tr *ngFor="let pastRecord of allPastRecords">
+                            <tr *ngFor="let pastRecord of records">
                     <td>{{pastRecord.uploadDate}}</td>
-                    <td>{{pastRecord.doctorName}}</td>
+                    <td>{{pastRecord.patientId}}</td>
                     <td>{{pastRecord.diagnosis}}</td>
                     <td>{{pastRecord.severity}}</td>
-                    <td>{{pastRecord.uploadedBy}}</td> -->
-
-                            <!-- <td>
-                      <app-button [btntext]="'View'" [btnConfig]="textBtnConfig"></app-button>
-                    </td>
-                </tr> -->
-
                         </table>
                     </div>
                 </div>

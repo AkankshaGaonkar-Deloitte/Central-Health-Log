@@ -66,6 +66,10 @@ export class PastRecordService {
     let headers = this.createAuthenticationHeader()
     return this.http.get<Number>(`http://localhost:8080/appointments/${patientId}`, {headers})
   } 
+  TotalAppointmentsofDoc(doctorId: number){
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<Number>(`http://localhost:8080/doc-appointments/${doctorId}`, {headers})
+  } 
 
   TotalDiseases(patientId: number){
     let headers = this.createAuthenticationHeader()

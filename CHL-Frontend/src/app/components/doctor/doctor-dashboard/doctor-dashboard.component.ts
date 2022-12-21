@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Doctor } from 'src/app/model/doctor';
+import { PastRecord } from 'src/app/model/past-record';
 import { Patient } from 'src/app/model/patient';
 import { PostResponse } from 'src/app/model/post-response';
 import { SMSPojo } from 'src/app/model/SMSPojo';
 import { TempOTP } from 'src/app/model/TempOTP';
 import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.service';
 import { OtpService } from 'src/app/service/otp.service';
+import { PastRecordService } from 'src/app/service/past-record.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
@@ -20,13 +22,15 @@ export class DoctorDashboardComponent implements OnInit {
   response: PostResponse = new PostResponse('')
   doctor=new Doctor()
   doctorName!: string;
+  records!: PastRecord[];
+  appointments!: Number;
 
   constructor(
+    private pastRecordService:PastRecordService,
     private doctorService:DoctorDetailsService, 
     private patientService: PatientService, 
     private otpService: OtpService,
     private router:Router,
-    public doctorDetailsService: DoctorDetailsService
   ) { }
   displayStyle1 = "none";
   displayStyle = "none";
@@ -69,20 +73,20 @@ export class DoctorDashboardComponent implements OnInit {
   };
 
   Verifyotp() {
-    // return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
-    //   .subscribe(
-    //     data => {
-    //       console.log(data);
-    //       if (data.responseMessage=="OTP verified!"){
-    //         sessionStorage.setItem('searched-patient',String(this.patient.id))
-    //         this.router.navigate(['/doc-patient-dashboard'])
-    //       }
-    //       else{
-    //         console.log(data.responseMessage);
+    return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
+      .subscribe(
+        data => {
+          console.log(data);
+          if (data.responseMessage=="OTP verified!"){
+            sessionStorage.setItem('searched-patient',String(this.patient.id))
+            this.router.navigate(['/doc-patient-dashboard'])
+          }
+          else{
+            console.log(data.responseMessage);
             
-    //       }
-    //     }
-    //   )
+          }
+        }
+      )
   }
   
   menus1 = {
@@ -95,10 +99,12 @@ export class DoctorDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.doctorName='Dr '+String(sessionStorage.getItem('Doctor-name'))
     let id=Number(sessionStorage.getItem('user-id'))
-    this.doctorService.getDoctorByDoctorId(id).subscribe(data=>{this.doctor=data;console.warn(this.doctor);}
-    )
 
-    
+    this.doctorService.getDoctorByDoctorId(id)
+    .subscribe(data=>{this.doctor=data;console.warn(this.doctor);
+    })
+    this.pastRecordService.GetPastRecordByDoctor(id).subscribe(data=>this.records=data)
+    this.pastRecordService.TotalAppointmentsofDoc(id).subscribe(data=>this.appointments=data)
   }
 
   searchPatientId = {
@@ -129,14 +135,14 @@ export class DoctorDashboardComponent implements OnInit {
 
   closePopup() {
     this.displayStyle = "none";
-    //window.location.reload()
+    // window.location.reload()
   }
 
   removeDoctor(){
     console.log('doctor to be deleted!');
     console.log(this.doctor);
     
-    this.doctorDetailsService.deleteDoctorById(this.doctor.id as string)
+    this.doctorService.deleteDoctorById(this.doctor.id as string)
     .subscribe(response => {
       
     })

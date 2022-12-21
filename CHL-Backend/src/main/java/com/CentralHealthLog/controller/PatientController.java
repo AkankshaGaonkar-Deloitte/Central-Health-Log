@@ -6,13 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.sql.Blob;
-import java.sql.SQLException;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @CrossOrigin("*")
@@ -52,6 +49,10 @@ public class PatientController {
     public Long CountById(@PathVariable Long patientId) {
         return pastRecordService.countOfRecordsById(patientId);
     }
+    @GetMapping("/doc-appointments/{doctorId}")
+    public Long CountByDocId(@PathVariable Long doctorId) {
+        return pastRecordService.countOfRecordsByDocId(doctorId);
+    }
     @GetMapping("/record/{patientId}/sortByDate")
     public List<PastRecord> SortByDate(@PathVariable Long patientId) {
         return pastRecordService.orderByUploadDate(patientId);
@@ -66,4 +67,9 @@ public class PatientController {
     public Long CountById(@PathVariable Long patientId, @PathVariable Integer severityFrom, @PathVariable Integer severityTo) {
         return pastRecordService.countOfRecordsByIdAndSeverity(patientId,severityFrom, severityTo);
     }
+    @GetMapping("/doctor/past-appointment/{doctorId}")
+    public Optional<List<PastRecord>> findRecordByDocId(@PathVariable Long doctorId) {
+        return pastRecordService.findByDocID(doctorId);
+    }
+
 }

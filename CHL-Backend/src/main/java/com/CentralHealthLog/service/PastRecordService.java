@@ -9,6 +9,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PastRecordService {
@@ -42,12 +43,18 @@ public class PastRecordService {
     public Long countOfRecordsById(Long patientId){
         return pastRecordRepository.countByPatientId(patientId);
     }
+    public Long countOfRecordsByDocId(Long doctorId){
+        return pastRecordRepository.countByDoctorId(doctorId);
+    }
 
     public Long countOfRecordsByIdAndSeverity(Long patientId, Integer severityFrom, Integer severityTo){
         return pastRecordRepository.countByPatientIdAndSeverityBetween(patientId,severityFrom, severityTo);
     }
     public List<PastRecord> orderByUploadDate(Long patientId){
         return pastRecordRepository.findByPatientIdOrderByUploadDateDesc(patientId);
+    }
+    public Optional<List<PastRecord>> findByDocID(Long doctorId){
+        return pastRecordRepository.findByDoctorIdOrderByUploadDateDesc(doctorId);
     }
     public PastRecord LastAppointment(Long patientId){
         return pastRecordRepository.findTopByPatientIdOrderByUploadDateDesc(patientId);

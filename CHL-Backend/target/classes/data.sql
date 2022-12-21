@@ -4,10 +4,10 @@ INTO
   (patient_id, doctor_id, doctor_name, upload_date, diagnosis, uploaded_by, severity)
 VALUES
   (43190, 45241, 'Dr. Prasad', '2022-11-21', 'Polio', 'Doctor', 9),
-  (43190, 1, 'Dr. Amit', '2022-11-21', 'Polio', 'Doctor', 9),
+  (89197, 1, 'Dr. Amit', '2022-11-21', 'Polio', 'Doctor', 9),
     (43190, 1, 'Dr. Amit', '2012-9-12', 'Tuberculosis', 'Doctor', 6),
     (43190, 1, 'Dr. Amit', '2021-01-25', 'Hep-C', 'Doctor', 8),
-    (43190, 1, 'Dr. Amit', '2019-10-15', 'Pneumonia', 'Self', 5),
+    (12345, 1, 'Dr. Amit', '2019-10-15', 'Pneumonia', 'Self', 5),
   (89197, 33421, 'Dr. Tashmeet', '2011-09-17', 'Hep-A', 'Doctor', 4);
 
 
