@@ -2,12 +2,34 @@
     <div id="nav">
         <app-navbar [button]="false" [name]="doctorName"></app-navbar>
     </div>
+    
     <div *ngIf="doctor.statusCode!='REGISTERED'" class="status"><b>
         You do not have permission to access our site.
         <div>Your Details are sent to the Admin for verification </div>
         <div *ngIf="doctor.comment === ''">Your status is = {{doctor.statusCode}}</div>
         <div *ngIf="doctor.comment != ''">Reason = {{doctor.comment}}</div></b>
+        {{openPopup()}}
     </div>
+    <!--modal 2-->
+    <div *ngIf="doctor.statusCode=='TO_BE_REGISTERED' && doctor.comment != ''" class="modal2" role="dialog" [ngStyle]="{ display: displayStyle }">
+        <div class="modal-header">
+          <h4 class="modal-title">Important!</h4>
+        </div>
+        <div class="modal-body">
+          <!-- <div class="form-cell">
+            <div class="cell"> -->
+              <!-- <label>Explanation:</label> -->
+              <p><b>Your details are being removed from our database as we couldn't verify your documents. Please register again!</b></p>
+            <!-- </div>
+          </div> -->
+          <br />
+          <div class="modal-footer">
+            <app-button [btntext]="'OK'" [btnConfig]="textBtnConfig" (click)="''">
+            </app-button>
+          </div>
+        </div>
+      </div>
+      <!--modal ends-->
     <div *ngIf="doctor.statusCode=='REGISTERED'" class="subcontainer">
         <div class="flex-item1">
             <app-sidebar [menus]="menus"></app-sidebar>

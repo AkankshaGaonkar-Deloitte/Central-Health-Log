@@ -61,11 +61,6 @@ export class DoctorDashboardComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  closePopup() {
-    this.displayStyle = "none";
-  }
-
-
   Verifyotp() {
     return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
       .subscribe(
@@ -120,6 +115,15 @@ export class DoctorDashboardComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    //window.location.reload()
+  }
 
 
 }
