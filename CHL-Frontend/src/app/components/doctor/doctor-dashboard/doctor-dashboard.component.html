@@ -8,7 +8,7 @@
         <div>Your Details are sent to the Admin for verification </div>
         <div *ngIf="doctor.comment === ''">Your status is = {{doctor.statusCode}}</div>
         <div *ngIf="doctor.comment != ''">Reason = {{doctor.comment}}</div></b>
-        {{openPopup()}}
+        <div *ngIf="doctor.statusCode=='TO_BE_REGISTERED' && doctor.comment != ''">{{openPopup()}}</div>
     </div>
     <!--modal 2-->
     <div *ngIf="doctor.statusCode=='TO_BE_REGISTERED' && doctor.comment != ''" class="modal2" role="dialog" [ngStyle]="{ display: displayStyle }">
@@ -16,12 +16,7 @@
           <h4 class="modal-title">Important!</h4>
         </div>
         <div class="modal-body">
-          <!-- <div class="form-cell">
-            <div class="cell"> -->
-              <!-- <label>Explanation:</label> -->
               <p><b>Your details are being removed from our database as we couldn't verify your documents. Please register again!</b></p>
-            <!-- </div>
-          </div> -->
           <br />
           <div class="modal-footer">
             <app-button [btntext]="'OK'" [btnConfig]="textBtnConfig" (click)="removeDoctor()">

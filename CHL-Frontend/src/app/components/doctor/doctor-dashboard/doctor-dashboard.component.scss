@@ -154,14 +154,13 @@ td {
 
 }
 .modal{
+    position: relative;
+    // margin-left: 33.5em;
     width: 25em;
-    height: 15em;
-    position: absolute;
-    left:40em;
-    top:5em;
+    background-color: #fff;
     text-align: center;
     align-self: center;
-    border: 1em solid #DAFDFF;
+    border: 0.8em solid #dafdff;
 }
 .modal-content{
     width: 25em;
