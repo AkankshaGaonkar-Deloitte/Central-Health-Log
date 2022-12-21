@@ -69,20 +69,20 @@ export class DoctorDashboardComponent implements OnInit {
   };
 
   Verifyotp() {
-    return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
-      .subscribe(
-        data => {
-          console.log(data);
-          if (data.responseMessage=="OTP verified!"){
-            sessionStorage.setItem('searched-patient',String(this.patient.id))
-            this.router.navigate(['/doc-patient-dashboard'])
-          }
-          else{
-            console.log(data.responseMessage);
+    // return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
+    //   .subscribe(
+    //     data => {
+    //       console.log(data);
+    //       if (data.responseMessage=="OTP verified!"){
+    //         sessionStorage.setItem('searched-patient',String(this.patient.id))
+    //         this.router.navigate(['/doc-patient-dashboard'])
+    //       }
+    //       else{
+    //         console.log(data.responseMessage);
             
-          }
-        }
-      )
+    //       }
+    //     }
+    //   )
   }
   
   menus1 = {

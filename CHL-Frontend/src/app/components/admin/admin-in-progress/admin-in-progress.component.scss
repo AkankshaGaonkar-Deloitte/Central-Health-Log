@@ -156,9 +156,10 @@ td {
 
 .modal {    
   position: relative;
-  margin-left: 20em;
+  margin-left: auto;
+  margin-right: auto;
   width: 25em;
-  height: 17em;
+  // height: 17em;
   background-color: #fff;
   // text-align: center;
   // align-self: center;
