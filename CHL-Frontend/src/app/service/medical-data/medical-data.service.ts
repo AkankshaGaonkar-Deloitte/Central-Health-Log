@@ -28,6 +28,11 @@ export class MedicalDataService {
     return this.http.get<MedicalData>(`${this.baseurl}/medical-data/${patientId}`, { headers });
 
   }
+  getAllMedicalDataById(patientId: number): Observable<MedicalData[]> {
+    let headers = this.createAuthenticationHeader()
+    return this.http.get<MedicalData[]>(`${this.baseurl}/all-medical-data/${patientId}`, { headers });
+
+  }
 
   saveMedicalData(medicalData: MedicalData): Observable<MedicalData>{
     let headers = this.createAuthenticationHeader()

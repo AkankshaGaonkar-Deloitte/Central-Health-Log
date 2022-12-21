@@ -1,6 +1,6 @@
 
 export class Pulse {
-  id!: number;
-  date!: Date;
-  pulse!: number;
+  id?: string|number|null
+  date?: string|number|null
+  pulse?: string|number|null
 }
