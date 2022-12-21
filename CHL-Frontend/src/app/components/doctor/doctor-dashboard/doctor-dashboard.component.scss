@@ -15,6 +15,7 @@
         justify-content: center;
         text-align: center;
         padding: 10em;
+        padding-bottom: 2em;
         // background-color: #f5feff;
     }
     
@@ -170,6 +171,20 @@ td {
     padding-right:2em;
     
 }
-// .modal-body{
-//     width: 20em;
-// }
+
+.modal2 {    
+    position: relative;
+    margin-left: 33.5em;
+    width: 25em;
+    background-color: #fff;
+    text-align: center;
+    align-self: center;
+    border: 0.8em solid #dafdff;
+  
+    .modal-header {
+      text-align: center;
+      align-self: center;
+      align-items: center;
+      justify-content: center;
+    }
+  }

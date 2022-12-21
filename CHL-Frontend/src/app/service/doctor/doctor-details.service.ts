@@ -47,9 +47,14 @@ export class DoctorDetailsService {
     return this.http.put<Doctor>(`${this.baseurl}/${id}/${statusCode}`, null, { headers });
   }
 
-  deleteDoctorById(id : string) : Observable<any>{
+  updateDoctor(doctor: Doctor){
     let headers = this.createAuthenticationHeader()
-    return this.http.delete<any>(`${this.baseurl}/${id}`, { headers });
+    return this.http.put<Doctor>(`${this.baseurl}/update`, doctor, {headers})
+  }
+
+  deleteDoctorById(id : string){
+    let headers = this.createAuthenticationHeader()
+    return this.http.delete(`${this.baseurl}/${id}`, { headers });
   }
   
 }

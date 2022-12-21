@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Doctor } from 'src/app/model/doctor';
-import { PastRecord } from 'src/app/model/past-record';
 import { Patient } from 'src/app/model/patient';
 import { PostResponse } from 'src/app/model/post-response';
 import { SMSPojo } from 'src/app/model/SMSPojo';
 import { TempOTP } from 'src/app/model/TempOTP';
 import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.service';
 import { OtpService } from 'src/app/service/otp.service';
-import { PastRecordService } from 'src/app/service/past-record.service';
 import { PatientService } from 'src/app/service/patient/patient.service';
 
 @Component({
@@ -22,9 +20,14 @@ export class DoctorDashboardComponent implements OnInit {
   response: PostResponse = new PostResponse('')
   doctor=new Doctor()
   doctorName!: string;
-  record!: PastRecord[];
 
-  constructor(private pastRecordService:PastRecordService, private doctorService:DoctorDetailsService, private patientService: PatientService, private otpService: OtpService,private router:Router) { }
+  constructor(
+    private doctorService:DoctorDetailsService, 
+    private patientService: PatientService, 
+    private otpService: OtpService,
+    private router:Router,
+    public doctorDetailsService: DoctorDetailsService
+  ) { }
   displayStyle = "none";
 
   GetPatient() {
@@ -64,11 +67,6 @@ export class DoctorDashboardComponent implements OnInit {
     patternErrorMessage: ''
   };
 
-  closePopup() {
-    this.displayStyle = "none";
-  }
-
-
   Verifyotp() {
     return this.otpService.VerifyOtp(new TempOTP(String('+91'+this.patient.phoneNo), Number(this.otp)))
       .subscribe(
@@ -98,7 +96,7 @@ export class DoctorDashboardComponent implements OnInit {
     let id=Number(sessionStorage.getItem('user-id'))
     this.doctorService.getDoctorByDoctorId(id).subscribe(data=>{this.doctor=data;console.warn(this.doctor);}
     )
-    this.pastRecordService.GetPastRecordByDoctor(id).subscribe(data=>{this.record=data;})
+
     
   }
 
@@ -123,6 +121,27 @@ export class DoctorDashboardComponent implements OnInit {
     },
     patternErrorMessage: ''
   };
+
+  openPopup() {
+    this.displayStyle = "block";
+  }
+
+  closePopup() {
+    this.displayStyle = "none";
+    //window.location.reload()
+  }
+
+  removeDoctor(){
+    console.log('doctor to be deleted!');
+    console.log(this.doctor);
+    
+    this.doctorDetailsService.deleteDoctorById(this.doctor.id as string)
+    .subscribe(response => {
+      
+    })
+    this.router.navigate(['/login'])
+    
+  }
 
 
 }

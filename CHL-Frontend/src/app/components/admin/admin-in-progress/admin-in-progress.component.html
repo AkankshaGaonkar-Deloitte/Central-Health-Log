@@ -1,42 +1,64 @@
 <div class="main-container">
-    <div id="nav">
-      <app-navbar [button]="false" [name]="adminName"></app-navbar>
+  <div id="nav">
+    <app-navbar [button]="false" [name]="adminName"></app-navbar>
+  </div>
+  <div class="subcontainer">
+    <div class="flex-item1">
+      <app-sidebar [menus]="menus"></app-sidebar>
     </div>
-    <div class="subcontainer">
-      <div class="flex-item1">
-        <app-sidebar [menus]="menus"></app-sidebar>
-      </div>
-      <div class="flex-item2">
-        <div class="main">
-          <div id="text1"><a routerLink="/patient-dashboard"></a>In Progress</div>
-          <div id="doctor-id">
-            <app-input [ipConfig]="searchDoctorId" (outputEmit)="DocID=$event"></app-input>
-            <img  (click)="searchDoc()" src="assets/images/search.png" style="height: 2.5em;cursor: pointer;">
-            </div>
-          <div class="table-container">
-            <table>
-              <tr>
-                <th>ID</th>
-                <th>Doctor Name</th>
-                <th>Qualification</th>
-                <th>Speciality</th>
-                <th>Contact</th>
-                <th>Action</th>
-              </tr>
-              <tr *ngFor="let doctor of allDoctors">
-                <td>{{doctor.id}}</td>
-                <td>{{doctor.doctorName}}</td>
-                <td>{{doctor.qualification}}</td>
-                <td>{{doctor.speciality}}</td>
-                <td>{{doctor.phoneNo}}</td>
-                <td id="btn">
-                  <app-button (onClick)="onClickEventReceived($event, doctor.id, 'REGISTERED')" [btntext]="'Approve'" [btnConfig]="textBtnConfig "></app-button>
-                  <app-button (onClick)="onClickEventReceived($event, doctor.id,'TO_BE_REGISTERED')"  [btntext]="'Deny'" [btnConfig]="textBtnConfig3"></app-button>
-                </td>
+    <div class="flex-item2">
+      <div class="main">
+        <div id="text1"><a routerLink="/patient-dashboard"></a>In Progress</div>
+        <div id="doctor-id">
+          <app-input [ipConfig]="searchDoctorId" (outputEmit)="DocID=$event"></app-input>
+          <img (click)="searchDoc()" src="assets/images/search.png" style="height: 2.5em;cursor: pointer;">
+        </div>
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>ID</th>
+              <th>Doctor Name</th>
+              <th>Qualification</th>
+              <th>Speciality</th>
+              <th>Contact</th>
+              <th>Action</th>
+            </tr>
+            <tr *ngFor="let doctor of allDoctors">
+              <td>{{doctor.id}}</td>
+              <td>{{doctor.doctorName}}</td>
+              <td>{{doctor.qualification}}</td>
+              <td>{{doctor.speciality}}</td>
+              <td>{{doctor.phoneNo}}</td>
+              <td id="btn">
+                <app-button (onClick)="approved($event, doctor.id, 'REGISTERED')" [btntext]="'Approve'"
+                  [btnConfig]="textBtnConfig "></app-button>
+                <app-button (onClick)="denied($event, doctor,'TO_BE_REGISTERED')" [btntext]="'Deny'"
+                  [btnConfig]="textBtnConfig3"></app-button>
+              </td>
             </tr>
           </table>
+        </div>
+        <!--modal-->
+        <div class="modal" role="dialog" [ngStyle]="{ display: displayStyle }">
+          <div class="modal-header">
+            <h4 class="modal-title">Provide reason</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-cell">
+              <div class="cell">
+                <label>Explanation:</label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="currDoctor.comment = $event"></app-input>
+              </div>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig3" (click)="submitComment()">
+              </app-button>
+            </div>
           </div>
         </div>
+        <!--modal ends-->
       </div>
     </div>
   </div>
+</div>

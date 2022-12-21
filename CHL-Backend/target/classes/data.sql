@@ -68,12 +68,12 @@ VALUES
 INSERT
 INTO
   doctor
-  (username, password, doctor_name, phone_no, registration_no, year_of_reg, state_medical_council, qualification, email, speciality, age, gender, status_code)
+  (username, password, doctor_name, phone_no, registration_no, year_of_reg, state_medical_council, qualification, email, speciality, age, gender, status_code, comment)
 VALUES
-  ('Amit23', '123', 'Amit Tiwari', '99999999', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'tiwari@gmail.com', 'Neurologist', 49, 'Male', 'REGISTERED'),
-  ('Akanksha', '123', 'Akanksha Jain', '99999946', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'ashu@gmail.com', 'Neurologist', 49, 'Female', 'TO_BE_REGISTERED'),
-  ('Prasad15', '123', 'Prasad Singh', '99999993', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'prasi@gmail.com', 'Neurologist', 49, 'Male', 'TO_BE_REGISTERED'),
-  ('Bhishma', '123', 'Bhishma Malhotra', '99999992', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'bhi@gmail.com', 'Neurologist', 49, 'Male', 'IN_PROGRESS');
+  ('Amit23', '123', 'Amit Tiwari', '99999999', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'tiwari@gmail.com', 'Neurologist', 49, 'Male', 'REGISTERED', ''),
+  ('Akanksha', '123', 'Akanksha Jain', '99999946', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'ashu@gmail.com', 'Neurologist', 49, 'Female', 'TO_BE_REGISTERED', ''),
+  ('Prasad15', '123', 'Prasad Singh', '99999993', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'prasi@gmail.com', 'Neurologist', 49, 'Male', 'TO_BE_REGISTERED', ''),
+  ('Bhishma', '123', 'Bhishma Malhotra', '99999992', 456, 1997, 'Goa Medical Council', 'MBBS(Neurology)', 'bhi@gmail.com', 'Neurologist', 49, 'Male', 'IN_PROGRESS', '');
 
 INSERT
 INTO
