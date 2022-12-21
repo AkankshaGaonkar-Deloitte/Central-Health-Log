@@ -2,6 +2,7 @@ package com.CentralHealthLog.repository;
 
 import com.CentralHealthLog.entity.PastRecord;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Date;
@@ -23,6 +24,8 @@ public interface PastRecordRepository extends JpaRepository<PastRecord, Long> {
     long countByPatientId(Long patientId);
     long countByDoctorId(Long doctorId);
     long countByPatientIdAndSeverityBetween(Long patientId,Integer severityFrom, Integer severityTo);
+    
+//    @Query("Select count(distinct patientId) from Table t where t.id = ?1")
 
     List<PastRecord> findByPatientIdOrderByUploadDateDesc(Long patientId);
     PastRecord findTopByPatientIdOrderByUploadDateDesc(Long patientId);
