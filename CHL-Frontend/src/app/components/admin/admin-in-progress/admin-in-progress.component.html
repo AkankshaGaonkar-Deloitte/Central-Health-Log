@@ -32,33 +32,32 @@
               <td id="btn">
                 <app-button (onClick)="approved($event, doctor.id, 'REGISTERED')" [btntext]="'Approve'"
                   [btnConfig]="textBtnConfig "></app-button>
-                <app-button (onClick)="denied($event, doctor.id,'TO_BE_REGISTERED')" [btntext]="'Deny'"
+                <app-button (onClick)="denied($event, doctor,'TO_BE_REGISTERED')" [btntext]="'Deny'"
                   [btnConfig]="textBtnConfig3"></app-button>
               </td>
-              <!--modal-->
-              <div class="modal" role="dialog" [ngStyle]="{ display: displayStyle }">
-                <div class="modal-header">
-                  <h4 class="modal-title">Provide reason</h4>
-                </div>
-                <div class="modal-body">
-                  <div class="form-cell">
-                    <div class="cell">
-                      <label>Explanation:</label>
-                      <app-input [ipConfig]="ipConfig" (outputEmit)="doctor.comment = $event"></app-input>
-                    </div>
-                  </div>
-                  <br />
-                  <div class="modal-footer">
-                    <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig3" (click)="submitComment(doctor.id)">
-                    </app-button>
-                  </div>
-                </div>
-              </div>
-              <!--modal ends-->
             </tr>
           </table>
         </div>
-
+        <!--modal-->
+        <div class="modal" role="dialog" [ngStyle]="{ display: displayStyle }">
+          <div class="modal-header">
+            <h4 class="modal-title">Provide reason</h4>
+          </div>
+          <div class="modal-body">
+            <div class="form-cell">
+              <div class="cell">
+                <label>Explanation:</label>
+                <app-input [ipConfig]="ipConfig" (outputEmit)="currDoctor.comment = $event"></app-input>
+              </div>
+            </div>
+            <br />
+            <div class="modal-footer">
+              <app-button [btntext]="'Save'" [btnConfig]="textBtnConfig3" (click)="submitComment()">
+              </app-button>
+            </div>
+          </div>
+        </div>
+        <!--modal ends-->
       </div>
     </div>
   </div>

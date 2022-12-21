@@ -81,26 +81,6 @@ table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
-
-  .modal {
-    width: 25em;
-    height: 17em;
-    background-color: #fff;
-    text-align: center;
-    align-self: center;
-    border: 0.8em solid #dafdff;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  
-    .modal-header {
-      text-align: center;
-      align-self: center;
-      align-items: center;
-      justify-content: center;
-    }
-  }
 }
 
 td,
@@ -171,5 +151,27 @@ td {
       letter-spacing: 0.1em;
       color: #2c2d2d;
     }
+  }
+}
+
+.modal {    
+  position: relative;
+  margin-left: 20em;
+  width: 25em;
+  height: 17em;
+  background-color: #fff;
+  // text-align: center;
+  // align-self: center;
+  border: 0.8em solid #dafdff;
+  // align-items: center;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+
+  .modal-header {
+    text-align: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
   }
 }

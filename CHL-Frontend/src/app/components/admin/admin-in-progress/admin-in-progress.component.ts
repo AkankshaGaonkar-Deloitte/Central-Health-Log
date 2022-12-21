@@ -10,7 +10,7 @@ import { DoctorDetailsService } from 'src/app/service/doctor/doctor-details.serv
 export class AdminInProgressComponent implements OnInit {
   DocID!: string | number | null;
   allDoctors!: Doctor[];
-
+  currDoctor!: Doctor
   comment!: string | number | null
 
   searchBtnConfig = {
@@ -185,19 +185,14 @@ export class AdminInProgressComponent implements OnInit {
     });
   }
 
-  denied($event: any, id: any, statusCode: string) {
+  denied($event: any, doctor: Doctor, statusCode: string) {
+    this.currDoctor = doctor
     this.openPopup()
   }
 
-  submitComment(id: string | number | null) {
+  submitComment() {
     console.log(this.allDoctors);
-    let doc: Doctor = new Doctor()
-    this.allDoctors.forEach(element => {
-      if (element.id === id) {
-        console.log(element);
-        doc = element
-      }
-    });
+    let doc: Doctor = this.currDoctor
 
     doc.statusCode = 'TO_BE_REGISTERED'
     this.doctorDetailsService.updateDoctor(doc)
