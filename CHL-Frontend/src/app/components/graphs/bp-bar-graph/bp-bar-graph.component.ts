@@ -87,32 +87,8 @@ export class BpBarGraphComponent implements OnInit {
         this.BP = pr;
       }
       )
-    // this.graphService.getBloodPressure().subscribe(data => {
-    //   for (let i in data) {
-    //     pr.push(data[i]);
-    //   }
-    //   this.BP = pr;
-    // })
   }
 
 }
-
-
-
-
-
-
-
-
-   // custom code start
-// public load(args: ILoadedEventArgs): void {
-//     let selectedTheme: string = location.hash.split('/')[1];
-//     selectedTheme = selectedTheme ? selectedTheme : 'Material';
-//     args.chart.theme = <ChartTheme>(selectedTheme.charAt(0).toUpperCase() + selectedTheme.slice(1)).replace(/-dark/i, "Dark");
-//     [150, 71.5, 106.4, 100.25, 70.0, 106.0, 85.6, 78.5, 76.4, 86.1, 155.6, 160.4].map((value: number, index: number) => {
-//         this.dataValues.push({ XValue: new Date(2016, index, 1), YValue: value });
-//     });
-// };
-   // custom code end
 
 

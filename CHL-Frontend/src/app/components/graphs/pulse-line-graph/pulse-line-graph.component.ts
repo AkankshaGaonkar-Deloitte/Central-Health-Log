@@ -79,14 +79,6 @@ export class PulseLineGraphComponent implements OnInit {
         this.pulseRate = pr;
       }
       )
-
-    // this.graphService.getPulse().subscribe(data => {
-    //   for (let i in data) {
-    //     console.warn(data[i]);
-    //     pr.push(data[i]);
-    //   }
-    //   this.pulseRate = pr;
-    // })
   }
 
 }

@@ -99,13 +99,6 @@ export class AreaGraphComponent implements OnInit {
         this.BMI = pr;
       }
       )
-    
-    // this.graphService.getBMI().subscribe(data => {
-    //   for (let i in data) {
-    //     pr.push(data[i]);
-    //   }
-    //   this.BMI = pr;
-    // })
   }
 
 }
