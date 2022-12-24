@@ -37,7 +37,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tabs">
+                <!-- <div class="tabs">
                     <nav class="nav">
                         <div class="tab" (click)="onClick(menu,menus)" [ngClass]="{'active': menu.value[1]===true}"
                             *ngFor="let menu of menus | keyvalue" id="sidebar-element">
@@ -46,8 +46,8 @@
                             </div>
                         </div>
                     </nav>
-                </div>
-                <div class="charts">
+                </div> -->
+                <!-- <div class="charts">
                     <div *ngIf="bmi" class="bmiGraph">
                         <app-area-graph [id]="patientId"></app-area-graph>
                     </div>
@@ -56,9 +56,23 @@
                     </div>
                     <div *ngIf="bp" class="bpGraph">
                         <bp-graph [id]="patientId"></bp-graph>
+                    </div> -->
+                <!-- </div> -->
+                <div class="graphs">
+                    <div style="margin: 0.8em;" class="bmiGraph">
+                        <p style="font-size :1.5em;">BMI</p>
+                        <app-area-graph [id]="patientId"></app-area-graph>
                     </div>
-
+                    <div style="margin: 0.8em;" class="pulseRate">
+                        <p style="font-size :1.5em;">Pulse Rate</p>
+                        <pulse-line-graph [id]="patientId"></pulse-line-graph>
+                    </div>
+                    <div style="margin: 0.8em;" class="bpGraph">
+                        <p style="font-size :1.5em;">Blood Pressure</p>
+                        <bp-graph [id]="patientId"></bp-graph>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

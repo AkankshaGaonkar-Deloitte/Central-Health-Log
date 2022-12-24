@@ -381,7 +381,6 @@ patient=new Patient()
   }
 
   submitNewPastRecord() {
-    console.log(this.pastRecord);
     this.pastRecordService.addPastRecord(this.pastRecord)
       .subscribe(data => {
         console.log(`Newly added data ${data}`);
@@ -425,10 +424,10 @@ patient=new Patient()
           this.pastRecord.prescriptionId = response.id
           this.pastRecord.patientId = this.patientId
           // upload past record
-          this.pastRecordService.addPastRecord(this.pastRecord)
-            .subscribe(response => {
-              console.log(response)
-            })
+          // this.pastRecordService.addPastRecord(this.pastRecord)
+          //   .subscribe(response => {
+          //     console.log(response)
+          //   })
 
         }
       )

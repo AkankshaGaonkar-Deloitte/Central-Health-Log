@@ -45,7 +45,7 @@ export class PulseLineGraphComponent implements OnInit {
   public segments: Object[] = [{
      
   
-      color: 'url(#spring)'
+      color: 'url(#pulse)'
   }];
   public tooltip: Object = {
       enable: true,

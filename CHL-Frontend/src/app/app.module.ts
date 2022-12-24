@@ -37,6 +37,7 @@ import { AreaGraphComponent } from './components/graphs/area-graph/area-graph.co
 import { ToBeRegisteredComponent } from './components/admin/to-be-registered/to-be-registered.component';
 import { RegisteredDoctorsComponent } from './components/admin/registered-doctors/registered-doctors.component';
 import { AdminInProgressComponent } from './components/admin/admin-in-progress/admin-in-progress.component';
+import { PrescriptionComponent } from './components/patient/prescription/prescription.component';
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { AdminInProgressComponent } from './components/admin/admin-in-progress/a
     DoctorDashboardComponent,
     AreaGraphComponent,
     ToBeRegisteredComponent,
-    RegisteredDoctorsComponent
+    RegisteredDoctorsComponent,
+    PrescriptionComponent
   ],
   imports: [
     BrowserModule,
