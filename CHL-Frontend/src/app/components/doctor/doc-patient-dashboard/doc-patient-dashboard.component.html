@@ -58,13 +58,13 @@
                         </div>
                         <div class="charts">
                             <div *ngIf="bmi" class="bmiGraph">
-                                <app-area-graph></app-area-graph>
+                                <app-area-graph [id]="patientId"></app-area-graph>
                             </div>
                             <div *ngIf="pulse" class="pulseRate">
-                                <pulse-line-graph></pulse-line-graph>
+                                <pulse-line-graph [id]="patientId"></pulse-line-graph>
                             </div>
                             <div *ngIf="bp" class="bpGraph">
-                                <bp-graph></bp-graph>
+                                <bp-graph [id]="patientId"></bp-graph>
                             </div>
 
                         </div>

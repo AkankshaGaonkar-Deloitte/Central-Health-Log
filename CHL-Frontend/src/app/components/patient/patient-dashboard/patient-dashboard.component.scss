@@ -5,11 +5,6 @@
     font-style: normal;
     display: table-cell;
 
-    #nav {
-        height: 7%;
-        width: 100%;
-    }
-
     .subcontainer {
         background-color: #f5feff;
         display: flex;
@@ -40,7 +35,7 @@
 
             #heading {
                 font-weight: 700;
-                font-size: 1.1em;
+                font-size: 1.5em;
                 line-height: 1.2em;
                 color: #2C2D2D;
                 margin: 1.25em;
@@ -63,7 +58,7 @@
                     display: flex;
                     flex-direction: row;
                     gap: 1em;
-                    margin: 1em;
+                    margin: 0.8em;
 
                     #cards {
                         background: #FFFFFF;
